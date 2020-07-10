@@ -1,9 +1,12 @@
+
+
 const Sequelize = require('sequelize')
 const DataTypes = Sequelize.DataTypes
-const database = 'wh2o'
-const host = 'wh2o.clourdmiyl6j.us-west-1.rds.amazonaws.com'
-const username = 'wh2o'
-const pass = 'wh2o2020'
+
+const database = process.env.POSTGRES_DB
+const host = process.env.POSTGRES_HOST
+const username = process.env.POSTGRES_USER
+const pass = process.env.POSTGRES_PASSWORD
 
 const pgClient = new Sequelize(
   database,

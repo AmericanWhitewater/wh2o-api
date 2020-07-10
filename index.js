@@ -1,3 +1,4 @@
+require('dotenv').config()
 const app = require('express')()
 const port = process.env.PORT || 8000
 const bodyParser = require("body-parser");
