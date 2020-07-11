@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     the_geom: {
-      type: DataTypes.ENUM(),
+      type: DataTypes.GEOMETRY,
       allowNull: true
     }
   }, {
