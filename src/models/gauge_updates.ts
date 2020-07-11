@@ -56,7 +56,7 @@ module.exports = function(sequelize, DataTypes) {
     updated: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: now(),
+      defaultValue: sequelize.fn('NOW'),
       comment: 'when this entry was updated.'
     },
     obs_ref: {
