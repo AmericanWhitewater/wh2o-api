@@ -9,7 +9,7 @@ module.exports = app => {
         id: req.query.id
       }
     }).then(result => {
-      res.send({ reach: result })
+      res.send({ reach: result }).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
@@ -23,7 +23,7 @@ module.exports = app => {
       res.send('Reach Created').status(200)
     }).catch(err => {
       console.log('err: ', err)
-      res.send(err)
+      res.send(err).status(500)
     })
 
   })
@@ -38,7 +38,7 @@ module.exports = app => {
       res.send('Reach Updated').status(200)
     }).catch(err => {
       console.log('err: ', err)
-      res.send(err)
+      res.send(err).status(500)
     })
 
   })
@@ -53,7 +53,7 @@ module.exports = app => {
       res.send('Reach Deleted').status(200)
     }).catch(err => {
       console.log('err: ', err)
-      res.send(err)
+      res.send(err).send(500)
     })
 
   })

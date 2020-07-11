@@ -22,6 +22,7 @@ const pgClient = new Sequelize(
   {
     host,
     dialect: 'postgres',
+    logging: false,
     define: {
       freezeTableName: true,
       timestamps: false,
