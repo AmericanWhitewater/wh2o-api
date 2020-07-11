@@ -1,4 +1,4 @@
-const { pgClient, DataTypes } = require('../config')
+import { pgClient, DataTypes } from "../config";
 const GISHuc = require('../models/gis_hucs')(pgClient, DataTypes)
 
 module.exports = app => {

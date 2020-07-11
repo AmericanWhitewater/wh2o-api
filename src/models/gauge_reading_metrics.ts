@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     unit: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'Unit name (e.g. 'cfs')'
+      comment: 'Unit name (e.g. \'cfs\')'
     },
     name: {
       type: DataTypes.STRING,

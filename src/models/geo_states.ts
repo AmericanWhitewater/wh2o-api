@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     aw_region: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'aw's region code.'
+      comment: 'aw\'s region code.'
     }
   }, {
     sequelize,

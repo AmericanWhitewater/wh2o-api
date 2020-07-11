@@ -1,4 +1,4 @@
-const routes = [
+const apiRoutes = [
   require('./accidents'),
   require('./articles'),
   require('./comments'),
@@ -15,7 +15,7 @@ const routes = [
 
 module.exports = app => {
 
-  for (const route of routes) {
+  for (const route of apiRoutes) {
     route(app)
   }
 

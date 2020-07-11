@@ -16,17 +16,13 @@ module.exports = function(sequelize, DataTypes) {
     url: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'URL to Datasource Homepage.'
+      comment: 'URL to data source Homepage.'
     },
     update_type: {
       type: DataTypes.CHAR(1),
       allowNull: false,
       defaultValue: "h",
-      comment: 'm - manual (no programatic updates)
-
-h - header based (uses the last_update and update frequency to serve a list of headers needing readings )
-
-r - reading based (uses incoming reaings to to populate the header table later ).'
+      comment: 'm - manual (no programmatic updates) h - header based (uses the last_update and update frequency to serve a list of headers needing readings ) r - reading based (uses incoming readings to to populate the header table later ).'
     },
     update_frequency: {
       type: DataTypes.INTEGER,
@@ -37,7 +33,7 @@ r - reading based (uses incoming reaings to to populate the header table later )
     update_start_time: {
       type: DataTypes.TIME,
       allowNull: false,
-      defaultValue: now(),
+      defaultValue: sequelize.fn('NOW'),
       comment: 'when to start requesting updates on a reading-based gauge. For header based gauges, this is the time to do the update.'
     },
     data: {
@@ -48,13 +44,13 @@ r - reading based (uses incoming reaings to to populate the header table later )
     updated: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: now(),
+      defaultValue: sequelize.fn('NOW'),
       comment: DataTypes.TIME
     },
     populated: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: now(),
+      defaultValue: sequelize.fn('NOW'),
       comment: 'when the header was last populated.'
     },
     disclaimer: {

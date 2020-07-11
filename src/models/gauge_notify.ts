@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     uid: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: 'user's id'
+      comment: 'user\'s id'
     },
     min: {
       type: DataTypes.REAL,

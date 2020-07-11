@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     uid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: 'uid of person's gauge settings',
+      comment: 'uid of user who\'s gauge setting is is',
       primaryKey: true
     },
     starttime: {
@@ -31,8 +31,7 @@ module.exports = function(sequelize, DataTypes) {
     format: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: '0=normal
-1=pager'
+      comment: '0=normal 1=pager'
     }
   }, {
     sequelize,

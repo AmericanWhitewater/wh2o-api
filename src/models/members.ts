@@ -111,7 +111,7 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'person's name'
+      comment: 'person\'s name'
     },
     expiration: {
       type: DataTypes.DATE,

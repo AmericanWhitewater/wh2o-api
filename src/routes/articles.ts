@@ -1,4 +1,4 @@
-const { pgClient, DataTypes } = require('../config')
+import { pgClient, DataTypes } from "../config";
 const Article = require('../models/awarticles')(pgClient, DataTypes)
 
 module.exports = app => {

@@ -10,8 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     source: {
       type: DataTypes.STRING,
       allowNull: false,
-      comment: 'look at guage_source
-sample values include 'usgs', 'tva', 'dflows', ...',
+      comment: "look at guage_source. sample values include: usgs, tva, dflows",
       references: {
         model: {
           tableName: 'gauge_sources',
@@ -46,16 +45,12 @@ sample values include 'usgs', 'tva', 'dflows', ...',
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: "0",
-      comment: 'Update frequency specified in seconds > 0. 
-0 = disabled. 
-'
+      comment: 'Update frequency specified in seconds > 0. 0 = disabled.'
     },
     county: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'fips code of count 
-ssccc
-ex. 12005'
+      comment: 'fips code of count ssccc ex. 12005'
     },
     glat: {
       type: DataTypes.DOUBLE,
@@ -88,7 +83,7 @@ ex. 12005'
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "GMT",
-      comment: 'the timezone (from gnu's time library) for storing date stamps. We normalize all date stamps with this time zone after an update.'
+      comment: 'the timezone (from gnu\'s time library) for storing date stamps. We normalize all date stamps with this time zone after an update.'
     },
     update_user_frequency: {
       type: DataTypes.INTEGER,

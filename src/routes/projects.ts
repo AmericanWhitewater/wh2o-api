@@ -1,15 +1,15 @@
-const { pgClient, DataTypes } = require('../config')
-const Reach = require('../models/reaches')(pgClient, DataTypes)
+import { pgClient, DataTypes } from "../config";
+const Project = require('../models/projects')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get('/reach', (req, res) => {
+  app.get('/project', (req, res) => {
 
-    Reach.findOne({
+    Project.findOne({
       where: {
         id: req.query.id
       }
     }).then(result => {
-      res.send({ reach: result }).status(200)
+      res.send({ project: result }).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
@@ -17,10 +17,10 @@ module.exports = app => {
 
   })
 
-  app.post('/new-reach', (req, res) => {
+  app.post('/new-project', (req, res) => {
 
-    Reach.create(req.body).then(() => {
-      res.send('Reach Created').status(200)
+    Project.create(req.body).then(() => {
+      res.send('Project Created').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -28,14 +28,14 @@ module.exports = app => {
 
   })
 
-  app.put('/update-reach', (req, res) => {
+  app.put('/update-project', (req, res) => {
 
-    Reach.update(req.body, {
+    Project.update(req.body, {
       where: {
         id: req.query.id
       }
     }).then(() => {
-      res.send('Reach Updated').status(200)
+      res.send('Project updated').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -43,14 +43,14 @@ module.exports = app => {
 
   })
 
-  app.delete('/delete-reach', (req, res) => {
+  app.delete('/delete-project', (req, res) => {
 
-    Reach.destroy({
+    Project.destroy({
       where: {
         id: req.query.id
       }
     }).then(() => {
-      res.send('Reach Deleted').status(200)
+      res.send('Project Deleted').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).send(500)

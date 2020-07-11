@@ -1,4 +1,4 @@
-const { pgClient, DataTypes } = require('../config')
+import { pgClient, DataTypes } from "../config";
 const Rapid = require('../models/rapids')(pgClient, DataTypes)
 
 module.exports = app => {
