@@ -1,4 +1,4 @@
-const { pgClient, DataTypes } = require('../database')
+const { pgClient, DataTypes } = require('../config')
 const Reach = require('../models/reaches')(pgClient, DataTypes)
 
 module.exports = app => {
