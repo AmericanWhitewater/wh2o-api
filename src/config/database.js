@@ -1,5 +1,4 @@
 
-
 const Sequelize = require('sequelize')
 const DataTypes = Sequelize.DataTypes
 
@@ -34,6 +33,5 @@ const pgClient = new Sequelize(
     }
   }
 )
-
 
 module.exports = { pgClient, Sequelize, DataTypes }

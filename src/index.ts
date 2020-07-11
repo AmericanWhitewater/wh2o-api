@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT || 8000
 const bodyParser = require("body-parser");
 const middleware = require("./middleware")
-const routes = require('./routes') 
+const routes = require('./routes')
 
 const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
 

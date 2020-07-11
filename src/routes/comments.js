@@ -3,7 +3,6 @@ const Comment = require('../models/comments')(pgClient, DataTypes)
 
 module.exports = app => {
 
-
   app.get('/reach-warnings', (req, res) => {
 
     Comment.findAll({
