@@ -22,58 +22,5 @@ To start development server with nodemon run: `npm run dev`.
 
 ## Endpoints
 
-### Reaches
+For Swagger documentation, start the API then visit `{{ api_url }}/docs`
 
-### Get Single Reach
-
-GET
-
-```
-/reach?id={{ some_id }}
-```
-
-### Create Reach
-
-POST
-
-```
-/new-reach
-```
-
-*Body*
-
-Minimum requirements
-
-```
-{
-  river: '',
-  section: '',
-  is_final: false,
-  class: '',
-  description: '',
-}
-```
-
-### Update Reach
-
-PUT
-
-```
-/update-reach
-```
-
-Body can contain any field except for id.
-
-```
-{
-  river: 'Some crazy new river name',
-}
-```
-
-### Delete Reach
-
-DELETE
-
-```
-/delete-reach?id={{ some_id }}
-```

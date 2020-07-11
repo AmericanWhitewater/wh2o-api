@@ -3,6 +3,7 @@ const routes = [
   require('./articles'),
   require('./comments'),
   require('./events'),
+  require('./docs'),
   require('./gis-hucs'),
   require('./gis-states'),
   require('./gis-zips'),
