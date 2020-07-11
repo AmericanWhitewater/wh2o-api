@@ -17,6 +17,21 @@ module.exports = app => {
 
   })
 
+  app.get('/event-state', (req, res) => {
+
+    Event.findOne({
+      where: {
+        state: req.query.state
+      }
+    }).then(result => {
+      res.send(result).status(200)
+    }).catch(err => {
+      console.log(err)
+      res.send(err).status(404)
+    })
+
+  })
+
   app.post('/new-event', (req, res) => {
 
     Event.create(req.body).then(() => {

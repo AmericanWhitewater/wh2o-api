@@ -2,7 +2,6 @@ const apiRoutes = [
   require('./accidents'),
   require('./articles'),
   require('./comments'),
-  require('./docs'),
   require('./events'),
   require('./gage-reading-metrics'),
   require('./gage-sources'),
