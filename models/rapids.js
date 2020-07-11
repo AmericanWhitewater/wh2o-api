@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     rapidid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "nextval(("public"."rapids_rapidid_seq"",
+      defaultValue: "nextval('\"public\".\"rapids_rapidid_seq\"'::text::regclass)",
       comment: 'rapid id in reach'
     },
     name: {
@@ -93,7 +93,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: 'true if deleted. '
     },
     rloc: {
-      type: DataTypes.ENUM(),
+      type: DataTypes.GEOMETRY,
       allowNull: true
     },
     revision: {
@@ -110,7 +110,7 @@ module.exports = function(sequelize, DataTypes) {
     created_at: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: now()
+      defaultValue: sequelize.fn('NOW')
     }
   }, {
     sequelize,

@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
     verifydate: {
       type: DataTypes.DATEONLY,
       allowNull: true,
-      comment: 'when the user's email address was last verified (exempt if members, otherwise shoudl be every three months)'
+      comment: 'when the user\'s email address was last verified (exempt if members, otherwise should be every three months)'
     },
     email: {
       type: DataTypes.STRING,
@@ -131,7 +131,7 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: 'person's name'
+      comment: 'person\'s name'
     },
     mem_transaction: {
       type: DataTypes.STRING,

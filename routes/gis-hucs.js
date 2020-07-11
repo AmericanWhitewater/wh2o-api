@@ -1,15 +1,15 @@
 const { pgClient, DataTypes } = require('../config')
-const Reach = require('../models/reaches')(pgClient, DataTypes)
+const GISHuc = require('../models/gis_hucs')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get('/reach', (req, res) => {
+  app.get('/gis-huc', (req, res) => {
 
-    Reach.findOne({
+    GISHuc.findOne({
       where: {
-        id: req.query.id
+        gid: req.query.gid
       }
     }).then(result => {
-      res.send({ reach: result }).status(200)
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
@@ -17,10 +17,10 @@ module.exports = app => {
 
   })
 
-  app.post('/new-reach', (req, res) => {
+  app.post('/new-gis-huc', (req, res) => {
 
-    Reach.create(req.body).then(() => {
-      res.send('Reach Created').status(200)
+    GISHuc.create(req.body).then(() => {
+      res.send('GISHuc Created').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -28,14 +28,14 @@ module.exports = app => {
 
   })
 
-  app.put('/update-reach', (req, res) => {
+  app.put('/update-gis-huc', (req, res) => {
 
-    Reach.update(req.body, {
+    GISHuc.update(req.body, {
       where: {
-        id: req.query.id
+        gid: req.query.gid
       }
     }).then(() => {
-      res.send('Reach Updated').status(200)
+      res.send('GISHuc updated').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -43,14 +43,14 @@ module.exports = app => {
 
   })
 
-  app.delete('/delete-reach', (req, res) => {
+  app.delete('/delete-gis-huc', (req, res) => {
 
-    Reach.destroy({
+    GISHuc.destroy({
       where: {
-        id: req.query.id
+        gid: req.query.gid
       }
     }).then(() => {
-      res.send('Reach Deleted').status(200)
+      res.send('GIS Huc Deleted').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).send(500)

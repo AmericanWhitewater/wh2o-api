@@ -1,15 +1,15 @@
 const { pgClient, DataTypes } = require('../config')
-const Reach = require('../models/reaches')(pgClient, DataTypes)
+const User = require('../models/users')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get('/reach', (req, res) => {
+  app.get('/user', (req, res) => {
 
-    Reach.findOne({
+    User.findOne({
       where: {
-        id: req.query.id
+        uid: req.query.uid
       }
     }).then(result => {
-      res.send({ reach: result }).status(200)
+      res.send({ user: result }).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
@@ -17,10 +17,10 @@ module.exports = app => {
 
   })
 
-  app.post('/new-reach', (req, res) => {
+  app.post('/new-user', (req, res) => {
 
-    Reach.create(req.body).then(() => {
-      res.send('Reach Created').status(200)
+    User.create(req.body).then(() => {
+      res.send('Article Created').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -28,14 +28,14 @@ module.exports = app => {
 
   })
 
-  app.put('/update-reach', (req, res) => {
+  app.put('/update-user', (req, res) => {
 
-    Reach.update(req.body, {
+    User.update(req.body, {
       where: {
-        id: req.query.id
+        uid: req.query.uid
       }
     }).then(() => {
-      res.send('Reach Updated').status(200)
+      res.send('User updated').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -43,14 +43,14 @@ module.exports = app => {
 
   })
 
-  app.delete('/delete-reach', (req, res) => {
+  app.delete('/delete-user', (req, res) => {
 
-    Reach.destroy({
+    User.destroy({
       where: {
-        id: req.query.id
+        uid: req.query.uid
       }
     }).then(() => {
-      res.send('Reach Deleted').status(200)
+      res.send('User Deleted').status(200)
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).send(500)
