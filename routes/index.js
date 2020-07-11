@@ -1,5 +1,7 @@
 const routes = [
   require('./accidents'),
+  require('./comments'),
+  require('./rapids'),
   require('./reaches')
 ]
 
