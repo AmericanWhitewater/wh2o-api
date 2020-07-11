@@ -1,4 +1,5 @@
 const routes = [
+  require('./accidents'),
   require('./reaches')
 ]
 

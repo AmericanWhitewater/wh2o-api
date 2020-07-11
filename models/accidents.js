@@ -4,7 +4,9 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('accidents', {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
     },
     accidentdate: {
       type: DataTypes.DATEONLY,
