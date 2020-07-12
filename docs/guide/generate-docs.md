@@ -13,4 +13,4 @@ When you're ready to publish your endpoint docs, export the collection from Post
 docgen build -i wh2o-api.postman_collection.json -o ~/Downloads/wh2o-api.md -m
 ```
 
-Docgen is wh2o-api.postman_collection.json as the input file and then outputting a Markdown file named wh2o-api.md in the Downloads directory. Open the newly created markdown file, then copy all the contents below the Indices, then paste in the endpoints.md file: `wh2o-api/docs/endpoints/README.md`. 
+Docgen is wh2o-api.postman_collection.json as the input file and then outputting a Markdown file named wh2o-api.md in the Downloads directory. Open the newly created markdown file, then copy all the contents, and paste in the endpoints.md file: `wh2o-api/docs/endpoints/README.md`. 

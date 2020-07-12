@@ -1,6 +1,111 @@
 # Endpoints
 
-All available endpoints. If you find a bug please let us know.
+* [Accident](#accident)
+
+  * [Accident](#1-accident)
+  * [Create Accident](#2-create-accident)
+  * [Delete Accident](#3-delete-accident)
+  * [Update Accident](#4-update-accident)
+
+* [Article](#article)
+
+  * [Article](#1-article)
+  * [Create Article](#2-create-article)
+  * [Delete Article](#3-delete-article)
+  * [Update Article](#4-update-article)
+
+* [Comments](#comments)
+
+  * [Comment](#1-comment)
+  * [Create Comment](#2-create-comment)
+  * [Delete Comment](#3-delete-comment)
+  * [Reach Comments](#4-reach-comments)
+  * [Reach Warnings](#5-reach-warnings)
+  * [Update Comment](#6-update-comment)
+
+* [Event](#event)
+
+  * [Create Event](#1-create-event)
+  * [Delete Event](#2-delete-event)
+  * [Event](#3-event)
+  * [Events By State](#4-events-by-state)
+  * [Update Event](#5-update-event)
+
+* [GIS Huc](#gis-huc)
+
+  * [Create GIS Huc](#1-create-gis-huc)
+  * [Delete GIS Huc](#2-delete-gis-huc)
+  * [GIS Huc](#3-gis-huc)
+  * [Update GIS Huc](#4-update-gis-huc)
+
+* [GIS State](#gis-state)
+
+  * [Create GIS State](#1-create-gis-state)
+  * [Delete GIS State](#2-delete-gis-state)
+  * [GIS State](#3-gis-state)
+  * [GIS Zip Country](#4-gis-zip-country)
+  * [Update GIS Zip](#5-update-gis-zip)
+
+* [GIS Zip](#gis-zip)
+
+  * [Create GIS Zip](#1-create-gis-zip)
+  * [Delete GIS Zip](#2-delete-gis-zip)
+  * [GIS Zip](#3-gis-zip)
+  * [GIS Zip State](#4-gis-zip-state)
+  * [Update GIS Zip](#5-update-gis-zip-1)
+
+* [Gage Reading Metric](#gage-reading-metric)
+
+  * [Create Gage Reading Metric](#1-create-gage-reading-metric)
+  * [Delete Gage Reading Metric](#2-delete-gage-reading-metric)
+  * [Gage Reading Metrics](#3-gage-reading-metrics)
+  * [Update Gage Reading Metric](#4-update-gage-reading-metric)
+
+* [Gage Source](#gage-source)
+
+  * [Create Source](#1-create-source)
+  * [Delete Gage Source](#2-delete-gage-source)
+  * [Gage Sources](#3-gage-sources)
+  * [Update Gage Source](#4-update-gage-source)
+
+* [Gage Update](#gage-update)
+
+  * [Create Gage Update](#1-create-gage-update)
+  * [Delete Gage Update](#2-delete-gage-update)
+  * [Gage Updates](#3-gage-updates)
+  * [Update Gage Update](#4-update-gage-update)
+
+* [Project](#project)
+
+  * [Create Project](#1-create-project)
+  * [Delete Project](#2-delete-project)
+  * [Project](#3-project)
+  * [Update Project](#4-update-project)
+
+* [Rapids](#rapids)
+
+  * [Create Rapid](#1-create-rapid)
+  * [Delete Rapid](#2-delete-rapid)
+  * [Reach Rapids](#3-reach-rapids)
+  * [Update Rapid](#4-update-rapid)
+
+* [Reach](#reach)
+
+  * [Create Reach](#1-create-reach)
+  * [Delete Reach](#2-delete-reach)
+  * [Reach](#3-reach)
+  * [Update Reach](#4-update-reach)
+
+* [User](#user)
+
+  * [Create User](#1-create-user)
+  * [Delete User](#2-delete-user)
+  * [Update User](#3-update-user)
+  * [User](#4-user)
+
+
+--------
+
 
 ## Accident
 

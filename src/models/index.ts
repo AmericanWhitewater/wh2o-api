@@ -25,13 +25,12 @@ fs
     db[model.name] = model;
   });
 
+  // attach them to the db obj then do the same for in as before
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;
