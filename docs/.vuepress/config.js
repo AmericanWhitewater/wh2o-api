@@ -14,18 +14,22 @@ module.exports = {
         link: '/'
       },
       {
-        text: 'Guide',
+        text: 'Guides',
         link: '/guide/'
       }
     ],
     sidebar: [
       {
-        title: 'Guide',
+        title: 'Guides',
         path: '/guide/',
         children: [
           {
             title: 'Getting Started',
             path: '/guide/getting-started.md'
+          },
+          {
+            title: 'Generate Docs',
+            path: '/guide/generate-docs.md'
           }
         ]
       },

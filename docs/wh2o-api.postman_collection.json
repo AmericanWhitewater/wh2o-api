@@ -1,0 +1,2581 @@
+{
+	"info": {
+		"_postman_id": "2f1223a1-6f96-453d-a696-b9e2e502b1d0",
+		"name": "wh2o-api",
+		"description": "A node API for American Whitewater",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accident",
+			"item": [
+				{
+					"name": "Accident",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/accident?id=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Get single accident by id."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Accident",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "accidentdate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "victimname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reachid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "countryabbr",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "river",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "waterlevel",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rellevel",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "privcomm",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "boattype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "groupinfo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numvictims",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "othervictimnames",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cause",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactphone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactemail",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-accident",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-accident"
+							]
+						},
+						"description": "Create an accident report."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accident",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						},
+						"description": "Delete an accident report."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accident",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						},
+						"description": "See Create Accident for available fields."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Gage Update",
+			"item": [
+				{
+					"name": "Gage Updates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gage-updates?gauge_id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gage-updates"
+							],
+							"query": [
+								{
+									"key": "gauge_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get updates for a single gage. "
+					},
+					"response": []
+				},
+				{
+					"name": "Create Gage Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oid",
+									"value": "128391",
+									"type": "text"
+								},
+								{
+									"key": "gauge_id",
+									"value": "251541",
+									"type": "text"
+								},
+								{
+									"key": "metric",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gage-update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gage-update"
+							]
+						},
+						"description": "Create gage update record."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gage Update",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gage-update?gauge_id=251541",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gage-update"
+							],
+							"query": [
+								{
+									"key": "gauge_id",
+									"value": "251541"
+								}
+							]
+						},
+						"description": "Remove gage update record from database."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gage Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						},
+						"description": "Edit an existing record."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Gage Reading Metric",
+			"item": [
+				{
+					"name": "Gage Reading Metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gage-reading-metrics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gage-reading-metrics"
+							]
+						},
+						"description": "Get all available gage metrics. For example, CFS, Ft, etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Gage Reading Metric",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "shortkey",
+									"value": "vis",
+									"type": "text"
+								},
+								{
+									"key": "unit",
+									"value": "visual",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "visual",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gage-reading-metric",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gage-reading-metric"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gage Reading Metric",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "update name",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-gage-reading-metric?id=16",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-gage-reading-metric"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gage Reading Metric",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gage-reading-metric?id=16",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gage-reading-metric"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Gage Source",
+			"item": [
+				{
+					"name": "Gage Sources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gage-sources",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gage-sources"
+							]
+						},
+						"description": "Get all recorded gage sources."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Source",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "source",
+									"value": "drew2",
+									"type": "text"
+								},
+								{
+									"key": "shortkey",
+									"value": "vis",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": "visual",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "visual",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gage-source",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gage-source"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gage Source",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "source",
+									"value": "drew3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-gage-source?source=drew2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-gage-source"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "drew2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gage Source",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gage-source?source=drew3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gage-source"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "drew3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/event?id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get a single event record by id."
+					},
+					"response": []
+				},
+				{
+					"name": "Events By State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/event-state?state=MA",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event-state"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "Get events by state."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cat",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "orgname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "orgaddress",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "orgphone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "orgfax",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "orgemail",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "site",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rivid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expectpart",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expectspec",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "issue",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "media",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nowreventinfo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "updated",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "html_description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "retired",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-event",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-event?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-event"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-event?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-event"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GIS Zip",
+			"item": [
+				{
+					"name": "GIS Zip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gis-zip?gid=30010",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gis-zip"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "30010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GIS Zip State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gis-zip-state?state=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gis-zip-state"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create GIS Zip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "gid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "po_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sumblkpop",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "pop2000",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "the_geom",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gis-zip",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gis-zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete GIS Zip",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-zip?gid=30010",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-zip"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "30010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GIS Zip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "zip",
+									"value": "20861",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-gis-zip?gid=30010",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-gis-zip"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "30010"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GIS State",
+			"item": [
+				{
+					"name": "GIS State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gis-states?gid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gis-states"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GIS Zip Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gis-states-country?country=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gis-states-country"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create GIS State",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "gid",
+									"value": "2607",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gis-state",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gis-state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete GIS State",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-state?gid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-state"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GIS Zip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "zip",
+									"value": "20861",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-gis-zip?gid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-gis-zip"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GIS Huc",
+			"item": [
+				{
+					"name": "GIS Huc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/gis-huc?gid=2158",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"gis-huc"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "2158"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create GIS Huc",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "huc_name",
+									"value": "drew",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-gis-huc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-gis-huc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete GIS Huc",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-huc?gid=2159",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-huc"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "2159"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GIS Huc",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "huc_name",
+									"value": "updated huc name",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-gis-huc?gid=2160",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-gis-huc"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "2160"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/article?articleid=34161",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"article"
+							],
+							"query": [
+								{
+									"key": "articleid",
+									"value": "34161"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "articleid",
+									"value": "34164",
+									"type": "text"
+								},
+								{
+									"key": "shortname",
+									"value": "new-test-article",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-article",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-article?articleid=34163",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-article"
+							],
+							"query": [
+								{
+									"key": "articleid",
+									"value": "34163"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "update test title",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-article?articleid=34163",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-article"
+							],
+							"query": [
+								{
+									"key": "articleid",
+									"value": "34163"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/project?id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "shortname",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-project",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-project?id=201",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-project"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "201"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/update-project?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-project"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user?uid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "uid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "upass",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "verifydate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lastlogin",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "volunteer",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "alerts",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "postal",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "memnum",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "home_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "work_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "journal",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "aw_beta",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mbr_level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bad_addrr",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bad_email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mod_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "record_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mem_transation",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "transaction_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expiration",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modifydate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "pushdate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mbr_relation",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prefs",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "annual_renew",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "googleid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "socialprofile",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "facebookid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "epassword",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "remember_token",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "created_at",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "updated_at",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-user?uid=160557",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-user"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "160557"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "upass",
+									"value": "update test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-user?uid=160558",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-user"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "160558"
+								},
+								{
+									"key": "title",
+									"value": "update test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rapids",
+			"item": [
+				{
+					"name": "Reach Rapids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rapids?reachid=355",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rapids"
+							],
+							"query": [
+								{
+									"key": "reachid",
+									"value": "355"
+								}
+							]
+						},
+						"description": "Get all rapids for a reach"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rapid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "distance",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reachid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rapidid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "approximate",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-rapid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-rapid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rapid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rapid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "distance",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reachid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "approximate",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-rapid?rapidid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-rapid"
+							],
+							"query": [
+								{
+									"key": "rapidid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "50d648cc-58b2-4493-bc69-4806d335d93b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d72c984e-aeef-4e01-83ee-42dc9917d5d3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reach",
+			"item": [
+				{
+					"name": "Reach",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reach?id=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Get single reach by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reach",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "river",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "altname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "county",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "length",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "avggradient",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "maxgradient",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "agency",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gaugeinfo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photoid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "permitid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "huc",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plat",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plon",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prrn",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tlat",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tlon",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "trrn",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "skid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "edited",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_final",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "revision",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "class",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "ploc",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tloc",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "was_final",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "thumboverride",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "shuttledetails",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "abstract",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "direction_default",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "custom_destination",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "revision_comment",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "permiturl",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "permitinfo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image_override",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-reach",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-reach"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reach",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Reach",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/update-reach?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "See Create Reach for available fields."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comment?id=1250363",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comment"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1250363"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reach Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reach-comments?sectionid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reach-comments"
+							],
+							"query": [
+								{
+									"key": "sectionid",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get all comments for a reach."
+					},
+					"response": []
+				},
+				{
+					"name": "Reach Warnings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reach-warnings?sectionid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reach-warnings"
+							],
+							"query": [
+								{
+									"key": "sectionid",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get all comments which are categorized as warnings."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "uid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sectionid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_final",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_private",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "posted",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "deleted",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "duid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "revision",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-comment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/update-reach?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "66b4c776-057d-497f-a768-b59d7e5ed586",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a52d3dd5-0650-4263-a666-80b52acb1c06",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e137e992-5fb7-4b34-bf07-f42439d98bf0",
+			"key": "base_url",
+			"value": "http://localhost:8000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
