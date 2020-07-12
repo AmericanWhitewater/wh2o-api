@@ -1,5 +1,5 @@
-# Endpoints
 
+# Endpoints
 
 ## Accident
 
@@ -107,6 +107,106 @@ URL: http://localhost:8000/delete-accident
 
 
 See Create Accident for available fields.
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+***Body:***
+
+
+
+## Alert
+
+
+
+### 1. Alert
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/alert
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| articleid | 34161 |  |
+
+
+
+### 2. Create Alert
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-alert
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| type |  |  |
+| value |  |  |
+| expiration |  |  |
+| priority |  |  |
+
+
+
+### 3. Delete Alert
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+### 4. Update Alert
+
 
 
 ***Endpoint:***
@@ -388,6 +488,116 @@ URL: http://localhost:8000/update-reach
 
 
 ***Body:***
+
+
+
+## Documents
+
+
+
+### 1. Create Document
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-document
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| documentid |  |  |
+| shortname |  |  |
+| abstract |  |  |
+| description |  |  |
+| keywords |  |  |
+| recipient |  |  |
+| author |  |  |
+| document |  |  |
+| title |  |  |
+
+
+
+### 2. Delete Document
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-document
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| documentid |  |  |
+
+
+
+### 3. Document
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/document
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| documentid |  |  |
+
+
+
+### 4. Update Document
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-document
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| documentid | 1790 |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| title | updated title |  |
 
 
 
@@ -1205,6 +1415,101 @@ URL: http://localhost:8000/update-accident
 
 
 
+## Injuries
+
+
+
+### 1. Create Injury
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-injury
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+| injury |  |  |
+
+
+
+### 2. Delete Injury
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-injury
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 3. Injuries
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/injuries
+```
+
+
+
+### 4. Update Injury
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-state
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| record_number |  |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| name |  |  |
+
+
+
 ## Project
 
 
@@ -1543,6 +1848,334 @@ See Create Reach for available fields.
 Method: PUT
 Type: URLENCODED
 URL: http://localhost:8000/update-reach
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+***Body:***
+
+
+
+## States
+
+
+
+### 1. Create State
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-state
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| name |  |  |
+| record_number |  |  |
+| abbreviation |  |  |
+| country |  |  |
+
+
+
+### 2. Delete State
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-state
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| record_number |  |  |
+
+
+
+### 3. States
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/states
+```
+
+
+
+### 4. Update State
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-state
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| record_number |  |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| name |  |  |
+
+
+
+## Trip Log
+
+
+
+### 1. Create Trip Log
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-trip-log
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 892843 |  |
+| state |  |  |
+| rivername |  |  |
+| reachid |  |  |
+| datetaken |  |  |
+| level |  |  |
+| description |  |  |
+| uid |  |  |
+| deleted |  |  |
+| observation |  |  |
+| title |  |  |
+| obs_time |  |  |
+| reading |  |  |
+| gaugeid |  |  |
+| metric |  |  |
+| edit_option |  |  |
+
+
+
+### 2. Delete Trip Log
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-trip-log
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 3. Reach Trip Logs
+
+
+Get single trip log by id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/trip-logs
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| reachid |  |  |
+
+
+
+### 4. Update Trip Log
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-trip-log
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| rivername | new name |  |
+
+
+
+## Trip Log Photo
+
+
+
+### 1. Create Trip Log Photo
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-trip-log-photo
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+| caption |  |  |
+| rapidname |  |  |
+| thumbnail |  |  |
+| ext |  |  |
+| isvideo |  |  |
+| filesize |  |  |
+| deleted |  |  |
+| triplog_id |  |  |
+| author |  |  |
+| subject |  |  |
+| detail |  |  |
+| allowhtml |  |  |
+| url |  |  |
+
+
+
+### 2. Delete Trip Log Photo
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-trip-log-photo
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 3. Trip Log Photo
+
+
+Get single trip log by id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/trip-log-photo
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 4. Update Trip Log Photo
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-trip-log-photo
 ```
 
 

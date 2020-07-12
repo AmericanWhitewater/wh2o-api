@@ -1,7 +1,9 @@
 const apiRoutes = [
   require('./accidents'),
+  require('./alerts'),
   require('./articles'),
   require('./comments'),
+  require('./documents'),
   require('./events'),
   require('./gage-reading-metrics'),
   require('./gage-sources'),
@@ -9,9 +11,13 @@ const apiRoutes = [
   require('./gis-hucs'),
   require('./gis-states'),
   require('./gis-zips'),
+  require('./injuries'),
   require('./projects'),
   require('./rapids'),
   require('./reaches'),
+  require('./states'),
+  require('./trip-log'),
+  require('./trip-log-photo'),
   require('./users')
 ]
 
