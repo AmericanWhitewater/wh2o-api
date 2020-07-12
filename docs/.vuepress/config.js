@@ -28,6 +28,10 @@ module.exports = {
             path: '/guide/getting-started.md'
           },
           {
+            title: 'Contributing',
+            path: '/guide/contributing.md'
+          },
+          {
             title: 'Generate Docs',
             path: '/guide/generate-docs.md'
           }
