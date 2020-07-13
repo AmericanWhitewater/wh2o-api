@@ -4,7 +4,7 @@
 
 ## Installation
 
-To get started, clone the [repo](https://github.com/drewalth/wh2o-api) and `cd` to the project root then run `npm run init`. This will copy the example `.env` file, install dependencies, then start up the dev server.
+To get started, clone the [repo](https://github.com/AmericanWhitewater/wh2o-api) and `cd` to the project root then run `npm run init`. This will copy the example `.env` file, install dependencies, then start up the dev server.
 
 ## Configuration
 

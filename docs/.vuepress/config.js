@@ -5,7 +5,7 @@ module.exports = {
     logo: '/aw-logo-small.png',
     lastUpdated: 'Last updated',
     smoothScroll: true,
-    repo: 'https://github.com/drewalth/wh2o-api',
+    repo: 'https://github.com/AmericanWhitewater/wh2o-api',
     editLinks: true,
     editLinkText: 'Recommend a change',
     nav: [

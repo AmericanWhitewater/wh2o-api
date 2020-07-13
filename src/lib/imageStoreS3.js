@@ -4,8 +4,8 @@ const s3 = new AWS.S3()
 module.exports.save = (name, data) => {
   return new Promise((resolve, reject) => {
     const params = {
-      Bucket: 'pizza-luvrs-drewalth',
-      Key: `pizzas/${name}.png`,
+      Bucket: 'wh2o-drewalth',
+      Key: `wh2o/${name}.png`,
       Body: Buffer.from(data, 'base64'),
       ContentEncoding: 'base64',
       ContentType: 'image/png'
@@ -14,7 +14,7 @@ module.exports.save = (name, data) => {
       if (err) {
         reject(err)
       } else {
-        resolve(`//pizza-luvrs-drewalth.s3.amazonaws.com/${params.Key}`)
+        resolve(`//wh2o-drewalth.s3.amazonaws.com/${params.Key}`)
       }
     })
   });
