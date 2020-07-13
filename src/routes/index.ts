@@ -1,5 +1,6 @@
 const apiRoutes = [
   require('./accidents'),
+  require('./accidents-causes'),
   require('./affiliate'),
   require('./affiliate-reach'),
   require('./alerts'),
@@ -14,10 +15,12 @@ const apiRoutes = [
   require('./gis-states'),
   require('./gis-zips'),
   require('./injuries'),
+  require('./layer'),
   require('./projects'),
   require('./rapids'),
   require('./reaches'),
   require('./states'),
+  require('./topology'),
   require('./trip-log'),
   require('./trip-log-photo'),
   require('./users')

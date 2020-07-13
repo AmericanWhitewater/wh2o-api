@@ -131,6 +131,111 @@ URL: http://localhost:8000/update-accident
 
 
 
+## Accident Causes
+
+
+
+### 1. Accident Cause
+
+
+Get accident cause by accident id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/accident-cause
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+
+
+
+### 2. Create Accident Cause
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-accident-cause
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+| cause_id |  |  |
+
+
+
+### 3. Delete Accident Cause
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident-cause
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+
+
+
+### 4. Update Accident Cause
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-accident-cause
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| cause_id |  |  |
+
+
+
 ## Affiliate
 
 
@@ -1738,6 +1843,102 @@ URL: http://localhost:8000/update-state
 
 
 
+## Layer
+
+
+
+### 1. Create Layer
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-layer
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| topology_id |  |  |
+| layer_id |  |  |
+| schema_name |  |  |
+| table_name |  |  |
+| feature_column |  |  |
+| feature_type |  |  |
+| level |  |  |
+| child_id |  |  |
+
+
+
+### 2. Delete Layer
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-layer
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| layer_id |  |  |
+
+
+
+### 3. Layer
+
+
+Returns a single topology record.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/layer
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| layer_id |  |  |
+
+
+
+### 4. Layer All
+
+
+Returns all tpoplogy records.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/layer-all
+```
+
+
+
 ## Project
 
 
@@ -2189,6 +2390,125 @@ URL: http://localhost:8000/update-state
 
 
 
+## Topology
+
+
+
+### 1. Create Topology
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-topology
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+| name |  |  |
+| srid |  |  |
+| precision |  |  |
+| hasz |  |  |
+
+
+
+### 2. Delete Topology
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-topology
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 3. Topology
+
+
+Returns a single topology record.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/topology
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 4. Topology All
+
+
+Returns all tpoplogy records.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/topology-all
+```
+
+
+
+### 5. Update Topology
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-topology
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 1 |  |
+
+
+
+***Body:***
+
+
+
 ## Trip Log
 
 
@@ -2573,4 +2893,4 @@ URL: http://localhost:8000/user
 
 ---
 [Back to top](#wh2o-api)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-07-12 21:25:39 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-07-13 11:05:33 by [docgen](https://github.com/thedevsaddam/docgen)

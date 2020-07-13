@@ -2,9 +2,7 @@
 
 ## Our contribution model
 
-American Whitewater has several **open source** projects. The following are 
-a few notes on how to get involved. We pride ourselves in open and inclusive 
-design and development. If you're wondering more about our contribution process, 
+American Whitewater has several **open source** projects. The following are a few notes on how to get involved. We pride ourselves in open and inclusive design and development. If you're wondering more about our contribution process, 
 you're in the right place. First off, thank you for your interest! 
 Our projects are made possible not just by the core AW development team, but
 also by several community members who have invested their own time to give back
@@ -12,13 +10,13 @@ to the paddling community.
 
 ## Code of conduct
 
-We value all of our community members, and thus want to foster a positive
+We value all of our community members and thus want to foster a positive
 contributing environment. Please take a look at our
 [code of conduct](./CODE_OF_CONDUCT.md) before engaging in our workspaces.
 
 ## Prerequisites
 
-Before contributing to the wh2o-vue project, you should make sure you have the following tools
+Before contributing to the wh2o-api project, you should make sure you have the following tools
 installed:
 
 - [Node.js](https://nodejs.org/en/download/) v10 or above here or follow their
@@ -30,7 +28,7 @@ installed:
     version manager for Node.
 - Git
 
-You'll also need a code editor to make changes to wh2o-vue. There are many to
+You'll also need a code editor to make changes to wh2o-api. There are many to
 choose from but some popular options are
 [VSCode](https://code.visualstudio.com/), [Atom](https://atom.io), and
 [Sublime](https://www.sublimetext.com/).
@@ -42,22 +40,22 @@ With that all in place, you're ready to start contributing!
 ### 1. Fork the repo:
 
 Go to
-[Wh2o-vue's repository on GitHub](https://github.com/AmericanWhitewater/wh2o-vue)
+[Wh2o-vue's repository on GitHub](https://github.com/AmericanWhitewater/wh2o-api)
 and click the `Fork` button in the top-right corner. This will create a copy
-repo of wh2o-vue associated with your account.
+repo of wh2o-api associated with your account.
 
 ### 2. Clone your fork:
 
 1.  Go to your [GitHub Repositories](https://github.com/settings/repositories).
-1.  Click on `[your_github_username]/wh2o-vue`.
+1.  Click on `[your_github_username]/wh2o-api`.
 1.  Click on the `Clone or Download` button and copy the URL from the
     `Clone with SSH` option. It should start with `git@github.com...`
 
 In your terminal:
 
 ```sh
-git clone git@github.com:[your_github_username]/wh2o-vue.git
-cd wh2o-vue
+git clone git@github.com:[your_github_username]/wh2o-api.git
+cd wh2o-api
 ```
 
 See [GitHub docs](https://help.github.com/articles/fork-a-repo/) for more
@@ -68,12 +66,12 @@ details.
 When you clone your forked repo, running `git remote -v` will show that the
 `origin` is pointing to your forked repo by default.
 
-Now you need to add the `AmericanWhitewater/wh2o-vue` repo as your upstream
+Now you need to add the `AmericanWhitewater/wh2o-api` repo as your upstream
 remote branch:
 
 ```sh
 # Add the upstream remote to your repo
-git remote add upstream git@github.com:AmericanWhitewater/wh2o-vue.git
+git remote add upstream git@github.com:AmericanWhitewater/wh2o-api.git
 
 # Verify the remote was added
 git remote -v
@@ -84,13 +82,13 @@ Your terminal should output something like this:
 ```sh
 origin  [your forked repo] (fetch)
 origin  [your forked repo] (push)
-upstream    git@github.com:AmericanWhitewater/wh2o-vue.git (fetch)
-upstream    git@github.com:AmericanWhitewater/wh2o-vue.git (push)
+upstream    git@github.com:AmericanWhitewater/wh2o-api.git (fetch)
+upstream    git@github.com:AmericanWhitewater/wh2o-api.git (push)
 ```
 
 ### 4. Work in a branch
 
-When contributing to wh2o-vue, your work should always be done in a branch off of
+When contributing to wh2o-api, your work should always be done in a branch off of
 your repo, this is also how you will submit your pull request when your work is
 done.
 
@@ -123,34 +121,18 @@ making to the app.
 
 Once it's done building, you can edit source code or create new components. The
 system is set up to automatically bundle your changes/additions. Visit
-http://localhost:8080 to see the changes happen on the fly.
+http://localhost:8000 to see the changes happen on the fly.
 
-### 6. Test your code
-
-We use [@vue/test-utils](https://vue-test-utils.vuejs.org/) and [Jest](https://jestjs.io/) for testing our components.
-Test commands:
-
-```sh
-# run all unit tests:
-npm run test:unit
-
-# run all unit tests and gather coverage information:
-npm run test:coverage
-
-# update test snapshots:
-npm run snapshot:update
-
-```
 
 ### 7. Make a pull request
 
 **Note:** Before you make a pull request,
-[search](https://github.com/Americanwhitewater/wh2o-vue/issues) the issues to see if a
+[search](https://github.com/Americanwhitewater/wh2o-api/issues) the issues to see if a
 similar issue has already been submitted. If a similar issue has been submitted,
-assign yourself or ask to be assigned to the issue by posting a comment. If the
+assign yourself, or ask to be assigned to the issue by posting a comment. If the
 issue does not exist, please make a new issue. Issues give us context about what
-you are contributing and expedite the process to getting your contributions
-merged into wh2o-vue. It's a win for everybody :tada:
+you are contributing and expedite the process of getting your contributions
+merged into wh2o-api. It's a win for everybody :tada:
 
 When you're at a good stopping place and you're ready for feedback from other
 contributors and maintainers, **push your commits to your fork**:
@@ -179,7 +161,7 @@ git push -u origin { YOUR_BRANCH_NAME }
 ```
 
 In your browser, navigate to
-[AmericanWhitewater/wh2o-vue](https://github.com/AmericanWhitewater/wh2o-vue)
+[AmericanWhitewater/wh2o-api](https://github.com/AmericanWhitewater/wh2o-api)
 and click the button that reads `Compare & pull request`
 
 Write a title and description then click `Create pull request`
@@ -202,45 +184,30 @@ will squash and merge your commits for you.
 
 ### Who can contribute?
 
-Anyone! We mean it. The one and only requirement is you'll need a
+Anyone! We mean it. The one and the only requirement is you'll need a
 [public GitHub account](https://github.com/join), as all our assets live on
 GitHub.
 
-- **Development:** If coding is your thing, you can help us by contributing bug
-  fixes or community components.
+- **Development:** If coding is your thing, you can help us by contributing bug fixes or community components.
 - **Design:** Design contributions can vary from visual assets, UX interactions,
-  motion design, Sketch kit bug fixes and more.
+  motion design, Sketch kit bug fixes, and more.
 
 ### What is the contribution process?
 
-1. **Issue:** Check repo for an _existing_ issue related to your contribution
-   first. If none exist, open a new issue. Be sure to check the right repo.
-   (i.e. Don't open an issue for wh2o-vue documentation in the `aw-ios`
-   repo.) We reserve the right to close any issues that haven't been filled
-   out properly according to the issue template.
-2. **Contributor License Agreement:** Before you can contribute any code, we
-   need you to sign a Contributor License Agreement (CLA). Code doesn't just
-   mean "components"; if you're contributing to our website docs, you're
-   contributing code. ;)
-3. **Development environment:** If you haven't already, fork and clone whichever
-   repo you want to contribute to. Then, create a new branch and add your
-   contribution in it. Checkout our
-   [Developer Handbook](../developer-handbook.md) to read up on our best coding
-   practices and proper commit messages.
+1. **Issue:** Check repo for an _existing_ issue related to your contribution first. If none exists, open a new issue. Be sure to check the right repo.
+   (i.e. Don't open an issue for wh2o-api documentation in the `aw-ios`
+   repo.) We reserve the right to close any issues that haven't been filled out properly according to the issue template.
+2. **Contributor License Agreement:** Before you can contribute any code, we need you to sign a Contributor License Agreement (CLA). Code doesn't just mean "components"; if you're contributing to our website docs, you're contributing code. ;)
+3. **Development environment:** If you haven't already, fork and clone whichever repo you want to contribute to. Then, create a new branch and add your contribution to it. Check out our
+   [Developer Handbook](../developer-handbook.md) to read up on our best coding practices and proper commit messages.
 4. **Pull request:** Submit a PR. Be sure to fill out the template properly.
-5. **Approval:** Get PR approved by design and developers, or make any necessary
-   changes for approval. This process may be quick or take a few iterations of
-   feedback-update.
-6. **Documentation:** After design and dev have approved and merged PR, update
-   any website documentation if necessary. One of the best examples for this is
-   if you're contributing to component work which has website documentation
-   related to your contribution.
+5. **Approval:** Get PR approved by design and developers, or make any necessary changes for approval. This process may be quick or take a few iterations of feedback-update.
+6. **Documentation:** After design and dev have approved and merged PR, update any website documentation if necessary. One of the best examples for this is if you're contributing to component work which has website documentation related to your contribution.
 
 Here are some contribution quick tips:
 
 - **Do** check repos for existing issues.
-- **Do** fill out the required template for contributions entirely; this
-  pertains to both issues and PRs.
+- **Do** fill out the required template for contributions entirely; this pertains to both issues and PRs.
 - **Do** add or update tests for any contributions that require it.
 - **Do** follow existing coding and writing styles.
 - **Do** follow proper commit messages syntax.
@@ -251,22 +218,18 @@ Here are some contribution quick tips:
 ### What projects can I contribute to?
 
 - [`wh2o-vue`](https://github.com/AmericanWhitewater/wh2o-vue)
+- [`wh2o-api`](https://github.com/AmericanWhitewater/wh2o-api)
 - [`aw-ios`](https://github.com/AmericanWhitewater/aw-ios)
 - [`aw-android`](https://github.com/AmericanWhitewater/aw-android)
 - [`nwi-data-tool`](https://github.com/AmericanWhitewater/nwi-data-tool)
 
 ### Besides some of the obvious contributions mentioned above, how else can I contribute?
 
-Great question! Contribution does not require creating or maintaining our
-assets. Here are some other ways you can contribute, which don't require much
-work:
+Great question! A contribution does not require creating or maintaining our
+assets. Here are some other ways you can contribute, which don't require much work:
 
 - **Join our slack community and interact with other users.** 
   We're quite a small team with contributors across the US. 
-  One of the easiest ways to get involved is to jump in on slack
-  conversations if there's something you know the answer to! Some of our most
-  popular slack channels include `#wh2o-vue`, `#nwi`,
-  `#design`, `#app-api`.
+  One of the easiest ways to get involved is to jump in on slack conversations if there's something you know the answer to! Some of our most popular slack channels include `#wh2o-vue`, `#nwi`, `#design`, `#app-api`.
 - **Report bugs.** Even if you don't have the time to contribute a bug fix,
-  opening an issue alone makes a big difference! Be sure to completely fill out
-  the issue template to best help us understand what is going wrong.
+  opening an issue alone makes a big difference! Be sure to completely fill out the issue template to best help us understand what is going wrong.
