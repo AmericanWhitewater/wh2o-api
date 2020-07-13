@@ -19,7 +19,7 @@ module.exports = app => {
 
   app.get('/event-state', (req, res) => {
 
-    Event.findOne({
+    Event.findAll({
       where: {
         state: req.query.state
       }

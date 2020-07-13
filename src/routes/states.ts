@@ -5,7 +5,13 @@ module.exports = (app) => {
   app.get("/states", (req, res) => {
     State.findAll()
       .then((result) => {
-        res.send(result).status(200);
+
+        /**
+         * @todo adjust to return name, abbreviation, and country.
+         */
+        const data = result.map((factor) => factor.dataValues.name.trim());
+
+        res.send(data).status(200);
       })
       .catch((err) => {
         console.log(err);

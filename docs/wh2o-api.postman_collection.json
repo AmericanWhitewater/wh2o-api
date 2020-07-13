@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "2f1223a1-6f96-453d-a696-b9e2e502b1d0",
 		"name": "wh2o-api",
-		"description": "A node API for American Whitewater",
+		"description": "The following is a collection of available endpoints.\n\nIf you would like to request that an endpoint be added, edited, or removed, please contact [@drewalth](https://github.com/drewalth).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -31,7 +31,61 @@
 						},
 						"description": "Get single accident by id."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Accident",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/accident?id=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accident"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1733"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c5-cvISGaAKiMYRhrZ/sKke4bh58ig\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:17:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Accident\": {\n        \"id\": 2,\n        \"accidentdate\": \"1977-08-27\",\n        \"victimname\": \"Robert A. Taylor\",\n        \"reachid\": 2378,\n        \"countryabbr\": \"US\",\n        \"state\": \"WV\",\n        \"river\": \"Gauley (7 \",\n        \"section\": \"7 (Upper). Summersville Dam to Mason Branch\",\n        \"location\": \"Lost Paddle\",\n        \"waterlevel\": \"3100\",\n        \"rellevel\": \"M\",\n        \"difficulty\": \"V\",\n        \"age\": 25,\n        \"experience\": \"X\",\n        \"privcomm\": \"P\",\n        \"boattype\": \"K\",\n        \"groupinfo\": \"\",\n        \"numvictims\": 1,\n        \"othervictimnames\": \"\",\n        \"description\": \"<p>\\r\\n\\tBob Taylor was running the Upper Gauley with four friends on August 27, 1977. The level was 2700 from the dam, 400 from the Meadow River, Bob was in his late 20s, very fit, and quite familiar with the Gauley. He was probably the best paddler in West Virginia. In the third drop of Lost Paddle Bob elected to surf the holes. He got pummelled in the second, which is quite large. He flipped, rolled, endered, and rolled again. After his third flip he bailed out. He recirculated twice in the hole, then washed downstream. One other paddler attempted a boat rescue, but after holding on for a short time Bob let go of the boat and attempted to swim into a river left eddy. He was washed into a chute on the upper left side of Tumblehome Rapid where he disappeared. His companions coulds not find him that day, so they paddled out and reported the accident to authorites. The next day, with the river running at 2100 cfs, they returned with WVDNR Officers. After a lengthy search they spotted his body under several feet of water in the chute. They were able to pull a log out of the chute, which released the body.</p>\\r\\n<p>\\r\\n\\thttp://www.americanwhitewater.org/content/Journal/show-page/issue/6/year/1977/page/193/</p>\\r\\n\",\n        \"type\": \"F\",\n        \"cause\": 12,\n        \"contactname\": null,\n        \"contactphone\": null,\n        \"contactemail\": null,\n        \"status\": \"R\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Accident",
@@ -257,23 +311,77 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/accident-cause?accident_id=",
+							"raw": "{{base_url}}/accident-causes?accident_id=16",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"accident-cause"
+								"accident-causes"
 							],
 							"query": [
 								{
 									"key": "accident_id",
-									"value": ""
+									"value": "16"
 								}
 							]
 						},
 						"description": "Get accident cause by accident id."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Accident Cause",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/accident-causes?accident_id=16",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accident-causes"
+									],
+									"query": [
+										{
+											"key": "accident_id",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7-r9IgNWn0tEExSGprvumqeA7j1pE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:20:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    15,\n    87\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Accident Cause",
@@ -367,6 +475,201 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Accident Factors",
+			"item": [
+				{
+					"name": "Accident Factors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/accident-factors?accident_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accident-factors"
+							],
+							"query": [
+								{
+									"key": "accident_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get accident cause by accident id."
+					},
+					"response": [
+						{
+							"name": "Accident Factors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/accident-factors?accident_id=49",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accident-factors"
+									],
+									"query": [
+										{
+											"key": "accident_id",
+											"value": "49"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "10"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a-H4jN7k61y01ZDNFwKgRSwseH1GQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:16:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    31,\n    35,\n    43\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Accident Factor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accident_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cause_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-accident-cause",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-accident-cause"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accident Factors",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cause_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-accident-cause?accident_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-accident-cause"
+							],
+							"query": [
+								{
+									"key": "accident_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accident Cause",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-accident-cause?accident_id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-accident-cause"
+							],
+							"query": [
+								{
+									"key": "accident_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Note: DB may be able to be restructured here. Use an array of factors instead of separate records.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "65c25d79-7d42-479c-99d4-f4e89f202f76",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "931c7550-8273-4820-bc28-e2bd31e3352e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Affiliate",
 			"item": [
 				{
@@ -391,7 +694,61 @@
 						},
 						"description": "Returns a single AW affiliate."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Affiliate",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/affiliate?id=98",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"affiliate"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "98"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1223"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c7-YBeFzSv/LgF8CTjAdzapTbAtdsc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:23:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"last\": \"Coastals Canoeists\",\n    \"url\": \"http://coastals.org/\",\n    \"conemail\": \"\",\n    \"members\": \"375\",\n    \"contact\": \"http://www.coastals.org/contact/contactform.php\",\n    \"abstract\": \"Coastals are people who love the blueways of Virginia and beyond. Coastals are whitewater canoeists and kayakers, flat water recreational kayakers, rafters and those who paddle any other people-powered watercraft you can imagine.\",\n    \"description\": \"Coastals is a family-oriented club dedicated to the enjoyment and advancement of paddlesports and consists of canoeists, kayakers and others from the southeastern U.S., but primarily from Virginia. Activities of the club include an active club volunteer-coordinated trip roster with trips for members, at all skill levels, happening nearly every weekend of the year.\\r\\n\\r\\nThe club holds quarterly meetings at various locations around Virginia featuring an evening meal, board of directors meeting, a trip on a nearby river, and a program of interest to paddlers. Coastals' website features an active forum for paddlers throughout the Commonwealth to communicate and discuss paddlesports.\",\n    \"reaches\": \"\",\n    \"volunteer\": \"654\",\n    \"id\": \"98\",\n    \"city\": \"Richmond\",\n    \"state\": \"VA\",\n    \"expiration\": \"2017-03-30\",\n    \"memberid\": \"99\",\n    \"deleted\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "Affiliates",
@@ -409,7 +766,55 @@
 						},
 						"description": "Returns all AW affiliates."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Affiliates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/affiliates",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"affiliates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141994"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22aaa-iJc2V6mSHtFPyxAxW3DRnuebBnA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:21:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"last\": \"Big Thompson Watershed Forum\",\n        \"url\": \"http://www.btwatershed.org/\",\n        \"conemail\": \"zshelley@btwatershed.org\",\n        \"members\": \"0\",\n        \"contact\": \"Zack Shelley\",\n        \"abstract\": \"\",\n        \"description\": \"\",\n        \"reaches\": \"\",\n        \"volunteer\": \"0\",\n        \"id\": \"4008\",\n        \"city\": \"Loveland\",\n        \"state\": \"CO\",\n        \"expiration\": \"2008-08-16\",\n        \"memberid\": \"28872\",\n        \"deleted\": 1\n    },\n    {\n        \"last\": \"Keelhaulers Canoe Club\",\n        \"url\": \"http://keelhauler.org/kh.htm\",\n        \"conemail\": \"keelhauler@yahoo.com\",\n        \"members\": \"300\",\n        \"contact\": \"WebMeister and Membership Chair John Kobak\",\n        \"abstract\": \"Paddling in OH, PA, WV, and wherever there's water!\",\n        \"description\": \"<center><img src=\\\"http://keelhauler.org/newlogoweb.jpg\\\"></center><br>Centered in the Cleveland, OH, area, Keel-haulers is an active club with <a href=\\\"http://www.keelhauler.org/khcc/tripschedule.htm\\\">a full trip schedule</a>. Our 100-page yearbook contains a lot of info, including maps to local rivers and a self-consistent ranking of over a hundred international whitewater rivers. The club is open to all <a href=\\\"http://www.keelhauler.org/khcc/khcapp.htm\\\">(Print an Application)</a>; dues are $20/year.<br>\\r\\nThe club website has a very active <a href=\\\"http://www.keelhauler.org/khcc/khcads.htm\\\">Used Boats and Equipment</a> page and a <a href=\\\"http://keelhauler.org/phpBB/viewforum.php?f=2\\\">Message Board</a>.\\r\\n\",\n        \"reaches\": null,\n        \"volunteer\": \"358\",\n        \"id\": \"713\",\n        \"city\": \"Cleveland\",\n        \"state\": \"OH\",\n        \"expiration\": \"2019-05-24\",\n        \"memberid\": \"706\",\n        \"deleted\": 0\n    },\n    {\n        \"last\": \"Warren Wilson College Paddling Club\",\n        \"url\": \"\",\n        \"conemail\": \"bfarthing@warren-wilson.edu\",\n        \"members\": \"0\",\n        \"contact\": \"Brit Farthing, 828-771-3004\",\n        \"abstract\": \"\",\n        \"description\": \"\",\n        \"reaches\": null,\n        \"volunteer\": \"0\",\n        \"id\": \"1000004\",\n        \"city\": \"Asheville\",\n        \"state\": \"NC\",\n        \"expiration\": \"2006-08-26\",\n        \"memberid\": \"17832\",\n        \"deleted\": 1\n    }    \n]"
+						}
+					]
 				},
 				{
 					"name": "Affiliates State",
@@ -888,7 +1293,61 @@
 						},
 						"description": "Get all reaches associated with an AW affiliate by id."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Affiliate Reaches",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/affiliate-reaches?affiliateid=1000011",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"affiliate-reaches"
+									],
+									"query": [
+										{
+											"key": "affiliateid",
+											"value": "1000011"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-R3xvCcNIzwgmZx60i8MpogINF1g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:25:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"1812\",\n    \"1816\",\n    \"1817\",\n    \"1830\",\n    \"2674\",\n    \"2676\",\n    \"2677\",\n    \"2678\",\n    \"2680\",\n    \"2778\",\n    \"4388\",\n    \"4563\",\n    \"4575\"\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Affiliate Reach",
@@ -976,7 +1435,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Alert",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/alert?articleid=34161",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"alert"
+									],
+									"query": [
+										{
+											"key": "articleid",
+											"value": "34161"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-GerR2uZxn8fZWhWYRVA2JII2Uk0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:26:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"articleid\": \"34161\",\n    \"type\": \"rgnews\",\n    \"value\": \"NW\",\n    \"expiration\": \"2019-06-30\",\n    \"priority\": \"0\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Alert",
@@ -1103,9 +1616,63 @@
 								}
 							]
 						},
-						"description": "Get single trip log by id."
+						"description": "Get all trip logs associated with a reach."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Reach Trip Logs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/trip-logs?reachid=1002",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip-logs"
+									],
+									"query": [
+										{
+											"key": "reachid",
+											"value": "1002"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-bne7cFrL4zSchFhEnkMiPdSwtRA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:29:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 891701,\n        \"state\": \"MT\",\n        \"rivername\": \"@Flathead Buffalo Rapids: Kerr Dam to County Road Bridge\",\n        \"reachid\": 1002,\n        \"datetaken\": \"03/22/18\",\n        \"level\": null,\n        \"description\": null,\n        \"uid\": 2096,\n        \"deleted\": false,\n        \"observation\": null,\n        \"title\": \"Rafting on Buffalo Rapids! \",\n        \"obs_time\": \"2018-03-23T01:12:00.000Z\",\n        \"reading\": null,\n        \"gaugeid\": 38188,\n        \"metric\": null,\n        \"edit_option\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Trip Log",
@@ -1272,28 +1839,82 @@
 			"name": "Trip Log Photo",
 			"item": [
 				{
-					"name": "Trip Log Photo",
+					"name": "Trip Log Photos",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/trip-log-photo?id=",
+							"raw": "{{base_url}}/trip-log-photos?triplog_id=",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"trip-log-photo"
+								"trip-log-photos"
 							],
 							"query": [
 								{
-									"key": "id",
+									"key": "triplog_id",
 									"value": ""
 								}
 							]
 						},
-						"description": "Get single trip log by id."
+						"description": "Get all photos for a trip log."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Trip Log Photos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/trip-log-photos?triplog_id=1001",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"trip-log-photos"
+									],
+									"query": [
+										{
+											"key": "triplog_id",
+											"value": "1001"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"85b-Wm3SY0hhhTlYhD4vL+S48onhYl0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:32:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 19248,\n        \"caption\": \"Hueco Falls\",\n        \"rapidname\": \"\",\n        \"thumbnail\": true,\n        \"ext\": \"jpeg\",\n        \"isvideo\": false,\n        \"filesize\": \"2403659\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"\",\n        \"subject\": \"\",\n        \"detail\": \"\",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 19437,\n        \"caption\": \"Buffalo Rapid\",\n        \"rapidname\": \"\",\n        \"thumbnail\": false,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"0\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"\",\n        \"subject\": \"\",\n        \"detail\": \"\",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 31060,\n        \"caption\": \"suejavqa\",\n        \"rapidname\": \"suejavqa\",\n        \"thumbnail\": false,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"0\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"suejavqa\",\n        \"subject\": \"suejavqa\",\n        \"detail\": \" vzyeeiwo http://ifuffleo.com klizuatt ejucfadd  <a href=\\\"http://xmqoyqah.com\\\">xkkwsyyf</a>  [URL=http://lwqhejhh.com]twkadunx[/URL] \",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 32788,\n        \"caption\": \"gbvwegvc\",\n        \"rapidname\": \"gbvwegvc\",\n        \"thumbnail\": false,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"0\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"gbvwegvc\",\n        \"subject\": \"gbvwegvc\",\n        \"detail\": \" <a href=\\\"http://etvkwevm.com\\\">hwpmrugp</a>  [URL=http://ywhemqze.com]iwyvsfbd[/URL]  ugxhzqqo http://liltbgyv.com jxjklmqm tqczfatc \",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 19147,\n        \"caption\": \".\",\n        \"rapidname\": \"\",\n        \"thumbnail\": true,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"1662976\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"\",\n        \"subject\": \"\",\n        \"detail\": \"\",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 19151,\n        \"caption\": \".\",\n        \"rapidname\": \"\",\n        \"thumbnail\": true,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"1662976\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"\",\n        \"subject\": \"\",\n        \"detail\": \"\",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 32793,\n        \"caption\": \"aowkggck\",\n        \"rapidname\": \"aowkggck\",\n        \"thumbnail\": false,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"0\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"aowkggck\",\n        \"subject\": \"aowkggck\",\n        \"detail\": \" kckpwrvb http://lmbplpzk.com inavzwll hfjqkgyo  [URL=http://aqkkpcdy.com]mquaszwt[/URL]  <a href=\\\"http://dkdvgfgr.com\\\">nqumtodt</a> \",\n        \"allowhtml\": false,\n        \"url\": null\n    },\n    {\n        \"id\": 35512,\n        \"caption\": \"\",\n        \"rapidname\": \"\",\n        \"thumbnail\": false,\n        \"ext\": \"\",\n        \"isvideo\": false,\n        \"filesize\": \"0\",\n        \"deleted\": false,\n        \"triplog_id\": 1001,\n        \"author\": \"\",\n        \"subject\": \"\",\n        \"detail\": \"\",\n        \"allowhtml\": false,\n        \"url\": null\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Trip Log Photo",
@@ -1458,7 +2079,55 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "States",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/states",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"states"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "753"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f1-vtfGUPVUxL7rrzP9Ytsgvj3+fRc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:43:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Other\",\n    \"Newfoundland\",\n    \"Nova Scotia\",\n    \"Nunavut\",\n    \"Manitoba\",\n    \"Alberta\",\n    \"British Columbia\",\n    \"New Brunswick\",\n    \"Quebec\",\n    \"Saskatchewan\",\n    \"Ontario\",\n    \"Alaska\",\n    \"Minnesota\",\n    \"Washington\",\n    \"Montana\",\n    \"Idaho\",\n    \"North Dakota\",\n    \"Michigan\",\n    \"Maine\",\n    \"Wisconsin\",\n    \"Oregon\",\n    \"South Dakota\",\n    \"New Hampshire\",\n    \"New York\",\n    \"Vermont\",\n    \"Wyoming\",\n    \"Iowa\",\n    \"Nebraska\",\n    \"Massachusetts\",\n    \"Pennsylvania\",\n    \"Illinois\",\n    \"Ohio\",\n    \"Connecticut\",\n    \"Rhode Island\",\n    \"California\",\n    \"Utah\",\n    \"Nevada\",\n    \"Indiana\",\n    \"New Jersey\",\n    \"Colorado\",\n    \"West Virginia\",\n    \"Missouri\",\n    \"Kansas\",\n    \"Delaware\",\n    \"Maryland\",\n    \"Virginia\",\n    \"Kentucky\",\n    \"District of Columbia\",\n    \"Arizona\",\n    \"NWT\",\n    \"PEI\",\n    \"Oklahoma\",\n    \"New Mexico\",\n    \"Tennessee\",\n    \"North Carolina\",\n    \"Texas\",\n    \"Arkansas\",\n    \"South Carolina\",\n    \"Alabama\",\n    \"Georgia\",\n    \"Mississippi\",\n    \"Louisiana\",\n    \"Florida\",\n    \"Hawaii\",\n    \"Yukon\"\n]"
+						}
+					]
 				},
 				{
 					"name": "Create State",
@@ -1585,7 +2254,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Document",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/document?documentid=51",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"document"
+									],
+									"query": [
+										{
+											"key": "documentid",
+											"value": "51"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "465"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d1-/8anAnpXLqTv7z1vQ2nTwW1HUNs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:46:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"documentid\": \"51\",\n    \"shortname\": \"Ausable Flow Study Comments\",\n    \"abstract\": \"Comments on NYSEG's whitewater flow study, which also addresses demand, conflicts, and access.\",\n    \"description\": \"Comments on NYSEG's whitewater flow study, wh\",\n    \"uid\": \"419\",\n    \"keywords\": \"FERC, NY, NYSEG, Flow Study, Access, Conflict\",\n    \"editdate\": \"2007-04-13T04:00:00.000Z\",\n    \"recipient\": \"0\",\n    \"author\": \"144031\",\n    \"document\": \"51.pdf\",\n    \"deleted\": 0,\n    \"title\": \"Ausable Flow Study Comments\",\n    \"document_size\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Document",
@@ -1731,7 +2454,55 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Injuries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/injuries",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"injuries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"178-a1jeyrdvdeI+fk/cLTZKOzhZIz4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:47:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 0,\n        \"injury\": \"Does not Apply\"\n    },\n    {\n        \"id\": 51,\n        \"injury\": \"Asthma Attack\"\n    },\n    {\n        \"id\": 52,\n        \"injury\": \"Head Injury / Concussion\"\n    },\n    {\n        \"id\": 53,\n        \"injury\": \"Heart Attack / Heart Failure\"\n    },\n    {\n        \"id\": 54,\n        \"injury\": \"Hypothermia\"\n    },\n    {\n        \"id\": 55,\n        \"injury\": \"Near Drowning\"\n    },\n    {\n        \"id\": 56,\n        \"injury\": \"Other\"\n    },\n    {\n        \"id\": 57,\n        \"injury\": \"Shoulder Dislocation\"\n    },\n    {\n        \"id\": 58,\n        \"injury\": \"Spinal Injury\"\n    },\n    {\n        \"id\": 59,\n        \"injury\": \"Physical Trauma\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Injury",
@@ -1871,7 +2642,61 @@
 						},
 						"description": "Get updates for a single gage. "
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Gage Updates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/gage-updates?gauge_id=64",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"gage-updates"
+									],
+									"query": [
+										{
+											"key": "gauge_id",
+											"value": "64"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1017"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3f9-TmpiVgWJnzO086yzPEwLzZr6HbE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:48:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"gauge_id\": 64,\n        \"metric\": 10,\n        \"lobs_time\": \"2017-04-11T07:04:00.000Z\",\n        \"lobs_id\": \"275064391039\",\n        \"lobs_reading\": 0,\n        \"obs_time\": \"2017-04-11T07:04:00.000Z\",\n        \"obs_id\": \"275064391039\",\n        \"obs_reading\": 0,\n        \"obs_data\": null,\n        \"write_sequence\": 9777059,\n        \"updated\": \"2017-05-09T03:07:21.000Z\",\n        \"obs_ref\": \"890469\",\n        \"last_journal_date\": \"2017-04-11T07:04:00.000Z\",\n        \"gd_ref\": null\n    },\n    {\n        \"gauge_id\": 64,\n        \"metric\": 8,\n        \"lobs_time\": \"2019-01-25T07:29:52.000Z\",\n        \"lobs_id\": \"275071453969\",\n        \"lobs_reading\": 4.67,\n        \"obs_time\": \"2019-01-25T08:29:36.000Z\",\n        \"obs_id\": \"275071454419\",\n        \"obs_reading\": 4.7,\n        \"obs_data\": null,\n        \"write_sequence\": 11946928,\n        \"updated\": \"2019-01-25T08:45:05.000Z\",\n        \"obs_ref\": null,\n        \"last_journal_date\": null,\n        \"gd_ref\": null\n    },\n    {\n        \"gauge_id\": 64,\n        \"metric\": 2,\n        \"lobs_time\": \"2019-01-25T07:29:52.000Z\",\n        \"lobs_id\": \"275071453969\",\n        \"lobs_reading\": 1300,\n        \"obs_time\": \"2019-01-25T08:29:36.000Z\",\n        \"obs_id\": \"275071454419\",\n        \"obs_reading\": 1320,\n        \"obs_data\": null,\n        \"write_sequence\": 11946928,\n        \"updated\": \"2019-01-25T08:45:05.000Z\",\n        \"obs_ref\": null,\n        \"last_journal_date\": \"2011-10-21T10:41:36.000Z\",\n        \"gd_ref\": null\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Gage Update",
@@ -1991,7 +2816,55 @@
 						},
 						"description": "Get all available gage metrics. For example, CFS, Ft, etc."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Gage Reading Metrics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/gage-reading-metrics",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"gage-reading-metrics"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1440"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a0-o0AKfYHj9uIdMYudqswNvGZ6QIE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:49:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"shortkey\": \"corr\",\n        \"unit\": \"r.c.\",\n        \"name\": \"Status\",\n        \"id\": 1,\n        \"format\": \"%1.1f\",\n        \"sortorder\": 99\n    },\n    {\n        \"shortkey\": \"perc\",\n        \"unit\": \"%\",\n        \"name\": \"Percent\",\n        \"id\": 14,\n        \"format\": \"%3.1f\",\n        \"sortorder\": 30\n    },\n    {\n        \"shortkey\": \"mflow\",\n        \"unit\": \"cm/s\",\n        \"name\": \"Metric Volumentric Flow \",\n        \"id\": 13,\n        \"format\": \"%3.1f\",\n        \"sortorder\": 40\n    },\n    {\n        \"shortkey\": \"mstag\",\n        \"unit\": \"m\",\n        \"name\": \"Meters Stage\",\n        \"id\": 12,\n        \"format\": \"%3.2f\",\n        \"sortorder\": 50\n    },\n    {\n        \"shortkey\": \"pc15m\",\n        \"unit\": \"in/15min\",\n        \"name\": \"Precip. in 15m\",\n        \"id\": 4,\n        \"format\": \"%2.2f\",\n        \"sortorder\": 80\n    },\n    {\n        \"shortkey\": \"pc6h\",\n        \"unit\": \"in/6h\",\n        \"name\": \"Precip. in 6h\",\n        \"id\": 6,\n        \"format\": \"%2.1f\",\n        \"sortorder\": 83\n    },\n    {\n        \"shortkey\": \"pc12h\",\n        \"unit\": \"in/12h\",\n        \"name\": \"Precip. in 12h\",\n        \"id\": 3,\n        \"format\": \"%2.1f\",\n        \"sortorder\": 86\n    },\n    {\n        \"shortkey\": \"pc24h\",\n        \"unit\": \"in/24h\",\n        \"name\": \"Precip. in 24h\",\n        \"id\": 5,\n        \"format\": \"%2.1f\",\n        \"sortorder\": 89\n    },\n    {\n        \"shortkey\": \"pccum\",\n        \"unit\": \"in/yr\",\n        \"name\": \"Yearly Precip.\",\n        \"id\": 7,\n        \"format\": \"%3.1f\",\n        \"sortorder\": 93\n    },\n    {\n        \"shortkey\": \"bflow\",\n        \"unit\": \"cfs\",\n        \"name\": \"Alt. Flow\",\n        \"id\": 10,\n        \"format\": \"%4.0f\",\n        \"sortorder\": 60\n    },\n    {\n        \"shortkey\": \"bstag\",\n        \"unit\": \"ft\",\n        \"name\": \"Alt. Stage in Feet\",\n        \"id\": 11,\n        \"format\": \"%3.2f\",\n        \"sortorder\": 65\n    },\n    {\n        \"shortkey\": \"temp\",\n        \"unit\": \"? F\",\n        \"name\": \"Temperature\",\n        \"id\": 9,\n        \"format\": \"%3.0f\",\n        \"sortorder\": 75\n    },\n    {\n        \"shortkey\": \"flow\",\n        \"unit\": \"cfs\",\n        \"name\": \"Flow\",\n        \"id\": 2,\n        \"format\": \"%4.0f\",\n        \"sortorder\": 10\n    },\n    {\n        \"shortkey\": \"in\",\n        \"unit\": \"inches\",\n        \"name\": \"Inches Stage\",\n        \"id\": 15,\n        \"format\": \"%4.0f\",\n        \"sortorder\": 25\n    },\n    {\n        \"shortkey\": \"stage\",\n        \"unit\": \"ft\",\n        \"name\": \"Feet Stage\",\n        \"id\": 8,\n        \"format\": \"%3.2f\",\n        \"sortorder\": 20\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Gage Reading Metric",
@@ -2113,7 +2986,55 @@
 						},
 						"description": "Get all recorded gage sources."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Gage Sources",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/gage-sources",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"gage-sources"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6703"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2f-KncZR2vOXbtOq170PJVcDO2x4gg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:49:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"source\": \"river\",\n        \"title\": \"Direct River Observations and Calculations\",\n        \"url\": null,\n        \"update_type\": \"d\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"20:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"virtual\",\n        \"title\": \"New Virtual Gauges\",\n        \"url\": null,\n        \"update_type\": \"d\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"20:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"virt\",\n        \"title\": \"Linear Virtual\",\n        \"url\": null,\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"vrt2\",\n        \"title\": \"Virtual\",\n        \"url\": null,\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"release\",\n        \"title\": \"AW Supplied Release Information\",\n        \"url\": null,\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"ice\",\n        \"title\": \"Ice custom gauge?\",\n        \"url\": \"\",\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"dflows\",\n        \"title\": \"Dreamflows\",\n        \"url\": null,\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"bobs\",\n        \"title\": \"Bobs custom gauge?\",\n        \"url\": \"\",\n        \"update_type\": \"m\",\n        \"update_frequency\": 0,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"hads\",\n        \"title\": \"NOAA Gauges\",\n        \"url\": null,\n        \"update_type\": \"h\",\n        \"update_frequency\": 2592000,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": \"2009-10-06T16:58:21.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"wvcoe\",\n        \"title\": \"WV COE Gauges\",\n        \"url\": \"http://www.lrh-wc.usace.army.mil/wc/whitewater.html\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 3600,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": \"2009-08-24T06:54:38.000Z\",\n        \"populated\": \"2016-02-11T22:00:03.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"sce\",\n        \"title\": \"SC Edison Gauges\",\n        \"url\": \"http://www.sce.com\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 600,\n        \"update_start_time\": \"00:33:53\",\n        \"data\": \"{\\\"uid\\\":45851}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \",\n        \"updated\": \"2013-05-06T06:33:53.000Z\",\n        \"populated\": \"2018-03-01T16:03:55.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"pge\",\n        \"title\": \"PG&E Supplied\",\n        \"url\": null,\n        \"update_type\": \"r\",\n        \"update_frequency\": 600,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": \"{\\\"uid\\\":88675}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \",\n        \"updated\": null,\n        \"populated\": null,\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"cdec\",\n        \"title\": \"CDEC Gauges\",\n        \"url\": \"http://www.nws.noaa.gov\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 7200,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": \"2008-05-06T02:01:28.000Z\",\n        \"populated\": \"2018-12-22T05:00:49.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"test\",\n        \"title\": \"Test Gauge\",\n        \"url\": null,\n        \"update_type\": \"h\",\n        \"update_frequency\": 1000000,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": \"2019-01-14T16:25:24.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"codwr\",\n        \"title\": \"CO DWR Gauges\",\n        \"url\": \"http://www.dwr.state.co.us/\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 3600,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": \"2010-09-08T07:12:35.000Z\",\n        \"populated\": \"2019-01-13T02:00:39.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"popud\",\n        \"title\": \"POPUD Gauges\",\n        \"url\": \"\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 3600,\n        \"update_start_time\": \"18:56:46\",\n        \"data\": null,\n        \"updated\": \"2013-11-08T01:56:46.000Z\",\n        \"populated\": \"2018-11-08T15:56:46.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"qbec\",\n        \"title\": \"Quebec Gauges\",\n        \"url\": \"http://www.gouv.qc.ca/\",\n        \"update_type\": \"h\",\n        \"update_frequency\": 2592000,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": \"2009-08-24T06:54:12.000Z\",\n        \"populated\": \"2018-12-27T06:35:35.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"wadoe\",\n        \"title\": \"WA DOE Gauges\",\n        \"url\": \"https://fortress.wa.gov/ecy/eap/flows/regions/state.asp\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 1800,\n        \"update_start_time\": \"01:29:27\",\n        \"data\": null,\n        \"updated\": \"2016-02-17T08:29:27.000Z\",\n        \"populated\": \"2019-01-24T09:29:29.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"noaa\",\n        \"title\": \"NOAA Gauges\",\n        \"url\": \"http://water.weather.gov\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 1800,\n        \"update_start_time\": \"22:59:05\",\n        \"data\": null,\n        \"updated\": \"2013-12-09T05:59:05.000Z\",\n        \"populated\": \"2019-01-25T03:59:08.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"tva\",\n        \"title\": \"TVA Gauges\",\n        \"url\": \"http://lakeinfo.tva.gov/htbin/streaminfo\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 3600,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": \"2008-05-06T02:00:13.000Z\",\n        \"populated\": \"2018-04-09T02:00:01.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"dream\",\n        \"title\": \"DreamFlows Gauges\",\n        \"url\": \"http://www.dreamflows.com/\",\n        \"update_type\": \"r\",\n        \"update_frequency\": 1800,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": \"{\\\"cycle\\\":3}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \",\n        \"updated\": \"2008-05-06T02:00:44.000Z\",\n        \"populated\": \"2019-01-25T07:00:01.000Z\",\n        \"disclaimer\": null\n    },\n    {\n        \"source\": \"usgs\",\n        \"title\": \"USGS Gauges\",\n        \"url\": null,\n        \"update_type\": \"r\",\n        \"update_frequency\": 900,\n        \"update_start_time\": \"00:00:00\",\n        \"data\": null,\n        \"updated\": null,\n        \"populated\": \"2019-01-25T08:45:05.000Z\",\n        \"disclaimer\": null\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Source",
@@ -2244,7 +3165,61 @@
 						},
 						"description": "Get a single event record by id."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Event",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/event?id=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "472"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d8-s/HjVhcqlWyaHuYj0E1+wiDveRs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:51:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Triple Crown\",\n    \"city\": \"Elizabethton\",\n    \"description\": \"Race the Watauga. \\r\\nRodeo at Hydro\\r\\nRodeo at Rock Island.\\r\\nRodeo at the Nolichucky.\",\n    \"cat\": 8,\n    \"uid\": 1,\n    \"state\": \"TN\",\n    \"url\": null,\n    \"orgname\": null,\n    \"orgaddress\": null,\n    \"orgphone\": null,\n    \"orgfax\": null,\n    \"orgemail\": null,\n    \"site\": null,\n    \"rivid\": null,\n    \"expectpart\": null,\n    \"expectspec\": null,\n    \"issue\": null,\n    \"media\": null,\n    \"nowreventinfo\": 0,\n    \"contact_id\": null,\n    \"updated\": \"2010-01-01T07:00:00.000Z\",\n    \"html_description\": \"\",\n    \"retired\": 1\n}"
+						}
+					]
 				},
 				{
 					"name": "Events By State",
@@ -2252,7 +3227,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/event-state?state=MA",
+							"raw": "{{base_url}}/event-state?state=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -2262,13 +3237,67 @@
 							"query": [
 								{
 									"key": "state",
-									"value": "MA"
+									"value": ""
 								}
 							]
 						},
 						"description": "Get events by state."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Events By State",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/event-state?state=VT",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"event-state"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "VT"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1323"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52b-8oTPMR0IZGpS7aGMRVn7372bLbg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:53:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 655,\n        \"title\": \"Teva LiquidLifestyles Tour\",\n        \"city\": \"Burlington\",\n        \"description\": \"Video premier to be held at the Higher Grounds Nightclub\",\n        \"cat\": 19,\n        \"uid\": 759,\n        \"state\": \"VT\",\n        \"url\": \"\",\n        \"orgname\": \"Mark Lubkowitz\",\n        \"orgaddress\": \"\",\n        \"orgphone\": \"(802) 434-8412\",\n        \"orgfax\": \"\",\n        \"orgemail\": \"\",\n        \"site\": \"\",\n        \"rivid\": 0,\n        \"expectpart\": 0,\n        \"expectspec\": 0,\n        \"issue\": \"\",\n        \"media\": \"\",\n        \"nowreventinfo\": 0,\n        \"contact_id\": null,\n        \"updated\": \"2010-01-01T07:00:00.000Z\",\n        \"html_description\": \"\",\n        \"retired\": 1\n    },\n    {\n        \"id\": 2389,\n        \"title\": \"West River Releases\",\n        \"city\": \"Jamaca\",\n        \"description\": \"\",\n        \"cat\": 20,\n        \"uid\": null,\n        \"state\": \"VT\",\n        \"url\": \"\",\n        \"orgname\": null,\n        \"orgaddress\": null,\n        \"orgphone\": null,\n        \"orgfax\": null,\n        \"orgemail\": null,\n        \"site\": \"\",\n        \"rivid\": null,\n        \"expectpart\": 0,\n        \"expectspec\": 0,\n        \"issue\": \"\",\n        \"media\": \"\",\n        \"nowreventinfo\": 0,\n        \"contact_id\": 8201,\n        \"updated\": \"2007-12-10T18:03:53.000Z\",\n        \"html_description\": \"\",\n        \"retired\": 1\n    },\n    {\n        \"id\": 2532,\n        \"title\": \"West River Release\",\n        \"city\": \"Jamaica\",\n        \"description\": \"Scheduled whitewater releases from Ball Mountain Dam.\",\n        \"cat\": 20,\n        \"uid\": null,\n        \"state\": \"VT\",\n        \"url\": \"http://www.vtstateparks.com/htm/jamaicawhitewater.cfm\",\n        \"orgname\": null,\n        \"orgaddress\": null,\n        \"orgphone\": null,\n        \"orgfax\": null,\n        \"orgemail\": null,\n        \"site\": \"\",\n        \"rivid\": null,\n        \"expectpart\": 0,\n        \"expectspec\": 0,\n        \"issue\": \"\",\n        \"media\": \"\",\n        \"nowreventinfo\": 0,\n        \"contact_id\": 144031,\n        \"updated\": \"2012-07-13T20:07:02.000Z\",\n        \"html_description\": \"\",\n        \"retired\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Event",
@@ -2475,7 +3504,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/gis-zip?gid=30010",
+							"raw": "{{base_url}}/gis-zip?gid=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -2485,12 +3514,66 @@
 							"query": [
 								{
 									"key": "gid",
-									"value": "30010"
+									"value": ""
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "GIS Zip",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/gis-zip?gid=30010",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"gis-zip"
+									],
+									"query": [
+										{
+											"key": "gid",
+											"value": "30010"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-Q4MprdSYLkW5ypfZNww14ePdCOo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:53:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"gid\": 30010,\n    \"zip\": \"20861\",\n    \"po_name\": null,\n    \"state\": null,\n    \"area\": null,\n    \"sumblkpop\": null,\n    \"pop2000\": null,\n    \"the_geom\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "GIS Zip State",
@@ -2907,7 +3990,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Article",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/article?articleid=34161",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"article"
+									],
+									"query": [
+										{
+											"key": "articleid",
+											"value": "34161"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"841-/SLsyMsjtwBF1WcmmUkuGcGMMag\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:56:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"article\": {\n        \"articleid\": \"34161\",\n        \"title\": \"Clackamas River flow information survey\",\n        \"author\": \"Thomas O'Keefe\",\n        \"abstract\": \"<p>\\r\\n\\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas. PGE is currently seeking feedback from the whitewater community on the flow resources along the Upper Clackamas River through a short 8 question online survey.</p>\\r\\n\",\n        \"abstractphoto\": \"2\",\n        \"icon\": null,\n        \"hascontents\": 1,\n        \"contents\": \"<div>\\r\\n\\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas.</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\tPGE meets bi-annually with a local whitewater stakeholder group, the Boater Logistics User Body (BLUB), to plan, conduct and complete the whitewater boating-related activities along the Upper Clackamas River. Such activities include sponsorship of the Annual Upper Clackamas River Whitewater Festival, the development of three river boat access sites (complete), the creation of a new whitewater boating-related improvement (in discussion), and funding for the annual maintenance of USGS flow gauges (ongoing).</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\tAs a part of the above measures, PGE is seeking feedback from the whitewater community on the current flow resources along the Upper Clackamas River through a short 8 question online survey.</div>\\r\\n<div>\\r\\n\\t<br />\\r\\n\\tWe encourage paddlers who enjoy the Clackamas River to take this survey:</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\t<a href=\\\"https://www.surveymonkey.com/r/FKJN8S2\\\">https://www.surveymonkey.com/r/FKJN8S2</a></div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n\",\n        \"contentsphoto\": \"2\",\n        \"contact\": \"580\",\n        \"posted\": \"2019-01-23T00:52:00.000Z\",\n        \"shortname\": \"\",\n        \"uid\": \"580\",\n        \"releasedate\": \"2019-01-23T00:52:00.000Z\",\n        \"deleted\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Article",
@@ -3024,7 +4161,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Project",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/project?id=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c4-ykuWlYH1g8xv4EIWWdmPfAJwhS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:56:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"project\": {\n        \"id\": \"1\",\n        \"name\": \"Gauley River (WV)\",\n        \"description\": \"For many years AW has worked on the protection of this river and advocated for public access.\",\n        \"uid\": \"0\",\n        \"deleted\": 0,\n        \"shortname\": \"\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Project",
@@ -3150,7 +4341,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user?uid=160551",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "uid",
+											"value": "160551"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "893"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37d-yjfzpFo0Z2GLnWWY/L7vzHk973E\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:57:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"uid\": \"160551\",\n        \"uname\": \"paddlebro420\",\n        \"upass\": \"password\",\n        \"verifydate\": \"1978-01-21\",\n        \"email\": \"pb@aol.com\",\n        \"zip\": \"28804-2200\",\n        \"address\": \"123 Maple Street\",\n        \"city\": \"Asheville\",\n        \"state\": \"NC\",\n        \"country\": \"United States\",\n        \"lastlogin\": \"2019-01-21T01:26:51.000Z\",\n        \"volunteer\": 0,\n        \"alerts\": 0,\n        \"postal\": 0,\n        \"memnum\": \"12345\",\n        \"address2\": \"\",\n        \"home_phone\": \"123-456-7890\",\n        \"work_phone\": \"\",\n        \"journal\": 0,\n        \"aw_beta\": 1,\n        \"mbr_level\": \"Explorer\",\n        \"bad_addr\": 0,\n        \"bad_email\": 0,\n        \"mod_date\": \"2019-01-24T06:00:07.000Z\",\n        \"record_type\": \"Fam\",\n        \"name\": \"Chad Smith\",\n        \"mem_transaction\": null,\n        \"transaction_id\": null,\n        \"expiration\": \"2021-08-21T04:00:00.000Z\",\n        \"modifydate\": null,\n        \"pushdate\": null,\n        \"mbr_relation\": \"Renewal\",\n        \"prefs\": null,\n        \"annual_renew\": 1,\n        \"code\": null,\n        \"googleid\": null,\n        \"socialprofile\": null,\n        \"facebookid\": null,\n        \"remember_token\": null,\n        \"created_at\": null,\n        \"updated_at\": null\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Create User",
@@ -3452,12 +4697,143 @@
 			"name": "Rapids",
 			"item": [
 				{
+					"name": "Rapid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rapid?rapidid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rapid"
+							],
+							"query": [
+								{
+									"key": "rapidid",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get all rapids for a reach"
+					},
+					"response": [
+						{
+							"name": "Rapid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/rapid?rapidid=102199",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"rapid"
+									],
+									"query": [
+										{
+											"key": "rapidid",
+											"value": "102199"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "933"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a5-LTFsGwf2IBs3zyE1vNTcBVMls7A\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 21:03:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reachid\": 10605,\n    \"rapidid\": 102199,\n    \"name\": \"Bitch Monkey\",\n    \"distance\": 0.42,\n    \"difficulty\": \"5.2\",\n    \"description\": \"<p>\\n\\tThis chaotic drop connects the third slide to the Back Canyon, but it has an irregular lip and a shallow landing. &nbsp; It can be run well, but unfortunately it&rsquo;s frequently run by accident. Formerly, there was an eddy or logjam above the slot but in recent years, rocks have shifted and much more water is rushing towards the dividing rock, and to the right over Bitch Monkey, which is now certainly in play.</p>\\n\",\n    \"photoid\": 881376,\n    \"videoid\": 0,\n    \"isputin\": 0,\n    \"istakeout\": 0,\n    \"isaccess\": 0,\n    \"isportage\": 0,\n    \"ishazard\": 1,\n    \"iswaterfall\": 1,\n    \"isplayspot\": 0,\n    \"rlat\": 38.9962997436523,\n    \"rlon\": -77.2491989135742,\n    \"approximate\": false,\n    \"deleted\": false,\n    \"rloc\": {\n        \"crs\": {\n            \"type\": \"name\",\n            \"properties\": {\n                \"name\": \"EPSG:4326\"\n            }\n        },\n        \"type\": \"Point\",\n        \"coordinates\": [\n            -77.2492,\n            38.9963\n        ]\n    },\n    \"revision\": 7464,\n    \"is_final\": true,\n    \"created_at\": \"2019-01-25T05:28:08.308Z\"\n}"
+						},
+						{
+							"name": "Reach Rapids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/rapids?reachid=355",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"rapids"
+									],
+									"query": [
+										{
+											"key": "reachid",
+											"value": "355"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2523"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9db-21Ljcj+7GiNZ4dKHB0GcJGu+LNY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 21:00:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reachid\": 355,\n        \"rapidid\": 11128,\n        \"name\": \"test lorem rapid\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11381,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T09:54:53.896Z\"\n    },\n    {\n        \"reachid\": 355,\n        \"rapidid\": 106974,\n        \"name\": \"test lorem rapid\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11382,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T09:56:40.836Z\"\n    },\n    {\n        \"reachid\": 355,\n        \"rapidid\": 106975,\n        \"name\": \"test another blah!!\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11383,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T10:03:02.490Z\"\n    }\n]"
+						}
+					]
+				},
+				{
 					"name": "Reach Rapids",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/rapids?reachid=355",
+							"raw": "{{base_url}}/rapids?reachid=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -3467,13 +4843,67 @@
 							"query": [
 								{
 									"key": "reachid",
-									"value": "355"
+									"value": ""
 								}
 							]
 						},
 						"description": "Get all rapids for a reach"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Reach Rapids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/rapids?reachid=355",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"rapids"
+									],
+									"query": [
+										{
+											"key": "reachid",
+											"value": "355"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2523"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9db-21Ljcj+7GiNZ4dKHB0GcJGu+LNY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 21:00:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reachid\": 355,\n        \"rapidid\": 11128,\n        \"name\": \"test lorem rapid\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11381,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T09:54:53.896Z\"\n    },\n    {\n        \"reachid\": 355,\n        \"rapidid\": 106974,\n        \"name\": \"test lorem rapid\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11382,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T09:56:40.836Z\"\n    },\n    {\n        \"reachid\": 355,\n        \"rapidid\": 106975,\n        \"name\": \"test another blah!!\",\n        \"distance\": 0.1,\n        \"difficulty\": \"V\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 11383,\n        \"is_final\": true,\n        \"created_at\": \"2020-07-11T10:03:02.490Z\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Create Rapid",
@@ -3663,7 +5093,61 @@
 						},
 						"description": "Get single reach by id"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Reach",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reach?id=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reach"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3923"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f53-zD1zJazETPigKgg/J39iBqxcVWA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 21:04:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reach\": {\n        \"id\": 2,\n        \"river\": \"Aniakchak\",\n        \"section\": \"Surprise Lake to Aniakchak Bay\",\n        \"altname\": null,\n        \"county\": \"Aniakchak National Park and Preserve\",\n        \"zipcode\": \"99571\",\n        \"length\": 32,\n        \"avggradient\": 30,\n        \"maxgradient\": 83,\n        \"agency\": \"National Park Service\",\n        \"gaugeinfo\": \"<p>Look for 1000-2000 cfs in July (based on \\r\\nEmbick).</p>\",\n        \"description\": \"<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \\r\\nhref=\\\"http://www.nps.gov/ania/\\\">Aniakchak National Mounment and Preserve</a> providing an \\r\\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \\r\\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \\r\\nthe schedule.</p>\\r\\n\\r\\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \\r\\nyears \\r\\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \\r\\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \\r\\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \\r\\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \\r\\nlandscape.</p>\\r\\n\\r\\n<p>From the lake the river begins at a slow pace for the first mile before entering the \\\"Gates\\\", a \\r\\n1500 foot gash in \\r\\nthe \\r\\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \\r\\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \\r\\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \\r\\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \\r\\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \\r\\nfive miles \\r\\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \\r\\nthat takes you to the ocean.<p>\\r\\n\\r\\n<p>The river system \\r\\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \\r\\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \\r\\nbear are common along this river so be sure to take proper precautions and be prepared for \\r\\nencounters.\\r\\n</p>\\r\\n\\r\\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \\r\\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \\r\\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \\r\\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \\r\\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \\r\\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \\r\\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \\r\\nis extremely remote with no practical access to outside assistance.</p>\",\n        \"photoid\": 8547,\n        \"permitid\": null,\n        \"huc\": \"19020702\",\n        \"plat\": 56.9059982299805,\n        \"plon\": -158.080902099609,\n        \"prrn\": null,\n        \"tlat\": 56.7634010314941,\n        \"tlon\": -157.493392944336,\n        \"trrn\": null,\n        \"skid\": null,\n        \"status\": \"u\",\n        \"edited\": \"2004-09-03T20:12:15.000Z\",\n        \"is_final\": true,\n        \"revision\": 1189796,\n        \"class\": \"I-IV\",\n        \"ploc\": {\n            \"crs\": {\n                \"type\": \"name\",\n                \"properties\": {\n                    \"name\": \"EPSG:4326\"\n                }\n            },\n            \"type\": \"Point\",\n            \"coordinates\": [\n                -158.081,\n                56.906\n            ]\n        },\n        \"tloc\": {\n            \"crs\": {\n                \"type\": \"name\",\n                \"properties\": {\n                    \"name\": \"EPSG:4326\"\n                }\n            },\n            \"type\": \"Point\",\n            \"coordinates\": [\n                -157.493,\n                56.7634\n            ]\n        },\n        \"was_final\": true,\n        \"thumboverride\": false,\n        \"shuttledetails\": null,\n        \"abstract\": null,\n        \"direction_default\": 1,\n        \"custom_destination\": null,\n        \"revision_comment\": null,\n        \"permiturl\": null,\n        \"permitinfo\": null,\n        \"image_override\": null\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Reach",
@@ -4170,7 +5654,7 @@
 	],
 	"variable": [
 		{
-			"id": "08ec12ce-1c4d-49dc-a410-3c5315d820ae",
+			"id": "d340b2f1-2dac-42bd-9107-b5c5ca167772",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

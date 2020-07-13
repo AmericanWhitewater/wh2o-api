@@ -2,11 +2,11 @@ import { pgClient, DataTypes } from "../config";
 const TripLogPhoto = require("../models/triplog_photos")(pgClient, DataTypes);
 
 module.exports = (app) => {
-  app.get("/trip-log-photo", (req, res) => {
-    TripLogPhoto.findOne({
+  app.get("/trip-log-photos", (req, res) => {
+    TripLogPhoto.findAll({
       where: {
-        id: req.query.id
-      }
+        triplog_id: req.query.triplog_id,
+      },
     })
       .then((result) => {
         res.send(result).status(200);

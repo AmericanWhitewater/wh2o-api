@@ -9,11 +9,28 @@ module.exports = app => {
         reachid: req.query.reachid
       }
     }).then(result => {
-      res.send({ Rapid: result }).status(200)
+      res.send(result).status(200);
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
     })
+
+  })
+
+  app.get('/rapid', (req, res) => {
+
+    Rapid.findOne({
+      where: {
+        rapidid: req.query.rapidid,
+      },
+    })
+      .then((result) => {
+        res.send(result).status(200);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.send(err).status(404);
+      });
 
   })
 

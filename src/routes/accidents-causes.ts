@@ -2,14 +2,17 @@ import { pgClient, DataTypes } from "../config";
 const AccidentCause = require('../models/accidents_causes')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get('/accident-cause', (req, res) => {
+  app.get('/accident-causes', (req, res) => {
 
-    AccidentCause.findOne({
+    AccidentCause.findAll({
       where: {
         accident_id: req.query.accident_id
       }
     }).then(result => {
-      res.send(result).status(200);
+
+      const data = result.map((factor) => factor.dataValues.cause_id);
+
+      res.send(data).status(200);
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

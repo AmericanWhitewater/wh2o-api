@@ -3,7 +3,11 @@ const TripLog = require("../models/triplog")(pgClient, DataTypes);
 
 module.exports = (app) => {
   app.get("/trip-logs", (req, res) => {
-    TripLog.findAll()
+    TripLog.findAll({
+      where: {
+        reachid: req.query.reachid
+      }
+    })
       .then((result) => {
         res.send(result).status(200);
       })

@@ -10,7 +10,10 @@ module.exports = app => {
       },
     })
       .then((result) => {
-        res.send(result).status(200);
+
+        const data = result.map((factor) => factor.dataValues.reachid);
+
+        res.send(data).status(200);
       })
       .catch((err) => {
         console.log(err);

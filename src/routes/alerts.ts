@@ -9,7 +9,7 @@ module.exports = (app) => {
       },
     })
       .then((result) => {
-        res.send({ Alert: result }).status(200);
+        res.send(result).status(200);
       })
       .catch((err) => {
         console.log(err);
