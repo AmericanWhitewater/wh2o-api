@@ -257,7 +257,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/affiliate?id=17",
+							"raw": "{{base_url}}/affiliate?id=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -267,10 +267,11 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "17"
+									"value": ""
 								}
 							]
-						}
+						},
+						"description": "Returns a single AW affiliate."
 					},
 					"response": []
 				},
@@ -287,7 +288,8 @@
 							"path": [
 								"affiliates"
 							]
-						}
+						},
+						"description": "Returns all AW affiliates."
 					},
 					"response": []
 				},
@@ -297,7 +299,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/affiliates-state?state=PA",
+							"raw": "{{base_url}}/affiliates-state?state=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -307,10 +309,11 @@
 							"query": [
 								{
 									"key": "state",
-									"value": "PA"
+									"value": ""
 								}
 							]
-						}
+						},
+						"description": "Query affiliates by state. Use state abbreviations: AL, AZ, AR..."
 					},
 					"response": []
 				},
@@ -455,12 +458,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_url}}/new-accident",
+							"raw": "{{base_url}}/new-affiliate",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"new-accident"
+								"new-affiliate"
 							]
 						}
 					},
@@ -483,17 +486,17 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_url}}/update-accident?id=11139",
+							"raw": "{{base_url}}/update-affiliate?id=",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"update-accident"
+								"update-affiliate"
 							],
 							"query": [
 								{
 									"key": "id",
-									"value": "11139"
+									"value": ""
 								}
 							]
 						}
@@ -700,17 +703,17 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_url}}/update-accident?id=11139",
+							"raw": "{{base_url}}/update-alert?id=",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"update-accident"
+								"update-alert"
 							],
 							"query": [
 								{
 									"key": "id",
-									"value": "11139"
+									"value": ""
 								}
 							]
 						}
@@ -723,17 +726,17 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/delete-accident?id=11139",
+							"raw": "{{base_url}}/delete-alert?id=",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"delete-accident"
+								"delete-alert"
 							],
 							"query": [
 								{
 									"key": "id",
-									"value": "11139"
+									"value": ""
 								}
 							]
 						}
@@ -1333,7 +1336,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{base_url}}/update-document?documentid=1790",
+							"raw": "{{base_url}}/update-document?documentid=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1343,7 +1346,7 @@
 							"query": [
 								{
 									"key": "documentid",
-									"value": "1790"
+									"value": ""
 								}
 							]
 						}
@@ -1518,7 +1521,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/gage-updates?gauge_id=1",
+							"raw": "{{base_url}}/gage-updates?gauge_id=",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1528,7 +1531,7 @@
 							"query": [
 								{
 									"key": "gauge_id",
-									"value": "1"
+									"value": ""
 								}
 							]
 						},
@@ -3833,7 +3836,7 @@
 	],
 	"variable": [
 		{
-			"id": "bd3a7cdb-d8e0-4008-a1e9-97be442ec3ea",
+			"id": "5afe103c-3fd7-4f12-9dea-1cf6ab3aa963",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

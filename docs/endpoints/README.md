@@ -131,6 +131,245 @@ URL: http://localhost:8000/update-accident
 
 
 
+## Affiliate
+
+
+
+### 1. Affiliate
+
+
+Returns a single AW affiliate.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/affiliate
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+### 2. Affiliates
+
+
+Returns all AW affiliates.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/affiliates
+```
+
+
+
+### 3. Affiliates State
+
+
+Query affiliates by state. Use state abbreviations: AL, AZ, AR...
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/affiliates-state
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| state |  |  |
+
+
+
+### 4. Create Affiliate
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-affiliate
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+| accidentdate |  |  |
+| victimname |  |  |
+| reachid |  |  |
+| countryabbr |  |  |
+| state |  |  |
+| river |  |  |
+| section |  |  |
+| location |  |  |
+| waterlevel |  |  |
+| rellevel |  |  |
+| difficulty |  |  |
+| age |  |  |
+| experience |  |  |
+| privcomm |  |  |
+| boattype |  |  |
+| groupinfo |  |  |
+| numvictims |  |  |
+| othervictimnames |  |  |
+| description |  |  |
+| type |  |  |
+| cause |  |  |
+| contactname |  |  |
+| contactphone |  |  |
+| contactemail |  |  |
+| status |  |  |
+
+
+
+### 5. Delete Affiliate
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+### 6. Update Affiliate
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-affiliate
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+***Body:***
+
+
+
+## Affiliate Reach
+
+
+
+### 1. Affiliate Reaches
+
+
+Get all reaches associated with an AW affiliate by id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/affiliate-reaches
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| affiliateid |  |  |
+
+
+
+### 2. Create Affiliate Reach
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-affiliate-reach
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| reachid |  |  |
+| affiliateid |  |  |
+
+
+
+### 3. Delete Affiliate Reach
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-affiliate-reach
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| affiliateid |  |  |
+| reachid |  |  |
+
+
+
 ## Alert
 
 
@@ -192,7 +431,7 @@ URL: http://localhost:8000/new-alert
 ```bash
 Method: DELETE
 Type: 
-URL: http://localhost:8000/delete-accident
+URL: http://localhost:8000/delete-alert
 ```
 
 
@@ -201,7 +440,7 @@ URL: http://localhost:8000/delete-accident
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id | 11139 |  |
+| id |  |  |
 
 
 
@@ -214,7 +453,7 @@ URL: http://localhost:8000/delete-accident
 ```bash
 Method: PUT
 Type: URLENCODED
-URL: http://localhost:8000/update-accident
+URL: http://localhost:8000/update-alert
 ```
 
 
@@ -223,7 +462,7 @@ URL: http://localhost:8000/update-accident
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id | 11139 |  |
+| id |  |  |
 
 
 
@@ -588,7 +827,7 @@ URL: http://localhost:8000/update-document
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| documentid | 1790 |  |
+| documentid |  |  |
 
 
 
@@ -1378,7 +1617,7 @@ URL: http://localhost:8000/gage-updates
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| gauge_id | 1 |  |
+| gauge_id |  |  |
 
 
 
@@ -2342,3 +2581,7 @@ URL: http://localhost:8000/user
 | base_url | http://localhost:8000 |  |
 
 
+
+---
+[Back to top](#wh2o-api)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-07-12 21:19:39 by [docgen](https://github.com/thedevsaddam/docgen)
