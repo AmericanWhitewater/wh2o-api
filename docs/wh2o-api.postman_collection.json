@@ -249,6 +249,373 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Affiliate",
+			"item": [
+				{
+					"name": "Affiliate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/affiliate?id=17",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"affiliate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Affiliates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/affiliates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"affiliates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Affiliates State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/affiliates-state?state=PA",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"affiliates-state"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "PA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Affiliate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "accidentdate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "victimname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reachid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "countryabbr",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "river",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "waterlevel",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rellevel",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "privcomm",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "boattype",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "groupinfo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numvictims",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "othervictimnames",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "cause",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactname",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactphone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contactemail",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-accident",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-accident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Affiliate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Affiliate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Affiliate Reach",
+			"item": [
+				{
+					"name": "Affiliate Reaches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/affiliate-reaches?affiliateid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"affiliate-reaches"
+							],
+							"query": [
+								{
+									"key": "affiliateid",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get all reaches associated with an AW affiliate by id."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Affiliate Reach",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reachid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "affiliateid",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-affiliate-reach",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-affiliate-reach"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Affiliate Reach",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-affiliate-reach?affiliateid=&reachid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-affiliate-reach"
+							],
+							"query": [
+								{
+									"key": "affiliateid",
+									"value": ""
+								},
+								{
+									"key": "reachid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Alert",
 			"item": [
 				{
@@ -3466,7 +3833,7 @@
 	],
 	"variable": [
 		{
-			"id": "ffa922ca-009d-486e-bb08-640dca6e4ae4",
+			"id": "bd3a7cdb-d8e0-4008-a1e9-97be442ec3ea",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

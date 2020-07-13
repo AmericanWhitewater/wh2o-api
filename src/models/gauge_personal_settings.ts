@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     uid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: 'uid of user who\'s gauge setting is is',
+      comment: 'uid of user who\'s gauge setting it is',
       primaryKey: true
     },
     starttime: {

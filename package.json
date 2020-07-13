@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "init": "npm install && npm run serve",
+    "init": "npm install && cp .env.example .env && npm run serve",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:postman": "docgen build -i docs/wh2o-api.postman_collection.json -o docs/endpoints/README.md -m",

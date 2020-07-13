@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     rundate: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'when it got ran'
+      comment: 'when it ran'
     }
   }, {
     sequelize,
