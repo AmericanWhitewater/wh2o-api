@@ -326,97 +326,32 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "id",
+									"key": "last",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "accidentdate",
+									"key": "url",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "victimname",
+									"key": "conemail",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "reachid",
+									"key": "members",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "countryabbr",
+									"key": "contact",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "state",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "river",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "section",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "location",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "waterlevel",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "rellevel",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "difficulty",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "age",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "experience",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "privcomm",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "boattype",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "groupinfo",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "numvictims",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "othervictimnames",
+									"key": "abstract",
 									"value": "",
 									"type": "text"
 								},
@@ -426,32 +361,42 @@
 									"type": "text"
 								},
 								{
-									"key": "type",
+									"key": "reaches",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "cause",
+									"key": "volunteer",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "contactname",
+									"key": "id",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "contactphone",
+									"key": "city",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "contactemail",
+									"key": "state",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "status",
+									"key": "expiration",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "memberid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "deleted",
 									"value": "",
 									"type": "text"
 								}
@@ -476,14 +421,7 @@
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "description",
-									"value": "new description",
-									"type": "text",
-									"disabled": true
-								}
-							]
+							"urlencoded": []
 						},
 						"url": {
 							"raw": "{{base_url}}/update-affiliate?id=",
@@ -3836,7 +3774,7 @@
 	],
 	"variable": [
 		{
-			"id": "5afe103c-3fd7-4f12-9dea-1cf6ab3aa963",
+			"id": "0b343d7f-8a67-4b30-9761-c1692a5e6c40",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

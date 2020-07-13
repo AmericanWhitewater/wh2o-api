@@ -218,32 +218,21 @@ URL: http://localhost:8000/new-affiliate
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id |  |  |
-| accidentdate |  |  |
-| victimname |  |  |
-| reachid |  |  |
-| countryabbr |  |  |
-| state |  |  |
-| river |  |  |
-| section |  |  |
-| location |  |  |
-| waterlevel |  |  |
-| rellevel |  |  |
-| difficulty |  |  |
-| age |  |  |
-| experience |  |  |
-| privcomm |  |  |
-| boattype |  |  |
-| groupinfo |  |  |
-| numvictims |  |  |
-| othervictimnames |  |  |
+| last |  |  |
+| url |  |  |
+| conemail |  |  |
+| members |  |  |
+| contact |  |  |
+| abstract |  |  |
 | description |  |  |
-| type |  |  |
-| cause |  |  |
-| contactname |  |  |
-| contactphone |  |  |
-| contactemail |  |  |
-| status |  |  |
+| reaches |  |  |
+| volunteer |  |  |
+| id |  |  |
+| city |  |  |
+| state |  |  |
+| expiration |  |  |
+| memberid |  |  |
+| deleted |  |  |
 
 
 
@@ -2584,4 +2573,4 @@ URL: http://localhost:8000/user
 
 ---
 [Back to top](#wh2o-api)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-07-12 21:19:39 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-07-12 21:25:39 by [docgen](https://github.com/thedevsaddam/docgen)
