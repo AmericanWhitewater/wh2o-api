@@ -1,17 +1,17 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const Topology = require('../models/topology')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get("/topology-all", (req, res) => {
+  app.get('/topology-all', (req, res) => {
     Topology.findAll()
       .then((result) => {
-        res.send(result).status(200);
+        res.send(result).status(200)
       })
       .catch((err) => {
-        console.log(err);
-        res.send(err).status(404);
-      });
-  });
+        console.log(err)
+        res.send(err).status(404)
+      })
+  })
 
   app.get('/topology', (req, res) => {
 
@@ -20,7 +20,7 @@ module.exports = app => {
         id: req.query.id
       }
     }).then(result => {
-      res.send(result).status(200);
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('contacts', {
     uid: {
       type: DataTypes.BIGINT,
@@ -63,12 +63,12 @@ module.exports = function(sequelize, DataTypes) {
     photo: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     company: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     position: {
       type: DataTypes.STRING,
@@ -86,5 +86,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'contacts',
     schema: 'wh2o'
-  });
-};
+  })
+}

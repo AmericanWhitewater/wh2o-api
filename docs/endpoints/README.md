@@ -3,14 +3,87 @@
 
 The following is a collection of available endpoints.
 
-If you would like to request that an endpoint be added, edited, or removed, please contact [@drewalth](https://github.com/drewalth).
 
 
 ## Accident
 
 
 
-### 1. Accident
+### 1. Create
+
+
+Create an accident report.
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-accident
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+| accidentdate |  |  |
+| victimname |  |  |
+| reachid |  |  |
+| countryabbr |  |  |
+| state |  |  |
+| river |  |  |
+| section |  |  |
+| location |  |  |
+| waterlevel |  |  |
+| rellevel |  |  |
+| difficulty |  |  |
+| age |  |  |
+| experience |  |  |
+| privcomm |  |  |
+| boattype |  |  |
+| groupinfo |  |  |
+| numvictims |  |  |
+| othervictimnames |  |  |
+| description |  |  |
+| type |  |  |
+| cause |  |  |
+| contactname |  |  |
+| contactphone |  |  |
+| contactemail |  |  |
+| status |  |  |
+
+
+
+### 2. Delete
+
+
+Delete an accident report.
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+### 3. Get By Key
 
 
 Get single accident by id.
@@ -90,81 +163,7 @@ URL: http://localhost:8000/accident
 
 
 
-### 2. Create Accident
-
-
-Create an accident report.
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-accident
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id |  |  |
-| accidentdate |  |  |
-| victimname |  |  |
-| reachid |  |  |
-| countryabbr |  |  |
-| state |  |  |
-| river |  |  |
-| section |  |  |
-| location |  |  |
-| waterlevel |  |  |
-| rellevel |  |  |
-| difficulty |  |  |
-| age |  |  |
-| experience |  |  |
-| privcomm |  |  |
-| boattype |  |  |
-| groupinfo |  |  |
-| numvictims |  |  |
-| othervictimnames |  |  |
-| description |  |  |
-| type |  |  |
-| cause |  |  |
-| contactname |  |  |
-| contactphone |  |  |
-| contactemail |  |  |
-| status |  |  |
-
-
-
-### 3. Delete Accident
-
-
-Delete an accident report.
-
-
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-accident
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 11139 |  |
-
-
-
-### 4. Update Accident
+### 4. Update
 
 
 See Create Accident for available fields.
@@ -196,7 +195,53 @@ URL: http://localhost:8000/update-accident
 
 
 
-### 1. Accident Cause
+### 1. Create
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-accident-cause
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+| cause_id |  |  |
+
+
+
+### 2. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident-cause
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+
+
+
+### 3. Get By Key
 
 
 Get accident cause by accident id.
@@ -250,53 +295,7 @@ URL: http://localhost:8000/accident-causes
 
 
 
-### 2. Create Accident Cause
-
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-accident-cause
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| accident_id |  |  |
-| cause_id |  |  |
-
-
-
-### 3. Delete Accident Cause
-
-
-
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-accident-cause
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| accident_id |  |  |
-
-
-
-### 4. Update Accident Cause
+### 4. Update
 
 
 
@@ -332,7 +331,53 @@ Note: DB may be able to be restructured here. Use an array of factors instead of
 
 
 
-### 1. Accident Factors
+### 1. Create
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-accident-cause
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+| cause_id |  |  |
+
+
+
+### 2. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident-cause
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| accident_id |  |  |
+
+
+
+### 3. Get By Key
 
 
 Get accident cause by accident id.
@@ -387,53 +432,7 @@ URL: http://localhost:8000/accident-factors
 
 
 
-### 2. Create Accident Factor
-
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-accident-cause
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| accident_id |  |  |
-| cause_id |  |  |
-
-
-
-### 3. Delete Accident Cause
-
-
-
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-accident-cause
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| accident_id |  |  |
-
-
-
-### 4. Update Accident Factors
+### 4. Update
 
 
 
@@ -468,10 +467,10 @@ URL: http://localhost:8000/update-accident-cause
 
 
 
-### 1. Affiliate
+### 1. By State
 
 
-Returns a single AW affiliate.
+Query affiliates by state. Use state abbreviations: AL, AZ, AR...
 
 
 ***Endpoint:***
@@ -479,7 +478,7 @@ Returns a single AW affiliate.
 ```bash
 Method: GET
 Type: 
-URL: http://localhost:8000/affiliate
+URL: http://localhost:8000/affiliates-state
 ```
 
 
@@ -488,54 +487,70 @@ URL: http://localhost:8000/affiliate
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id |  |  |
+| state |  |  |
 
 
 
-***More example Requests/Responses:***
-
-
-##### I. Example Request: Affiliate
+### 2. Create
 
 
 
-***Query:***
+***Endpoint:***
 
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 98 |  |
-
-
-
-##### I. Example Response: Affiliate
-```js
-{
-    "last": "Coastals Canoeists",
-    "url": "http://coastals.org/",
-    "conemail": "",
-    "members": "375",
-    "contact": "http://www.coastals.org/contact/contactform.php",
-    "abstract": "Coastals are people who love the blueways of Virginia and beyond. Coastals are whitewater canoeists and kayakers, flat water recreational kayakers, rafters and those who paddle any other people-powered watercraft you can imagine.",
-    "description": "Coastals is a family-oriented club dedicated to the enjoyment and advancement of paddlesports and consists of canoeists, kayakers and others from the southeastern U.S., but primarily from Virginia. Activities of the club include an active club volunteer-coordinated trip roster with trips for members, at all skill levels, happening nearly every weekend of the year.\r\n\r\nThe club holds quarterly meetings at various locations around Virginia featuring an evening meal, board of directors meeting, a trip on a nearby river, and a program of interest to paddlers. Coastals' website features an active forum for paddlers throughout the Commonwealth to communicate and discuss paddlesports.",
-    "reaches": "",
-    "volunteer": "654",
-    "id": "98",
-    "city": "Richmond",
-    "state": "VA",
-    "expiration": "2017-03-30",
-    "memberid": "99",
-    "deleted": 0
-}
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-affiliate
 ```
 
 
-***Status Code:*** 200
 
-<br>
-
+***Body:***
 
 
-### 2. Affiliates
+| Key | Value | Description |
+| --- | ------|-------------|
+| last |  |  |
+| url |  |  |
+| conemail |  |  |
+| members |  |  |
+| contact |  |  |
+| abstract |  |  |
+| description |  |  |
+| reaches |  |  |
+| volunteer |  |  |
+| id |  |  |
+| city |  |  |
+| state |  |  |
+| expiration |  |  |
+| memberid |  |  |
+| deleted |  |  |
+
+
+
+### 3. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+### 4. Get All
 
 
 Returns all AW affiliates.
@@ -622,10 +637,10 @@ URL: http://localhost:8000/affiliates
 
 
 
-### 3. Affiliates State
+### 5. Get By Key
 
 
-Query affiliates by state. Use state abbreviations: AL, AZ, AR...
+Returns a single AW affiliate.
 
 
 ***Endpoint:***
@@ -633,7 +648,7 @@ Query affiliates by state. Use state abbreviations: AL, AZ, AR...
 ```bash
 Method: GET
 Type: 
-URL: http://localhost:8000/affiliates-state
+URL: http://localhost:8000/affiliate
 ```
 
 
@@ -642,70 +657,54 @@ URL: http://localhost:8000/affiliates-state
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| state |  |  |
-
-
-
-### 4. Create Affiliate
-
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-affiliate
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| last |  |  |
-| url |  |  |
-| conemail |  |  |
-| members |  |  |
-| contact |  |  |
-| abstract |  |  |
-| description |  |  |
-| reaches |  |  |
-| volunteer |  |  |
 | id |  |  |
-| city |  |  |
-| state |  |  |
-| expiration |  |  |
-| memberid |  |  |
-| deleted |  |  |
 
 
 
-### 5. Delete Affiliate
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Affiliate
 
 
 
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-accident
-```
-
-
-
-***Query params:***
+***Query:***
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id | 11139 |  |
+| id | 98 |  |
 
 
 
-### 6. Update Affiliate
+##### I. Example Response: Affiliate
+```js
+{
+    "last": "Coastals Canoeists",
+    "url": "http://coastals.org/",
+    "conemail": "",
+    "members": "375",
+    "contact": "http://www.coastals.org/contact/contactform.php",
+    "abstract": "Coastals are people who love the blueways of Virginia and beyond. Coastals are whitewater canoeists and kayakers, flat water recreational kayakers, rafters and those who paddle any other people-powered watercraft you can imagine.",
+    "description": "Coastals is a family-oriented club dedicated to the enjoyment and advancement of paddlesports and consists of canoeists, kayakers and others from the southeastern U.S., but primarily from Virginia. Activities of the club include an active club volunteer-coordinated trip roster with trips for members, at all skill levels, happening nearly every weekend of the year.\r\n\r\nThe club holds quarterly meetings at various locations around Virginia featuring an evening meal, board of directors meeting, a trip on a nearby river, and a program of interest to paddlers. Coastals' website features an active forum for paddlers throughout the Commonwealth to communicate and discuss paddlesports.",
+    "reaches": "",
+    "volunteer": "654",
+    "id": "98",
+    "city": "Richmond",
+    "state": "VA",
+    "expiration": "2017-03-30",
+    "memberid": "99",
+    "deleted": 0
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 6. Update
 
 
 
@@ -735,7 +734,54 @@ URL: http://localhost:8000/update-affiliate
 
 
 
-### 1. Affiliate Reaches
+### 1. Create
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-affiliate-reach
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| reachid |  |  |
+| affiliateid |  |  |
+
+
+
+### 2. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-affiliate-reach
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| affiliateid |  |  |
+| reachid |  |  |
+
+
+
+### 3. Get All By Key
 
 
 Get all reaches associated with an AW affiliate by id.
@@ -800,7 +846,11 @@ URL: http://localhost:8000/affiliate-reaches
 
 
 
-### 2. Create Affiliate Reach
+## Alert
+
+
+
+### 1. Create
 
 
 
@@ -809,7 +859,7 @@ URL: http://localhost:8000/affiliate-reaches
 ```bash
 Method: POST
 Type: URLENCODED
-URL: http://localhost:8000/new-affiliate-reach
+URL: http://localhost:8000/new-alert
 ```
 
 
@@ -819,12 +869,14 @@ URL: http://localhost:8000/new-affiliate-reach
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| reachid |  |  |
-| affiliateid |  |  |
+| type |  |  |
+| value |  |  |
+| expiration |  |  |
+| priority |  |  |
 
 
 
-### 3. Delete Affiliate Reach
+### 2. Delete
 
 
 
@@ -833,7 +885,7 @@ URL: http://localhost:8000/new-affiliate-reach
 ```bash
 Method: DELETE
 Type: 
-URL: http://localhost:8000/delete-affiliate-reach
+URL: http://localhost:8000/delete-alert
 ```
 
 
@@ -842,16 +894,11 @@ URL: http://localhost:8000/delete-affiliate-reach
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| affiliateid |  |  |
-| reachid |  |  |
+| id |  |  |
 
 
 
-## Alert
-
-
-
-### 1. Alert
+### 3. Get By Key
 
 
 
@@ -906,55 +953,7 @@ URL: http://localhost:8000/alert
 
 
 
-### 2. Create Alert
-
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-alert
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| type |  |  |
-| value |  |  |
-| expiration |  |  |
-| priority |  |  |
-
-
-
-### 3. Delete Alert
-
-
-
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-alert
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id |  |  |
-
-
-
-### 4. Update Alert
+### 4. Update
 
 
 
@@ -984,7 +983,53 @@ URL: http://localhost:8000/update-alert
 
 
 
-### 1. Article
+### 1. Create
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-article
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| articleid | 34164 |  |
+| shortname | new-test-article |  |
+
+
+
+### 2. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-article
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| articleid | 34163 |  |
+
+
+
+### 3. Get By Key
 
 
 
@@ -1051,53 +1096,7 @@ URL: http://localhost:8000/article
 
 
 
-### 2. Create Article
-
-
-
-***Endpoint:***
-
-```bash
-Method: POST
-Type: URLENCODED
-URL: http://localhost:8000/new-article
-```
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| articleid | 34164 |  |
-| shortname | new-test-article |  |
-
-
-
-### 3. Delete Article
-
-
-
-***Endpoint:***
-
-```bash
-Method: DELETE
-Type: 
-URL: http://localhost:8000/delete-article
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| articleid | 34163 |  |
-
-
-
-### 4. Update Article
+### 4. Update
 
 
 
@@ -1132,29 +1131,7 @@ URL: http://localhost:8000/update-article
 
 
 
-### 1. Comment
-
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/comment
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 1250363 |  |
-
-
-
-### 2. Create Comment
+### 1. Create
 
 
 
@@ -1189,7 +1166,7 @@ URL: http://localhost:8000/new-comment
 
 
 
-### 3. Delete Comment
+### 2. Delete
 
 
 
@@ -1211,7 +1188,29 @@ URL: http://localhost:8000/delete-reach
 
 
 
-### 4. Reach Comments
+### 3. Get By Key
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/comment
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 1250363 |  |
+
+
+
+### 4. Get By Reach
 
 
 Get all comments for a reach.
@@ -1259,7 +1258,7 @@ URL: http://localhost:8000/reach-warnings
 
 
 
-### 6. Update Comment
+### 6. Update
 
 
 
@@ -1289,7 +1288,7 @@ URL: http://localhost:8000/update-reach
 
 
 
-### 1. Create Document
+### 1. Create
 
 
 
@@ -1320,7 +1319,7 @@ URL: http://localhost:8000/new-document
 
 
 
-### 2. Delete Document
+### 2. Delete
 
 
 
@@ -1342,7 +1341,7 @@ URL: http://localhost:8000/delete-document
 
 
 
-### 3. Document
+### 3. Get By Key
 
 
 
@@ -1405,7 +1404,7 @@ URL: http://localhost:8000/document
 
 
 
-### 4. Update Document
+### 4. Update
 
 
 
@@ -1440,7 +1439,7 @@ URL: http://localhost:8000/update-document
 
 
 
-### 1. Create Event
+### 1. Create
 
 
 
@@ -1485,7 +1484,7 @@ URL: http://localhost:8000/new-event
 
 
 
-### 2. Delete Event
+### 2. Delete
 
 
 
@@ -1507,83 +1506,7 @@ URL: http://localhost:8000/delete-event
 
 
 
-### 3. Event
-
-
-Get a single event record by id.
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/event
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 1 |  |
-
-
-
-***More example Requests/Responses:***
-
-
-##### I. Example Request: Event
-
-
-
-***Query:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 1 |  |
-
-
-
-##### I. Example Response: Event
-```js
-{
-    "id": 1,
-    "title": "Triple Crown",
-    "city": "Elizabethton",
-    "description": "Race the Watauga. \r\nRodeo at Hydro\r\nRodeo at Rock Island.\r\nRodeo at the Nolichucky.",
-    "cat": 8,
-    "uid": 1,
-    "state": "TN",
-    "url": null,
-    "orgname": null,
-    "orgaddress": null,
-    "orgphone": null,
-    "orgfax": null,
-    "orgemail": null,
-    "site": null,
-    "rivid": null,
-    "expectpart": null,
-    "expectspec": null,
-    "issue": null,
-    "media": null,
-    "nowreventinfo": 0,
-    "contact_id": null,
-    "updated": "2010-01-01T07:00:00.000Z",
-    "html_description": "",
-    "retired": 1
-}
-```
-
-
-***Status Code:*** 200
-
-<br>
-
-
-
-### 4. Events By State
+### 3. Get All By State
 
 
 Get events by state.
@@ -1713,7 +1636,83 @@ URL: http://localhost:8000/event-state
 
 
 
-### 5. Update Event
+### 4. Get By Key
+
+
+Get a single event record by id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/event
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 1 |  |
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Event
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 1 |  |
+
+
+
+##### I. Example Response: Event
+```js
+{
+    "id": 1,
+    "title": "Triple Crown",
+    "city": "Elizabethton",
+    "description": "Race the Watauga. \r\nRodeo at Hydro\r\nRodeo at Rock Island.\r\nRodeo at the Nolichucky.",
+    "cat": 8,
+    "uid": 1,
+    "state": "TN",
+    "url": null,
+    "orgname": null,
+    "orgaddress": null,
+    "orgphone": null,
+    "orgfax": null,
+    "orgemail": null,
+    "site": null,
+    "rivid": null,
+    "expectpart": null,
+    "expectspec": null,
+    "issue": null,
+    "media": null,
+    "nowreventinfo": 0,
+    "contact_id": null,
+    "updated": "2010-01-01T07:00:00.000Z",
+    "html_description": "",
+    "retired": 1
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 5. Update
 
 
 
@@ -1748,7 +1747,7 @@ URL: http://localhost:8000/update-event
 
 
 
-### 1. Create GIS Huc
+### 1. Create
 
 
 
@@ -1771,7 +1770,7 @@ URL: http://localhost:8000/new-gis-huc
 
 
 
-### 2. Delete GIS Huc
+### 2. Delete
 
 
 
@@ -1793,7 +1792,7 @@ URL: http://localhost:8000/delete-gis-huc
 
 
 
-### 3. GIS Huc
+### 3. Get By Key
 
 
 
@@ -1815,7 +1814,7 @@ URL: http://localhost:8000/gis-huc
 
 
 
-### 4. Update GIS Huc
+### 4. Update
 
 
 
@@ -1850,7 +1849,7 @@ URL: http://localhost:8000/update-gis-huc
 
 
 
-### 1. Create GIS State
+### 1. Create
 
 
 
@@ -1873,7 +1872,7 @@ URL: http://localhost:8000/new-gis-state
 
 
 
-### 2. Delete GIS State
+### 2. Delete
 
 
 
@@ -1895,29 +1894,7 @@ URL: http://localhost:8000/delete-gis-state
 
 
 
-### 3. GIS State
-
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/gis-states
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| gid |  |  |
-
-
-
-### 4. GIS Zip Country
+### 3. Get All By Country
 
 
 
@@ -1939,7 +1916,29 @@ URL: http://localhost:8000/gis-states-country
 
 
 
-### 5. Update GIS Zip
+### 4. Get All By State
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/gis-states
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| gid |  |  |
+
+
+
+### 5. Update
 
 
 
@@ -1974,7 +1973,7 @@ URL: http://localhost:8000/update-gis-zip
 
 
 
-### 1. Create GIS Zip
+### 1. Create
 
 
 
@@ -2004,7 +2003,7 @@ URL: http://localhost:8000/new-gis-zip
 
 
 
-### 2. Delete GIS Zip
+### 2. Delete
 
 
 
@@ -2026,7 +2025,29 @@ URL: http://localhost:8000/delete-gis-zip
 
 
 
-### 3. GIS Zip
+### 3. Get All By State
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/gis-zip-state
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| state |  |  |
+
+
+
+### 4. Get By Key
 
 
 
@@ -2084,29 +2105,7 @@ URL: http://localhost:8000/gis-zip
 
 
 
-### 4. GIS Zip State
-
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/gis-zip-state
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| state |  |  |
-
-
-
-### 5. Update GIS Zip
+### 5. Update
 
 
 
@@ -2141,7 +2140,7 @@ URL: http://localhost:8000/update-gis-zip
 
 
 
-### 1. Create Gage Reading Metric
+### 1. Create
 
 
 
@@ -2167,7 +2166,7 @@ URL: http://localhost:8000/new-gage-reading-metric
 
 
 
-### 2. Delete Gage Reading Metric
+### 2. Delete
 
 
 
@@ -2189,7 +2188,7 @@ URL: http://localhost:8000/delete-gage-reading-metric
 
 
 
-### 3. Gage Reading Metrics
+### 3. Get All
 
 
 Get all available gage metrics. For example, CFS, Ft, etc.
@@ -2345,7 +2344,7 @@ URL: http://localhost:8000/gage-reading-metrics
 
 
 
-### 4. Update Gage Reading Metric
+### 4. Update
 
 
 
@@ -2380,7 +2379,7 @@ URL: http://localhost:8000/update-gage-reading-metric
 
 
 
-### 1. Create Source
+### 1. Create
 
 
 
@@ -2403,7 +2402,7 @@ URL: http://localhost:8000/new-gage-source
 
 
 
-### 2. Delete Gage Source
+### 2. Delete
 
 
 
@@ -2425,7 +2424,7 @@ URL: http://localhost:8000/delete-gage-source
 
 
 
-### 3. Gage Sources
+### 3. Get All
 
 
 Get all recorded gage sources.
@@ -2725,7 +2724,7 @@ URL: http://localhost:8000/gage-sources
 
 
 
-### 4. Update Gage Source
+### 4. Update
 
 
 
@@ -2760,7 +2759,7 @@ URL: http://localhost:8000/update-gage-source
 
 
 
-### 1. Create Gage Update
+### 1. Create
 
 
 Create gage update record.
@@ -2787,7 +2786,7 @@ URL: http://localhost:8000/new-gage-update
 
 
 
-### 2. Delete Gage Update
+### 2. Delete
 
 
 Remove gage update record from database.
@@ -2811,7 +2810,7 @@ URL: http://localhost:8000/delete-gage-update
 
 
 
-### 3. Gage Updates
+### 3. Get By Key
 
 
 Get updates for a single gage. 
@@ -2911,7 +2910,7 @@ URL: http://localhost:8000/gage-updates
 
 
 
-### 4. Update Gage Update
+### 4. Update
 
 
 Edit an existing record.
@@ -2948,7 +2947,7 @@ URL: http://localhost:8000/update-accident
 
 
 
-### 1. Create Injury
+### 1. Create
 
 
 
@@ -2972,7 +2971,7 @@ URL: http://localhost:8000/new-injury
 
 
 
-### 2. Delete Injury
+### 2. Delete
 
 
 
@@ -2994,7 +2993,7 @@ URL: http://localhost:8000/delete-injury
 
 
 
-### 3. Injuries
+### 3. Get All
 
 
 
@@ -3068,7 +3067,7 @@ URL: http://localhost:8000/injuries
 
 
 
-### 4. Update Injury
+### 4. Update
 
 
 
@@ -3103,7 +3102,7 @@ URL: http://localhost:8000/update-state
 
 
 
-### 1. Create Layer
+### 1. Create
 
 
 
@@ -3133,7 +3132,7 @@ URL: http://localhost:8000/new-layer
 
 
 
-### 2. Delete Layer
+### 2. Delete
 
 
 
@@ -3155,7 +3154,23 @@ URL: http://localhost:8000/delete-layer
 
 
 
-### 3. Layer
+### 3. Get All
+
+
+Returns all tpoplogy records.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/layer-all
+```
+
+
+
+### 4. Get By Key
 
 
 Returns a single topology record.
@@ -3179,27 +3194,11 @@ URL: http://localhost:8000/layer
 
 
 
-### 4. Layer All
-
-
-Returns all tpoplogy records.
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/layer-all
-```
-
-
-
 ## Project
 
 
 
-### 1. Create Project
+### 1. Create
 
 
 
@@ -3226,7 +3225,7 @@ URL: http://localhost:8000/new-project
 
 
 
-### 2. Delete Project
+### 2. Delete
 
 
 
@@ -3248,7 +3247,7 @@ URL: http://localhost:8000/delete-project
 
 
 
-### 3. Project
+### 3. Get By Key
 
 
 
@@ -3306,7 +3305,7 @@ URL: http://localhost:8000/project
 
 
 
-### 4. Update Project
+### 4. Update
 
 
 
@@ -3336,7 +3335,7 @@ URL: http://localhost:8000/update-project
 
 
 
-### 1. Create Rapid
+### 1. Create
 
 
 
@@ -3365,7 +3364,7 @@ URL: http://localhost:8000/new-rapid
 
 
 
-### 2. Delete Rapid
+### 2. Delete
 
 
 
@@ -3387,7 +3386,7 @@ URL: http://localhost:8000/delete-reach
 
 
 
-### 3. Rapid
+### 3. Get By Key
 
 
 Get all rapids for a reach
@@ -3574,7 +3573,7 @@ URL: http://localhost:8000/rapid
 
 
 
-### 4. Reach Rapids
+### 4. Get By Reach
 
 
 Get all rapids for a reach
@@ -3701,7 +3700,7 @@ URL: http://localhost:8000/rapids
 
 
 
-### 5. Update Rapid
+### 5. Update
 
 
 
@@ -3741,7 +3740,7 @@ URL: http://localhost:8000/update-rapid
 
 
 
-### 1. Create Reach
+### 1. Create
 
 
 
@@ -3801,7 +3800,7 @@ URL: http://localhost:8000/new-reach
 
 
 
-### 2. Delete Reach
+### 2. Delete
 
 
 
@@ -3823,7 +3822,7 @@ URL: http://localhost:8000/delete-reach
 
 
 
-### 3. Reach
+### 3. Get By Key
 
 
 Get single reach by id
@@ -3940,7 +3939,7 @@ URL: http://localhost:8000/reach
 
 
 
-### 4. Update Reach
+### 4. Update
 
 
 See Create Reach for available fields.
@@ -3972,7 +3971,7 @@ URL: http://localhost:8000/update-reach
 
 
 
-### 1. Create State
+### 1. Create
 
 
 
@@ -3998,7 +3997,7 @@ URL: http://localhost:8000/new-state
 
 
 
-### 2. Delete State
+### 2. Delete
 
 
 
@@ -4020,7 +4019,7 @@ URL: http://localhost:8000/delete-state
 
 
 
-### 3. States
+### 3. Get All
 
 
 
@@ -4119,7 +4118,7 @@ URL: http://localhost:8000/states
 
 
 
-### 4. Update State
+### 4. Update
 
 
 
@@ -4154,7 +4153,7 @@ URL: http://localhost:8000/update-state
 
 
 
-### 1. Create Topology
+### 1. Create
 
 
 
@@ -4181,7 +4180,7 @@ URL: http://localhost:8000/new-topology
 
 
 
-### 2. Delete Topology
+### 2. Delete
 
 
 
@@ -4203,7 +4202,23 @@ URL: http://localhost:8000/delete-topology
 
 
 
-### 3. Topology
+### 3. Get All
+
+
+Returns all tpoplogy records.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/topology-all
+```
+
+
+
+### 4. Get By Key
 
 
 Returns a single topology record.
@@ -4227,23 +4242,7 @@ URL: http://localhost:8000/topology
 
 
 
-### 4. Topology All
-
-
-Returns all tpoplogy records.
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/topology-all
-```
-
-
-
-### 5. Update Topology
+### 5. Update
 
 
 
@@ -4273,7 +4272,7 @@ URL: http://localhost:8000/update-topology
 
 
 
-### 1. Create Trip Log
+### 1. Create
 
 
 
@@ -4311,7 +4310,7 @@ URL: http://localhost:8000/new-trip-log
 
 
 
-### 2. Delete Trip Log
+### 2. Delete
 
 
 
@@ -4333,7 +4332,7 @@ URL: http://localhost:8000/delete-trip-log
 
 
 
-### 3. Reach Trip Logs
+### 3. Get All By Key
 
 
 Get all trip logs associated with a reach.
@@ -4403,7 +4402,7 @@ URL: http://localhost:8000/trip-logs
 
 
 
-### 4. Update Trip Log
+### 4. Update
 
 
 
@@ -4438,7 +4437,7 @@ URL: http://localhost:8000/update-trip-log
 
 
 
-### 1. Create Trip Log Photo
+### 1. Create
 
 
 
@@ -4474,7 +4473,7 @@ URL: http://localhost:8000/new-trip-log-photo
 
 
 
-### 2. Delete Trip Log Photo
+### 2. Delete
 
 
 
@@ -4496,7 +4495,7 @@ URL: http://localhost:8000/delete-trip-log-photo
 
 
 
-### 3. Trip Log Photos
+### 3. Get All By Key
 
 
 Get all photos for a trip log.
@@ -4676,7 +4675,7 @@ URL: http://localhost:8000/trip-log-photos
 
 
 
-### 4. Update Trip Log Photo
+### 4. Update
 
 
 
@@ -4706,7 +4705,7 @@ URL: http://localhost:8000/update-trip-log-photo
 
 
 
-### 1. Create User
+### 1. Create
 
 
 
@@ -4770,7 +4769,7 @@ URL: http://localhost:8000/new-user
 
 
 
-### 2. Delete User
+### 2. Delete
 
 
 
@@ -4792,38 +4791,7 @@ URL: http://localhost:8000/delete-user
 
 
 
-### 3. Update User
-
-
-
-***Endpoint:***
-
-```bash
-Method: PUT
-Type: URLENCODED
-URL: http://localhost:8000/update-user
-```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| uid | 160558 |  |
-
-
-
-***Body:***
-
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| upass | update test |  |
-
-
-
-### 4. User
+### 3. Get By Key
 
 
 
@@ -4913,6 +4881,37 @@ URL: http://localhost:8000/user
 ***Status Code:*** 200
 
 <br>
+
+
+
+### 4. Update
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-user
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| uid | 160558 |  |
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| upass | update test |  |
 
 
 

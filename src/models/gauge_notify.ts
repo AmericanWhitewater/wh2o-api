@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_notify', {
     id: {
       type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     min: {
       type: DataTypes.REAL,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'minimum to email'
     },
     metric: {
@@ -48,5 +48,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'gauge_notify',
     schema: 'public'
-  });
-};
+  })
+}

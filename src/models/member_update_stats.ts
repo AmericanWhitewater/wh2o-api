@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('member_update_stats', {
     update_date: {
       type: DataTypes.DATE,
@@ -32,5 +32,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'member_update_stats',
     schema: 'wh2o'
-  });
-};
+  })
+}

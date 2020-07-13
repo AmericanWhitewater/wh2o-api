@@ -1,17 +1,17 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('comments', {
     uid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'user id that made the comment'
     },
     sectionid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'id of object from the section'
     },
     name: {
@@ -32,19 +32,19 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "nextval(comments_id_seq::regclass)",
+      defaultValue: 'nextval(comments_id_seq::regclass)',
       comment: 'comment ID'
     },
     section: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "river",
+      defaultValue: 'river',
       comment: 'section this applies to (river,photo,journal)'
     },
     type: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "comment",
+      defaultValue: 'comment',
       comment: 'type of comment (warning,complaint,comment)'
     },
     deleted: {
@@ -79,5 +79,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'comments',
     schema: 'wh2o'
-  });
-};
+  })
+}

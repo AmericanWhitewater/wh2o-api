@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_updates', {
     gauge_id: {
       type: DataTypes.INTEGER,
@@ -78,5 +78,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'gauge_updates',
     schema: 'public',
     hasTrigger: true
-  });
-};
+  })
+}

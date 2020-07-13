@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('jrpeople', {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     peoplelast: {
       type: DataTypes.TEXT,
@@ -19,5 +19,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'jrpeople',
     schema: 'wh2o'
-  });
-};
+  })
+}

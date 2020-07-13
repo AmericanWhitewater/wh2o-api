@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('security', {
     domain: {
       type: DataTypes.STRING,
@@ -28,5 +28,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'security',
     schema: 'wh2o'
-  });
-};
+  })
+}

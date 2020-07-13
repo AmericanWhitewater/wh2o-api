@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_personal_settings', {
     uid: {
       type: DataTypes.INTEGER,
@@ -37,5 +37,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'gauge_personal_settings',
     schema: 'public'
-  });
-};
+  })
+}

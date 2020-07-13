@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('contactinstance2contact', {
     instance: {
       type: DataTypes.STRING,
@@ -23,5 +23,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'contactinstance2contact',
     schema: 'wh2o'
-  });
-};
+  })
+}

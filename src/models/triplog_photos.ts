@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('triplog_photos', {
     id: {
       type: DataTypes.INTEGER,
@@ -72,5 +72,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'triplog_photos',
     schema: 'public'
-  });
-};
+  })
+}

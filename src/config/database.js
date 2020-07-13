@@ -5,11 +5,11 @@ const DataTypes = Sequelize.DataTypes
 const database = process.env.POSTGRES_DB || 'db'
 const host = process.env.POSTGRES_HOST || 'localhost'
 const user = process.env.POSTGRES_USER
-const pass = process.env.POSTGRES_PASSWORD 
+const pass = process.env.POSTGRES_PASSWORD
 
 if (!pass || !user) {
-  console.error('missing credentials');
-  process.exit();
+  console.error('missing credentials')
+  process.exit()
 }
 
 console.log(`--\n\nHOST: ${host}\n\n--`)
@@ -26,7 +26,7 @@ const pgClient = new Sequelize(
       freezeTableName: true,
       timestamps: false,
       hooks: {
-        beforeCreate() {
+        beforeCreate () {
           console.log('creating table')
         }
       }

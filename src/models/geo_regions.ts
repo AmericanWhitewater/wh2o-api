@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('geo_regions', {
     id: {
       type: DataTypes.STRING,
@@ -21,5 +21,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'geo_regions',
     schema: 'public'
-  });
-};
+  })
+}

@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('etap_cache', {
     id: {
       type: DataTypes.INTEGER,
@@ -38,5 +38,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'etap_cache',
     schema: 'public'
-  });
-};
+  })
+}

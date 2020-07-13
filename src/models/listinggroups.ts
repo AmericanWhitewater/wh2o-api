@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('listinggroups', {
     lgid: {
       type: DataTypes.BIGINT,
@@ -19,12 +19,12 @@ module.exports = function(sequelize, DataTypes) {
     inviteonly: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "1"
+      defaultValue: '1'
     },
     isrecruiting: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     description: {
       type: DataTypes.STRING,
@@ -37,26 +37,26 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     maxvolunteer: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     shoulddescribe: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     showvolunteers: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     }
   }, {
     sequelize,
     tableName: 'listinggroups',
     schema: 'wh2o'
-  });
-};
+  })
+}

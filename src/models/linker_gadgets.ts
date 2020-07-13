@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('linker_gadgets', {
     source: {
       type: DataTypes.STRING,
@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     is_list: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'is this resource associated with a single (id-based) resource or all resources regardless of id?'
     },
     state: {
@@ -41,5 +41,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'linker_gadgets',
     schema: 'wh2o'
-  });
-};
+  })
+}

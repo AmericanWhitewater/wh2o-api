@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('retval', {
     min: {
       type: DataTypes.INTEGER,
@@ -10,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'retval',
     schema: 'public'
-  });
-};
+  })
+}

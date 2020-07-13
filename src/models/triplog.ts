@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('triplog', {
     id: {
       type: DataTypes.INTEGER,
@@ -71,7 +71,7 @@ module.exports = function(sequelize, DataTypes) {
     edit_option: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'last photo count, should be updated in code by photo uploads.'
     }
   }, {
@@ -79,5 +79,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'triplog',
     schema: 'public',
     hasTrigger: true
-  });
-};
+  })
+}

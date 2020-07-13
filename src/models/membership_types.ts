@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('membership_types', {
     id: {
       type: DataTypes.BIGINT,
@@ -41,12 +41,12 @@ module.exports = function(sequelize, DataTypes) {
     fundstopremium: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'how much money goes to product if that is selected'
     }
   }, {
     sequelize,
     tableName: 'membership_types',
     schema: 'wh2o'
-  });
-};
+  })
+}

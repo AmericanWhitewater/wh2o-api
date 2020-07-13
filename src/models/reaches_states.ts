@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('reaches_states', {
     id: {
       type: DataTypes.INTEGER,
@@ -24,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'reaches_states',
     schema: 'public',
     hasTrigger: true
-  });
-};
+  })
+}

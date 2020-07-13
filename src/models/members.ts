@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('members', {
     uname: {
       type: DataTypes.CHAR(15),
@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     memnum: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'eTap Acct#',
       primaryKey: true
     },
@@ -125,12 +125,12 @@ module.exports = function(sequelize, DataTypes) {
     annual_renew: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'annual renewal flag, prevents warning user too early'
     }
   }, {
     sequelize,
     tableName: 'members',
     schema: 'wh2o'
-  });
-};
+  })
+}

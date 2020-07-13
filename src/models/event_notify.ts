@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('event_notify', {
     id: {
       type: DataTypes.INTEGER,
@@ -20,5 +20,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'event_notify',
     schema: 'public'
-  });
-};
+  })
+}

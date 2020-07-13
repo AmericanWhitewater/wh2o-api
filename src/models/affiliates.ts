@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('affiliates', {
     last: {
       type: DataTypes.STRING,
@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       primaryKey: true
     },
     city: {
@@ -55,21 +55,21 @@ module.exports = function(sequelize, DataTypes) {
     expiration: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     memberid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     deleted: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0"
+      defaultValue: '0'
     }
   }, {
     sequelize,
     tableName: 'affiliates',
     schema: 'wh2o'
-  });
-};
+  })
+}

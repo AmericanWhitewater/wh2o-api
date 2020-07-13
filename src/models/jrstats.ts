@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('jrstats', {
     issueyear: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       primaryKey: true
     },
     artdate: {
@@ -15,18 +15,18 @@ module.exports = function(sequelize, DataTypes) {
     issuenumber: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       primaryKey: true
     },
     scanned_pdfs: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     total_articles: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     pages: {
       type: DataTypes.BIGINT,
@@ -35,11 +35,11 @@ module.exports = function(sequelize, DataTypes) {
     offset: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      defaultValue: "0"
+      defaultValue: '0'
     }
   }, {
     sequelize,
     tableName: 'jrstats',
     schema: 'wh2o'
-  });
-};
+  })
+}

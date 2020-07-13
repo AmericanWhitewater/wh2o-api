@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('awarticles', {
     articleid: {
       type: DataTypes.BIGINT,
@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     uid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     releasedate: {
       type: DataTypes.DATE,
@@ -64,12 +64,12 @@ module.exports = function(sequelize, DataTypes) {
     deleted: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'tells if article is deleted'
     }
   }, {
     sequelize,
     tableName: 'awarticles',
     schema: 'wh2o'
-  });
-};
+  })
+}

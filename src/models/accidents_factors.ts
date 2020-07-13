@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('accidents_factors', {
     accident_id: {
       type: DataTypes.INTEGER,
@@ -16,5 +16,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'accidents_factors',
     schema: 'public'
-  });
-};
+  })
+}

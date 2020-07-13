@@ -2,8 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8000
-const bodyParser = require("body-parser");
-const middleware = require("./middleware")
+const bodyParser = require('body-parser')
+const middleware = require('./middleware')
 const routes = require('./routes')
 
 app.use(bodyParser.urlencoded({ extended: false }))

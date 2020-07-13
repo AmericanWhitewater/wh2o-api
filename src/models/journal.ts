@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('journal', {
     artid: {
       type: DataTypes.BIGINT,
@@ -19,27 +19,27 @@ module.exports = function(sequelize, DataTypes) {
     startpage: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     endpage: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     volume: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     issuenumber: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     issueyear: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     scanner_uid: {
       type: DataTypes.BIGINT,
@@ -57,5 +57,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'journal',
     schema: 'wh2o'
-  });
-};
+  })
+}

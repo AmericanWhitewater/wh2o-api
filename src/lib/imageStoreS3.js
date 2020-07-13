@@ -17,5 +17,5 @@ module.exports.save = (name, data) => {
         resolve(`//wh2o-drewalth.s3.amazonaws.com/${params.Key}`)
       }
     })
-  });
+  })
 }

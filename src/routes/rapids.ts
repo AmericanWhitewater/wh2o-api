@@ -1,4 +1,4 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const Rapid = require('../models/rapids')(pgClient, DataTypes)
 
 module.exports = app => {
@@ -9,7 +9,7 @@ module.exports = app => {
         reachid: req.query.reachid
       }
     }).then(result => {
-      res.send(result).status(200);
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
@@ -25,12 +25,12 @@ module.exports = app => {
       },
     })
       .then((result) => {
-        res.send(result).status(200);
+        res.send(result).status(200)
       })
       .catch((err) => {
-        console.log(err);
-        res.send(err).status(404);
-      });
+        console.log(err)
+        res.send(err).status(404)
+      })
 
   })
 
@@ -55,7 +55,7 @@ module.exports = app => {
       res.send('Rapid updated').status(200)
     }).catch(err => {
       console.log('err: ', err)
-      res.send({message: err}).status(500)
+      res.send({ message: err }).status(500)
     })
 
   })

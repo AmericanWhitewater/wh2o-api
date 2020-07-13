@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('rapids', {
     reachid: {
       type: DataTypes.INTEGER,
@@ -74,12 +74,12 @@ module.exports = function(sequelize, DataTypes) {
     rlat: {
       type: DataTypes.DOUBLE,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     rlon: {
       type: DataTypes.DOUBLE,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     approximate: {
       type: DataTypes.BOOLEAN,
@@ -117,5 +117,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'rapids',
     schema: 'public',
     hasTrigger: true
-  });
-};
+  })
+}

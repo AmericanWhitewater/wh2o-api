@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "2f1223a1-6f96-453d-a696-b9e2e502b1d0",
 		"name": "wh2o-api",
-		"description": "The following is a collection of available endpoints.\n\nIf you would like to request that an endpoint be added, edited, or removed, please contact [@drewalth](https://github.com/drewalth).\n",
+		"description": "The following is a collection of available endpoints.\n\n---",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -10,7 +10,7 @@
 			"name": "Accident",
 			"item": [
 				{
-					"name": "Accident",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -88,7 +88,7 @@
 					]
 				},
 				{
-					"name": "Create Accident",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -241,31 +241,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Accident",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-accident?id=11139",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-accident"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "11139"
-								}
-							]
-						},
-						"description": "Delete an accident report."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Accident",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -298,6 +274,30 @@
 						"description": "See Create Accident for available fields."
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						},
+						"description": "Delete an accident report."
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -306,7 +306,7 @@
 			"name": "Accident Causes",
 			"item": [
 				{
-					"name": "Accident Cause",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -384,7 +384,7 @@
 					]
 				},
 				{
-					"name": "Create Accident Cause",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -416,7 +416,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Accident Cause",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -449,7 +449,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Accident Cause",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -478,7 +478,7 @@
 			"name": "Accident Factors",
 			"item": [
 				{
-					"name": "Accident Factors",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -556,7 +556,7 @@
 					]
 				},
 				{
-					"name": "Create Accident Factor",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -588,7 +588,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Accident Factors",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -621,7 +621,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Accident Cause",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -673,7 +673,7 @@
 			"name": "Affiliate",
 			"item": [
 				{
-					"name": "Affiliate",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -751,7 +751,7 @@
 					]
 				},
 				{
-					"name": "Affiliates",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -817,7 +817,7 @@
 					]
 				},
 				{
-					"name": "Affiliates State",
+					"name": "By State",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -841,7 +841,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Affiliate",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -938,7 +938,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Affiliate",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -965,7 +965,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Affiliate",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -994,7 +994,7 @@
 			"name": "Topology",
 			"item": [
 				{
-					"name": "Topology",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1018,7 +1018,7 @@
 					"response": []
 				},
 				{
-					"name": "Topology All",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1036,7 +1036,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Topology",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1083,7 +1083,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Topology",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1110,7 +1110,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Topology",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -1139,7 +1139,7 @@
 			"name": "Layer",
 			"item": [
 				{
-					"name": "Layer",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1163,7 +1163,7 @@
 					"response": []
 				},
 				{
-					"name": "Layer All",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1181,7 +1181,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Layer",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1243,7 +1243,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Layer",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -1272,7 +1272,7 @@
 			"name": "Affiliate Reach",
 			"item": [
 				{
-					"name": "Affiliate Reaches",
+					"name": "Get All By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1350,7 +1350,7 @@
 					]
 				},
 				{
-					"name": "Create Affiliate Reach",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1382,7 +1382,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Affiliate Reach",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -1415,7 +1415,7 @@
 			"name": "Alert",
 			"item": [
 				{
-					"name": "Alert",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1492,7 +1492,7 @@
 					]
 				},
 				{
-					"name": "Create Alert",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1534,7 +1534,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Alert",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1568,7 +1568,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Alert",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -1597,7 +1597,7 @@
 			"name": "Trip Log",
 			"item": [
 				{
-					"name": "Reach Trip Logs",
+					"name": "Get All By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1675,7 +1675,7 @@
 					]
 				},
 				{
-					"name": "Create Trip Log",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1777,7 +1777,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Trip Log",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1810,7 +1810,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Trip Log",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -1839,7 +1839,7 @@
 			"name": "Trip Log Photo",
 			"item": [
 				{
-					"name": "Trip Log Photos",
+					"name": "Get All By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1917,7 +1917,7 @@
 					]
 				},
 				{
-					"name": "Create Trip Log Photo",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2009,7 +2009,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Trip Log Photo",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2036,7 +2036,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Trip Log Photo",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -2065,7 +2065,7 @@
 			"name": "States",
 			"item": [
 				{
-					"name": "States",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2130,7 +2130,7 @@
 					]
 				},
 				{
-					"name": "Create State",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2172,7 +2172,7 @@
 					"response": []
 				},
 				{
-					"name": "Update State",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2205,7 +2205,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete State",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -2234,7 +2234,7 @@
 			"name": "Documents",
 			"item": [
 				{
-					"name": "Document",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2311,7 +2311,7 @@
 					]
 				},
 				{
-					"name": "Create Document",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2378,7 +2378,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Document",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2411,7 +2411,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Document",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -2440,7 +2440,7 @@
 			"name": "Injuries",
 			"item": [
 				{
-					"name": "Injuries",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2505,7 +2505,7 @@
 					]
 				},
 				{
-					"name": "Create Injury",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2537,7 +2537,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Injury",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2570,7 +2570,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Injury",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -2621,7 +2621,7 @@
 			"name": "Gage Update",
 			"item": [
 				{
-					"name": "Gage Updates",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2699,7 +2699,7 @@
 					]
 				},
 				{
-					"name": "Create Gage Update",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2737,31 +2737,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Gage Update",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-gage-update?gauge_id=251541",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-gage-update"
-							],
-							"query": [
-								{
-									"key": "gauge_id",
-									"value": "251541"
-								}
-							]
-						},
-						"description": "Remove gage update record from database."
-					},
-					"response": []
-				},
-				{
-					"name": "Update Gage Update",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2793,6 +2769,30 @@
 						"description": "Edit an existing record."
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gage-update?gauge_id=251541",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gage-update"
+							],
+							"query": [
+								{
+									"key": "gauge_id",
+									"value": "251541"
+								}
+							]
+						},
+						"description": "Remove gage update record from database."
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -2801,7 +2801,7 @@
 			"name": "Gage Reading Metric",
 			"item": [
 				{
-					"name": "Gage Reading Metrics",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2867,7 +2867,7 @@
 					]
 				},
 				{
-					"name": "Create Gage Reading Metric",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -2909,7 +2909,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Gage Reading Metric",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -2942,7 +2942,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Gage Reading Metric",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -2971,7 +2971,7 @@
 			"name": "Gage Source",
 			"item": [
 				{
-					"name": "Gage Sources",
+					"name": "Get All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3037,7 +3037,7 @@
 					]
 				},
 				{
-					"name": "Create Source",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3082,7 +3082,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Gage Source",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -3115,7 +3115,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Gage Source",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -3144,7 +3144,7 @@
 			"name": "Event",
 			"item": [
 				{
-					"name": "Event",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3222,7 +3222,7 @@
 					]
 				},
 				{
-					"name": "Events By State",
+					"name": "Get All By State",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3300,7 +3300,7 @@
 					]
 				},
 				{
-					"name": "Create Event",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3437,7 +3437,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Event",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -3470,7 +3470,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Event",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -3499,7 +3499,7 @@
 			"name": "GIS Zip",
 			"item": [
 				{
-					"name": "GIS Zip",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3576,7 +3576,7 @@
 					]
 				},
 				{
-					"name": "GIS Zip State",
+					"name": "Get All By State",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3599,7 +3599,7 @@
 					"response": []
 				},
 				{
-					"name": "Create GIS Zip",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3661,30 +3661,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete GIS Zip",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-gis-zip?gid=30010",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-gis-zip"
-							],
-							"query": [
-								{
-									"key": "gid",
-									"value": "30010"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update GIS Zip",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -3715,6 +3692,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-zip?gid=30010",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-zip"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "30010"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -3723,7 +3723,7 @@
 			"name": "GIS State",
 			"item": [
 				{
-					"name": "GIS State",
+					"name": "Get All By State",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3746,7 +3746,7 @@
 					"response": []
 				},
 				{
-					"name": "GIS Zip Country",
+					"name": "Get All By Country",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3769,7 +3769,7 @@
 					"response": []
 				},
 				{
-					"name": "Create GIS State",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3796,30 +3796,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete GIS State",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-gis-state?gid=",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-gis-state"
-							],
-							"query": [
-								{
-									"key": "gid",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update GIS Zip",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -3850,6 +3827,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-state?gid=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-state"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -3858,7 +3858,7 @@
 			"name": "GIS Huc",
 			"item": [
 				{
-					"name": "GIS Huc",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3881,7 +3881,7 @@
 					"response": []
 				},
 				{
-					"name": "Create GIS Huc",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3908,30 +3908,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete GIS Huc",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-gis-huc?gid=2159",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-gis-huc"
-							],
-							"query": [
-								{
-									"key": "gid",
-									"value": "2159"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update GIS Huc",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -3962,6 +3939,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-gis-huc?gid=2159",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-gis-huc"
+							],
+							"query": [
+								{
+									"key": "gid",
+									"value": "2159"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -3970,7 +3970,7 @@
 			"name": "Article",
 			"item": [
 				{
-					"name": "Article",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4047,7 +4047,7 @@
 					]
 				},
 				{
-					"name": "Create Article",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4079,30 +4079,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Article",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-article?articleid=34163",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-article"
-							],
-							"query": [
-								{
-									"key": "articleid",
-									"value": "34163"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Article",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -4133,6 +4110,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-article?articleid=34163",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-article"
+							],
+							"query": [
+								{
+									"key": "articleid",
+									"value": "34163"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -4141,7 +4141,7 @@
 			"name": "Project",
 			"item": [
 				{
-					"name": "Project",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4218,7 +4218,7 @@
 					]
 				},
 				{
-					"name": "Create Project",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4265,30 +4265,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Project",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-project?id=201",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-project"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "201"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Project",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -4313,6 +4290,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-project?id=201",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-project"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "201"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -4321,7 +4321,7 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "User",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4398,7 +4398,7 @@
 					]
 				},
 				{
-					"name": "Create User",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4630,30 +4630,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete User",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-user?uid=160557",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-user"
-							],
-							"query": [
-								{
-									"key": "uid",
-									"value": "160557"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update User",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -4689,6 +4666,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-user?uid=160557",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-user"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "160557"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -4697,7 +4697,7 @@
 			"name": "Rapids",
 			"item": [
 				{
-					"name": "Rapid",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4828,7 +4828,7 @@
 					]
 				},
 				{
-					"name": "Reach Rapids",
+					"name": "Get By Reach",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -4906,7 +4906,7 @@
 					]
 				},
 				{
-					"name": "Create Rapid",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4963,30 +4963,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Rapid",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-reach?id=11139",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-reach"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "11139"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Rapid",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -5042,6 +5019,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -5072,7 +5072,7 @@
 			"name": "Reach",
 			"item": [
 				{
-					"name": "Reach",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -5150,7 +5150,7 @@
 					]
 				},
 				{
-					"name": "Create Reach",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -5362,30 +5362,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Reach",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-reach?id=",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-reach"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Reach",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -5411,6 +5388,29 @@
 						"description": "See Create Reach for available fields."
 					},
 					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -5419,7 +5419,7 @@
 			"name": "Comments",
 			"item": [
 				{
-					"name": "Comment",
+					"name": "Get By Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -5442,7 +5442,7 @@
 					"response": []
 				},
 				{
-					"name": "Reach Comments",
+					"name": "Get By Reach",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -5490,7 +5490,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Comment",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -5577,30 +5577,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Comment",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/delete-reach?id=11139",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"delete-reach"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "11139"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Comment",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -5620,6 +5597,29 @@
 								{
 									"key": "id",
 									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-reach?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-reach"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
 								}
 							]
 						}
@@ -5654,7 +5654,7 @@
 	],
 	"variable": [
 		{
-			"id": "d340b2f1-2dac-42bd-9107-b5c5ca167772",
+			"id": "985dfe6b-7811-48f5-8600-b3280d0e64ed",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

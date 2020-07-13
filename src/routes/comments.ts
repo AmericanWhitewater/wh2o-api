@@ -1,4 +1,4 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const Comment = require('../models/comments')(pgClient, DataTypes)
 
 module.exports = app => {

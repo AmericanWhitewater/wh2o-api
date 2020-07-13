@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('jrriver', {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       primaryKey: true
     },
     theriver: {
@@ -17,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'jrriver',
     schema: 'wh2o'
-  });
-};
+  })
+}

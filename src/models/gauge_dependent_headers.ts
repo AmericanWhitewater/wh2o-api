@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_dependent_headers', {
     sourceid: {
       type: DataTypes.INTEGER,
@@ -20,13 +20,13 @@ module.exports = function(sequelize, DataTypes) {
     comment: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "NULL",
+      defaultValue: 'NULL',
       comment: 'comment to describe this gauge relationship'
     },
     metricid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'metric to describe'
     },
     estimated: {
@@ -51,7 +51,7 @@ module.exports = function(sequelize, DataTypes) {
     uid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'user id'
     },
     excluded: {
@@ -64,5 +64,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'gauge_dependent_headers',
     schema: 'public'
-  });
-};
+  })
+}

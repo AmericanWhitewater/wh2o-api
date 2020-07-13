@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('linker_lists', {
     sourcecomp: {
       type: DataTypes.STRING,
@@ -36,5 +36,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'linker_lists',
     schema: 'wh2o'
-  });
-};
+  })
+}

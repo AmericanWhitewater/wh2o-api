@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('users', {
     uid: {
       type: DataTypes.BIGINT,
@@ -169,7 +169,7 @@ module.exports = function(sequelize, DataTypes) {
     annual_renew: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'annual renewal flag, prevents warning user too early'
     },
     code: {
@@ -191,7 +191,7 @@ module.exports = function(sequelize, DataTypes) {
     epassword: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "NULL",
+      defaultValue: 'NULL',
       comment: 'encrypted password.'
     },
     remember_token: {
@@ -210,5 +210,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'users',
     schema: 'wh2o'
-  });
-};
+  })
+}

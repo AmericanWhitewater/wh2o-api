@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_ws2ts', {
     write_sequence: {
       type: DataTypes.INTEGER,
@@ -17,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'gauge_ws2ts',
     schema: 'public'
-  });
-};
+  })
+}

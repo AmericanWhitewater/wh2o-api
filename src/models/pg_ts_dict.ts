@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('pg_ts_dict', {
     dict_name: {
       type: DataTypes.TEXT,
@@ -27,5 +27,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'pg_ts_dict',
     schema: 'public'
-  });
-};
+  })
+}

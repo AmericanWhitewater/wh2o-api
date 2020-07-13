@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('parameter_cache', {
     key: {
       type: DataTypes.CHAR(10),
@@ -19,5 +19,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'parameter_cache',
     schema: 'wh2o'
-  });
-};
+  })
+}

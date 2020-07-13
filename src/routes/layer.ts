@@ -1,17 +1,17 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const Layer = require('../models/layer')(pgClient, DataTypes)
 
 module.exports = app => {
-  app.get("/layer-all", (req, res) => {
+  app.get('/layer-all', (req, res) => {
     Layer.findAll()
       .then((result) => {
-        res.send(result).status(200);
+        res.send(result).status(200)
       })
       .catch((err) => {
-        console.log(err);
-        res.send(err).status(404);
-      });
-  });
+        console.log(err)
+        res.send(err).status(404)
+      })
+  })
 
   app.get('/layer', (req, res) => {
 
@@ -20,7 +20,7 @@ module.exports = app => {
         layer_id: req.query.layer_id
       }
     }).then(result => {
-      res.send(result).status(200);
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

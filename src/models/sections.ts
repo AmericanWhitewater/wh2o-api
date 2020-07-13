@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('sections', {
     name: {
       type: DataTypes.STRING,
@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     preload: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     description: {
       type: DataTypes.STRING,
@@ -32,5 +32,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'sections',
     schema: 'wh2o'
-  });
-};
+  })
+}

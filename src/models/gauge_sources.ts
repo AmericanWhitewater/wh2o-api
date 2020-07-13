@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_sources', {
     source: {
       type: DataTypes.STRING,
@@ -21,13 +21,13 @@ module.exports = function(sequelize, DataTypes) {
     update_type: {
       type: DataTypes.CHAR(1),
       allowNull: false,
-      defaultValue: "h",
+      defaultValue: 'h',
       comment: 'm - manual (no programmatic updates) h - header based (uses the last_update and update frequency to serve a list of headers needing readings ) r - reading based (uses incoming readings to to populate the header table later ).'
     },
     update_frequency: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'on reading-based updates (r) this is the interval to update on in seconds, on header-based gauges (h) this is the interval to update gauge headers on in seconds.'
     },
     update_start_time: {
@@ -61,5 +61,5 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'gauge_sources',
     schema: 'public'
-  });
-};
+  })
+}

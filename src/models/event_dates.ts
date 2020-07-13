@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('event_dates', {
     event_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "nextval(event_dateseq::regclass)"
+      defaultValue: 'nextval(event_dateseq::regclass)'
     },
     evdate: {
       type: DataTypes.DATEONLY,
@@ -14,12 +14,12 @@ module.exports = function(sequelize, DataTypes) {
     detail_description: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     batchid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "nextval(event_datesbidseq::regclass)"
+      defaultValue: 'nextval(event_datesbidseq::regclass)'
     },
     starttime: {
       type: DataTypes.TIME,
@@ -48,12 +48,12 @@ module.exports = function(sequelize, DataTypes) {
     ed_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "nextval(event_dateseq::regclass)",
+      defaultValue: 'nextval(event_dateseq::regclass)',
       primaryKey: true
     }
   }, {
     sequelize,
     tableName: 'event_dates',
     schema: 'public'
-  });
-};
+  })
+}

@@ -1,4 +1,4 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const GISZip = require('../models/gis_zips')(pgClient, DataTypes)
 
 module.exports = app => {

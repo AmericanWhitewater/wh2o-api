@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('layer', {
     topology_id: {
       type: DataTypes.INTEGER,
@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     level: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     child_id: {
       type: DataTypes.INTEGER,
@@ -49,5 +49,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'layer',
     schema: 'topology',
     hasTrigger: true
-  });
-};
+  })
+}

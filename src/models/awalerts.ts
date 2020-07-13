@@ -1,11 +1,11 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('awalerts', {
     articleid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0",
+      defaultValue: '0',
       primaryKey: true
     },
     type: {
@@ -25,11 +25,11 @@ module.exports = function(sequelize, DataTypes) {
     priority: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     }
   }, {
     sequelize,
     tableName: 'awalerts',
     schema: 'wh2o'
-  });
-};
+  })
+}

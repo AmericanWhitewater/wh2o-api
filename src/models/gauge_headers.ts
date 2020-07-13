@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_headers', {
     state: {
       type: DataTypes.STRING,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     source: {
       type: DataTypes.STRING,
       allowNull: false,
-      comment: "look at guage_source. sample values include: usgs, tva, dflows",
+      comment: 'look at guage_source. sample values include: usgs, tva, dflows',
       references: {
         model: {
           tableName: 'gauge_sources',
@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
     update_frequency: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'Update frequency specified in seconds > 0. 0 = disabled.'
     },
     county: {
@@ -55,13 +55,13 @@ module.exports = function(sequelize, DataTypes) {
     glat: {
       type: DataTypes.DOUBLE,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'gauge lat and lon, if specified will update the geometry column. '
     },
     glon: {
       type: DataTypes.DOUBLE,
       allowNull: true,
-      defaultValue: "0",
+      defaultValue: '0',
       comment: 'see glat'
     },
     update_start_time: {
@@ -82,13 +82,13 @@ module.exports = function(sequelize, DataTypes) {
     timezone: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "GMT",
+      defaultValue: 'GMT',
       comment: 'the timezone (from gnu\'s time library) for storing date stamps. We normalize all date stamps with this time zone after an update.'
     },
     update_user_frequency: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      defaultValue: "1",
+      defaultValue: '1',
       comment: '# of seconds to update the gauge, 0 = ignore, and 1 = 1x/sec, etc...'
     },
     loc: {
@@ -139,5 +139,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'gauge_headers',
     schema: 'public',
     hasTrigger: true
-  });
-};
+  })
+}

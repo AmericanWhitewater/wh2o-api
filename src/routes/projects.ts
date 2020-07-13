@@ -1,4 +1,4 @@
-import { pgClient, DataTypes } from "../config";
+import { pgClient, DataTypes } from '../config'
 const Project = require('../models/projects')(pgClient, DataTypes)
 
 module.exports = app => {
