@@ -4,7 +4,6 @@
 The following is a collection of available endpoints.
 
 
-
 ## Accident
 
 
@@ -869,10 +868,9 @@ URL: http://localhost:8000/new-alert
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| type |  |  |
-| value |  |  |
-| expiration |  |  |
-| priority |  |  |
+| articleid | 34162 |  |
+| type | rgnews |  |
+| value | NW |  |
 
 
 
@@ -3194,6 +3192,182 @@ URL: http://localhost:8000/layer
 
 
 
+## Members
+
+
+
+### 1. Create
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/new-affiliate
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| last |  |  |
+| url |  |  |
+| conemail |  |  |
+| members |  |  |
+| contact |  |  |
+| abstract |  |  |
+| description |  |  |
+| reaches |  |  |
+| volunteer |  |  |
+| id |  |  |
+| city |  |  |
+| state |  |  |
+| expiration |  |  |
+| memberid |  |  |
+| deleted |  |  |
+
+
+
+### 2. Delete
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: 
+URL: http://localhost:8000/delete-accident
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 11139 |  |
+
+
+
+### 3. Get All
+
+
+Returns all AW affiliates.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/members
+```
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Affiliates
+
+
+
+##### I. Example Response: Affiliates
+```js
+[
+    {
+        "last": "Big Thompson Watershed Forum",
+        "url": "http://www.btwatershed.org/",
+        "conemail": "zshelley@btwatershed.org",
+        "members": "0",
+        "contact": "Zack Shelley",
+        "abstract": "",
+        "description": "",
+        "reaches": "",
+        "volunteer": "0",
+        "id": "4008",
+        "city": "Loveland",
+        "state": "CO",
+        "expiration": "2008-08-16",
+        "memberid": "28872",
+        "deleted": 1
+    },
+    {
+        "last": "Keelhaulers Canoe Club",
+        "url": "http://keelhauler.org/kh.htm",
+        "conemail": "keelhauler@yahoo.com",
+        "members": "300",
+        "contact": "WebMeister and Membership Chair John Kobak",
+        "abstract": "Paddling in OH, PA, WV, and wherever there's water!",
+        "description": "<center><img src=\"http://keelhauler.org/newlogoweb.jpg\"></center><br>Centered in the Cleveland, OH, area, Keel-haulers is an active club with <a href=\"http://www.keelhauler.org/khcc/tripschedule.htm\">a full trip schedule</a>. Our 100-page yearbook contains a lot of info, including maps to local rivers and a self-consistent ranking of over a hundred international whitewater rivers. The club is open to all <a href=\"http://www.keelhauler.org/khcc/khcapp.htm\">(Print an Application)</a>; dues are $20/year.<br>\r\nThe club website has a very active <a href=\"http://www.keelhauler.org/khcc/khcads.htm\">Used Boats and Equipment</a> page and a <a href=\"http://keelhauler.org/phpBB/viewforum.php?f=2\">Message Board</a>.\r\n",
+        "reaches": null,
+        "volunteer": "358",
+        "id": "713",
+        "city": "Cleveland",
+        "state": "OH",
+        "expiration": "2019-05-24",
+        "memberid": "706",
+        "deleted": 0
+    },
+    {
+        "last": "Warren Wilson College Paddling Club",
+        "url": "",
+        "conemail": "bfarthing@warren-wilson.edu",
+        "members": "0",
+        "contact": "Brit Farthing, 828-771-3004",
+        "abstract": "",
+        "description": "",
+        "reaches": null,
+        "volunteer": "0",
+        "id": "1000004",
+        "city": "Asheville",
+        "state": "NC",
+        "expiration": "2006-08-26",
+        "memberid": "17832",
+        "deleted": 1
+    }    
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 4. Update
+
+
+
+***Endpoint:***
+
+```bash
+Method: PUT
+Type: URLENCODED
+URL: http://localhost:8000/update-affiliate
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
+***Body:***
+
+
+
 ## Project
 
 
@@ -3600,7 +3774,307 @@ URL: http://localhost:8000/rapids
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: Reach Rapids
+##### I. Example Request: Get By Reach
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| reachid | 1039 |  |
+
+
+
+##### I. Example Response: Get By Reach
+```js
+[
+    {
+        "reachid": 1039,
+        "rapidid": 658,
+        "name": "Pinball / First Rapid",
+        "distance": 0.4,
+        "difficulty": "II",
+        "description": "<p>\n\tPinaball / 1st Rapid is the 1st horizon line that you come to. Almost all paddlers will run the opening left of center. At the bottom is a rock squarely in the most direct path. One method is to boof left into an eddy above and left of the rock. This is fairly easy. The other method (shown in the photo) is to angle right of the bottom rock. The problem is that there is a hidden underwater rock that you will hit if you cheat and head right too soon. It will pinball you into the rock at the bottom which you are trying to avoid. This is much more of a problem at lower water levels. At higher levels the pinball rock is further under water and you can start right earlier. I&#39;m leaving the old text below.</p>\n<p>\n\tRun the left hand chute! The right hand chute (which appears to be the obvious route) runs into a pinning rock.</p>\n",
+        "photoid": 882130,
+        "videoid": 0,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 3750,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 659,
+        "name": "Stairstep Rapid",
+        "distance": 1,
+        "difficulty": "III+",
+        "description": "<p>\n\tStairstep is the 1st horizon line after Pinball. The first 3 steps are not large, but by the 4th one you need to be lined up properly to run the big drop into the hole (not a keeper). This is followed by a succession of fairly large breaking waves. Stairstep gets harder with higher water levels; above a foot it is fairly beefy. &nbsp;Next to the 1st step there is a large boulder in the center of the river (boaters will pass to the right of it) with a fairly large eddy behind it. A lot of boaters catch this eddy. You can do so but be aware that there is a sieve at the lower end of that eddy that a few people have been sucked into. Fortunately all flushed out. The tree trunk that was on river right has been gone for a couple years. &nbsp;</p>\n",
+        "photoid": 882307,
+        "videoid": 0,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 7538,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 660,
+        "name": "Suddy Hole",
+        "distance": 1.9,
+        "difficulty": "III+",
+        "description": "<p>\n\tSuddy Hole consists of two drops. Most boaters will eddy out after the 1st. As you look at the horizon line of the second, you will see a &quot;dead&quot; tree across the creek and at the bottom of the rapid. This tree is still partly alive and has a prominent &quot;Y&quot; about 15 ft from the bottom. &nbsp;If you aim for this tree, you will be on the most commonly run line. The nasty recircing Suddy hole is on boaters right. There is an exciting line on river left at higher (above 6 inches) levels.&nbsp;</p>\n",
+        "photoid": 882187,
+        "videoid": 0,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": true,
+        "deleted": false,
+        "rloc": null,
+        "revision": 7574,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 102453,
+        "name": "Lower Prelude",
+        "distance": 2.2,
+        "difficulty": "III",
+        "description": "<p>\n\tPrelude (sometimes called False Narrows, Upper Narrows, and sometimes considered part of the Narrows) is a longish rapid and fairly intense, especially at higher water levels.&nbsp;</p>\n",
+        "photoid": 882186,
+        "videoid": 0,
+        "isputin": null,
+        "istakeout": null,
+        "isaccess": null,
+        "isportage": null,
+        "ishazard": null,
+        "iswaterfall": null,
+        "isplayspot": null,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": true,
+        "deleted": false,
+        "rloc": null,
+        "revision": 4943,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 661,
+        "name": "Narrows",
+        "distance": 2.4,
+        "difficulty": "III+",
+        "description": "Start on river right moving towards river center over the first drop.  Run the slide that immediately follows down the center.",
+        "photoid": 3672,
+        "videoid": null,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 800,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 102452,
+        "name": "Cliffside",
+        "distance": 2.9,
+        "difficulty": "II+",
+        "description": "<p>\n\tThe path with enough water takes you to river right and to the base of a cliff. One good stroke at the right time keeps you from being pushed into it. Peter Van G is stylin it in the photo.&nbsp;</p>\n",
+        "photoid": 882182,
+        "videoid": 0,
+        "isputin": null,
+        "istakeout": null,
+        "isaccess": null,
+        "isportage": null,
+        "ishazard": null,
+        "iswaterfall": null,
+        "isplayspot": null,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": true,
+        "deleted": false,
+        "rloc": null,
+        "revision": 4292,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 102454,
+        "name": "Flume",
+        "distance": 3.1,
+        "difficulty": "II+",
+        "description": "<p>\n\tSmall entry drop, then the main flume, run on river right. Smooth tongue leads into a breaking wave (low levels) or hole (medium and up). Hole is usually punched fairly easily.&nbsp;</p>\n",
+        "photoid": 882188,
+        "videoid": 0,
+        "isputin": null,
+        "istakeout": null,
+        "isaccess": null,
+        "isportage": null,
+        "ishazard": null,
+        "iswaterfall": null,
+        "isplayspot": null,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": true,
+        "deleted": false,
+        "rloc": null,
+        "revision": 5215,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 102529,
+        "name": "Humble Pie",
+        "distance": 3.4,
+        "difficulty": "III",
+        "description": "<p>\n\tHumble Pie (aka Commitment Eddy) is the last rapid before the French Broad. Below about 8 inches, you are forced to take a route on the far left. The gap between the left bank and the 1st boulder is about 15 ft. Avoid the extreme left - i.e. the 5 ft closest to the left bank. &nbsp;The first hole tends to surf you to the left, the second more to the right. The boater in the picture is in the 1st hole. Above 8 inches a couple lines open up near the center. Below 0, it starts getting boney and one line is to make the &quot;commitment&quot; to catch the eddy behind that 1st large boulder. If you don&#39;t commit or blow the line you will be on a pinning rock. At those low levels, most people choose to make a couple quick turns around the partially exposed rocks.&nbsp;</p>\n",
+        "photoid": 882306,
+        "videoid": 0,
+        "isputin": null,
+        "istakeout": null,
+        "isaccess": null,
+        "isportage": null,
+        "ishazard": null,
+        "iswaterfall": null,
+        "isplayspot": null,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": true,
+        "deleted": false,
+        "rloc": null,
+        "revision": 4302,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 662,
+        "name": "Confluence with French Broad River",
+        "distance": 3.7,
+        "difficulty": null,
+        "description": "To skip the 3 mile section on the French Broad, take out at the railroad tressle on river left.Â  Carry 0.7 miles up the railroad tracks to Stackhouse.Â  This also shortens the shuttle run.",
+        "photoid": null,
+        "videoid": null,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 1,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 801,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 663,
+        "name": "Kayak Ledge (Needle Falls)",
+        "distance": 4.7,
+        "difficulty": "III",
+        "description": "Run this five foot ledge on the right of the island.",
+        "photoid": null,
+        "videoid": null,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 802,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    },
+    {
+        "reachid": 1039,
+        "rapidid": 664,
+        "name": "Frank Bell's Rapid (Deep Water Rapid)",
+        "distance": 5.7,
+        "difficulty": "IV",
+        "description": "This rapid is a long series of ledges and holes.  Start left and avoid the holes.  Aim for the right side of the bottom hole at higher water levels.",
+        "photoid": null,
+        "videoid": null,
+        "isputin": 0,
+        "istakeout": 0,
+        "isaccess": 0,
+        "isportage": 0,
+        "ishazard": 0,
+        "iswaterfall": 0,
+        "isplayspot": 0,
+        "rlat": 0,
+        "rlon": 0,
+        "approximate": false,
+        "deleted": false,
+        "rloc": null,
+        "revision": 803,
+        "is_final": true,
+        "created_at": "2019-01-25T05:28:08.308Z"
+    }
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+##### II. Example Request: Reach Rapids
 
 
 
@@ -3612,7 +4086,7 @@ URL: http://localhost:8000/rapids
 
 
 
-##### I. Example Response: Reach Rapids
+##### II. Example Response: Reach Rapids
 ```js
 [
     {
@@ -4912,6 +5386,67 @@ URL: http://localhost:8000/update-user
 | Key | Value | Description |
 | --- | ------|-------------|
 | upass | update test |  |
+
+
+
+## User Auth
+
+
+
+### 1. Login
+
+
+Create an accident report.
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: URLENCODED
+URL: http://localhost:8000/user-login
+```
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| email |  |  |
+| password |  |  |
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Login
+
+
+
+***Body:***
+
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| email | foo@email.com |  |
+| password | password |  |
+
+
+
+##### I. Example Response: Login
+```js
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZvb0Bhb2wuY29tIiwiaWF0IjoxNTk0Njg2MzMwLCJleHAiOjE1OTQ2ODY2MzB9.ddefDTo6yHQNwDE-y7Nn2BRk74cwVsJBkzlgbzXmp_E"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
 
 
 

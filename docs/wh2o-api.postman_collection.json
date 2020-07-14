@@ -303,6 +303,115 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "User Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user-login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user-login"
+							]
+						},
+						"description": "Create an accident report."
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "foo@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/user-login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user-login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZvb0Bhb2wuY29tIiwiaWF0IjoxNTk0Njg2MzMwLCJleHAiOjE1OTQ2ODY2MzB9.ddefDTo6yHQNwDE-y7Nn2BRk74cwVsJBkzlgbzXmp_E; Max-Age=300; Path=/; Expires=Tue, 14 Jul 2020 00:30:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-QMyGh0JvIZM8UbdBNqZiISm5hAY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Jul 2020 00:25:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZvb0Bhb2wuY29tIiwiaWF0IjoxNTk0Njg2MzMwLCJleHAiOjE1OTQ2ODY2MzB9.ddefDTo6yHQNwDE-y7Nn2BRk74cwVsJBkzlgbzXmp_E\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Accident Causes",
 			"item": [
 				{
@@ -991,6 +1100,225 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/members",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"members"
+							]
+						},
+						"description": "Returns all AW affiliates."
+					},
+					"response": [
+						{
+							"name": "Affiliates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/affiliates",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"affiliates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141994"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22aaa-iJc2V6mSHtFPyxAxW3DRnuebBnA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 20:21:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"last\": \"Big Thompson Watershed Forum\",\n        \"url\": \"http://www.btwatershed.org/\",\n        \"conemail\": \"zshelley@btwatershed.org\",\n        \"members\": \"0\",\n        \"contact\": \"Zack Shelley\",\n        \"abstract\": \"\",\n        \"description\": \"\",\n        \"reaches\": \"\",\n        \"volunteer\": \"0\",\n        \"id\": \"4008\",\n        \"city\": \"Loveland\",\n        \"state\": \"CO\",\n        \"expiration\": \"2008-08-16\",\n        \"memberid\": \"28872\",\n        \"deleted\": 1\n    },\n    {\n        \"last\": \"Keelhaulers Canoe Club\",\n        \"url\": \"http://keelhauler.org/kh.htm\",\n        \"conemail\": \"keelhauler@yahoo.com\",\n        \"members\": \"300\",\n        \"contact\": \"WebMeister and Membership Chair John Kobak\",\n        \"abstract\": \"Paddling in OH, PA, WV, and wherever there's water!\",\n        \"description\": \"<center><img src=\\\"http://keelhauler.org/newlogoweb.jpg\\\"></center><br>Centered in the Cleveland, OH, area, Keel-haulers is an active club with <a href=\\\"http://www.keelhauler.org/khcc/tripschedule.htm\\\">a full trip schedule</a>. Our 100-page yearbook contains a lot of info, including maps to local rivers and a self-consistent ranking of over a hundred international whitewater rivers. The club is open to all <a href=\\\"http://www.keelhauler.org/khcc/khcapp.htm\\\">(Print an Application)</a>; dues are $20/year.<br>\\r\\nThe club website has a very active <a href=\\\"http://www.keelhauler.org/khcc/khcads.htm\\\">Used Boats and Equipment</a> page and a <a href=\\\"http://keelhauler.org/phpBB/viewforum.php?f=2\\\">Message Board</a>.\\r\\n\",\n        \"reaches\": null,\n        \"volunteer\": \"358\",\n        \"id\": \"713\",\n        \"city\": \"Cleveland\",\n        \"state\": \"OH\",\n        \"expiration\": \"2019-05-24\",\n        \"memberid\": \"706\",\n        \"deleted\": 0\n    },\n    {\n        \"last\": \"Warren Wilson College Paddling Club\",\n        \"url\": \"\",\n        \"conemail\": \"bfarthing@warren-wilson.edu\",\n        \"members\": \"0\",\n        \"contact\": \"Brit Farthing, 828-771-3004\",\n        \"abstract\": \"\",\n        \"description\": \"\",\n        \"reaches\": null,\n        \"volunteer\": \"0\",\n        \"id\": \"1000004\",\n        \"city\": \"Asheville\",\n        \"state\": \"NC\",\n        \"expiration\": \"2006-08-26\",\n        \"memberid\": \"17832\",\n        \"deleted\": 1\n    }    \n]"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "last",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "conemail",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "members",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "abstract",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reaches",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "volunteer",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expiration",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "memberid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "deleted",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/new-affiliate",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"new-affiliate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/update-affiliate?id=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-affiliate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/delete-accident?id=11139",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-accident"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11139"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Topology",
 			"item": [
 				{
@@ -1500,23 +1828,18 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
+									"key": "articleid",
+									"value": "34162",
+									"type": "text"
+								},
+								{
 									"key": "type",
-									"value": "",
+									"value": "rgnews",
 									"type": "text"
 								},
 								{
 									"key": "value",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "expiration",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "priority",
-									"value": "",
+									"value": "NW",
 									"type": "text"
 								}
 							]
@@ -4851,6 +5174,59 @@
 					},
 					"response": [
 						{
+							"name": "Get By Reach",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/rapids?reachid=1039",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"rapids"
+									],
+									"query": [
+										{
+											"key": "reachid",
+											"value": "1039"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8228"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2024-aaefGhZumJfeAOMrxAaIsySn8G0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 23:33:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 658,\n        \"name\": \"Pinball / First Rapid\",\n        \"distance\": 0.4,\n        \"difficulty\": \"II\",\n        \"description\": \"<p>\\n\\tPinaball / 1st Rapid is the 1st horizon line that you come to. Almost all paddlers will run the opening left of center. At the bottom is a rock squarely in the most direct path. One method is to boof left into an eddy above and left of the rock. This is fairly easy. The other method (shown in the photo) is to angle right of the bottom rock. The problem is that there is a hidden underwater rock that you will hit if you cheat and head right too soon. It will pinball you into the rock at the bottom which you are trying to avoid. This is much more of a problem at lower water levels. At higher levels the pinball rock is further under water and you can start right earlier. I&#39;m leaving the old text below.</p>\\n<p>\\n\\tRun the left hand chute! The right hand chute (which appears to be the obvious route) runs into a pinning rock.</p>\\n\",\n        \"photoid\": 882130,\n        \"videoid\": 0,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 3750,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 659,\n        \"name\": \"Stairstep Rapid\",\n        \"distance\": 1,\n        \"difficulty\": \"III+\",\n        \"description\": \"<p>\\n\\tStairstep is the 1st horizon line after Pinball. The first 3 steps are not large, but by the 4th one you need to be lined up properly to run the big drop into the hole (not a keeper). This is followed by a succession of fairly large breaking waves. Stairstep gets harder with higher water levels; above a foot it is fairly beefy. &nbsp;Next to the 1st step there is a large boulder in the center of the river (boaters will pass to the right of it) with a fairly large eddy behind it. A lot of boaters catch this eddy. You can do so but be aware that there is a sieve at the lower end of that eddy that a few people have been sucked into. Fortunately all flushed out. The tree trunk that was on river right has been gone for a couple years. &nbsp;</p>\\n\",\n        \"photoid\": 882307,\n        \"videoid\": 0,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 7538,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 660,\n        \"name\": \"Suddy Hole\",\n        \"distance\": 1.9,\n        \"difficulty\": \"III+\",\n        \"description\": \"<p>\\n\\tSuddy Hole consists of two drops. Most boaters will eddy out after the 1st. As you look at the horizon line of the second, you will see a &quot;dead&quot; tree across the creek and at the bottom of the rapid. This tree is still partly alive and has a prominent &quot;Y&quot; about 15 ft from the bottom. &nbsp;If you aim for this tree, you will be on the most commonly run line. The nasty recircing Suddy hole is on boaters right. There is an exciting line on river left at higher (above 6 inches) levels.&nbsp;</p>\\n\",\n        \"photoid\": 882187,\n        \"videoid\": 0,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": true,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 7574,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 102453,\n        \"name\": \"Lower Prelude\",\n        \"distance\": 2.2,\n        \"difficulty\": \"III\",\n        \"description\": \"<p>\\n\\tPrelude (sometimes called False Narrows, Upper Narrows, and sometimes considered part of the Narrows) is a longish rapid and fairly intense, especially at higher water levels.&nbsp;</p>\\n\",\n        \"photoid\": 882186,\n        \"videoid\": 0,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": true,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 4943,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 661,\n        \"name\": \"Narrows\",\n        \"distance\": 2.4,\n        \"difficulty\": \"III+\",\n        \"description\": \"Start on river right moving towards river center over the first drop.  Run the slide that immediately follows down the center.\",\n        \"photoid\": 3672,\n        \"videoid\": null,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 800,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 102452,\n        \"name\": \"Cliffside\",\n        \"distance\": 2.9,\n        \"difficulty\": \"II+\",\n        \"description\": \"<p>\\n\\tThe path with enough water takes you to river right and to the base of a cliff. One good stroke at the right time keeps you from being pushed into it. Peter Van G is stylin it in the photo.&nbsp;</p>\\n\",\n        \"photoid\": 882182,\n        \"videoid\": 0,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": true,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 4292,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 102454,\n        \"name\": \"Flume\",\n        \"distance\": 3.1,\n        \"difficulty\": \"II+\",\n        \"description\": \"<p>\\n\\tSmall entry drop, then the main flume, run on river right. Smooth tongue leads into a breaking wave (low levels) or hole (medium and up). Hole is usually punched fairly easily.&nbsp;</p>\\n\",\n        \"photoid\": 882188,\n        \"videoid\": 0,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": true,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 5215,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 102529,\n        \"name\": \"Humble Pie\",\n        \"distance\": 3.4,\n        \"difficulty\": \"III\",\n        \"description\": \"<p>\\n\\tHumble Pie (aka Commitment Eddy) is the last rapid before the French Broad. Below about 8 inches, you are forced to take a route on the far left. The gap between the left bank and the 1st boulder is about 15 ft. Avoid the extreme left - i.e. the 5 ft closest to the left bank. &nbsp;The first hole tends to surf you to the left, the second more to the right. The boater in the picture is in the 1st hole. Above 8 inches a couple lines open up near the center. Below 0, it starts getting boney and one line is to make the &quot;commitment&quot; to catch the eddy behind that 1st large boulder. If you don&#39;t commit or blow the line you will be on a pinning rock. At those low levels, most people choose to make a couple quick turns around the partially exposed rocks.&nbsp;</p>\\n\",\n        \"photoid\": 882306,\n        \"videoid\": 0,\n        \"isputin\": null,\n        \"istakeout\": null,\n        \"isaccess\": null,\n        \"isportage\": null,\n        \"ishazard\": null,\n        \"iswaterfall\": null,\n        \"isplayspot\": null,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": true,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 4302,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 662,\n        \"name\": \"Confluence with French Broad River\",\n        \"distance\": 3.7,\n        \"difficulty\": null,\n        \"description\": \"To skip the 3 mile section on the French Broad, take out at the railroad tressle on river left.Â  Carry 0.7 miles up the railroad tracks to Stackhouse.Â  This also shortens the shuttle run.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 1,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 801,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 663,\n        \"name\": \"Kayak Ledge (Needle Falls)\",\n        \"distance\": 4.7,\n        \"difficulty\": \"III\",\n        \"description\": \"Run this five foot ledge on the right of the island.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 802,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    },\n    {\n        \"reachid\": 1039,\n        \"rapidid\": 664,\n        \"name\": \"Frank Bell's Rapid (Deep Water Rapid)\",\n        \"distance\": 5.7,\n        \"difficulty\": \"IV\",\n        \"description\": \"This rapid is a long series of ledges and holes.  Start left and avoid the holes.  Aim for the right side of the bottom hole at higher water levels.\",\n        \"photoid\": null,\n        \"videoid\": null,\n        \"isputin\": 0,\n        \"istakeout\": 0,\n        \"isaccess\": 0,\n        \"isportage\": 0,\n        \"ishazard\": 0,\n        \"iswaterfall\": 0,\n        \"isplayspot\": 0,\n        \"rlat\": 0,\n        \"rlon\": 0,\n        \"approximate\": false,\n        \"deleted\": false,\n        \"rloc\": null,\n        \"revision\": 803,\n        \"is_final\": true,\n        \"created_at\": \"2019-01-25T05:28:08.308Z\"\n    }\n]"
+						},
+						{
 							"name": "Reach Rapids",
 							"originalRequest": {
 								"method": "GET",
@@ -5630,6 +6006,16 @@
 			"protocolProfileBehavior": {}
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZvb0Bhb2wuY29tIiwiaWF0IjoxNTk0NjkyOTc1LCJleHAiOjE1OTQ2OTMyNzV9.PwsOuw6DvZK0vReeuuR41Wev-V89yziR7gwfCNUEz4A",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -5654,7 +6040,7 @@
 	],
 	"variable": [
 		{
-			"id": "985dfe6b-7811-48f5-8600-b3280d0e64ed",
+			"id": "026b2a8d-67e9-4a4d-8605-4ca86377108d",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

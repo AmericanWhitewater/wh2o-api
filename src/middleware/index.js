@@ -1,10 +1,10 @@
-const middleware = [
+const middlewares = [
   require('./morgan')
 ]
 
 module.exports = app => {
 
-  for (const item of middleware) {
+  for (const item of middlewares) {
     item(app)
   }
 

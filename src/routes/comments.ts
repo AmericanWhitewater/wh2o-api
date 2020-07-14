@@ -1,6 +1,14 @@
 import { pgClient, DataTypes } from '../config'
 const Comment = require('../models/comments')(pgClient, DataTypes)
 
+const _sortNewestFirst = (arr) => {
+  const sortedComments = arr.sort(function (a, b) {
+    return a.posted - b.posted
+  })
+
+  return sortedComments
+}
+
 module.exports = app => {
 
   app.get('/reach-warnings', (req, res) => {
@@ -11,7 +19,7 @@ module.exports = app => {
         type: 'warning'
       }
     }).then(result => {
-      res.send({ comments: result }).status(200)
+      res.send(_sortNewestFirst(result)).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

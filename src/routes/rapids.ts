@@ -9,7 +9,15 @@ module.exports = app => {
         reachid: req.query.reachid
       }
     }).then(result => {
-      res.send(result).status(200)
+
+      /**
+       * sorted put-in first
+       */
+      const sortedRapids = result.sort(function (a, b) {
+        return a.distance - b.distance
+      })
+
+      res.send(sortedRapids).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

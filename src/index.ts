@@ -5,7 +5,9 @@ const port = process.env.PORT || 8000
 const bodyParser = require('body-parser')
 const middleware = require('./middleware')
 const routes = require('./routes')
+const authMiddleware = require('./middleware/authentication')
 
+app.use(authMiddleware)
 app.use(bodyParser.urlencoded({ extended: false }))
 
 middleware(app)
