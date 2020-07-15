@@ -5,7 +5,7 @@ module.exports.save = (name, data) => {
   return new Promise((resolve, reject) => {
     const params = {
       Bucket: 'wh2o-drewalth',
-      Key: `wh2o/${name}.png`,
+      Key: `wh2o/assets/${name}.png`,
       Body: Buffer.from(data, 'base64'),
       ContentEncoding: 'base64',
       ContentType: 'image/png'
@@ -14,7 +14,7 @@ module.exports.save = (name, data) => {
       if (err) {
         reject(err)
       } else {
-        resolve(`//wh2o-drewalth.s3.amazonaws.com/${params.Key}`)
+        resolve(`//wh2o-api-docs.s3.amazonaws.com/${params.Key}`)
       }
     })
   })

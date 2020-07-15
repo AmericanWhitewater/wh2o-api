@@ -9,9 +9,9 @@ module.exports = (app) => {
         /**
          * @todo adjust to return name, abbreviation, and country.
          */
-        const data = result.map((factor) => factor.dataValues.name.trim())
+        const data = result.map((factor) => factor.dataValues.abbreviation.trim())
 
-        res.send(data).status(200)
+        res.send(data.sort()).status(200)
       })
       .catch((err) => {
         console.log(err)

@@ -1,4 +1,4 @@
-const s3Store = require('./imageStoreS3')
+const s3Store = require('./imageStoreFile')
 
 function save (name, base64String) {
   const imageData = base64String.split('data:image/png;base64,')[1]
