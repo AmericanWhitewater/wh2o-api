@@ -4,4 +4,4 @@
 
 American Whitewater's REST API built on Node.js
 
-For documentation, visit the [Documentation Website](https://bit.ly/2OqBA2g)
+For documentation, visit the [Documentation Website](https://bit.ly/2Cn6Ywh)
