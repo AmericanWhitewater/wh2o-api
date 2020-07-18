@@ -20,6 +20,10 @@ module.exports = {
     ],
     sidebar: [
       {
+        title: 'Introduction',
+        path: '/introduction/'
+      },
+      {
         title: 'Guides',
         path: '/guide/',
         children: [
