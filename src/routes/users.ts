@@ -1,5 +1,5 @@
 import { pgClient, DataTypes } from '../config'
-import { jwt } from '../config/jwt'
+import jwt from '../config/jwt'
 import { jwt_secret_key } from '../environment'
 const User = require('../models/users')(pgClient, DataTypes)
 

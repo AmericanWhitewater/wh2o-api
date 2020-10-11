@@ -1,5 +1,5 @@
 import { jwt_secret_key } from '../environment'
-import { jwt } from '../config/jwt'
+import jwt from '../config/jwt'
 
 module.exports = (req, res, next) => {
   const protectedMethods = ['POST', 'DELETE', 'PUT', 'PATCH']
