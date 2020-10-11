@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 8000
+const apiPort = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const middleware = require('./middleware')
 const routes = require('./routes')
@@ -23,6 +23,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 middleware(app)
 routes(app)
 
-app.listen(port, () => {
-  console.log(`wh2o-api listening on http://localhost:${port}`)
+app.listen(apiPort, () => {
+  console.log(`wh2o-api listening on http://localhost:${apiPort}`)
 })
