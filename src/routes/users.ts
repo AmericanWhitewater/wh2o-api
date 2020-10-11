@@ -3,7 +3,7 @@ import { jwt } from '../config/jwt'
 import { jwt_secret_key } from '../environment'
 const User = require('../models/users')(pgClient, DataTypes)
 
-const jwtExpirySeconds = 86400;
+const jwtExpirySeconds = 86400
 
 module.exports = (app) => {
   app.get('/user', (req, res) => {

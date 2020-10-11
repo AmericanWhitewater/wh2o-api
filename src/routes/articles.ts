@@ -22,15 +22,15 @@ module.exports = app => {
     Article.findAll({
       limit: 8,
       where: {},
-      order: [["releasedate", "DESC"]],
+      order: [['releasedate', 'DESC']],
     })
       .then((result) => {
-        res.send(result).status(200);
+        res.send(result).status(200)
       })
       .catch((err) => {
-        console.log(err);
-        res.send(err).status(404);
-      });
+        console.log(err)
+        res.send(err).status(404)
+      })
 
   })
 

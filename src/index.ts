@@ -1,18 +1,24 @@
-require('dotenv').config()
-const express = require('express')
+import dotenv from 'dotenv'
+
+const result = dotenv.config()
+
+if (result.error) {
+  dotenv.config({ path: '.env.default' })
+}
+import express from 'express'
 const app = express()
 const apiPort = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const middleware = require('./middleware')
 const routes = require('./routes')
 const authMiddleware = require('./middleware/authentication')
-const helmet = require("helmet");
-const cors = require("cors")
+const helmet = require('helmet')
+const cors = require('cors')
 
-var corsOptions = {
-  origin: "http://localhost:8080",
+let corsOptions = {
+  origin: 'http://localhost:8080',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+}
 
 app.use(cors(corsOptions))
 app.use(helmet())

@@ -1,4 +1,4 @@
-import {Sequelize, DataTypes} from "sequelize"
+import { Sequelize, DataTypes } from 'sequelize'
 
 const database = process.env.POSTGRES_DB || 'db'
 const host = process.env.POSTGRES_HOST || 'localhost'
@@ -31,17 +31,17 @@ const pgClient = new Sequelize(
     }
   }
 )
- 
+
 async function verifyDbConnection () {
   try {
-    await pgClient.authenticate();
-    console.log('Connection has been established successfully.');
+    await pgClient.authenticate()
+    console.log('Connection has been established successfully.')
   } catch (error) {
-    console.error('Unable to connect to the database:', error);
+    console.error('Unable to connect to the database:', error)
     process.exit()
   }
 }
-  
+
 verifyDbConnection()
 
 export = { pgClient, Sequelize, DataTypes }

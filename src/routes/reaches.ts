@@ -9,7 +9,7 @@ module.exports = app => {
         id: req.query.id
       }
     }).then(result => {
-      res.send(result).status(200);
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)
