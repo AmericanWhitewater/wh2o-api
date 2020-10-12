@@ -15,7 +15,7 @@ const authMiddleware = require('./middleware/authentication')
 const helmet = require('helmet')
 const cors = require('cors')
 
-let corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:8080',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
@@ -30,5 +30,6 @@ middleware(app)
 routes(app)
 
 app.listen(apiPort, () => {
-  console.log(`wh2o-api listening on http://localhost:${apiPort}`)
+  console.log('---------------------------------------------\n')
+  console.log(`✅ Listening on http://localhost:${apiPort}`)
 })

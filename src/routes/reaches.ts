@@ -1,8 +1,9 @@
 import { pgClient, DataTypes } from '../config'
+import { Express, Request, Response } from 'express'
 const Reach = require('../models/reaches')(pgClient, DataTypes)
 
-module.exports = app => {
-  app.get('/reach', (req, res) => {
+export = (app: Express) => {
+  app.get('/reach', (req: Request, res: Response) => {
 
     Reach.findOne({
       where: {
@@ -17,7 +18,7 @@ module.exports = app => {
 
   })
 
-  app.post('/new-reach', (req, res) => {
+  app.post('/new-reach', (req: Request, res: Response) => {
 
     Reach.create(req.body).then(() => {
       res.send('Reach Created').status(200)
@@ -28,7 +29,7 @@ module.exports = app => {
 
   })
 
-  app.put('/update-reach', (req, res) => {
+  app.put('/update-reach', (req: Request, res: Response) => {
 
     Reach.update(req.body, {
       where: {
@@ -43,7 +44,7 @@ module.exports = app => {
 
   })
 
-  app.delete('/delete-reach', (req, res) => {
+  app.delete('/delete-reach', (req: Request, res: Response) => {
 
     Reach.destroy({
       where: {
@@ -55,6 +56,21 @@ module.exports = app => {
       console.log('err: ', err)
       res.send(err).send(500)
     })
+
+  })
+
+  app.get('/reaches', async (req, res) => {
+
+    try {
+      const result = await Reach.findAll()
+
+      if (result) {
+        res.status(200).send(result)
+      }
+    } catch (error) {
+      res.status(500).send(error)
+      console.log('error :>> ', error)
+    }
 
   })
 

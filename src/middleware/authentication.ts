@@ -1,7 +1,7 @@
 import { jwt_secret_key } from '../environment'
 import jwt from '../config/jwt'
 
-module.exports = (req, res, next) => {
+export = (req, res, next) => {
   const protectedMethods = ['POST', 'DELETE', 'PUT', 'PATCH']
   const whitelistedRoutes = ['/user-login', '/user-register', '/user-forgot']
   const token = req.headers['x-access-token'] || req.headers.authorization

@@ -67,7 +67,7 @@ module.exports = (app) => {
     const { email, password } = req.body
 
     if (!email || !password) {
-      return res.send({ message: 'missing credentials' }).status(401).end()
+      return res.send({ message: 'missing credentials' }).status(400).end()
     }
 
     const token = jwt.sign({ email }, jwt_secret_key, {
@@ -82,20 +82,35 @@ module.exports = (app) => {
     })
       .then((result) => {
 
-        if (result.dataValues.upass !== password) {
-          // return 401 error is username or password doesn't exist, or if password does
-          // not match the password in our records
-          return res.send({ message: 'Invalid password' }).status(401).end()
-        } else {
-          res.cookie('token', token, { maxAge: jwtExpirySeconds * 1000 })
-          res.send({ token })
+        if (result) {
+          if (result.dataValues.upass !== password) {
+            // return 401 error is username or password doesn't exist, or if password does
+            // not match the password in our records
+            return res.status(401).send({ message: 'Invalid password' }).end()
+          } else {
+            res.cookie('token', token, { maxAge: jwtExpirySeconds * 1000 })
 
-          res.end()
+            /**
+             * remove some from response.
+             */
+
+            delete result.dataValues.epassword
+            delete result.dataValues.upass
+
+            res.send({
+              user: result.dataValues,
+              token
+            })
+
+            res.end()
+          }
+        } else {
+          res.status(401).send({ message: 'Invalid email or password provided.' }).end()
         }
       })
       .catch((err) => {
         console.log(err)
-        res.send(err).status(404)
+        res.status(500).send(err)
       })
   })
 
@@ -134,4 +149,21 @@ module.exports = (app) => {
     res.cookie('token', newToken, { maxAge: jwtExpirySeconds * 1000 })
     res.end()
   })
+
+  app.get('/users', async (req, res) => {
+
+    try {
+      const result = await User.findAll()
+
+      if (result) {
+        res.status(200).send(result)
+      }
+
+    } catch (error) {
+      console.log('error :>> ', error)
+      res.status(500).send(error)
+    }
+
+  })
+
 }

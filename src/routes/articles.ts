@@ -1,8 +1,9 @@
+import { Express, Request, Response } from 'express'
 import { pgClient, DataTypes } from '../config'
 const Article = require('../models/awarticles')(pgClient, DataTypes)
 
-module.exports = app => {
-  app.get('/article', (req, res) => {
+export = (app: Express) => {
+  app.get('/article', (req: Request, res: Response) => {
 
     Article.findOne({
       where: {
@@ -17,7 +18,7 @@ module.exports = app => {
 
   })
 
-  app.get('/front-page-news', (req, res) => {
+  app.get('/front-page-news', (req: Request, res: Response) => {
 
     Article.findAll({
       limit: 8,
@@ -34,10 +35,13 @@ module.exports = app => {
 
   })
 
-  app.post('/new-article', (req, res) => {
+  app.post('/new-article', (req: Request, res: Response) => {
 
-    Article.create(req.body).then(() => {
-      res.send('Article Created').status(200)
+    Article.create(req.body).then((result) => {
+      if (result && result.dataValues) {
+        return res.send(result.dataValues).status(200)
+      }
+
     }).catch(err => {
       console.log('err: ', err)
       res.send(err).status(500)
@@ -45,7 +49,7 @@ module.exports = app => {
 
   })
 
-  app.put('/update-article', (req, res) => {
+  app.put('/update-article', (req: Request, res: Response) => {
 
     Article.update(req.body, {
       where: {
@@ -60,7 +64,7 @@ module.exports = app => {
 
   })
 
-  app.delete('/delete-article', (req, res) => {
+  app.delete('/delete-article', (req: Request, res: Response) => {
 
     Article.destroy({
       where: {
@@ -75,4 +79,16 @@ module.exports = app => {
 
   })
 
+  app.get('/articles', async (req: Request, res: Response) => {
+    try {
+      const result = await Article.findAll({
+        order: [['releasedate', 'DESC']],
+      })
+      if (result) {
+        res.status(200).send(result)
+      }
+    } catch (error) {
+      res.status(500).send(error)
+    }
+  })
 }

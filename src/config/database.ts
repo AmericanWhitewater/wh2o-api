@@ -22,12 +22,7 @@ const pgClient = new Sequelize(
     logging: false,
     define: {
       freezeTableName: true,
-      timestamps: false,
-      hooks: {
-        beforeCreate () {
-          console.log('creating table')
-        }
-      }
+      timestamps: false
     }
   }
 )
@@ -35,9 +30,11 @@ const pgClient = new Sequelize(
 async function verifyDbConnection () {
   try {
     await pgClient.authenticate()
-    console.log('Connection has been established successfully.')
+    console.log('✅ Database connection established.\n')
+    console.log('---------------------------------------------')
   } catch (error) {
-    console.error('Unable to connect to the database:', error)
+    console.error('🚫 Unable to connect to the database:', error, '\n')
+    console.log('---------------------------------------------')
     process.exit()
   }
 }

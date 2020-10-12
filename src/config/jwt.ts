@@ -1,3 +1,3 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken'
 
 export default jwt
