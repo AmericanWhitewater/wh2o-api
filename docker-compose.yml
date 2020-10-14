@@ -15,7 +15,6 @@ services:
     volumes:
       - .:/src/
       - /node_modules
-
   postgres:
     image: postgres:10.4
     ports:
