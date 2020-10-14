@@ -2,7 +2,7 @@ import { pgClient, DataTypes } from '../config'
 const Comment = require('../models/comments')(pgClient, DataTypes)
 
 const _sortNewestFirst = (arr) => {
-  const sortedComments = arr.sort(function (a, b) {
+  const sortedComments = arr.sort((a, b) => {
     return a.posted - b.posted
   })
 

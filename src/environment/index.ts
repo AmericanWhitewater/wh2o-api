@@ -4,6 +4,6 @@ const {
 } = process.env
 
 const environment = NODE_ENV.toLowerCase()
-const jwt_secret_key = JWT_SECRET_KEY
+const jwtSecretKey = JWT_SECRET_KEY
 
-export { environment, jwt_secret_key }
+export { environment, jwtSecretKey }

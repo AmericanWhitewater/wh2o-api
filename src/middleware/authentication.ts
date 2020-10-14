@@ -1,4 +1,4 @@
-import { jwt_secret_key } from '../environment'
+import { jwtSecretKey } from '../environment'
 import jwt from '../config/jwt'
 
 export = (req, res, next) => {
@@ -13,7 +13,7 @@ export = (req, res, next) => {
 
     if (!token) return res.status(401).send('Access denied. No token provided.')
 
-    jwt.verify(token.split(' ')[1], jwt_secret_key, (err, user) => {
+    jwt.verify(token.split(' ')[1], jwtSecretKey, (err, user) => {
       if (err) {
         return res.sendStatus(403)
       }

@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize'
 
-const database = process.env.POSTGRES_DB || 'db'
+const database = process.env.POSTGRES_DB || 'wh2o'
 const host = process.env.POSTGRES_HOST || 'localhost'
 const port = Number(process.env.POSTGRES_PORT) || 35432
 const user = process.env.POSTGRES_USER || 'wh2o'

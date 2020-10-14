@@ -1,9 +1,18 @@
 import { pgClient, DataTypes } from '../config'
 import jwt from '../config/jwt'
-import { jwt_secret_key } from '../environment'
+import { jwtSecretKey } from '../environment'
 const User = require('../models/users')(pgClient, DataTypes)
 
 const jwtExpirySeconds = 86400
+
+function comparePasswords (input, record) {
+  let mismatch = 0
+  for (let i = 0; i < input.length; ++i) {
+    mismatch |= (input.charCodeAt(i) ^ record.charCodeAt(i))
+  }
+  console.log('mismatch :>> ', mismatch)
+  return mismatch
+}
 
 module.exports = (app) => {
   app.get('/user', (req, res) => {
@@ -70,7 +79,7 @@ module.exports = (app) => {
       return res.send({ message: 'missing credentials' }).status(400).end()
     }
 
-    const token = jwt.sign({ email }, jwt_secret_key, {
+    const token = jwt.sign({ email }, jwtSecretKey, {
       algorithm: 'HS256',
       expiresIn: jwtExpirySeconds,
     })
@@ -83,7 +92,7 @@ module.exports = (app) => {
       .then((result) => {
 
         if (result) {
-          if (result.dataValues.upass !== password) {
+          if (comparePasswords(result.dataValues.upass, password)) {
             // return 401 error is username or password doesn't exist, or if password does
             // not match the password in our records
             return res.status(401).send({ message: 'Invalid password' }).end()
@@ -123,7 +132,7 @@ module.exports = (app) => {
 
     let payload
     try {
-      payload = jwt.verify(token, jwt_secret_key)
+      payload = jwt.verify(token, jwtSecretKey)
     } catch (e) {
       if (e instanceof jwt.JsonWebTokenError) {
         return res.status(401).end()
@@ -140,7 +149,7 @@ module.exports = (app) => {
     }
 
     // Now, create a new token for the current user, with a renewed expiration time
-    const newToken = jwt.sign({ username: payload.username }, jwt_secret_key, {
+    const newToken = jwt.sign({ username: payload.username }, jwtSecretKey, {
       algorithm: 'HS256',
       expiresIn: jwtExpirySeconds,
     })

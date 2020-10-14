@@ -13,7 +13,7 @@ module.exports = app => {
       /**
        * sorted put-in first
        */
-      const sortedRapids = result.sort(function (a, b) {
+      const sortedRapids = result.sort((a, b) => {
         return a.distance - b.distance
       })
 
