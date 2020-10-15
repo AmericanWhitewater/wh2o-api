@@ -1,6 +1,7 @@
-'use strict'
+'use strict';
 
-let Sequelize = require('sequelize')
+var Sequelize = require('sequelize');
+var {DataTypes} = require('sequelize')
 
 /**
  * Actions summary:
@@ -94,27 +95,132 @@ let Sequelize = require('sequelize')
  *
  **/
 
-let info = {
-    'revision': 1,
-    'name': 'initial-setup',
-    'created': '2020-10-15T04:32:04.380Z',
-    'comment': ''
-}
-
-let migrationCommands = [{
-        fn: 'createTable',
-        params: [
-            'accidents',
-            {
-
+var info = {
+    "revision": 1,
+    "name": "initial-setup",
+    "created": "2020-10-15T15:02:48.998Z",
+    "comment": ""
+};
+
+var migrationCommands = [{
+        fn: "createTable",
+        params: [
+            "accidents",
+            {
+                id: {
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    autoIncrement: true,
+                    primaryKey: true
+                },
+                accidentdate: {
+                    type: DataTypes.DATEONLY,
+                    allowNull: true
+                },
+                victimname: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                reachid: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true
+                },
+                countryabbr: {
+                    type: DataTypes.CHAR(2),
+                    allowNull: true
+                },
+                state: {
+                    type: DataTypes.CHAR(2),
+                    allowNull: true
+                },
+                river: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                section: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                location: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                waterlevel: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                rellevel: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                difficulty: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                age: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true
+                },
+                experience: {
+                    type: DataTypes.CHAR(1),
+                    allowNull: true
+                },
+                privcomm: {
+                    type: DataTypes.CHAR(1),
+                    allowNull: true
+                },
+                boattype: {
+                    type: DataTypes.CHAR(1),
+                    allowNull: true
+                },
+                groupinfo: {
+                    type: DataTypes.TEXT,
+                    allowNull: true
+                },
+                numvictims: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true
+                },
+                othervictimnames: {
+                    type: DataTypes.TEXT,
+                    allowNull: true
+                },
+                description: {
+                    type: DataTypes.TEXT,
+                    allowNull: true
+                },
+                type: {
+                    type: DataTypes.CHAR(1),
+                    allowNull: true
+                },
+                cause: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true
+                },
+                contactname: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                contactphone: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                contactemail: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                },
+                status: {
+                    type: DataTypes.STRING,
+                    allowNull: true
+                }
             },
             {}
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'accidents_causes',
+            "accidents_causes",
             {
 
             },
@@ -122,9 +228,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'accidents_factors',
+            "accidents_factors",
             {
 
             },
@@ -132,9 +238,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'accidents_injuries',
+            "accidents_injuries",
             {
 
             },
@@ -142,9 +248,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'affiliates',
+            "affiliates",
             {
 
             },
@@ -152,9 +258,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'affiliates_reaches',
+            "affiliates_reaches",
             {
 
             },
@@ -162,9 +268,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'awalerts',
+            "awalerts",
             {
 
             },
@@ -172,9 +278,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'awarticle',
+            "awarticle",
             {
 
             },
@@ -182,9 +288,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'awarticles',
+            "awarticles",
             {
 
             },
@@ -192,9 +298,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'awnews',
+            "awnews",
             {
 
             },
@@ -202,9 +308,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'causes',
+            "causes",
             {
 
             },
@@ -212,9 +318,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'comments',
+            "comments",
             {
 
             },
@@ -222,9 +328,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'contactheader',
+            "contactheader",
             {
 
             },
@@ -232,9 +338,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'contactinstance2contact',
+            "contactinstance2contact",
             {
 
             },
@@ -242,9 +348,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'contacts',
+            "contacts",
             {
 
             },
@@ -252,9 +358,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'documents',
+            "documents",
             {
 
             },
@@ -262,9 +368,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'etap_cache',
+            "etap_cache",
             {
 
             },
@@ -272,9 +378,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'event_dates',
+            "event_dates",
             {
 
             },
@@ -282,9 +388,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'event_notify',
+            "event_notify",
             {
 
             },
@@ -292,9 +398,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'events',
+            "events",
             {
 
             },
@@ -302,9 +408,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'factors',
+            "factors",
             {
 
             },
@@ -312,9 +418,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_dependent_headers',
+            "gauge_dependent_headers",
             {
 
             },
@@ -322,9 +428,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_dependents',
+            "gauge_dependents",
             {
 
             },
@@ -332,9 +438,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_headers',
+            "gauge_headers",
             {
 
             },
@@ -342,9 +448,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_notify',
+            "gauge_notify",
             {
 
             },
@@ -352,9 +458,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_notify_history',
+            "gauge_notify_history",
             {
 
             },
@@ -362,9 +468,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_personal_settings',
+            "gauge_personal_settings",
             {
 
             },
@@ -372,9 +478,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_reading_metrics',
+            "gauge_reading_metrics",
             {
 
             },
@@ -382,9 +488,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_reading_sources',
+            "gauge_reading_sources",
             {
 
             },
@@ -392,9 +498,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_sources',
+            "gauge_sources",
             {
 
             },
@@ -402,9 +508,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_updates',
+            "gauge_updates",
             {
 
             },
@@ -412,9 +518,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gauge_ws2ts',
+            "gauge_ws2ts",
             {
 
             },
@@ -422,9 +528,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'geo_countries',
+            "geo_countries",
             {
 
             },
@@ -432,9 +538,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'geo_hucs',
+            "geo_hucs",
             {
 
             },
@@ -442,9 +548,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'geo_regions',
+            "geo_regions",
             {
 
             },
@@ -452,9 +558,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'geo_states',
+            "geo_states",
             {
 
             },
@@ -462,9 +568,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gis_counties',
+            "gis_counties",
             {
 
             },
@@ -472,9 +578,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gis_hucs',
+            "gis_hucs",
             {
 
             },
@@ -482,9 +588,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gis_states',
+            "gis_states",
             {
 
             },
@@ -492,9 +598,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gis_timezones',
+            "gis_timezones",
             {
 
             },
@@ -502,9 +608,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'gis_zips',
+            "gis_zips",
             {
 
             },
@@ -512,9 +618,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'injuries',
+            "injuries",
             {
 
             },
@@ -522,9 +628,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'journal',
+            "journal",
             {
 
             },
@@ -532,9 +638,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrauthor',
+            "jrauthor",
             {
 
             },
@@ -542,9 +648,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrbiblio',
+            "jrbiblio",
             {
 
             },
@@ -552,9 +658,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrgeo',
+            "jrgeo",
             {
 
             },
@@ -562,9 +668,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrlinks',
+            "jrlinks",
             {
 
             },
@@ -572,9 +678,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrpeople',
+            "jrpeople",
             {
 
             },
@@ -582,9 +688,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrriver',
+            "jrriver",
             {
 
             },
@@ -592,9 +698,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrscans',
+            "jrscans",
             {
 
             },
@@ -602,9 +708,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrstats',
+            "jrstats",
             {
 
             },
@@ -612,9 +718,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrtopic',
+            "jrtopic",
             {
 
             },
@@ -622,9 +728,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'jrtopics',
+            "jrtopics",
             {
 
             },
@@ -632,9 +738,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'layer',
+            "layer",
             {
 
             },
@@ -642,9 +748,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'linker_gadgets',
+            "linker_gadgets",
             {
 
             },
@@ -652,9 +758,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'linker_lists',
+            "linker_lists",
             {
 
             },
@@ -662,9 +768,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'linker_sources',
+            "linker_sources",
             {
 
             },
@@ -672,9 +778,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'listing2permkey',
+            "listing2permkey",
             {
 
             },
@@ -682,9 +788,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'listinggroups',
+            "listinggroups",
             {
 
             },
@@ -692,9 +798,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'listings',
+            "listings",
             {
 
             },
@@ -702,9 +808,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'Lorem',
+            "Lorem",
             {
 
             },
@@ -712,9 +818,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'member_update_stats',
+            "member_update_stats",
             {
 
             },
@@ -722,9 +828,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'members',
+            "members",
             {
 
             },
@@ -732,9 +838,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'membership_types',
+            "membership_types",
             {
 
             },
@@ -742,9 +848,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'parameter_cache',
+            "parameter_cache",
             {
 
             },
@@ -752,9 +858,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'pg_ts_cfg',
+            "pg_ts_cfg",
             {
 
             },
@@ -762,9 +868,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'pg_ts_cfgmap',
+            "pg_ts_cfgmap",
             {
 
             },
@@ -772,9 +878,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'pg_ts_dict',
+            "pg_ts_dict",
             {
 
             },
@@ -782,9 +888,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'pg_ts_parser',
+            "pg_ts_parser",
             {
 
             },
@@ -792,9 +898,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'projects',
+            "projects",
             {
 
             },
@@ -802,9 +908,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'rapids',
+            "rapids",
             {
 
             },
@@ -812,9 +918,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'reaches',
+            "reaches",
             {
 
             },
@@ -822,9 +928,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'reaches_permits',
+            "reaches_permits",
             {
 
             },
@@ -832,9 +938,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'reaches_states',
+            "reaches_states",
             {
 
             },
@@ -842,9 +948,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'retval',
+            "retval",
             {
 
             },
@@ -852,9 +958,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'sections',
+            "sections",
             {
 
             },
@@ -862,9 +968,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'security',
+            "security",
             {
 
             },
@@ -872,9 +978,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'security_defaults',
+            "security_defaults",
             {
 
             },
@@ -882,9 +988,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'sfboatmanufacturers',
+            "sfboatmanufacturers",
             {
 
             },
@@ -892,9 +998,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'sfboattypes',
+            "sfboattypes",
             {
 
             },
@@ -902,9 +1008,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'states',
+            "states",
             {
 
             },
@@ -912,9 +1018,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'topology',
+            "topology",
             {
 
             },
@@ -922,9 +1028,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'triplog',
+            "triplog",
             {
 
             },
@@ -932,9 +1038,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'triplog_photos',
+            "triplog_photos",
             {
 
             },
@@ -942,9 +1048,9 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'users',
+            "users",
             {
 
             },
@@ -952,34 +1058,36 @@ let migrationCommands = [{
         ]
     },
     {
-        fn: 'createTable',
+        fn: "createTable",
         params: [
-            'wh2osettings',
+            "wh2osettings",
             {
 
             },
             {}
         ]
     }
-]
+];
 
 module.exports = {
     pos: 0,
-    up: function (queryInterface, Sequelize) {
-        let index = this.pos
-        return new Promise(function (resolve, reject) {
-            function next () {
-                if (index < migrationCommands.length) {
-                    let command = migrationCommands[index]
-                    console.log('[#' + index + '] execute: ' + command.fn)
-                    index++
-                    queryInterface[command.fn].apply(queryInterface, command.params).then(next, reject)
-                } else {
-                    resolve()
+    up: function(queryInterface, Sequelize)
+    {
+        var index = this.pos;
+        return new Promise(function(resolve, reject) {
+            function next() {
+                if (index < migrationCommands.length)
+                {
+                    let command = migrationCommands[index];
+                    console.log("[#"+index+"] execute: " + command.fn);
+                    index++;
+                    queryInterface[command.fn].apply(queryInterface, command.params).then(next, reject);
                 }
+                else
+                    resolve();
             }
-            next()
-        })
+            next();
+        });
     },
     info: info
-}
+};
