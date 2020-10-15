@@ -1,5 +1,4 @@
-import { Sequelize, DataTypes } from 'sequelize'
-
+const {Sequelize, DataTypes} = require('sequelize')
 const database = process.env.POSTGRES_DB || 'wh2o'
 const host = process.env.POSTGRES_HOST || 'localhost'
 const port = Number(process.env.POSTGRES_PORT) || 35432
@@ -23,6 +22,12 @@ const pgClient = new Sequelize(
     define: {
       freezeTableName: true,
       timestamps: false
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
     }
   }
 )
@@ -41,4 +46,4 @@ async function verifyDbConnection () {
 
 verifyDbConnection()
 
-export = { pgClient, Sequelize, DataTypes }
+module.exports = { pgClient, DataTypes }

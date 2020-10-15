@@ -15,6 +15,8 @@ const authMiddleware = require('./middleware/authentication')
 const helmet = require('helmet')
 const cors = require('cors')
 
+const models = require('./models')
+
 const corsOptions = {
   origin: 'http://localhost:8080',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204

@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "wh2o",
+    "password": "wh2o",
+    "database": "wh2o",
+    "host": "localhost",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "wh2o",
+    "password": "wh2o",
+    "database": "wh2o",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "wh2o",
+    "password": "wh2o",
+    "database": "wh2o",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

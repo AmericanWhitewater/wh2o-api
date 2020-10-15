@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
+
   return sequelize.define('accidents', {
     id: {
       type: DataTypes.INTEGER,

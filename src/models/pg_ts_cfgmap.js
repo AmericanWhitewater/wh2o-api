@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     dict_name: {
-      type: DataTypes.ARRAY,
+      /**
+       * @todo this is not right...
+       */
+      type: DataTypes.ARRAY('foo'),
       allowNull: true
     }
   }, {

@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   return sequelize.define('awarticle', {
     id: {
       type: DataTypes.BIGINT,
-      allowNull: false
+      allowNull: false,
+      primaryKey: true
     }
   }, {
     sequelize,

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       comment: 'look at guage_source. sample values include: usgs, tva, dflows',
       references: {
         model: {
-          tableName: 'gauge_sources',
+          tableName: 'gauge_sources'
         },
         key: 'source'
       },
@@ -92,7 +92,7 @@ module.exports = (sequelize, DataTypes) => {
       comment: '# of seconds to update the gauge, 0 = ignore, and 1 = 1x/sec, etc...'
     },
     loc: {
-      type: DataTypes.ENUM(),
+      type: DataTypes.GEOMETRY,
       allowNull: true
     },
     reading_updated: {

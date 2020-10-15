@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       references: {
         model: {
-          tableName: 'topology',
+          tableName: 'topology'
         },
         key: 'id'
       }

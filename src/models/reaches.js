@@ -109,7 +109,7 @@ module.exports = (sequelize, DataTypes) => {
     revision: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: 'keeps the revision of the reach record.',
+      comment: 'keeps the revision of the reach record.'
       // primaryKey: true,
       // autoIncrement: true
     },
