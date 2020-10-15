@@ -4,7 +4,7 @@
     "password": "wh2o",
     "database": "wh2o",
     "host": "localhost",
-    "port": "5432",
+    "port": "35432",
     "dialect": "postgres"
   },
   "test": {
