@@ -13,7 +13,9 @@
     "start": "node dist/index.js",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "rimraf ./dist && tsc",
-    "migrate": "npx runmigration"
+    "db:migrate": "npx runmigration",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:undo-seed": "npx sequelize-cli db:seed:undo"
   },
   "repository": {
     "type": "git",
