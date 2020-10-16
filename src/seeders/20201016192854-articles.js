@@ -1,4 +1,4 @@
-const faker = require('faker');
+const faker = require('faker')
 
 const articles = [...Array(100)].map((article) => (
   {
@@ -21,9 +21,9 @@ const articles = [...Array(100)].map((article) => (
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('awarticles', articles, {});
+    return queryInterface.bulkInsert('awarticles', articles, {})
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('awarticles', null, {});
+    return queryInterface.bulkDelete('awarticles', null, {})
   }
-};
+}
