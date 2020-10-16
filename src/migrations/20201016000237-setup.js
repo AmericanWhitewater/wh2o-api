@@ -3053,7 +3053,7 @@ let migrationCommands = [{
         primaryKey: true
       },
       dict_name: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
         allowNull: true
       }
     },
