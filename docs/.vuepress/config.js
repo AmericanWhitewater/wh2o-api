@@ -32,6 +32,10 @@ module.exports = {
             path: '/guide/getting-started.md'
           },
           {
+            title: 'Database',
+            path: '/guide/database.md'
+          },
+          {
             title: 'Contributing',
             path: '/guide/contributing.md'
           },
