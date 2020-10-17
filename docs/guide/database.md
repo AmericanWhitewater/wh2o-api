@@ -16,19 +16,45 @@ The command above will generate a new model file for "superuser" with email, pas
 
 `wh2o-api/src/migrations`
 
-When you've created a new model or have updated an existing model, you'll need to generate a new migration file to make sure our data is accurate. We currently use a third-party library called [`sequelize-auto-migrations`](https://github.com/flexxnn/sequelize-auto-migrations) to help create our migrations. When your models are ready run: 
+When you've created a new model or have updated an existing model, you'll need to generate a new migration file to make sure our data is accurate. Similar to generating models, Sequelize CLI has a few commands for handling migrations. When your models are ready run: 
 
 ```
-npx makemigration --name <name-of-migration> 
+npx sequelize-cli migration:generate --name <name-of-migration> 
 ```
 
 For example, if you've made changes to the Reaches model, you could generate a new migration called "reaches-update" like so: 
 
 ```
-npx makemigration --name reaches-update
+npx sequelize-cli migration:generate --name --name reaches-update
 ```
 
-Next, the following command to execute the migration:
+This will generate a boilerplate migration file in the migrations directory: 
+
+```js
+'use strict';
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    /**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    /**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */
+  }
+};
+```
+
+Fill in the rest of the migration then run the following command to execute the migration:
 
 ```
 npm run db:migrate

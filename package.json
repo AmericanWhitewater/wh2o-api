@@ -54,7 +54,6 @@
     "faker": "^5.1.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
-    "sequelize-auto-migrations": "^1.0.3",
     "sequelize-cli": "^6.2.0",
     "ts-node": "^8.10.2",
     "tslint": "^6.1.3",
