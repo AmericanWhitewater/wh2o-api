@@ -57,4 +57,21 @@ module.exports = (app) => {
         res.send(err).send(500)
       })
   })
+
+  app.get('/accidents', async (req, res) => {
+
+    try {
+      const result = await Accident.findAll()
+
+      if (result) {
+        res.status(200).send(result)
+      }
+
+    } catch (error) {
+      console.log('error :>> ', error)
+      res.status(500).send(error)
+    }
+
+  })
+
 }

@@ -10,7 +10,7 @@ The [`Sequelize CLI`](https://sequelize.org/master/manual/migrations.html) provi
 sequelize model:create --name superuser --attributes email:string, password:string, role:enum
 ```
 
-The command above will generate a new model file and a new table for "superuser" with email, password, and role columns. This is a great way to bootstrap a new model but it can become difficult to add tons of columns in a single command. It's recommended to generate the model file with a column or two then do in the file itself to define model properties.
+The command above will generate a new model file for "superuser" with email, password, and role columns. This is a great way to bootstrap a new model but it can become difficult to add tons of columns in a single command. It's recommended to generate the model file with a column or two then go into the newly created file to flush out the properties.
 
 ## Migrations
 

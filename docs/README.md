@@ -2,5 +2,5 @@
 home: true
 heroImage: /aw-logo.png
 actionText: Get Started →
-actionLink: /introduction/
+actionLink: /guide/quick-start
 ---

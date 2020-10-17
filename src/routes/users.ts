@@ -22,7 +22,7 @@ module.exports = (app) => {
       },
     })
       .then((result) => {
-        res.send({ user: result }).status(200)
+        res.send(result).status(200)
       })
       .catch((err) => {
         console.log(err)
@@ -107,7 +107,7 @@ module.exports = (app) => {
             delete result.dataValues.upass
 
             res.send({
-              user: result.dataValues,
+              ...result.dataValues,
               token
             })
 

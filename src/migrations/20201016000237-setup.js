@@ -3463,7 +3463,9 @@ let migrationCommands = [{
         comment: DataTypes.JSON
       }
     },
-    {}
+    {
+      schema: 'public'
+    }
   ]
 },
 {
@@ -4068,7 +4070,9 @@ let migrationCommands = [{
         allowNull: true
       }
     },
-    {}
+    {
+      schema: 'wh2o'
+    }
   ]
 },
 {
