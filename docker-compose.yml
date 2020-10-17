@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  wh2o-db:
+    container_name: db-container
+    image: mdillon/postgis:9.6
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: wh2o
+      POSTGRES_PASSWORD: wh2o
+      POSTGRES_DB: wh2o

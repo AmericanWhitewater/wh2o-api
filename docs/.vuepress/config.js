@@ -25,23 +25,27 @@ module.exports = {
       },
       {
         title: 'Guides',
-        path: '/guide/',
+        path: '/guide/quick-start',
         children: [
           {
-            title: 'Getting Started',
-            path: '/guide/getting-started.md'
+            title: 'Quick Start',
+            path: '/guide/quick-start'
           },
           {
             title: 'Database',
-            path: '/guide/database.md'
+            path: '/guide/database'
           },
           {
             title: 'Contributing',
-            path: '/guide/contributing.md'
+            path: '/guide/contributing'
           },
           {
             title: 'Generate Docs',
-            path: '/guide/generate-docs.md'
+            path: '/guide/generate-docs'
+          },
+          {
+            title: 'Deployment',
+            path: '/guide/deployment'
           }
         ]
       },

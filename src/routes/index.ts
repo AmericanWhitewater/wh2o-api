@@ -15,6 +15,7 @@ const apiRoutes = [
   require('./gis-hucs'),
   require('./gis-states'),
   require('./gis-zips'),
+  require('./hello'),
   require('./image-upload'),
   require('./injuries'),
   require('./layer'),

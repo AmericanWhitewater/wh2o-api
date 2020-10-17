@@ -228,8 +228,7 @@ let migrationCommands = [{
       },
       cause_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
+        allowNull: false
       }
     }
   ]

@@ -8,14 +8,16 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:postman": "docgen build -i docs/wh2o-api.postman_collection.json -o docs/endpoints/README.md -m",
-    "serve": "nodemon",
     "dev": "nodemon",
     "start": "node dist/index.js",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "rimraf ./dist && tsc",
-    "db:migrate": "npx sequelize db:migrate",
-    "db:seed": "npx sequelize-cli db:seed:all",
-    "db:seed:undo": "npx sequelize-cli db:seed:undo"
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "db:seed:all": "npx sequelize-cli db:seed:all",
+    "db:seed:undo": "npx sequelize-cli db:seed:undo",
+    "db:seed:undo:all": "npx sequelize-cli db:seed:undo:all"
   },
   "repository": {
     "type": "git",
