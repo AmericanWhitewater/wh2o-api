@@ -1,7 +1,8 @@
 const faker = require('faker')
 
-const users = [...Array(100)].map((user) => (
+const users = [...Array(1000)].map((user, index) => (
   {
+    uid: index + 1,
     uname: faker.internet.userName(),
     upass: faker.internet.password(8),
     verifydate: new Date(),

@@ -1,8 +1,10 @@
 const faker = require('faker')
 
-const reaches = [...Array(100)].map(() => (
-  {
+const { randomRiverClass } = require('./helpers')
 
+const reaches = [...Array(1000)].map((reach,index) => (
+  {
+    id: index + 1,
     river: faker.lorem.words(2),
     section: faker.lorem.words(2),
     altname: null,
@@ -28,7 +30,7 @@ const reaches = [...Array(100)].map(() => (
     edited: null,
     is_final: true,
     revision: null,
-    class: 'none',
+    class: randomRiverClass(),
     ploc: null,
     tloc: null,
     was_final: false,

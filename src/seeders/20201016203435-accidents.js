@@ -4,7 +4,7 @@ const accidents = [...Array(100)].map(() => (
   {
     accidentdate: new Date(),
     victimname: faker.name.firstName(),
-    reachid: faker.random.number(),
+    reachid: faker.random.number(1000),
     countryabbr: faker.address.stateAbbr(), // inaccurate
     state: faker.address.stateAbbr(),
     river: faker.lorem.words(4),

@@ -82,7 +82,23 @@ URL: http://localhost:8000/delete-accident
 
 
 
-### 3. Get By Key
+### 3. Get All
+
+
+Get single accident by id.
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/accidents
+```
+
+
+
+### 4. Get By Key
 
 
 Get single accident by id.
@@ -162,7 +178,7 @@ URL: http://localhost:8000/accident
 
 
 
-### 4. Update
+### 5. Update
 
 
 See Create Accident for available fields.
@@ -1027,7 +1043,80 @@ URL: http://localhost:8000/delete-article
 
 
 
-### 3. Get By Key
+### 3. Front Page News
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/front-page-news
+```
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Article
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| articleid | 34161 |  |
+
+
+
+##### I. Example Response: Article
+```js
+{
+    "article": {
+        "articleid": "34161",
+        "title": "Clackamas River flow information survey",
+        "author": "Thomas O'Keefe",
+        "abstract": "<p>\r\n\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas. PGE is currently seeking feedback from the whitewater community on the flow resources along the Upper Clackamas River through a short 8 question online survey.</p>\r\n",
+        "abstractphoto": "2",
+        "icon": null,
+        "hascontents": 1,
+        "contents": "<div>\r\n\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas.</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\tPGE meets bi-annually with a local whitewater stakeholder group, the Boater Logistics User Body (BLUB), to plan, conduct and complete the whitewater boating-related activities along the Upper Clackamas River. Such activities include sponsorship of the Annual Upper Clackamas River Whitewater Festival, the development of three river boat access sites (complete), the creation of a new whitewater boating-related improvement (in discussion), and funding for the annual maintenance of USGS flow gauges (ongoing).</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\tAs a part of the above measures, PGE is seeking feedback from the whitewater community on the current flow resources along the Upper Clackamas River through a short 8 question online survey.</div>\r\n<div>\r\n\t<br />\r\n\tWe encourage paddlers who enjoy the Clackamas River to take this survey:</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\t<a href=\"https://www.surveymonkey.com/r/FKJN8S2\">https://www.surveymonkey.com/r/FKJN8S2</a></div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\t&nbsp;</div>\r\n",
+        "contentsphoto": "2",
+        "contact": "580",
+        "posted": "2019-01-23T00:52:00.000Z",
+        "shortname": "",
+        "uid": "580",
+        "releasedate": "2019-01-23T00:52:00.000Z",
+        "deleted": 0
+    }
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 4. Get All
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/articles
+```
+
+
+
+### 5. Get By Key
 
 
 
@@ -1094,7 +1183,7 @@ URL: http://localhost:8000/article
 
 
 
-### 4. Update
+### 6. Update
 
 
 
@@ -1186,7 +1275,7 @@ URL: http://localhost:8000/delete-reach
 
 
 
-### 3. Get By Key
+### 3. Get
 
 
 
@@ -1195,68 +1284,510 @@ URL: http://localhost:8000/delete-reach
 ```bash
 Method: GET
 Type: 
-URL: http://localhost:8000/comment
+URL: http://localhost:8000/comments
 ```
 
 
 
-***Query params:***
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Get - By ID
+
+
+
+***Query:***
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| id | 1250363 |  |
+| id | 2 |  |
 
 
 
-### 4. Get By Reach
-
-
-Get all comments for a reach.
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/reach-comments
+##### I. Example Response: Get - By ID
+```js
+{
+    "comment": {
+        "uid": "25",
+        "sectionid": "43",
+        "name": "Jaden",
+        "comments": "Culpa nihil consequuntur eaque ut quasi suscipit libero. Corporis consequuntur nemo quia et totam eum unde veniam in. Vel nesciunt ad id exercitationem reprehenderit deleniti. Minima ut odio. Molestias unde et nihil maxime dolorum.",
+        "posted": "2020-10-18T04:20:55.845Z",
+        "id": "2",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1",
+        "is_final": true,
+        "is_private": false
+    }
+}
 ```
 
 
+***Status Code:*** 200
 
-***Query params:***
+<br>
+
+
+
+##### II. Example Request: Get - User ID
+
+
+
+***Query:***
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| sectionid |  |  |
+| uid | 2 |  |
 
 
 
-### 5. Reach Warnings
-
-
-Get all comments which are categorized as warnings.
-
-
-***Endpoint:***
-
-```bash
-Method: GET
-Type: 
-URL: http://localhost:8000/reach-warnings
+##### II. Example Response: Get - User ID
+```js
+[
+    {
+        "uid": "2",
+        "sectionid": "97",
+        "name": "Unique",
+        "comments": "Dolor ipsa tenetur enim et porro blanditiis. Molestiae voluptatem quisquam. Dolorem sunt impedit aut eius maiores. Officiis et modi.",
+        "posted": "2020-10-18T04:20:55.846Z",
+        "id": "41",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "40",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "0",
+        "name": "Malachi",
+        "comments": "Aliquid qui sit. Velit non libero cumque quibusdam beatae. Dignissimos repudiandae suscipit blanditiis quia minus exercitationem qui. Delectus quos voluptates occaecati dolore at cum reprehenderit ut quia. Aperiam sunt nostrum iste. Repudiandae labore qui nostrum est blanditiis rerum.",
+        "posted": "2020-10-18T04:20:55.846Z",
+        "id": "81",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "80",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "21",
+        "name": "Freda",
+        "comments": "Commodi iure ut sed repudiandae veritatis officia neque repellendus molestias. Maxime est dicta voluptas nobis aliquid dolor. Ut est illum dolorem dolores. Non ullam optio earum commodi sit a. Fugiat impedit omnis dolor atque error quisquam sunt exercitationem.",
+        "posted": "2020-10-18T04:20:55.846Z",
+        "id": "88",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "87",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "80",
+        "name": "Tessie",
+        "comments": "Vel eaque ducimus libero ipsum placeat enim rem. Consequuntur est laborum nostrum earum corrupti doloremque iste. Quidem laborum ab commodi amet autem. Excepturi occaecati sit aut veritatis est ratione. Ullam et nesciunt molestias repellendus quia sunt.",
+        "posted": "2020-10-18T04:20:55.847Z",
+        "id": "145",
+        "section": "journal",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "144",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "47",
+        "name": "Josiane",
+        "comments": "Dolores voluptas molestiae ipsa quia aut. Voluptas distinctio optio ut facere et. Est et velit occaecati. Non aut incidunt enim placeat magnam enim nobis. Est veritatis et recusandae. Excepturi voluptates ut omnis in.",
+        "posted": "2020-10-18T04:20:55.847Z",
+        "id": "147",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "146",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "85",
+        "name": "Geovanny",
+        "comments": "Dolores sit quae. Omnis rerum exercitationem perspiciatis ab est. Aliquid corporis sequi. Eum praesentium quos sit provident tenetur natus. Rerum nobis ratione eum aperiam tempore exercitationem sed ea.",
+        "posted": "2020-10-18T04:20:55.849Z",
+        "id": "274",
+        "section": "journal",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "273",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "24",
+        "name": "Justyn",
+        "comments": "Ducimus ea itaque non expedita illum dolores hic et incidunt. Consequuntur error similique optio sequi temporibus quia. Sit nihil veritatis distinctio velit. Necessitatibus enim cupiditate eligendi facere impedit. Fuga numquam a.",
+        "posted": "2020-10-18T04:20:55.854Z",
+        "id": "605",
+        "section": "journal",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "604",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "35",
+        "name": "Brandi",
+        "comments": "Blanditiis sed et illo mollitia quia sit. Autem cupiditate sit. Repellendus natus consequatur magni iure consequatur voluptatibus velit ipsa quia. Porro nobis necessitatibus dolorem voluptas.",
+        "posted": "2020-10-18T04:20:55.857Z",
+        "id": "892",
+        "section": "journal",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "891",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "81",
+        "name": "Jakayla",
+        "comments": "Id eius temporibus qui amet nihil quasi. Tempore sit aut ipsa.",
+        "posted": "2020-10-18T04:20:55.859Z",
+        "id": "1017",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "1016",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "35",
+        "name": "Derick",
+        "comments": "Quis consectetur vel aut ipsa qui. Quas inventore ratione qui nesciunt rerum. Ipsam officia assumenda ea totam quae. Impedit soluta ea. Quia tenetur perferendis doloribus et aspernatur rem.",
+        "posted": "2020-10-18T04:20:55.859Z",
+        "id": "1062",
+        "section": "river",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "1061",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "99",
+        "name": "Mariela",
+        "comments": "Repellat dolorem nihil aut esse quibusdam amet sit aut. Id nostrum quis quam. Ut molestias non quae facilis aut est officiis esse maxime. Odio fuga quos illum sunt ut non.",
+        "posted": "2020-10-18T04:20:55.862Z",
+        "id": "1318",
+        "section": "photo",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1317",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "16",
+        "name": "Gennaro",
+        "comments": "Cumque asperiores dolorem voluptas. Dolor incidunt a. Doloremque perferendis aut cupiditate quaerat dolorem.",
+        "posted": "2020-10-18T04:20:55.863Z",
+        "id": "1395",
+        "section": "photo",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "1394",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "44",
+        "name": "Mack",
+        "comments": "Voluptatem quisquam ut et ipsum nesciunt natus voluptatum. Id harum adipisci at sint consequatur beatae.",
+        "posted": "2020-10-18T04:20:55.865Z",
+        "id": "1595",
+        "section": "photo",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "1594",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "79",
+        "name": "Randi",
+        "comments": "Sunt quos molestiae ipsum laudantium. Provident at et magni suscipit modi aspernatur aut est inventore.",
+        "posted": "2020-10-18T04:20:55.866Z",
+        "id": "1609",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1608",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "61",
+        "name": "Marianna",
+        "comments": "Libero maxime eius id vero. Id nihil eos nam quia. Non voluptate expedita officia et nesciunt dolorem. Iusto est vel fugiat error.",
+        "posted": "2020-10-18T04:20:55.866Z",
+        "id": "1698",
+        "section": "river",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "1697",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "2",
+        "sectionid": "15",
+        "name": "Grayson",
+        "comments": "Voluptatem suscipit eos doloribus rerum nihil reprehenderit. Vel sit dolor dolore consequatur aliquam neque delectus. Iste sint molestias fugiat sit maxime harum velit consequatur ipsum. Iste aut earum.",
+        "posted": "2020-10-18T04:20:55.869Z",
+        "id": "1891",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1890",
+        "is_final": true,
+        "is_private": false
+    }
+]
 ```
 
 
+***Status Code:*** 200
 
-***Query params:***
+<br>
+
+
+
+##### III. Example Request: Get - By Reach
+
+
+
+***Query:***
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| sectionid |  |  |
+| sectionid | 4 |  |
 
 
 
-### 6. Update
+##### III. Example Response: Get - By Reach
+```js
+[
+    {
+        "uid": "4",
+        "sectionid": "4",
+        "name": "Ruth",
+        "comments": "Necessitatibus id et sed dignissimos voluptas inventore nobis inventore magni. Voluptate quam non vel magnam beatae nesciunt et. Enim quia voluptatibus et quo dolore perspiciatis dolor. Nihil ad ratione quia molestias sed. Sunt ullam ab nam vero culpa vitae aut a minima. Expedita suscipit deserunt aperiam commodi est reiciendis.",
+        "posted": "2020-10-18T04:20:55.847Z",
+        "id": "95",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "94",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "41",
+        "sectionid": "4",
+        "name": "Alvina",
+        "comments": "Sit beatae explicabo. Facere dolor non officiis similique cumque. Dolorem laborum nemo voluptatem dicta eos ipsam et assumenda. Explicabo animi et accusantium officia id est. Labore non excepturi numquam dolor ut modi. Voluptates corporis occaecati facere rem.",
+        "posted": "2020-10-18T04:20:55.849Z",
+        "id": "273",
+        "section": "river",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "272",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "74",
+        "sectionid": "4",
+        "name": "Carolina",
+        "comments": "Praesentium quia voluptas quidem ut nesciunt. Facere assumenda voluptas eos soluta saepe.",
+        "posted": "2020-10-18T04:20:55.853Z",
+        "id": "519",
+        "section": "photo",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "518",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "17",
+        "sectionid": "4",
+        "name": "Oswaldo",
+        "comments": "Iusto esse enim nam et repellendus fugiat. Qui officiis commodi quis. Necessitatibus dicta magnam.",
+        "posted": "2020-10-18T04:20:55.854Z",
+        "id": "653",
+        "section": "river",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "652",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "43",
+        "sectionid": "4",
+        "name": "Lucious",
+        "comments": "Quis illum quia sed sunt ea enim ut libero. Quo exercitationem nisi enim iure pariatur voluptatem voluptatem nihil. Aut voluptates qui mollitia. Voluptatem quam non ut delectus quaerat sint. Sit fuga quo rerum. Quae dignissimos officiis placeat.",
+        "posted": "2020-10-18T04:20:55.857Z",
+        "id": "890",
+        "section": "photo",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "889",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "58",
+        "sectionid": "4",
+        "name": "Jordon",
+        "comments": "Veritatis eveniet voluptas et ullam accusamus sit et fuga. Mollitia eos maiores. Veritatis dolores animi omnis vel sed debitis. Delectus voluptas voluptatem impedit dolorem quisquam repellat hic. Enim iusto dolores voluptatem ipsa molestiae aut dolorum. Sunt iste soluta distinctio eos nihil.",
+        "posted": "2020-10-18T04:20:55.858Z",
+        "id": "930",
+        "section": "journal",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "929",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "34",
+        "sectionid": "4",
+        "name": "Kenny",
+        "comments": "Voluptatem aut facilis. Vel voluptas quasi. Voluptatibus magni assumenda. Earum sit cum voluptatum eligendi aut temporibus. Sapiente officiis saepe.",
+        "posted": "2020-10-18T04:20:55.858Z",
+        "id": "962",
+        "section": "journal",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "961",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "10",
+        "sectionid": "4",
+        "name": "Lacey",
+        "comments": "Ut recusandae eveniet quos. Possimus animi ut adipisci illum harum dolorum aut. Quis et nulla qui quia sed error nostrum. Quia ut sed eligendi ullam qui occaecati. Aperiam velit id ex temporibus perspiciatis laudantium dolor.",
+        "posted": "2020-10-18T04:20:55.862Z",
+        "id": "1282",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1281",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "19",
+        "sectionid": "4",
+        "name": "Laurie",
+        "comments": "Omnis sed dicta voluptate ut nihil. Explicabo et et vel minima rerum vitae. Tenetur dolorum et necessitatibus iusto architecto voluptas aspernatur corporis. Voluptate sit harum cupiditate natus iure qui quis quis quibusdam.",
+        "posted": "2020-10-18T04:20:55.864Z",
+        "id": "1504",
+        "section": "river",
+        "type": "complaint",
+        "deleted": null,
+        "duid": null,
+        "revision": "1503",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "66",
+        "sectionid": "4",
+        "name": "Augustine",
+        "comments": "Quasi est voluptate odio dignissimos. Aliquid minima soluta alias et aspernatur maxime quasi qui. Suscipit qui adipisci delectus adipisci optio rerum porro. Eius sed aut suscipit id animi fugiat sed velit. Voluptatem rem dolore velit tenetur occaecati. Cum velit ipsam consequuntur sapiente ea perferendis.",
+        "posted": "2020-10-18T04:20:55.869Z",
+        "id": "1917",
+        "section": "journal",
+        "type": "warning",
+        "deleted": null,
+        "duid": null,
+        "revision": "1916",
+        "is_final": true,
+        "is_private": false
+    },
+    {
+        "uid": "80",
+        "sectionid": "4",
+        "name": "Marcelino",
+        "comments": "Et aperiam optio ut molestias quo culpa. Natus beatae porro necessitatibus omnis et animi alias.",
+        "posted": "2020-10-18T04:20:55.869Z",
+        "id": "1940",
+        "section": "river",
+        "type": "comment",
+        "deleted": null,
+        "duid": null,
+        "revision": "1939",
+        "is_final": true,
+        "is_private": false
+    }
+]
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 4. Update
 
 
 
@@ -4296,7 +4827,125 @@ URL: http://localhost:8000/delete-reach
 
 
 
-### 3. Get By Key
+### 3. Get All
+
+
+Get single reach by id
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/reaches
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| class | I |  |
+| river | qu |  |
+| section | ut |  |
+| table | true |  |
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Get By Key
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id | 2 |  |
+
+
+
+##### I. Example Response: Get By Key
+```js
+{
+    "id": 2,
+    "river": "Aniakchak",
+    "section": "Surprise Lake to Aniakchak Bay",
+    "altname": null,
+    "county": "Aniakchak National Park and Preserve",
+    "zipcode": "99571",
+    "length": 32,
+    "avggradient": 30,
+    "maxgradient": 83,
+    "agency": "National Park Service",
+    "gaugeinfo": "<p>Look for 1000-2000 cfs in July (based on \r\nEmbick).</p>",
+    "description": "<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \r\nhref=\"http://www.nps.gov/ania/\">Aniakchak National Mounment and Preserve</a> providing an \r\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \r\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \r\nthe schedule.</p>\r\n\r\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \r\nyears \r\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \r\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \r\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \r\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \r\nlandscape.</p>\r\n\r\n<p>From the lake the river begins at a slow pace for the first mile before entering the \"Gates\", a \r\n1500 foot gash in \r\nthe \r\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \r\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \r\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \r\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \r\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \r\nfive miles \r\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \r\nthat takes you to the ocean.<p>\r\n\r\n<p>The river system \r\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \r\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \r\nbear are common along this river so be sure to take proper precautions and be prepared for \r\nencounters.\r\n</p>\r\n\r\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \r\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \r\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \r\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \r\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \r\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \r\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \r\nis extremely remote with no practical access to outside assistance.</p>",
+    "photoid": 8547,
+    "permitid": null,
+    "huc": "19020702",
+    "plat": 56.9059982299805,
+    "plon": -158.080902099609,
+    "prrn": null,
+    "tlat": 56.7634010314941,
+    "tlon": -157.493392944336,
+    "trrn": null,
+    "skid": null,
+    "status": "u",
+    "edited": "2004-09-03T20:12:15.000Z",
+    "is_final": true,
+    "revision": 1189796,
+    "class": "I-IV",
+    "ploc": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        },
+        "type": "Point",
+        "coordinates": [
+            -158.081,
+            56.906
+        ]
+    },
+    "tloc": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        },
+        "type": "Point",
+        "coordinates": [
+            -157.493,
+            56.7634
+        ]
+    },
+    "was_final": true,
+    "thumboverride": false,
+    "shuttledetails": null,
+    "abstract": null,
+    "direction_default": 1,
+    "custom_destination": null,
+    "revision_comment": null,
+    "permiturl": null,
+    "permitinfo": null,
+    "image_override": null
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 4. Get By Key
 
 
 Get single reach by id
@@ -4323,7 +4972,7 @@ URL: http://localhost:8000/reach
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: Reach
+##### I. Example Request: Get By Key
 
 
 
@@ -4335,74 +4984,72 @@ URL: http://localhost:8000/reach
 
 
 
-##### I. Example Response: Reach
+##### I. Example Response: Get By Key
 ```js
 {
-    "reach": {
-        "id": 2,
-        "river": "Aniakchak",
-        "section": "Surprise Lake to Aniakchak Bay",
-        "altname": null,
-        "county": "Aniakchak National Park and Preserve",
-        "zipcode": "99571",
-        "length": 32,
-        "avggradient": 30,
-        "maxgradient": 83,
-        "agency": "National Park Service",
-        "gaugeinfo": "<p>Look for 1000-2000 cfs in July (based on \r\nEmbick).</p>",
-        "description": "<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \r\nhref=\"http://www.nps.gov/ania/\">Aniakchak National Mounment and Preserve</a> providing an \r\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \r\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \r\nthe schedule.</p>\r\n\r\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \r\nyears \r\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \r\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \r\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \r\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \r\nlandscape.</p>\r\n\r\n<p>From the lake the river begins at a slow pace for the first mile before entering the \"Gates\", a \r\n1500 foot gash in \r\nthe \r\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \r\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \r\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \r\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \r\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \r\nfive miles \r\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \r\nthat takes you to the ocean.<p>\r\n\r\n<p>The river system \r\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \r\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \r\nbear are common along this river so be sure to take proper precautions and be prepared for \r\nencounters.\r\n</p>\r\n\r\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \r\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \r\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \r\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \r\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \r\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \r\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \r\nis extremely remote with no practical access to outside assistance.</p>",
-        "photoid": 8547,
-        "permitid": null,
-        "huc": "19020702",
-        "plat": 56.9059982299805,
-        "plon": -158.080902099609,
-        "prrn": null,
-        "tlat": 56.7634010314941,
-        "tlon": -157.493392944336,
-        "trrn": null,
-        "skid": null,
-        "status": "u",
-        "edited": "2004-09-03T20:12:15.000Z",
-        "is_final": true,
-        "revision": 1189796,
-        "class": "I-IV",
-        "ploc": {
-            "crs": {
-                "type": "name",
-                "properties": {
-                    "name": "EPSG:4326"
-                }
-            },
-            "type": "Point",
-            "coordinates": [
-                -158.081,
-                56.906
-            ]
+    "id": 2,
+    "river": "Aniakchak",
+    "section": "Surprise Lake to Aniakchak Bay",
+    "altname": null,
+    "county": "Aniakchak National Park and Preserve",
+    "zipcode": "99571",
+    "length": 32,
+    "avggradient": 30,
+    "maxgradient": 83,
+    "agency": "National Park Service",
+    "gaugeinfo": "<p>Look for 1000-2000 cfs in July (based on \r\nEmbick).</p>",
+    "description": "<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \r\nhref=\"http://www.nps.gov/ania/\">Aniakchak National Mounment and Preserve</a> providing an \r\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \r\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \r\nthe schedule.</p>\r\n\r\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \r\nyears \r\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \r\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \r\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \r\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \r\nlandscape.</p>\r\n\r\n<p>From the lake the river begins at a slow pace for the first mile before entering the \"Gates\", a \r\n1500 foot gash in \r\nthe \r\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \r\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \r\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \r\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \r\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \r\nfive miles \r\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \r\nthat takes you to the ocean.<p>\r\n\r\n<p>The river system \r\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \r\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \r\nbear are common along this river so be sure to take proper precautions and be prepared for \r\nencounters.\r\n</p>\r\n\r\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \r\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \r\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \r\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \r\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \r\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \r\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \r\nis extremely remote with no practical access to outside assistance.</p>",
+    "photoid": 8547,
+    "permitid": null,
+    "huc": "19020702",
+    "plat": 56.9059982299805,
+    "plon": -158.080902099609,
+    "prrn": null,
+    "tlat": 56.7634010314941,
+    "tlon": -157.493392944336,
+    "trrn": null,
+    "skid": null,
+    "status": "u",
+    "edited": "2004-09-03T20:12:15.000Z",
+    "is_final": true,
+    "revision": 1189796,
+    "class": "I-IV",
+    "ploc": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
         },
-        "tloc": {
-            "crs": {
-                "type": "name",
-                "properties": {
-                    "name": "EPSG:4326"
-                }
-            },
-            "type": "Point",
-            "coordinates": [
-                -157.493,
-                56.7634
-            ]
+        "type": "Point",
+        "coordinates": [
+            -158.081,
+            56.906
+        ]
+    },
+    "tloc": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
         },
-        "was_final": true,
-        "thumboverride": false,
-        "shuttledetails": null,
-        "abstract": null,
-        "direction_default": 1,
-        "custom_destination": null,
-        "revision_comment": null,
-        "permiturl": null,
-        "permitinfo": null,
-        "image_override": null
-    }
+        "type": "Point",
+        "coordinates": [
+            -157.493,
+            56.7634
+        ]
+    },
+    "was_final": true,
+    "thumboverride": false,
+    "shuttledetails": null,
+    "abstract": null,
+    "direction_default": 1,
+    "custom_destination": null,
+    "revision_comment": null,
+    "permiturl": null,
+    "permitinfo": null,
+    "image_override": null
 }
 ```
 
@@ -4413,7 +5060,7 @@ URL: http://localhost:8000/reach
 
 
 
-### 4. Update
+### 5. Update
 
 
 See Create Reach for available fields.
@@ -4510,78 +5157,78 @@ URL: http://localhost:8000/states
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: States
+##### I. Example Request: Get All
 
 
 
-##### I. Example Response: States
+##### I. Example Response: Get All
 ```js
 [
-    "Other",
-    "Newfoundland",
-    "Nova Scotia",
-    "Nunavut",
-    "Manitoba",
-    "Alberta",
-    "British Columbia",
-    "New Brunswick",
-    "Quebec",
-    "Saskatchewan",
-    "Ontario",
-    "Alaska",
-    "Minnesota",
-    "Washington",
-    "Montana",
-    "Idaho",
-    "North Dakota",
-    "Michigan",
-    "Maine",
-    "Wisconsin",
-    "Oregon",
-    "South Dakota",
-    "New Hampshire",
-    "New York",
-    "Vermont",
-    "Wyoming",
-    "Iowa",
-    "Nebraska",
-    "Massachusetts",
-    "Pennsylvania",
-    "Illinois",
-    "Ohio",
-    "Connecticut",
-    "Rhode Island",
-    "California",
-    "Utah",
-    "Nevada",
-    "Indiana",
-    "New Jersey",
-    "Colorado",
-    "West Virginia",
-    "Missouri",
-    "Kansas",
-    "Delaware",
-    "Maryland",
-    "Virginia",
-    "Kentucky",
-    "District of Columbia",
-    "Arizona",
-    "NWT",
-    "PEI",
-    "Oklahoma",
-    "New Mexico",
-    "Tennessee",
-    "North Carolina",
-    "Texas",
-    "Arkansas",
-    "South Carolina",
-    "Alabama",
-    "Georgia",
-    "Mississippi",
-    "Louisiana",
-    "Florida",
-    "Hawaii",
-    "Yukon"
+    "",
+    "AB",
+    "AK",
+    "AL",
+    "AR",
+    "AZ",
+    "BC",
+    "CA",
+    "CO",
+    "CT",
+    "DC",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MB",
+    "MD",
+    "ME",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NB",
+    "NC",
+    "ND",
+    "NE",
+    "NF",
+    "NH",
+    "NJ",
+    "NM",
+    "NS",
+    "NT",
+    "NU",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "ON",
+    "OR",
+    "PA",
+    "PI",
+    "PQ",
+    "RI",
+    "SC",
+    "SD",
+    "SK",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY",
+    "YT"
 ]
 ```
 
@@ -5265,7 +5912,7 @@ URL: http://localhost:8000/delete-user
 
 
 
-### 3. Get By Key
+### 3. Get All
 
 
 
@@ -5274,16 +5921,8 @@ URL: http://localhost:8000/delete-user
 ```bash
 Method: GET
 Type: 
-URL: http://localhost:8000/user
+URL: http://localhost:8000/users
 ```
-
-
-
-***Query params:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| uid |  |  |
 
 
 
@@ -5358,7 +5997,99 @@ URL: http://localhost:8000/user
 
 
 
-### 4. Update
+### 4. Get By Key
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: http://localhost:8000/user
+```
+
+
+
+***Query params:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| uid | 1 |  |
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Get By Key
+
+
+
+***Query:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| uid | 1 |  |
+
+
+
+##### I. Example Response: Get By Key
+```js
+{
+    "uid": "1",
+    "uname": "beta-tester",
+    "upass": "beta-tester",
+    "verifydate": "2020-10-17",
+    "email": "beta-tester@aw.com",
+    "zip": "34436",
+    "address": "718 Zemlak Corners",
+    "city": "Khalidport",
+    "state": "NC",
+    "country": "USA",
+    "lastlogin": "2020-10-17T05:18:55.589Z",
+    "volunteer": null,
+    "alerts": null,
+    "postal": null,
+    "memnum": "76857",
+    "address2": null,
+    "home_phone": "710.375.1421 x285",
+    "work_phone": "(376) 627-7821",
+    "journal": null,
+    "aw_beta": null,
+    "mbr_level": null,
+    "bad_addr": null,
+    "bad_email": null,
+    "mod_date": null,
+    "record_type": null,
+    "name": "Deshawn",
+    "mem_transaction": null,
+    "transaction_id": null,
+    "expiration": null,
+    "modifydate": null,
+    "pushdate": null,
+    "mbr_relation": null,
+    "prefs": null,
+    "annual_renew": 0,
+    "code": null,
+    "googleid": null,
+    "socialprofile": null,
+    "facebookid": null,
+    "epassword": "NULL",
+    "remember_token": null,
+    "created_at": "2020-10-17T05:18:55.589Z",
+    "updated_at": "2020-10-17T05:18:55.589Z"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 5. Update
 
 
 
@@ -5414,8 +6145,8 @@ URL: http://localhost:8000/user-login
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| email |  |  |
-| password |  |  |
+| email | foo@aol.com |  |
+| password | updatetest |  |
 
 
 

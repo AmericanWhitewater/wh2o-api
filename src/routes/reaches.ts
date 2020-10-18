@@ -1,6 +1,8 @@
 import { pgClient, DataTypes } from '../config'
 import { Express, Request, Response } from 'express'
 const Reach = require('../models/reaches')(pgClient, DataTypes)
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 export = (app: Express) => {
   app.get('/reach', (req: Request, res: Response) => {
@@ -59,11 +61,34 @@ export = (app: Express) => {
 
   })
 
-  app.get('/reaches', async (req, res) => {
+  app.get('/reaches', async(req: Request, res:Response) => {
 
     try {
-      const result = await Reach.findAll()
 
+      const params = {
+        limit: 100,
+        offset: 0,
+        where: {}
+      }
+
+      if (req.query.class) {
+        params.where['class'] = req.query.class
+      }
+
+      if (req.query.river) {
+        params.where['river'] = {
+          [Op.like]: `%${req.query.river}%`
+        }
+      }
+
+      if (req.query.section) {
+        params.where['section'] = {
+          [Op.like]: `%${req.query.section}%`
+        }
+      }
+
+      const result = await Reach.findAndCountAll(params)
+      
       if (result) {
         res.status(200).send(result)
       }

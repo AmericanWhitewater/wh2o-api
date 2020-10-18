@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     state: {
       type: DataTypes.STRING,
       allowNull: false,
-      comment: 'state a river is in',
-      unique: true
+      comment: 'state a river is in'
+      // unique: true ?
     },
     reach_id: {
       type: DataTypes.INTEGER,

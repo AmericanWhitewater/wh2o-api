@@ -11,51 +11,46 @@ const _sortNewestFirst = (arr) => {
 
 module.exports = app => {
 
-  app.get('/reach-warnings', (req, res) => {
+  app.get('/comments', (req, res) => {
 
-    Comment.findAll({
-      where: {
-        sectionid: req.query.sectionid,
-        type: 'warning'
+    if (req.query.id) {
+      Comment.findOne({
+        where: {
+          id: req.query.id
+        }
+      }).then(result => {
+        res.send({ comment: result }).status(200)
+      }).catch(err => {
+        console.log(err)
+        res.send(err).status(404)
+      })
+    } else {
+
+      const params = {
+        limit: 100,
+        offset: 0,
+        where: {}
       }
-    }).then(result => {
-      res.send(_sortNewestFirst(result)).status(200)
-    }).catch(err => {
-      console.log(err)
-      res.send(err).status(404)
-    })
 
-  })
-
-  app.get('/reach-comments', (req, res) => {
-
-    Comment.findAll({
-      where: {
-        sectionid: req.query.sectionid,
-        type: 'comment'
+      if (req.query.type) {
+        params.where['type'] = req.query.type
       }
-    }).then(result => {
-      res.send({ comments: result }).status(200)
-    }).catch(err => {
-      console.log(err)
-      res.send(err).status(404)
-    })
 
-  })
-
-  app.get('/comment', (req, res) => {
-
-    Comment.findOne({
-      where: {
-        id: req.query.id
+      if (req.query.sectionid) {
+        params.where['sectionid'] = req.query.sectionid
       }
-    }).then(result => {
-      res.send({ comment: result }).status(200)
-    }).catch(err => {
-      console.log(err)
-      res.send(err).status(404)
-    })
 
+      if (req.query.uid) {
+        params.where['uid'] = req.query.uid
+      }
+
+      Comment.findAll(params).then(result => {
+        res.send(_sortNewestFirst(result)).status(200)
+      }).catch(err => {
+        console.log(err)
+        res.send(err).status(404)
+      })
+    }
   })
 
   app.post('/new-comment', (req, res) => {

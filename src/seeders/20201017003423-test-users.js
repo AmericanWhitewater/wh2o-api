@@ -7,7 +7,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('users', [
       {
-        uid: 1,
+        uid: 1002,
         uname: 'beta-tester',
         upass: 'beta-tester',
         verifydate: new Date(),
