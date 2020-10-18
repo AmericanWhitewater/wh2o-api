@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         title: 'Guides',
-        path: '/guide/quick-start',
+        path: '/guide/',
         children: [
           {
             title: 'Quick Start',
