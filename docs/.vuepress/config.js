@@ -57,7 +57,7 @@ module.exports = {
         title: 'Endpoints',
         path: '/endpoints/'
       }
-    ],
-    plugins: ['@vuepress/active-header-links']
-  }
+    ]
+  },
+  plugins: ['@vuepress/back-to-top','@vuepress/pwa']
 }
