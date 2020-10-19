@@ -10,7 +10,7 @@ export = (app: Express) => {
         articleid: req.query.articleid
       }
     }).then(result => {
-      res.send({ article: result }).status(200)
+      res.send(result).status(200)
     }).catch(err => {
       console.log(err)
       res.send(err).status(404)

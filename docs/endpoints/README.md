@@ -1116,7 +1116,7 @@ URL: http://localhost:8000/articles
 
 
 
-### 5. Get By Key
+### 5. Get By Id
 
 
 
@@ -1134,14 +1134,14 @@ URL: http://localhost:8000/article
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| articleid | 34161 |  |
+| articleid | 50 |  |
 
 
 
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: Article
+##### I. Example Request: Get By Id
 
 
 
@@ -1149,30 +1149,28 @@ URL: http://localhost:8000/article
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| articleid | 34161 |  |
+| articleid | 50 |  |
 
 
 
-##### I. Example Response: Article
+##### I. Example Response: Get By Id
 ```js
 {
-    "article": {
-        "articleid": "34161",
-        "title": "Clackamas River flow information survey",
-        "author": "Thomas O'Keefe",
-        "abstract": "<p>\r\n\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas. PGE is currently seeking feedback from the whitewater community on the flow resources along the Upper Clackamas River through a short 8 question online survey.</p>\r\n",
-        "abstractphoto": "2",
-        "icon": null,
-        "hascontents": 1,
-        "contents": "<div>\r\n\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas.</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\tPGE meets bi-annually with a local whitewater stakeholder group, the Boater Logistics User Body (BLUB), to plan, conduct and complete the whitewater boating-related activities along the Upper Clackamas River. Such activities include sponsorship of the Annual Upper Clackamas River Whitewater Festival, the development of three river boat access sites (complete), the creation of a new whitewater boating-related improvement (in discussion), and funding for the annual maintenance of USGS flow gauges (ongoing).</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\tAs a part of the above measures, PGE is seeking feedback from the whitewater community on the current flow resources along the Upper Clackamas River through a short 8 question online survey.</div>\r\n<div>\r\n\t<br />\r\n\tWe encourage paddlers who enjoy the Clackamas River to take this survey:</div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\t<a href=\"https://www.surveymonkey.com/r/FKJN8S2\">https://www.surveymonkey.com/r/FKJN8S2</a></div>\r\n<div>\r\n\t&nbsp;</div>\r\n<div>\r\n\t&nbsp;</div>\r\n",
-        "contentsphoto": "2",
-        "contact": "580",
-        "posted": "2019-01-23T00:52:00.000Z",
-        "shortname": "",
-        "uid": "580",
-        "releasedate": "2019-01-23T00:52:00.000Z",
-        "deleted": 0
-    }
+    "articleid": "50",
+    "title": "est maxime nesciunt illo",
+    "author": "Shayna",
+    "abstract": "Et illo tenetur. Assumenda rem reprehenderit ex velit voluptas dolorem.",
+    "abstractphoto": "http://placeimg.com/640/480/nature",
+    "icon": null,
+    "hascontents": null,
+    "contents": "Omnis qui alias ad nihil qui. Eaque modi sed illo magni necessitatibus ut esse blanditiis dolores. Accusantium et saepe itaque sed molestiae porro tempore.\n \rRerum nihil unde id itaque sed blanditiis dolorum non non. Maiores qui dolores voluptatum minus sapiente assumenda non dolor aut. Placeat voluptas voluptatem ut.\n \rRerum laudantium ut autem. Cum qui sapiente est. Quas fuga quam ipsam qui reprehenderit id et aut accusantium. Similique porro ad quasi sint rerum aliquid. Quae ipsa quod tenetur aperiam.",
+    "contentsphoto": "http://placeimg.com/640/480/nature",
+    "contact": null,
+    "posted": "2020-10-19T17:27:36.972Z",
+    "shortname": "eaque neque laborum ad",
+    "uid": "78275",
+    "releasedate": "2020-10-19T17:27:36.972Z",
+    "deleted": 0
 }
 ```
 
@@ -4830,8 +4828,6 @@ URL: http://localhost:8000/delete-reach
 ### 3. Get All
 
 
-Get single reach by id
-
 
 ***Endpoint:***
 
@@ -4850,98 +4846,6 @@ URL: http://localhost:8000/reaches
 | class | I |  |
 | river | qu |  |
 | section | ut |  |
-| table | true |  |
-
-
-
-***More example Requests/Responses:***
-
-
-##### I. Example Request: Get By Key
-
-
-
-***Query:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| id | 2 |  |
-
-
-
-##### I. Example Response: Get By Key
-```js
-{
-    "id": 2,
-    "river": "Aniakchak",
-    "section": "Surprise Lake to Aniakchak Bay",
-    "altname": null,
-    "county": "Aniakchak National Park and Preserve",
-    "zipcode": "99571",
-    "length": 32,
-    "avggradient": 30,
-    "maxgradient": 83,
-    "agency": "National Park Service",
-    "gaugeinfo": "<p>Look for 1000-2000 cfs in July (based on \r\nEmbick).</p>",
-    "description": "<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \r\nhref=\"http://www.nps.gov/ania/\">Aniakchak National Mounment and Preserve</a> providing an \r\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \r\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \r\nthe schedule.</p>\r\n\r\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \r\nyears \r\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \r\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \r\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \r\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \r\nlandscape.</p>\r\n\r\n<p>From the lake the river begins at a slow pace for the first mile before entering the \"Gates\", a \r\n1500 foot gash in \r\nthe \r\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \r\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \r\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \r\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \r\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \r\nfive miles \r\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \r\nthat takes you to the ocean.<p>\r\n\r\n<p>The river system \r\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \r\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \r\nbear are common along this river so be sure to take proper precautions and be prepared for \r\nencounters.\r\n</p>\r\n\r\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \r\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \r\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \r\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \r\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \r\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \r\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \r\nis extremely remote with no practical access to outside assistance.</p>",
-    "photoid": 8547,
-    "permitid": null,
-    "huc": "19020702",
-    "plat": 56.9059982299805,
-    "plon": -158.080902099609,
-    "prrn": null,
-    "tlat": 56.7634010314941,
-    "tlon": -157.493392944336,
-    "trrn": null,
-    "skid": null,
-    "status": "u",
-    "edited": "2004-09-03T20:12:15.000Z",
-    "is_final": true,
-    "revision": 1189796,
-    "class": "I-IV",
-    "ploc": {
-        "crs": {
-            "type": "name",
-            "properties": {
-                "name": "EPSG:4326"
-            }
-        },
-        "type": "Point",
-        "coordinates": [
-            -158.081,
-            56.906
-        ]
-    },
-    "tloc": {
-        "crs": {
-            "type": "name",
-            "properties": {
-                "name": "EPSG:4326"
-            }
-        },
-        "type": "Point",
-        "coordinates": [
-            -157.493,
-            56.7634
-        ]
-    },
-    "was_final": true,
-    "thumboverride": false,
-    "shuttledetails": null,
-    "abstract": null,
-    "direction_default": 1,
-    "custom_destination": null,
-    "revision_comment": null,
-    "permiturl": null,
-    "permitinfo": null,
-    "image_override": null
-}
-```
-
-
-***Status Code:*** 200
-
-<br>
 
 
 

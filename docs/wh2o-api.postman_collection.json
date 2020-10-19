@@ -4462,12 +4462,12 @@
 			"name": "Article",
 			"item": [
 				{
-					"name": "Get By Key",
+					"name": "Get By Id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/article?articleid=34161",
+							"raw": "{{base_url}}/article?articleid=50",
 							"host": [
 								"{{base_url}}"
 							],
@@ -4477,19 +4477,19 @@
 							"query": [
 								{
 									"key": "articleid",
-									"value": "34161"
+									"value": "50"
 								}
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Article",
+							"name": "Get By Id",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/article?articleid=34161",
+									"raw": "{{base_url}}/article?articleid=50",
 									"host": [
 										"{{base_url}}"
 									],
@@ -4499,7 +4499,7 @@
 									"query": [
 										{
 											"key": "articleid",
-											"value": "34161"
+											"value": "50"
 										}
 									]
 								}
@@ -4509,8 +4509,36 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
 								},
 								{
 									"key": "Content-Type",
@@ -4518,15 +4546,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "2113"
+									"value": "975"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"841-/SLsyMsjtwBF1WcmmUkuGcGMMag\""
+									"value": "W/\"3cf-8atqjv1yDX26MVgh0N3kaKiB9vc\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 13 Jul 2020 20:56:04 GMT"
+									"value": "Mon, 19 Oct 2020 17:28:05 GMT"
 								},
 								{
 									"key": "Connection",
@@ -4534,7 +4562,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"article\": {\n        \"articleid\": \"34161\",\n        \"title\": \"Clackamas River flow information survey\",\n        \"author\": \"Thomas O'Keefe\",\n        \"abstract\": \"<p>\\r\\n\\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas. PGE is currently seeking feedback from the whitewater community on the flow resources along the Upper Clackamas River through a short 8 question online survey.</p>\\r\\n\",\n        \"abstractphoto\": \"2\",\n        \"icon\": null,\n        \"hascontents\": 1,\n        \"contents\": \"<div>\\r\\n\\tAs a part of Portland General Electric&rsquo;s (PGE) license for its hydroelectric project along the Clackamas River, PGE follows a Recreation Resource Management Plan that directs the Company towards recreation projects along the Clackamas.</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\tPGE meets bi-annually with a local whitewater stakeholder group, the Boater Logistics User Body (BLUB), to plan, conduct and complete the whitewater boating-related activities along the Upper Clackamas River. Such activities include sponsorship of the Annual Upper Clackamas River Whitewater Festival, the development of three river boat access sites (complete), the creation of a new whitewater boating-related improvement (in discussion), and funding for the annual maintenance of USGS flow gauges (ongoing).</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\tAs a part of the above measures, PGE is seeking feedback from the whitewater community on the current flow resources along the Upper Clackamas River through a short 8 question online survey.</div>\\r\\n<div>\\r\\n\\t<br />\\r\\n\\tWe encourage paddlers who enjoy the Clackamas River to take this survey:</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\t<a href=\\\"https://www.surveymonkey.com/r/FKJN8S2\\\">https://www.surveymonkey.com/r/FKJN8S2</a></div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n<div>\\r\\n\\t&nbsp;</div>\\r\\n\",\n        \"contentsphoto\": \"2\",\n        \"contact\": \"580\",\n        \"posted\": \"2019-01-23T00:52:00.000Z\",\n        \"shortname\": \"\",\n        \"uid\": \"580\",\n        \"releasedate\": \"2019-01-23T00:52:00.000Z\",\n        \"deleted\": 0\n    }\n}"
+							"body": "{\n    \"articleid\": \"50\",\n    \"title\": \"est maxime nesciunt illo\",\n    \"author\": \"Shayna\",\n    \"abstract\": \"Et illo tenetur. Assumenda rem reprehenderit ex velit voluptas dolorem.\",\n    \"abstractphoto\": \"http://placeimg.com/640/480/nature\",\n    \"icon\": null,\n    \"hascontents\": null,\n    \"contents\": \"Omnis qui alias ad nihil qui. Eaque modi sed illo magni necessitatibus ut esse blanditiis dolores. Accusantium et saepe itaque sed molestiae porro tempore.\\n \\rRerum nihil unde id itaque sed blanditiis dolorum non non. Maiores qui dolores voluptatum minus sapiente assumenda non dolor aut. Placeat voluptas voluptatem ut.\\n \\rRerum laudantium ut autem. Cum qui sapiente est. Quas fuga quam ipsam qui reprehenderit id et aut accusantium. Similique porro ad quasi sint rerum aliquid. Quae ipsa quod tenetur aperiam.\",\n    \"contentsphoto\": \"http://placeimg.com/640/480/nature\",\n    \"contact\": null,\n    \"posted\": \"2020-10-19T17:27:36.972Z\",\n    \"shortname\": \"eaque neque laborum ad\",\n    \"uid\": \"78275\",\n    \"releasedate\": \"2020-10-19T17:27:36.972Z\",\n    \"deleted\": 0\n}"
 						}
 					]
 				},
@@ -5939,7 +5967,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/reaches?class=I&river=qu&section=ut&table=true",
+							"raw": "{{base_url}}/reaches?class=I&river=qu&section=ut",
 							"host": [
 								"{{base_url}}"
 							],
@@ -5958,98 +5986,11 @@
 								{
 									"key": "section",
 									"value": "ut"
-								},
-								{
-									"key": "table",
-									"value": "true"
 								}
 							]
-						},
-						"description": "Get single reach by id"
-					},
-					"response": [
-						{
-							"name": "Get By Key",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/reach?id=2",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"reach"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "http://localhost:8080"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "3913"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"f49-1+2GVUCXsTAAus9ExU02g7J7mKg\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 15 Jul 2020 15:46:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 2,\n    \"river\": \"Aniakchak\",\n    \"section\": \"Surprise Lake to Aniakchak Bay\",\n    \"altname\": null,\n    \"county\": \"Aniakchak National Park and Preserve\",\n    \"zipcode\": \"99571\",\n    \"length\": 32,\n    \"avggradient\": 30,\n    \"maxgradient\": 83,\n    \"agency\": \"National Park Service\",\n    \"gaugeinfo\": \"<p>Look for 1000-2000 cfs in July (based on \\r\\nEmbick).</p>\",\n    \"description\": \"<p>The Aniakchak River, a Federally-designated Wild and Scenic River, is located within the <a \\r\\nhref=\\\"http://www.nps.gov/ania/\\\">Aniakchak National Mounment and Preserve</a> providing an \\r\\nopportunity for a remote river expedition on the Alaska Peninusla. Trips usually take place during \\r\\nthe month of July. Plan for 3-4 days but be prepared for longer as weather conditions often dictate \\r\\nthe schedule.</p>\\r\\n\\r\\n<p>The Aniakchak Volcano underwent a catostrophic explosive erruption approximately 3400 \\r\\nyears \\r\\nago that formed the current caldera. Smaller erruptions have occurred more recently, with the last \\r\\none in 1931. Surprise Lake, located within the 5.9 mile diameter caldera, is the source of the \\r\\nAniakchak River. This caldera has its own microclimate marked by consistently wet weather and \\r\\nharsh winds. Despite this it offers opportunities for exploration and hiking across the volcanic \\r\\nlandscape.</p>\\r\\n\\r\\n<p>From the lake the river begins at a slow pace for the first mile before entering the \\\"Gates\\\", a \\r\\n1500 foot gash in \\r\\nthe \\r\\ncaldera wall. Here the river drops at a rate of 73 feet per mile with class IV whitewater. The river \\r\\nremains class II/III for the next 10 miles (if you're in an inflatible be sure to pack the patch kit as \\r\\nthe sharp volcanic rocks can do a number on your boat). At the confluence of Hidden Creek the \\r\\nriver enters the steep 83 feet per mile section where volcanic bedrock on either side and boulders \\r\\nin the channel constrict the flow. The pace of the river begins to slow considerably over the next \\r\\nfive miles \\r\\nas you leave this section and continue the remainder of the journey on a low-gradient alluvial river \\r\\nthat takes you to the ocean.<p>\\r\\n\\r\\n<p>The river system \\r\\nsupports all five species of salmon and Surprise Lake provides spawning habitat and a nursery for \\r\\nsockeye salmon and artic char. Dolly Varden are also present. Wildlife are abundant and brown \\r\\nbear are common along this river so be sure to take proper precautions and be prepared for \\r\\nencounters.\\r\\n</p>\\r\\n\\r\\n<p>LOGISTICS: The expense of getting to this river and the unpredictable weather keep usage \\r\\nlow. You can get commerical service into King Salmon or to Port Heiden. From either of these \\r\\nairstrips you'll need to arrange for a float plane charter to Surprise Lake. King Salmon \\r\\nis further away (150 miles vs. 20 miles) but offers more options. You will also need to arrange for \\r\\npick up at the end of your trip where the river meets the ocean at Aniakchak Bay. Float planes can \\r\\nland in the bay or wheel planes can land on the beachhead. Poor weather conditions can delay \\r\\nflights so plan accordingly. There is a shelter at the beach for boaters awaiting pick up. This region \\r\\nis extremely remote with no practical access to outside assistance.</p>\",\n    \"photoid\": 8547,\n    \"permitid\": null,\n    \"huc\": \"19020702\",\n    \"plat\": 56.9059982299805,\n    \"plon\": -158.080902099609,\n    \"prrn\": null,\n    \"tlat\": 56.7634010314941,\n    \"tlon\": -157.493392944336,\n    \"trrn\": null,\n    \"skid\": null,\n    \"status\": \"u\",\n    \"edited\": \"2004-09-03T20:12:15.000Z\",\n    \"is_final\": true,\n    \"revision\": 1189796,\n    \"class\": \"I-IV\",\n    \"ploc\": {\n        \"crs\": {\n            \"type\": \"name\",\n            \"properties\": {\n                \"name\": \"EPSG:4326\"\n            }\n        },\n        \"type\": \"Point\",\n        \"coordinates\": [\n            -158.081,\n            56.906\n        ]\n    },\n    \"tloc\": {\n        \"crs\": {\n            \"type\": \"name\",\n            \"properties\": {\n                \"name\": \"EPSG:4326\"\n            }\n        },\n        \"type\": \"Point\",\n        \"coordinates\": [\n            -157.493,\n            56.7634\n        ]\n    },\n    \"was_final\": true,\n    \"thumboverride\": false,\n    \"shuttledetails\": null,\n    \"abstract\": null,\n    \"direction_default\": 1,\n    \"custom_destination\": null,\n    \"revision_comment\": null,\n    \"permiturl\": null,\n    \"permitinfo\": null,\n    \"image_override\": null\n}"
 						}
-					]
+					},
+					"response": []
 				},
 				{
 					"name": "Create",
@@ -6805,7 +6746,7 @@
 	],
 	"variable": [
 		{
-			"id": "7c2fe146-21c8-49b3-8c1e-5144a616c936",
+			"id": "0616dad4-0832-4b83-a663-0fa4e7347e0a",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}
