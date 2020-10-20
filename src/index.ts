@@ -7,7 +7,6 @@ if (result.error) {
 }
 import express from 'express'
 const app = express()
-const apiPort = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const middleware = require('./middleware')
 const routes = require('./routes')
@@ -29,7 +28,4 @@ app.use(bodyParser.urlencoded({ extended: false }))
 middleware(app)
 routes(app)
 
-app.listen(apiPort, () => {
-  console.log('---------------------------------------------\n')
-  console.log(`✅ Listening on http://localhost:${apiPort}`)
-})
+export default app
