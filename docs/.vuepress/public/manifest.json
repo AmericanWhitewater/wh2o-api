@@ -1,0 +1,9 @@
+{
+  "name": "wh2o-api docs",
+  "short_name": "wh2o-api docs",
+  "theme_color": "#4f758b",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}

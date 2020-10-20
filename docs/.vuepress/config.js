@@ -59,5 +59,19 @@ module.exports = {
       }
     ]
   },
-  plugins: ['@vuepress/back-to-top','@vuepress/pwa']
+  plugins: ['@vuepress/back-to-top', ['@vuepress/pwa', {
+    serviceWorker: true,
+    updatePopup: true
+  }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.png' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#4f758b' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#4f758b' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/mstile-144x144.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+  ],
 }
