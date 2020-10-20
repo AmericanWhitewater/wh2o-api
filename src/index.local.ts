@@ -1,4 +1,4 @@
-import app from "./index"
+import app from './index'
 const apiPort = process.env.PORT || 3000
 
 app.listen(apiPort, () => {

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -37,12 +37,12 @@ module.exports = {
         id: 7,
         shortkey: 'x',
         description: 'maximal'
-      },
+      }
     ])
   },
 
   down: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkDelete('gauge_reading_sources', null, {});
+    await queryInterface.bulkDelete('gauge_reading_sources', null, {})
   }
-};
+}

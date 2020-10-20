@@ -61,7 +61,7 @@ export = (app: Express) => {
 
   })
 
-  app.get('/reaches', async(req: Request, res:Response) => {
+  app.get('/reaches', async (req: Request, res: Response) => {
 
     try {
 
@@ -88,7 +88,7 @@ export = (app: Express) => {
       }
 
       const result = await Reach.findAndCountAll(params)
-      
+
       if (result) {
         res.status(200).send(result)
       }

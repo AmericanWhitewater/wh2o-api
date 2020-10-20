@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -33,7 +33,7 @@ module.exports = {
         unit: 'in/15min',
         name: 'Precip. in 15m',
         format: '%2.2f',
-        sortorder: 80,
+        sortorder: 80
       },
       {
         id: 5,
@@ -41,7 +41,7 @@ module.exports = {
         unit: 'in/24h',
         name: 'Precip. in 24h',
         format: '%2.1f',
-        sortorder: 89,
+        sortorder: 89
       },
       {
         id: 6,
@@ -49,7 +49,7 @@ module.exports = {
         unit: 'in/6h',
         name: 'Precip. in 6h',
         format: '%2.1f',
-        sortorder: 83,
+        sortorder: 83
       },
       {
         id: 7,
@@ -57,7 +57,7 @@ module.exports = {
         unit: 'in/yr',
         name: 'Yearly Precip.',
         format: '%3.1f',
-        sortorder: 93,
+        sortorder: 93
       },
       {
         id: 8,
@@ -65,7 +65,7 @@ module.exports = {
         unit: 'ft',
         name: 'Feet Stage',
         format: '%3.2f',
-        sortorder: 20,
+        sortorder: 20
       },
       {
         id: 9,
@@ -73,14 +73,14 @@ module.exports = {
         unit: 'ft',
         name: 'Feet Stage',
         format: '%3.2f',
-        sortorder: 20,
-      },
-      
+        sortorder: 20
+      }
+
     ])
   },
 
   down: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkDelete('gauge_reading_metrics', null, {});
+    await queryInterface.bulkDelete('gauge_reading_metrics', null, {})
   }
-};
+}

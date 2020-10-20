@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 const faker = require('faker')
 
 const randomUpdateType = () => {
@@ -28,6 +28,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('gauge_sources', null, {});
+    await queryInterface.bulkDelete('gauge_sources', null, {})
   }
-};
+}

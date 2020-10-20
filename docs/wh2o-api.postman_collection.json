@@ -33,7 +33,7 @@
 					},
 					"response": [
 						{
-							"name": "Accident",
+							"name": "Get By Key",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -58,8 +58,36 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
 								},
 								{
 									"key": "Content-Type",
@@ -67,15 +95,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1733"
+									"value": "1158"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"6c5-cvISGaAKiMYRhrZ/sKke4bh58ig\""
+									"value": "W/\"486-NWEx1VxG+Wo0eMrLMrZOXr2GuEo\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 13 Jul 2020 20:17:37 GMT"
+									"value": "Tue, 20 Oct 2020 23:10:44 GMT"
 								},
 								{
 									"key": "Connection",
@@ -83,7 +111,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"Accident\": {\n        \"id\": 2,\n        \"accidentdate\": \"1977-08-27\",\n        \"victimname\": \"Robert A. Taylor\",\n        \"reachid\": 2378,\n        \"countryabbr\": \"US\",\n        \"state\": \"WV\",\n        \"river\": \"Gauley (7 \",\n        \"section\": \"7 (Upper). Summersville Dam to Mason Branch\",\n        \"location\": \"Lost Paddle\",\n        \"waterlevel\": \"3100\",\n        \"rellevel\": \"M\",\n        \"difficulty\": \"V\",\n        \"age\": 25,\n        \"experience\": \"X\",\n        \"privcomm\": \"P\",\n        \"boattype\": \"K\",\n        \"groupinfo\": \"\",\n        \"numvictims\": 1,\n        \"othervictimnames\": \"\",\n        \"description\": \"<p>\\r\\n\\tBob Taylor was running the Upper Gauley with four friends on August 27, 1977. The level was 2700 from the dam, 400 from the Meadow River, Bob was in his late 20s, very fit, and quite familiar with the Gauley. He was probably the best paddler in West Virginia. In the third drop of Lost Paddle Bob elected to surf the holes. He got pummelled in the second, which is quite large. He flipped, rolled, endered, and rolled again. After his third flip he bailed out. He recirculated twice in the hole, then washed downstream. One other paddler attempted a boat rescue, but after holding on for a short time Bob let go of the boat and attempted to swim into a river left eddy. He was washed into a chute on the upper left side of Tumblehome Rapid where he disappeared. His companions coulds not find him that day, so they paddled out and reported the accident to authorites. The next day, with the river running at 2100 cfs, they returned with WVDNR Officers. After a lengthy search they spotted his body under several feet of water in the chute. They were able to pull a log out of the chute, which released the body.</p>\\r\\n<p>\\r\\n\\thttp://www.americanwhitewater.org/content/Journal/show-page/issue/6/year/1977/page/193/</p>\\r\\n\",\n        \"type\": \"F\",\n        \"cause\": 12,\n        \"contactname\": null,\n        \"contactphone\": null,\n        \"contactemail\": null,\n        \"status\": \"R\"\n    }\n}"
+							"body": "{\n    \"id\": 2,\n    \"accidentdate\": \"2020-10-20\",\n    \"victimname\": \"Dewayne\",\n    \"reachid\": 60,\n    \"countryabbr\": \"TX\",\n    \"state\": \"MA\",\n    \"river\": \"et perferendis ipsa ut\",\n    \"section\": \"recusandae mollitia tenetur assumenda\",\n    \"location\": null,\n    \"waterlevel\": null,\n    \"rellevel\": null,\n    \"difficulty\": null,\n    \"age\": 39,\n    \"experience\": null,\n    \"privcomm\": null,\n    \"boattype\": null,\n    \"groupinfo\": null,\n    \"numvictims\": null,\n    \"othervictimnames\": null,\n    \"description\": \"Quas quis cumque itaque nulla quas. Delectus quo dolores. Cum sit cupiditate aut aperiam repellat ipsum dicta odio.\\n \\rItaque adipisci est doloremque hic deleniti officiis beatae. Recusandae sunt possimus earum voluptatem dolores porro vitae aut autem. Vel error ipsum ipsa quidem provident. Ut omnis alias hic et laborum. Nihil magni pariatur dolor est corporis blanditiis dolor. Beatae est hic perspiciatis sunt temporibus similique.\\n \\rNihil in fugiat voluptatibus fuga sint. Dolor velit eos iste facilis nemo saepe assumenda corrupti. Quia reiciendis sunt saepe dolores et numquam occaecati. Est dolorem eaque. Quasi amet omnis qui ut consequatur nemo saepe atque.\",\n    \"type\": null,\n    \"cause\": null,\n    \"contactname\": null,\n    \"contactphone\": null,\n    \"contactemail\": null,\n    \"status\": null\n}"
 						}
 					]
 				},
@@ -5025,15 +5053,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "851"
+									"value": "866"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"353-LTZU7zZPR3IO1BcZP1yMz9Em1kQ\""
+									"value": "W/\"362-cJg4t550vU5s56UuLXTXBaWOrgs\""
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 17 Oct 2020 05:31:00 GMT"
+									"value": "Tue, 20 Oct 2020 23:16:35 GMT"
 								},
 								{
 									"key": "Connection",
@@ -5041,7 +5069,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"uid\": \"1\",\n    \"uname\": \"beta-tester\",\n    \"upass\": \"beta-tester\",\n    \"verifydate\": \"2020-10-17\",\n    \"email\": \"beta-tester@aw.com\",\n    \"zip\": \"34436\",\n    \"address\": \"718 Zemlak Corners\",\n    \"city\": \"Khalidport\",\n    \"state\": \"NC\",\n    \"country\": \"USA\",\n    \"lastlogin\": \"2020-10-17T05:18:55.589Z\",\n    \"volunteer\": null,\n    \"alerts\": null,\n    \"postal\": null,\n    \"memnum\": \"76857\",\n    \"address2\": null,\n    \"home_phone\": \"710.375.1421 x285\",\n    \"work_phone\": \"(376) 627-7821\",\n    \"journal\": null,\n    \"aw_beta\": null,\n    \"mbr_level\": null,\n    \"bad_addr\": null,\n    \"bad_email\": null,\n    \"mod_date\": null,\n    \"record_type\": null,\n    \"name\": \"Deshawn\",\n    \"mem_transaction\": null,\n    \"transaction_id\": null,\n    \"expiration\": null,\n    \"modifydate\": null,\n    \"pushdate\": null,\n    \"mbr_relation\": null,\n    \"prefs\": null,\n    \"annual_renew\": 0,\n    \"code\": null,\n    \"googleid\": null,\n    \"socialprofile\": null,\n    \"facebookid\": null,\n    \"epassword\": \"NULL\",\n    \"remember_token\": null,\n    \"created_at\": \"2020-10-17T05:18:55.589Z\",\n    \"updated_at\": \"2020-10-17T05:18:55.589Z\"\n}"
+							"body": "{\n    \"uid\": \"1\",\n    \"uname\": \"Griffin_Corkery\",\n    \"upass\": \"zPyW64Rf\",\n    \"verifydate\": \"2020-10-20\",\n    \"email\": \"Derrick55@yahoo.com\",\n    \"zip\": \"65056-4450\",\n    \"address\": \"7259 Dietrich Meadows\",\n    \"city\": \"East Zakary\",\n    \"state\": \"TN\",\n    \"country\": \"Armenia\",\n    \"lastlogin\": \"2020-10-20T23:10:28.691Z\",\n    \"volunteer\": null,\n    \"alerts\": null,\n    \"postal\": null,\n    \"memnum\": \"45124\",\n    \"address2\": null,\n    \"home_phone\": \"901-700-7153\",\n    \"work_phone\": \"788.993.7151 x98363\",\n    \"journal\": null,\n    \"aw_beta\": null,\n    \"mbr_level\": null,\n    \"bad_addr\": null,\n    \"bad_email\": null,\n    \"mod_date\": null,\n    \"record_type\": null,\n    \"name\": \"Skylar\",\n    \"mem_transaction\": null,\n    \"transaction_id\": null,\n    \"expiration\": null,\n    \"modifydate\": null,\n    \"pushdate\": null,\n    \"mbr_relation\": null,\n    \"prefs\": null,\n    \"annual_renew\": null,\n    \"code\": null,\n    \"googleid\": null,\n    \"socialprofile\": null,\n    \"facebookid\": null,\n    \"epassword\": null,\n    \"remember_token\": null,\n    \"created_at\": \"2020-10-20T23:10:28.691Z\",\n    \"updated_at\": \"2020-10-20T23:10:28.691Z\"\n}"
 						}
 					]
 				},
@@ -5060,61 +5088,7 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "User",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/user?uid=160551",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"user"
-									],
-									"query": [
-										{
-											"key": "uid",
-											"value": "160551"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "893"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"37d-yjfzpFo0Z2GLnWWY/L7vzHk973E\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 13 Jul 2020 20:57:34 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"user\": {\n        \"uid\": \"160551\",\n        \"uname\": \"paddlebro420\",\n        \"upass\": \"password\",\n        \"verifydate\": \"1978-01-21\",\n        \"email\": \"pb@aol.com\",\n        \"zip\": \"28804-2200\",\n        \"address\": \"123 Maple Street\",\n        \"city\": \"Asheville\",\n        \"state\": \"NC\",\n        \"country\": \"United States\",\n        \"lastlogin\": \"2019-01-21T01:26:51.000Z\",\n        \"volunteer\": 0,\n        \"alerts\": 0,\n        \"postal\": 0,\n        \"memnum\": \"12345\",\n        \"address2\": \"\",\n        \"home_phone\": \"123-456-7890\",\n        \"work_phone\": \"\",\n        \"journal\": 0,\n        \"aw_beta\": 1,\n        \"mbr_level\": \"Explorer\",\n        \"bad_addr\": 0,\n        \"bad_email\": 0,\n        \"mod_date\": \"2019-01-24T06:00:07.000Z\",\n        \"record_type\": \"Fam\",\n        \"name\": \"Chad Smith\",\n        \"mem_transaction\": null,\n        \"transaction_id\": null,\n        \"expiration\": \"2021-08-21T04:00:00.000Z\",\n        \"modifydate\": null,\n        \"pushdate\": null,\n        \"mbr_relation\": \"Renewal\",\n        \"prefs\": null,\n        \"annual_renew\": 1,\n        \"code\": null,\n        \"googleid\": null,\n        \"socialprofile\": null,\n        \"facebookid\": null,\n        \"remember_token\": null,\n        \"created_at\": null,\n        \"updated_at\": null\n    }\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "Create",
@@ -6301,7 +6275,7 @@
 					},
 					"response": [
 						{
-							"name": "Get - By ID",
+							"name": "Get By Id",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -6321,6 +6295,11 @@
 										{
 											"key": "sectionid",
 											"value": "4",
+											"disabled": true
+										},
+										{
+											"key": "uid",
+											"value": "2",
 											"disabled": true
 										}
 									]
@@ -6368,15 +6347,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "458"
+									"value": "361"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1ca-jAomdOdLWeOnKq+vSuTxGkOR37s\""
+									"value": "W/\"169-4AT6fQNrOeTKA3VkeLk7nt+vg08\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 18 Oct 2020 04:35:49 GMT"
+									"value": "Tue, 20 Oct 2020 23:14:27 GMT"
 								},
 								{
 									"key": "Connection",
@@ -6384,7 +6363,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"comment\": {\n        \"uid\": \"25\",\n        \"sectionid\": \"43\",\n        \"name\": \"Jaden\",\n        \"comments\": \"Culpa nihil consequuntur eaque ut quasi suscipit libero. Corporis consequuntur nemo quia et totam eum unde veniam in. Vel nesciunt ad id exercitationem reprehenderit deleniti. Minima ut odio. Molestias unde et nihil maxime dolorum.\",\n        \"posted\": \"2020-10-18T04:20:55.845Z\",\n        \"id\": \"2\",\n        \"section\": \"river\",\n        \"type\": \"comment\",\n        \"deleted\": null,\n        \"duid\": null,\n        \"revision\": \"1\",\n        \"is_final\": true,\n        \"is_private\": false\n    }\n}"
+							"body": "{\n    \"uid\": \"29\",\n    \"sectionid\": \"16\",\n    \"name\": \"Caden\",\n    \"comments\": \"Id ut non. Et magnam minus eveniet perspiciatis sed iure ratione ea porro. Aliquam voluptatem quia in iusto earum. Nobis iste exercitationem in.\",\n    \"posted\": \"2020-10-20T23:10:29.200Z\",\n    \"id\": \"2\",\n    \"section\": \"journal\",\n    \"type\": \"comment\",\n    \"deleted\": null,\n    \"duid\": null,\n    \"revision\": \"1\",\n    \"is_final\": true,\n    \"is_private\": false\n}"
 						},
 						{
 							"name": "Get - User ID",
@@ -6746,7 +6725,7 @@
 	],
 	"variable": [
 		{
-			"id": "0616dad4-0832-4b83-a663-0fa4e7347e0a",
+			"id": "49b055aa-2048-4541-812a-8abf6afa3c63",
 			"key": "base_url",
 			"value": "http://localhost:8000"
 		}

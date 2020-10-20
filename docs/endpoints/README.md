@@ -3,7 +3,6 @@
 
 The following is a collection of available endpoints.
 
-
 ## Accident
 
 
@@ -125,7 +124,7 @@ URL: http://localhost:8000/accident
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: Accident
+##### I. Example Request: Get By Key
 
 
 
@@ -137,37 +136,35 @@ URL: http://localhost:8000/accident
 
 
 
-##### I. Example Response: Accident
+##### I. Example Response: Get By Key
 ```js
 {
-    "Accident": {
-        "id": 2,
-        "accidentdate": "1977-08-27",
-        "victimname": "Robert A. Taylor",
-        "reachid": 2378,
-        "countryabbr": "US",
-        "state": "WV",
-        "river": "Gauley (7 ",
-        "section": "7 (Upper). Summersville Dam to Mason Branch",
-        "location": "Lost Paddle",
-        "waterlevel": "3100",
-        "rellevel": "M",
-        "difficulty": "V",
-        "age": 25,
-        "experience": "X",
-        "privcomm": "P",
-        "boattype": "K",
-        "groupinfo": "",
-        "numvictims": 1,
-        "othervictimnames": "",
-        "description": "<p>\r\n\tBob Taylor was running the Upper Gauley with four friends on August 27, 1977. The level was 2700 from the dam, 400 from the Meadow River, Bob was in his late 20s, very fit, and quite familiar with the Gauley. He was probably the best paddler in West Virginia. In the third drop of Lost Paddle Bob elected to surf the holes. He got pummelled in the second, which is quite large. He flipped, rolled, endered, and rolled again. After his third flip he bailed out. He recirculated twice in the hole, then washed downstream. One other paddler attempted a boat rescue, but after holding on for a short time Bob let go of the boat and attempted to swim into a river left eddy. He was washed into a chute on the upper left side of Tumblehome Rapid where he disappeared. His companions coulds not find him that day, so they paddled out and reported the accident to authorites. The next day, with the river running at 2100 cfs, they returned with WVDNR Officers. After a lengthy search they spotted his body under several feet of water in the chute. They were able to pull a log out of the chute, which released the body.</p>\r\n<p>\r\n\thttp://www.americanwhitewater.org/content/Journal/show-page/issue/6/year/1977/page/193/</p>\r\n",
-        "type": "F",
-        "cause": 12,
-        "contactname": null,
-        "contactphone": null,
-        "contactemail": null,
-        "status": "R"
-    }
+    "id": 2,
+    "accidentdate": "2020-10-20",
+    "victimname": "Dewayne",
+    "reachid": 60,
+    "countryabbr": "TX",
+    "state": "MA",
+    "river": "et perferendis ipsa ut",
+    "section": "recusandae mollitia tenetur assumenda",
+    "location": null,
+    "waterlevel": null,
+    "rellevel": null,
+    "difficulty": null,
+    "age": 39,
+    "experience": null,
+    "privcomm": null,
+    "boattype": null,
+    "groupinfo": null,
+    "numvictims": null,
+    "othervictimnames": null,
+    "description": "Quas quis cumque itaque nulla quas. Delectus quo dolores. Cum sit cupiditate aut aperiam repellat ipsum dicta odio.\n \rItaque adipisci est doloremque hic deleniti officiis beatae. Recusandae sunt possimus earum voluptatem dolores porro vitae aut autem. Vel error ipsum ipsa quidem provident. Ut omnis alias hic et laborum. Nihil magni pariatur dolor est corporis blanditiis dolor. Beatae est hic perspiciatis sunt temporibus similique.\n \rNihil in fugiat voluptatibus fuga sint. Dolor velit eos iste facilis nemo saepe assumenda corrupti. Quia reiciendis sunt saepe dolores et numquam occaecati. Est dolorem eaque. Quasi amet omnis qui ut consequatur nemo saepe atque.",
+    "type": null,
+    "cause": null,
+    "contactname": null,
+    "contactphone": null,
+    "contactemail": null,
+    "status": null
 }
 ```
 
@@ -1290,7 +1287,7 @@ URL: http://localhost:8000/comments
 ***More example Requests/Responses:***
 
 
-##### I. Example Request: Get - By ID
+##### I. Example Request: Get By Id
 
 
 
@@ -1302,24 +1299,22 @@ URL: http://localhost:8000/comments
 
 
 
-##### I. Example Response: Get - By ID
+##### I. Example Response: Get By Id
 ```js
 {
-    "comment": {
-        "uid": "25",
-        "sectionid": "43",
-        "name": "Jaden",
-        "comments": "Culpa nihil consequuntur eaque ut quasi suscipit libero. Corporis consequuntur nemo quia et totam eum unde veniam in. Vel nesciunt ad id exercitationem reprehenderit deleniti. Minima ut odio. Molestias unde et nihil maxime dolorum.",
-        "posted": "2020-10-18T04:20:55.845Z",
-        "id": "2",
-        "section": "river",
-        "type": "comment",
-        "deleted": null,
-        "duid": null,
-        "revision": "1",
-        "is_final": true,
-        "is_private": false
-    }
+    "uid": "29",
+    "sectionid": "16",
+    "name": "Caden",
+    "comments": "Id ut non. Et magnam minus eveniet perspiciatis sed iure ratione ea porro. Aliquam voluptatem quia in iusto earum. Nobis iste exercitationem in.",
+    "posted": "2020-10-20T23:10:29.200Z",
+    "id": "2",
+    "section": "journal",
+    "type": "comment",
+    "deleted": null,
+    "duid": null,
+    "revision": "1",
+    "is_final": true,
+    "is_private": false
 }
 ```
 
@@ -5830,77 +5825,6 @@ URL: http://localhost:8000/users
 
 
 
-***More example Requests/Responses:***
-
-
-##### I. Example Request: User
-
-
-
-***Query:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| uid | 160551 |  |
-
-
-
-##### I. Example Response: User
-```js
-{
-    "user": {
-        "uid": "160551",
-        "uname": "paddlebro420",
-        "upass": "password",
-        "verifydate": "1978-01-21",
-        "email": "pb@aol.com",
-        "zip": "28804-2200",
-        "address": "123 Maple Street",
-        "city": "Asheville",
-        "state": "NC",
-        "country": "United States",
-        "lastlogin": "2019-01-21T01:26:51.000Z",
-        "volunteer": 0,
-        "alerts": 0,
-        "postal": 0,
-        "memnum": "12345",
-        "address2": "",
-        "home_phone": "123-456-7890",
-        "work_phone": "",
-        "journal": 0,
-        "aw_beta": 1,
-        "mbr_level": "Explorer",
-        "bad_addr": 0,
-        "bad_email": 0,
-        "mod_date": "2019-01-24T06:00:07.000Z",
-        "record_type": "Fam",
-        "name": "Chad Smith",
-        "mem_transaction": null,
-        "transaction_id": null,
-        "expiration": "2021-08-21T04:00:00.000Z",
-        "modifydate": null,
-        "pushdate": null,
-        "mbr_relation": "Renewal",
-        "prefs": null,
-        "annual_renew": 1,
-        "code": null,
-        "googleid": null,
-        "socialprofile": null,
-        "facebookid": null,
-        "remember_token": null,
-        "created_at": null,
-        "updated_at": null
-    }
-}
-```
-
-
-***Status Code:*** 200
-
-<br>
-
-
-
 ### 4. Get By Key
 
 
@@ -5942,23 +5866,23 @@ URL: http://localhost:8000/user
 ```js
 {
     "uid": "1",
-    "uname": "beta-tester",
-    "upass": "beta-tester",
-    "verifydate": "2020-10-17",
-    "email": "beta-tester@aw.com",
-    "zip": "34436",
-    "address": "718 Zemlak Corners",
-    "city": "Khalidport",
-    "state": "NC",
-    "country": "USA",
-    "lastlogin": "2020-10-17T05:18:55.589Z",
+    "uname": "Griffin_Corkery",
+    "upass": "zPyW64Rf",
+    "verifydate": "2020-10-20",
+    "email": "Derrick55@yahoo.com",
+    "zip": "65056-4450",
+    "address": "7259 Dietrich Meadows",
+    "city": "East Zakary",
+    "state": "TN",
+    "country": "Armenia",
+    "lastlogin": "2020-10-20T23:10:28.691Z",
     "volunteer": null,
     "alerts": null,
     "postal": null,
-    "memnum": "76857",
+    "memnum": "45124",
     "address2": null,
-    "home_phone": "710.375.1421 x285",
-    "work_phone": "(376) 627-7821",
+    "home_phone": "901-700-7153",
+    "work_phone": "788.993.7151 x98363",
     "journal": null,
     "aw_beta": null,
     "mbr_level": null,
@@ -5966,7 +5890,7 @@ URL: http://localhost:8000/user
     "bad_email": null,
     "mod_date": null,
     "record_type": null,
-    "name": "Deshawn",
+    "name": "Skylar",
     "mem_transaction": null,
     "transaction_id": null,
     "expiration": null,
@@ -5974,15 +5898,15 @@ URL: http://localhost:8000/user
     "pushdate": null,
     "mbr_relation": null,
     "prefs": null,
-    "annual_renew": 0,
+    "annual_renew": null,
     "code": null,
     "googleid": null,
     "socialprofile": null,
     "facebookid": null,
-    "epassword": "NULL",
+    "epassword": null,
     "remember_token": null,
-    "created_at": "2020-10-17T05:18:55.589Z",
-    "updated_at": "2020-10-17T05:18:55.589Z"
+    "created_at": "2020-10-20T23:10:28.691Z",
+    "updated_at": "2020-10-20T23:10:28.691Z"
 }
 ```
 
