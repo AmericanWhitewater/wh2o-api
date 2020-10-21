@@ -1,7 +1,9 @@
 import { Express } from 'express'
 
 const middlewares = [
-  require('./request-parser'),
+  require('./authentication'),
+  require('./request-parser').parserBase,
+  require('./request-parser').parserJSON,
   require('./request-logger')
 ]
 

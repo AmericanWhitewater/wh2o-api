@@ -6,15 +6,9 @@ const AccidentCause = require('../models/accidents_causes')(
 
 module.exports = (app) => {
   app.get('/accident-causes', (req, res) => {
-    AccidentCause.findAll({
-      where: {
-        accident_id: req.query.accident_id,
-      },
-    })
+    AccidentCause.findAll()
       .then((result) => {
-        const data = result.map((factor) => factor.dataValues.cause_id)
-
-        res.send(data).status(200)
+        res.send(result).status(200)
       })
       .catch((err) => {
         console.log(err)

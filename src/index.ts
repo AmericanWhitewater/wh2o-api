@@ -1,16 +1,12 @@
 import dotenv from 'dotenv'
-
 const result = dotenv.config()
-
 if (result.error) {
   dotenv.config({ path: '.env.default' })
 }
 import express from 'express'
 const app = express()
-const bodyParser = require('body-parser')
 const middleware = require('./middleware')
 const routes = require('./routes')
-const authMiddleware = require('./middleware/authentication')
 const helmet = require('helmet')
 const cors = require('cors')
 
@@ -21,9 +17,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(helmet())
-
-app.use(authMiddleware)
-app.use(bodyParser.urlencoded({ extended: false }))
 
 middleware(app)
 routes(app)

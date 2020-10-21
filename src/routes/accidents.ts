@@ -18,9 +18,9 @@ module.exports = (app) => {
   })
 
   app.post('/new-accident', (req, res) => {
-    Accident.create(req.body)
-      .then(() => {
-        res.send('Accident Created').status(200)
+    Accident.create({...req.body})
+      .then((response) => {
+        res.send(response).status(200)
       })
       .catch((err) => {
         console.log('err: ', err)

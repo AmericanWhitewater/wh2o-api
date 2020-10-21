@@ -1,3 +1,6 @@
 import bodyParser from 'body-parser'
 
-export = bodyParser.urlencoded({ extended: false })
+const parserBase = bodyParser.urlencoded({ extended: true })
+const parserJSON = bodyParser.json()
+
+export = { parserBase, parserJSON }

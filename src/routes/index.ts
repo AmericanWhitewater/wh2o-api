@@ -6,6 +6,8 @@ const apiRoutes = [
   require('./affiliate-reach'),
   require('./alerts'),
   require('./articles'),
+  require('./boat-types'),
+  require('./causes'),
   require('./comments'),
   require('./documents'),
   require('./events'),

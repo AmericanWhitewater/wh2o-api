@@ -532,7 +532,9 @@ let migrationCommands = [{
         allowNull: true
       }
     },
-    {}
+    {
+      schema: 'public'
+    }
   ]
 },
 {
@@ -3700,7 +3702,9 @@ let migrationCommands = [{
         comment: 'FIPS code for State'
       }
     },
-    {}
+    {
+      schema: 'public'
+    }
   ]
 },
 
