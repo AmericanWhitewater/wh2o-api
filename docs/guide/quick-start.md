@@ -61,11 +61,8 @@ There is a [`Postman`](https://www.postman.com/) collection available in `docs/`
 docs/wh2o-api.postman_collection.json
 ```
 
-If you'd like to see the API results in the browser, there is a small frontend prototype available called [`wh2o-admin`](https://github.com/drewalth/wh2o-admin). Once you've installed the admin dashboard, you can log in with these credentials:
+If you'd like to see the API results in the browser, checkout the `next` branch in [`wh2o-vue`](https://github.com/AmericanWhitewater/wh2o-vue). Once you've got the app up and running, you can log in with these credentials:
 
 - email: `beta-tester@aw.com`
 - pass: `beta-tester`
 
-**Note**: Neither this project nor the admin prototype is on AW's official product roadmap. If you'd like to contribute to a live frontend app, see [`wh2o-vue`](https://github.com/AmericanWhitewater/wh2o-vue).
-
-If you have any questions or need help getting set up with either this project or the admin prototype, feel free to reach out to [`@drewalth`](https://github.com/drewalth).

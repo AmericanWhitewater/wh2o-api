@@ -16,6 +16,10 @@ module.exports = {
       {
         text: 'Guides',
         link: '/guide/'
+      },
+      {
+        text: 'Endpoints',
+        link: '/endpoints/'
       }
     ],
     sidebar: [

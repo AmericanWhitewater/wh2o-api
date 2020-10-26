@@ -3,6 +3,7 @@ const result = dotenv.config()
 if (result.error) {
   dotenv.config({ path: '.env.default' })
 }
+const apiPort = process.env.PORT || 3000
 import express from 'express'
 const app = express()
 const middleware = require('./middleware')
@@ -21,4 +22,7 @@ app.use(helmet())
 middleware(app)
 routes(app)
 
-export default app
+app.listen(apiPort, () => {
+  console.log('---------------------------------------------\n')
+  console.log(`✅ Listening on http://localhost:${apiPort}`)
+})
