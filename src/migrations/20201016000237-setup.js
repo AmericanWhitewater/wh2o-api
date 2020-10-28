@@ -3281,7 +3281,9 @@ let migrationCommands = [{
         defaultValue: Sequelize.fn('NOW')
       }
     },
-    {}
+    {
+      schema: 'public'
+    }
   ]
 },
 {
