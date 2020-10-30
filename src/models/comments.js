@@ -31,9 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     id: {
       type: DataTypes.BIGINT,
-      allowNull: false,
-      defaultValue: 'nextval(comments_id_seq::regclass)',
-      comment: 'comment ID'
+      comment: 'comment ID',
+      primaryKey: true,
+      autoIncrement: true
     },
     section: {
       type: DataTypes.STRING,
@@ -60,9 +60,7 @@ module.exports = (sequelize, DataTypes) => {
     revision: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      comment: 'Revision #',
-      primaryKey: true,
-      autoIncrement: true
+      comment: 'Revision #'
     },
     is_final: {
       type: DataTypes.BOOLEAN,

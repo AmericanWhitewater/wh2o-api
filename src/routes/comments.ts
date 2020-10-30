@@ -39,13 +39,13 @@ module.exports = app => {
       if (req.query.sectionid) {
         params.where['sectionid'] = req.query.sectionid
       }
-
+      
       if (req.query.uid) {
         params.where['uid'] = req.query.uid
       }
 
       Comment.findAll(params).then(result => {
-        res.send(_sortNewestFirst(result)).status(200)
+        res.send(result).status(200)
       }).catch(err => {
         console.log(err)
         res.send(err).status(404)

@@ -20,7 +20,6 @@ const comments = [...Array(2000)].map((affiliate, index) => (
     name: faker.name.firstName(),
     comments: faker.lorem.sentences(),
     posted: new Date(),
-    id: index + 1,
     section: commentsHelper.sections(),
     type: commentsHelper.types(),
     deleted: null,
