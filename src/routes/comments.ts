@@ -39,7 +39,7 @@ module.exports = app => {
       if (req.query.sectionid) {
         params.where['sectionid'] = req.query.sectionid
       }
-      
+
       if (req.query.uid) {
         params.where['uid'] = req.query.uid
       }

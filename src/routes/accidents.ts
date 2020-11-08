@@ -18,7 +18,7 @@ module.exports = (app) => {
   })
 
   app.post('/new-accident', (req, res) => {
-    Accident.create({...req.body})
+    Accident.create({ ...req.body })
       .then((response) => {
         res.send(response).status(200)
       })
