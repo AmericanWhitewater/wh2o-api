@@ -14,6 +14,7 @@ const apiRoutes = [
   require('./gage-reading-metrics'),
   require('./gage-sources'),
   require('./gage-updates'),
+  require('./gage-headers'),
   require('./gis-hucs'),
   require('./gis-states'),
   require('./gis-zips'),
