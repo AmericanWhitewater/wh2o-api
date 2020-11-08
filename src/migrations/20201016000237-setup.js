@@ -3162,7 +3162,9 @@ let migrationCommands = [{
         allowNull: false
       }
     },
-    {}
+    {
+      schema: 'public'
+    }
   ]
 },
 {

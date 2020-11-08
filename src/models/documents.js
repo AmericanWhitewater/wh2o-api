@@ -61,6 +61,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'documents',
-    schema: 'wh2o'
+    schema: 'public'
   })
 }

@@ -32,6 +32,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'projects',
-    schema: 'wh2o'
+    schema: 'public'
   })
 }

@@ -2,19 +2,31 @@ import { pgClient, DataTypes } from '../config'
 const Document = require('../models/documents')(pgClient, DataTypes)
 
 module.exports = (app) => {
-  app.get('/document', (req, res) => {
-    Document.findOne({
-      where: {
-        documentid: req.query.documentid
+ 
+ app.get('/documents', async (req, res) => {
+
+    try {
+
+      let result
+
+      const params = {
+        limit: 100,
+        offset: 0,
+        where: {}
       }
-    })
-      .then((result) => {
-        res.send(result).status(200)
-      })
-      .catch((err) => {
-        console.log(err)
-        res.send(err).status(404)
-      })
+
+      if (req.query.id) {
+        params.where['documentid'] = req.query.documentid
+        result = await Document.findOne(params)
+      } else {
+        result = await Document.findAndCountAll(params)
+      }
+
+      res.send(result).status(200)
+    } catch (error) {
+      console.log(error)
+      res.send(error).status(404)
+    }
   })
 
   app.post('/new-document', (req, res) => {

@@ -70,6 +70,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'affiliates',
-    schema: 'wh2o'
+    schema: 'public'
   })
 }
