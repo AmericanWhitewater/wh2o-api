@@ -26,3 +26,13 @@ app.listen(apiPort, () => {
   console.log('---------------------------------------------\n')
   console.log(`✅ Listening on http://localhost:${apiPort}`)
 })
+
+process.on("uncaughtException", e => {
+  console.log(e);
+  process.exit(1);
+});
+
+process.on("unhandledRejection", e => {
+  console.log(e);
+  process.exit(1);
+});

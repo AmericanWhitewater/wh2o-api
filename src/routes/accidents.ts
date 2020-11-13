@@ -61,8 +61,8 @@ module.exports = (app) => {
   app.get('/accidents', async (req, res) => {
 
     try {
-      const result = await Accident.findAll({
-        limit: 50
+      const result = await Accident.findAndCountAll({
+        limit: 25
       })
 
       if (result) {

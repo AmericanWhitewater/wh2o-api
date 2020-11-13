@@ -76,6 +76,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'comments',
-    schema: 'wh2o'
+    schema: 'public'
   })
 }
