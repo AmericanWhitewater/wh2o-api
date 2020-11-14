@@ -82,7 +82,7 @@ module.exports = {
     '@vuepress/active-header-links',
     '@vuepress/back-to-top',
     ['@vuepress/google-analytics', {
-      'ga': 'G-SXLSL03LVH'
+      'ga': 'UA-70972027-5'
     }],
     [
       '@vuepress/pwa',
