@@ -1,6 +1,10 @@
 module.exports = {
   title: 'wh2o-api',
   description: 'American Whitewater\'s REST API built on Node.js',
+  head: [
+    ['link', { href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&display=swap', rel: 'stylesheet' }],
+    ['link', { href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap', rel: 'stylesheet' }],
+  ],
   themeConfig: {
     logo: '/aw-logo-small.png',
     lastUpdated: 'Last updated',
