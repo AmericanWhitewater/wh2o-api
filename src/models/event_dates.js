@@ -1,25 +1,25 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('event_dates', {
     event_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 'nextval(event_dateseq::regclass)'
+      defaultValue: 'nextVal(event_dateseq::regclass)'
     },
     evdate: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
     detail_description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(240),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     batchid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 'nextval(event_datesbidseq::regclass)'
+      defaultValue: 'nextVal(event_dateseq::regclass)'
     },
     starttime: {
       type: DataTypes.TIME,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     tz: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(3),
       allowNull: false
     },
     mincfs: {
@@ -42,18 +42,36 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     deleted: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false
     },
     ed_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 'nextval(event_dateseq::regclass)',
+      autoIncrement: true,
       primaryKey: true
     }
   }, {
     sequelize,
     tableName: 'event_dates',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "basic",
+        fields: [
+          { name: "event_id" },
+          { name: "evdate" },
+          { name: "deleted" },
+        ]
+      },
+      {
+        name: "event_dates_pkey",
+        unique: true,
+        fields: [
+          { name: "ed_id" },
+        ]
+      },
+    ]
+  });
+};

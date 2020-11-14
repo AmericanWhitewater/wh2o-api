@@ -1,117 +1,117 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('members', {
     uname: {
       type: DataTypes.CHAR(15),
       allowNull: true,
-      comment: 'user name'
+      comment: "user name"
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(120),
       allowNull: true,
-      comment: 'email address'
+      comment: "email address"
     },
     zip: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       allowNull: true,
-      comment: 'zip code'
+      comment: "zip code"
     },
     address: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: 'first line of address'
+      comment: "first line of address"
     },
     city: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: true,
-      comment: 'city name'
+      comment: "city name"
     },
     state: {
       type: DataTypes.CHAR(2),
       allowNull: true,
-      comment: 'state name'
+      comment: "state name"
     },
     country: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: true,
-      comment: 'country code'
+      comment: "country code"
     },
     volunteer: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'are they willing to volunteer'
+      comment: "are they willing to volunteer"
     },
     alerts: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'PREF: Want web alerts?'
+      comment: "PREF: Want web alerts?"
     },
     postal: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'PREF: Trade Postal Address?'
+      comment: "PREF: Trade Postal Address?"
     },
     memnum: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
-      comment: 'eTap Acct#',
+      defaultValue: 0,
+      comment: "eTap Acct#",
       primaryKey: true
     },
     address2: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(200),
       allowNull: true,
-      comment: 'Address 2'
+      comment: "Address 2"
     },
     home_phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: true,
-      comment: 'Home Phone'
+      comment: "Home Phone"
     },
     work_phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: true,
-      comment: 'Work Phone'
+      comment: "Work Phone"
     },
     journal: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'PREF: Deliver Journal?'
+      comment: "PREF: Deliver Journal?"
     },
     aw_beta: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'PREF: Subscribe to AW_Beta'
+      comment: "PREF: Subscribe to AW_Beta"
     },
     mbr_level: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(25),
       allowNull: true
     },
     bad_addr: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'bad address flag from eTap'
+      comment: "bad address flag from eTap"
     },
     bad_email: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: 'bad email flag from eTap'
+      comment: "bad email flag from eTap"
     },
     mod_date: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'modified on '
+      comment: "modified on "
     },
     record_type: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: true,
-      comment: 'is this a business, organizaiton or something else (3)'
+      comment: "is this a business, organizaiton or something else (3)"
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(85),
       allowNull: true,
-      comment: 'person\'s name'
+      comment: "person's name"
     },
     expiration: {
       type: DataTypes.DATE,
@@ -119,18 +119,34 @@ module.exports = (sequelize, DataTypes) => {
       comment: DataTypes.DATE
     },
     mbr_relation: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(25),
       allowNull: true
     },
     annual_renew: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      defaultValue: '0',
-      comment: 'annual renewal flag, prevents warning user too early'
+      defaultValue: 0,
+      comment: "annual renewal flag, prevents warning user too early"
     }
   }, {
     sequelize,
     tableName: 'members',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "members_pkey",
+        unique: true,
+        fields: [
+          { name: "memnum" },
+        ]
+      },
+      {
+        name: "uname",
+        fields: [
+          { name: "uname" },
+        ]
+      },
+    ]
+  });
+};

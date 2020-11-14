@@ -8,12 +8,22 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     factor: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'factors',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "factors_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

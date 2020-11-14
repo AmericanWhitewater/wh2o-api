@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+const Sequelize = require('sequelize');
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('events', {
     id: {
       type: DataTypes.INTEGER,
@@ -9,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(80),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     city: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(40),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     description: {
       type: DataTypes.TEXT,
@@ -33,42 +34,42 @@ module.exports = (sequelize, DataTypes) => {
     state: {
       type: DataTypes.CHAR(2),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     url: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     orgname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     orgaddress: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     orgphone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(14),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     orgfax: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(14),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     orgemail: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     site: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: 'NULL'
+      defaultValue: "NULL"
     },
     rivid: {
       type: DataTypes.INTEGER,
@@ -91,9 +92,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     nowreventinfo: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true,
-      defaultValue: '0'
+      defaultValue: 0
     },
     contact_id: {
       type: DataTypes.INTEGER,
@@ -108,13 +109,31 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     retired: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     }
   }, {
     sequelize,
     tableName: 'events',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "events_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+      {
+        name: "state",
+        fields: [
+          { name: "cat" },
+          { name: "state" },
+          { name: "retired" },
+        ]
+      },
+    ]
+  });
+};

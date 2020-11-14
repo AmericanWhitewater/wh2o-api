@@ -3,13 +3,13 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('gis_timezones', {
     gid: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     tzid: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(30),
       allowNull: true
     },
     the_geom: {
@@ -19,6 +19,22 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'gis_timezones',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "gis_timezone_the_geom_gist",
+        fields: [
+          { name: "the_geom" },
+        ]
+      },
+      {
+        name: "gis_timezones_pkey",
+        unique: true,
+        fields: [
+          { name: "gid" },
+        ]
+      },
+    ]
+  });
+};

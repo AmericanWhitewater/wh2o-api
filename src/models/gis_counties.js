@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('gis_counties', {
     gid: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     area: {
       type: DataTypes.DOUBLE,
@@ -47,6 +47,22 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'gis_counties',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "county_geom",
+        fields: [
+          { name: "the_geom" },
+        ]
+      },
+      {
+        name: "gis_counties_pkey",
+        unique: true,
+        fields: [
+          { name: "gid" },
+        ]
+      },
+    ]
+  });
+};

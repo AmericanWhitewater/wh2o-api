@@ -1,19 +1,19 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('triplog_photos', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     caption: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(80),
       allowNull: true
     },
     rapidname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(80),
       allowNull: true
     },
     thumbnail: {
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: true
     },
     ext: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10),
       allowNull: true
     },
     isvideo: {
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: false
     },
     filesize: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: true
     },
     deleted: {
@@ -44,33 +44,49 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     author: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(80),
       allowNull: true
     },
     subject: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      comment: 'who the photo is of'
+      comment: "who the photo is of"
     },
     detail: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: 'description of the photo'
+      comment: "description of the photo"
     },
     allowhtml: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: 'description should be in html, to preserve some historical photo html.'
+      comment: "description should be in html, to preserve some historical photo html."
     },
     url: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true,
-      comment: 'url (for example video) for externally hosted images'
+      comment: DataTypes.BLOB
     }
   }, {
     sequelize,
     tableName: 'triplog_photos',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "journal_photos_idx_journal",
+        fields: [
+          { name: "triplog_id" },
+        ]
+      },
+      {
+        name: "triplog_photos_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

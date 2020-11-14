@@ -1,16 +1,16 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('member_update_stats', {
     update_date: {
       type: DataTypes.DATE,
       allowNull: true
     },
     id: {
+      autoIncrement: true,
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     num_records: {
       type: DataTypes.BIGINT,
@@ -31,6 +31,22 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'member_update_stats',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "index_date",
+        fields: [
+          { name: "update_date" },
+        ]
+      },
+      {
+        name: "member_update_stats_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

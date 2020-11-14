@@ -5,18 +5,29 @@ module.exports = (sequelize, DataTypes) => {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     },
     reachid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     }
   }, {
     sequelize,
     tableName: 'jrlinks',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "jrlinks_pkey",
+        unique: true,
+        fields: [
+          { name: "artid" },
+          { name: "reachid" },
+        ]
+      },
+    ]
+  });
+};

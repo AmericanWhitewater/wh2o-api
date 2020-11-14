@@ -5,24 +5,25 @@ module.exports = (sequelize, DataTypes) => {
     uniqueid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     topic: {
       type: DataTypes.TEXT,
       allowNull: false
     },
     primarytop: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'jrtopic',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false
+  });
+};

@@ -1,19 +1,19 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('projects', {
     id: {
+      autoIncrement: true,
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(51),
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(200),
       allowNull: false
     },
     uid: {
@@ -21,17 +21,27 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     deleted: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     shortname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(25),
       allowNull: false
     }
   }, {
     sequelize,
     tableName: 'projects',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "projects_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

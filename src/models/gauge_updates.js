@@ -5,49 +5,49 @@ module.exports = (sequelize, DataTypes) => {
     gauge_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: 'gauge',
+      comment: "gauge",
       primaryKey: true
     },
     metric: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false,
-      comment: 'metric',
+      comment: "metric",
       primaryKey: true
     },
     lobs_time: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'last reading time'
+      comment: "last reading time"
     },
     lobs_id: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      comment: 'last reading id'
+      comment: "last reading id"
     },
     lobs_reading: {
       type: DataTypes.REAL,
       allowNull: true,
-      comment: 'last reading'
+      comment: "last reading"
     },
     obs_time: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'main reading time'
+      comment: "main reading time"
     },
     obs_id: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      comment: 'main reading id'
+      comment: "main reading id"
     },
     obs_reading: {
       type: DataTypes.REAL,
       allowNull: true,
-      comment: 'main reading'
+      comment: "main reading"
     },
     obs_data: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: 'if we have an observation comment'
+      comment: "if we have an observation comment"
     },
     write_sequence: {
       type: DataTypes.INTEGER,
@@ -56,8 +56,8 @@ module.exports = (sequelize, DataTypes) => {
     updated: {
       type: DataTypes.DATE,
       allowNull: true,
-      defaultValue: sequelize.fn('NOW'),
-      comment: 'when this entry was updated.'
+      defaultValue: sequelize.fn('now'),
+      comment: "when this entry was updated."
     },
     obs_ref: {
       type: DataTypes.BIGINT,
@@ -66,17 +66,34 @@ module.exports = (sequelize, DataTypes) => {
     last_journal_date: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'last time a journal was written on the gauge.'
+      comment: "last time a journal was written on the gauge."
     },
     gd_ref: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: 'gauge dependent reference'
+      comment: "gauge dependent reference"
     }
   }, {
     sequelize,
     tableName: 'gauge_updates',
     schema: 'public',
-    hasTrigger: true
-  })
-}
+    hasTrigger: true,
+    timestamps: false,
+    indexes: [
+      {
+        name: "gauge_updates_pkey",
+        unique: true,
+        fields: [
+          { name: "gauge_id" },
+          { name: "metric" },
+        ]
+      },
+      {
+        name: "updates_time",
+        fields: [
+          { name: "obs_time" },
+        ]
+      },
+    ]
+  });
+};

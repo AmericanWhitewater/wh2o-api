@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     },
     geoloc: {
@@ -16,6 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'jrgeo',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "jrgeo_pkey",
+        unique: true,
+        fields: [
+          { name: "artid" },
+          { name: "geoloc" },
+        ]
+      },
+    ]
+  });
+};

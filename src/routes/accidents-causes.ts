@@ -6,7 +6,9 @@ const AccidentCause = require('../models/accidents_causes')(
 
 module.exports = (app) => {
   app.get('/accident-causes', (req, res) => {
-    AccidentCause.findAll()
+    AccidentCause.findAll({
+      limit: 25
+    })
       .then((result) => {
         res.send(result).status(200)
       })

@@ -10,7 +10,7 @@ module.exports = (app) => {
       let result
 
       const params = {
-        limit: 100,
+        limit: 2,
         offset: 0,
         where: {}
       }

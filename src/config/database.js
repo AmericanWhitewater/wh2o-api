@@ -16,12 +16,12 @@ async function initDBConnection () {
   let dbConnection = false
   while (!dbConnection) {
     try {
-      pgClient = new Sequelize('postgresql://wh2o:wh2o@localhost:55432/wh2o',
+      pgClient = new Sequelize('postgresql://wh2o:wh2o@localhost:35432/wh2o',
         {
           // host,
           // port,
           // dialect: 'postgres',
-          logging: false,
+          logging: console.log,
           define: {
             freezeTableName: true,
             timestamps: false

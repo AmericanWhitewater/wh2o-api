@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     },
     authorlast: {
@@ -14,13 +14,25 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     authorfirst: {
-      type: 'BYTEA',
+      type: "BYTEA",
       allowNull: false,
       primaryKey: true
     }
   }, {
     sequelize,
     tableName: 'jrauthor',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "jrauthor_pkey",
+        unique: true,
+        fields: [
+          { name: "artid" },
+          { name: "authorlast" },
+          { name: "authorfirst" },
+        ]
+      },
+    ]
+  });
+};

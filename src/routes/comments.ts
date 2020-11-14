@@ -27,7 +27,7 @@ module.exports = app => {
     } else {
 
       const params = {
-        limit: 100,
+        limit: 2,
         offset: 0,
         where: {}
       }

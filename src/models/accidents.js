@@ -1,7 +1,6 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-
   return sequelize.define('accidents', {
     id: {
       type: DataTypes.INTEGER,
@@ -14,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     victimname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     reachid: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
     countryabbr: {
@@ -30,31 +29,31 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     river: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     section: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     location: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     waterlevel: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(40),
       allowNull: true
     },
     rellevel: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     difficulty: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     age: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
     experience: {
@@ -74,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     numvictims: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
     othervictimnames: {
@@ -94,24 +93,45 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     contactname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     contactphone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(15),
       allowNull: true
     },
     contactemail: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1),
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'accidents',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "ndx_accident_accidentdate",
+        fields: [
+          { name: "accidentdate" },
+        ]
+      },
+      {
+        name: "ndx_accident_reachid",
+        fields: [
+          { name: "reachid" },
+        ]
+      },
+      {
+        name: "ndx_accident_state",
+        fields: [
+          { name: "state" },
+        ]
+      },
+    ]
+  });
+};

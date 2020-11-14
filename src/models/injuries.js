@@ -8,12 +8,22 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     injury: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'injuries',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "injuries_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

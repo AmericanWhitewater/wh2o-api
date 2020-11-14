@@ -5,22 +5,22 @@ module.exports = (sequelize, DataTypes) => {
     uid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: 'who',
+      comment: "who",
       primaryKey: true
     },
     gauge_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: 'what',
+      comment: "what",
       primaryKey: true
     },
     when: {
       type: DataTypes.DATE,
       allowNull: true,
-      comment: 'when'
+      comment: "when"
     },
     metric: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false,
       primaryKey: true
     },
@@ -31,6 +31,18 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'gauge_notify_history',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "gauge_notify_history_pkey",
+        unique: true,
+        fields: [
+          { name: "uid" },
+          { name: "gauge_id" },
+          { name: "metric" },
+        ]
+      },
+    ]
+  });
+};

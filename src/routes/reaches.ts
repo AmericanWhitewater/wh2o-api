@@ -66,7 +66,7 @@ export = (app: Express) => {
     try {
 
       const params = {
-        limit: 100,
+        limit: 20,
         offset: 0,
         where: {}
       }

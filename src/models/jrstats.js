@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     issueyear: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     },
     artdate: {
@@ -15,18 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     issuenumber: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0',
+      defaultValue: 0,
       primaryKey: true
     },
     scanned_pdfs: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     total_articles: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     pages: {
       type: DataTypes.BIGINT,
@@ -35,11 +35,22 @@ module.exports = (sequelize, DataTypes) => {
     offset: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      defaultValue: '0'
+      defaultValue: 0
     }
   }, {
     sequelize,
     tableName: 'jrstats',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "jrstats_pkey",
+        unique: true,
+        fields: [
+          { name: "issueyear" },
+          { name: "issuenumber" },
+        ]
+      },
+    ]
+  });
+};

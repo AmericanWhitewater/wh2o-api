@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('journal', {
     artid: {
+      autoIncrement: true,
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     arttitle: {
       type: DataTypes.TEXT,
@@ -19,27 +19,27 @@ module.exports = (sequelize, DataTypes) => {
     startpage: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     endpage: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     volume: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     issuenumber: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     issueyear: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     scanner_uid: {
       type: DataTypes.BIGINT,
@@ -50,12 +50,22 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     forpublic: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: true
     }
   }, {
     sequelize,
     tableName: 'journal',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "triplog_pkey",
+        unique: true,
+        fields: [
+          { name: "artid" },
+        ]
+      },
+    ]
+  });
+};

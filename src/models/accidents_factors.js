@@ -15,6 +15,17 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'accidents_factors',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "accidents_factors_pkey",
+        unique: true,
+        fields: [
+          { name: "accident_id" },
+          { name: "factor_id" },
+        ]
+      },
+    ]
+  });
+};

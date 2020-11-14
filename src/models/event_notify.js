@@ -3,10 +3,10 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('event_notify', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     uid: {
       type: DataTypes.INTEGER,
@@ -19,6 +19,16 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'event_notify',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "event_notify_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};

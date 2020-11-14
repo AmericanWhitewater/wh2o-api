@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     artid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     peoplelast: {
       type: DataTypes.TEXT,
@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'jrpeople',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false
+  });
+};

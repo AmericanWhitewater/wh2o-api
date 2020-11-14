@@ -82,6 +82,7 @@ export = (app: Express) => {
   app.get('/articles', async (req: Request, res: Response) => {
     try {
       const result = await Article.findAll({
+        limit: 25,
         order: [['releasedate', 'DESC']],
       })
       if (result) {

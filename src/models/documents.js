@@ -3,13 +3,13 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('documents', {
     documentid: {
+      autoIncrement: true,
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     shortname: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(45),
       allowNull: false
     },
     abstract: {
@@ -17,16 +17,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     uid: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     keywords: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     editdate: {
@@ -42,16 +42,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     document: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false
     },
     deleted: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.SMALLINT,
       allowNull: false,
-      defaultValue: '0'
+      defaultValue: 0
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     document_size: {
@@ -61,6 +61,28 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     tableName: 'documents',
-    schema: 'public'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "documents_pkey",
+        unique: true,
+        fields: [
+          { name: "documentid" },
+        ]
+      },
+      {
+        name: "index_2",
+        fields: [
+          { name: "shortname" },
+          { name: "title" },
+        ]
+      },
+      {
+        name: "index_3",
+        fields: [
+        ]
+      },
+    ]
+  });
+};

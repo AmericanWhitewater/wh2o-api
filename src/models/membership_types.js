@@ -1,12 +1,12 @@
 /* jshint indent: 2 */
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('membership_types', {
     id: {
+      autoIncrement: true,
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     name: {
       type: DataTypes.CHAR(80),
@@ -31,22 +31,32 @@ module.exports = (sequelize, DataTypes) => {
     fundstomembership: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      comment: 'amount of $$ that goes to membership, the rest is a donation'
+      comment: "amount of $$ that goes to membership, the rest is a donation"
     },
     order: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      comment: 'order of presentation low to high'
+      comment: "order of presentation low to high"
     },
     fundstopremium: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      defaultValue: '0',
-      comment: 'how much money goes to product if that is selected'
+      defaultValue: 0,
+      comment: "how much money goes to product if that is selected"
     }
   }, {
     sequelize,
     tableName: 'membership_types',
-    schema: 'wh2o'
-  })
-}
+    schema: 'public',
+    timestamps: false,
+    indexes: [
+      {
+        name: "membership_types_pkey",
+        unique: true,
+        fields: [
+          { name: "id" },
+        ]
+      },
+    ]
+  });
+};
