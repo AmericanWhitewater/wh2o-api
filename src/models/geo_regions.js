@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.STRING(2),
       allowNull: false,
-      comment: "region code",
+      comment: 'region code',
       primaryKey: true
     },
     name: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     is_aw: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      comment: "is this an aw sanctioned region or other"
+      comment: 'is this an aw sanctioned region or other'
     }
   }, {
     sequelize,
@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "geo_regions_pkey",
+        name: 'geo_regions_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

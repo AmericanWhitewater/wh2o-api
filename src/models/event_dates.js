@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
     detail_description: {
       type: DataTypes.STRING(240),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     batchid: {
       type: DataTypes.INTEGER,
@@ -58,20 +58,20 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "basic",
+        name: 'basic',
         fields: [
-          { name: "event_id" },
-          { name: "evdate" },
-          { name: "deleted" },
+          { name: 'event_id' },
+          { name: 'evdate' },
+          { name: 'deleted' }
         ]
       },
       {
-        name: "event_dates_pkey",
+        name: 'event_dates_pkey',
         unique: true,
         fields: [
-          { name: "ed_id" },
+          { name: 'ed_id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

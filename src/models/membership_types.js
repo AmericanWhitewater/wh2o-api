@@ -31,18 +31,18 @@ module.exports = function (sequelize, DataTypes) {
     fundstomembership: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      comment: "amount of $$ that goes to membership, the rest is a donation"
+      comment: 'amount of $$ that goes to membership, the rest is a donation'
     },
     order: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      comment: "order of presentation low to high"
+      comment: 'order of presentation low to high'
     },
     fundstopremium: {
       type: DataTypes.BIGINT,
       allowNull: true,
       defaultValue: 0,
-      comment: "how much money goes to product if that is selected"
+      comment: 'how much money goes to product if that is selected'
     }
   }, {
     sequelize,
@@ -51,12 +51,12 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "membership_types_pkey",
+        name: 'membership_types_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

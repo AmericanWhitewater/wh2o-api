@@ -45,31 +45,31 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "2digitstate",
+        name: '2digitstate',
         unique: true,
         fields: [
-          { name: "shortkey" },
+          { name: 'shortkey' }
         ]
       },
       {
-        name: "country",
+        name: 'country',
         fields: [
-          { name: "fips_country" },
+          { name: 'fips_country' }
         ]
       },
       {
-        name: "geo_states_pkey",
+        name: 'geo_states_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "gmi_index",
+        name: 'gmi_index',
         fields: [
-          { name: "gmi" },
+          { name: 'gmi' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

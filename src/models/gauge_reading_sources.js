@@ -5,12 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.STRING(100),
       allowNull: true,
-      comment: "source description"
+      comment: 'source description'
     },
     shortkey: {
       type: DataTypes.CHAR(1),
       allowNull: false,
-      comment: "source id."
+      comment: 'source id.'
     },
     id: {
       type: DataTypes.SMALLINT,
@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gauge_reading_sources_pkey",
+        name: 'gauge_reading_sources_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

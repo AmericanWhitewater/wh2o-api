@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     shortkey: {
       type: DataTypes.STRING(5),
       allowNull: false,
-      comment: "name of the reading type."
+      comment: 'name of the reading type.'
     },
     unit: {
       type: DataTypes.STRING(15),
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING(50),
       allowNull: true,
-      comment: "Full name of unit \"Cubic Feet Per Second\""
+      comment: 'Full name of unit "Cubic Feet Per Second"'
     },
     id: {
       type: DataTypes.SMALLINT,
@@ -25,13 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     format: {
       type: DataTypes.STRING(50),
       allowNull: true,
-      comment: "sprintf format for how this should be displayed"
+      comment: 'sprintf format for how this should be displayed'
     },
     sortorder: {
       type: DataTypes.SMALLINT,
       allowNull: true,
       defaultValue: 0,
-      comment: "sort order for this column"
+      comment: 'sort order for this column'
     }
   }, {
     sequelize,
@@ -40,12 +40,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gauge_reading_metrics_pkey",
+        name: 'gauge_reading_metrics_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

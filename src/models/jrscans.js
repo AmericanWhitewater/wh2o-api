@@ -23,12 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrscans_pkey",
+        name: 'jrscans_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
+          { name: 'artid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -1,17 +1,17 @@
 /* jshint indent: 2 */
 
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 module.exports = function (sequelize, DataTypes) {
   return sequelize.define('gauge_dependent_headers', {
     sourceid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "source (see dependents)"
+      comment: 'source (see dependents)'
     },
     targetid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "see dependents"
+      comment: 'see dependents'
     },
     time_adjustment: {
       type: DataTypes.INTEGER,
@@ -21,45 +21,45 @@ module.exports = function (sequelize, DataTypes) {
     comment: {
       type: DataTypes.STRING(160),
       allowNull: true,
-      defaultValue: "NULL",
-      comment: "comment to describe this gauge relationship"
+      defaultValue: 'NULL',
+      comment: 'comment to describe this gauge relationship'
     },
     metricid: {
       type: DataTypes.SMALLINT,
       allowNull: false,
       defaultValue: 0,
-      comment: "metric to describe"
+      comment: 'metric to describe'
     },
     estimated: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: "is this gauge estimated?"
+      comment: 'is this gauge estimated?'
     },
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "id number of corr.",
+      comment: 'id number of corr.',
       primaryKey: true
     },
     deleted: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: "are you deleted?"
+      comment: 'are you deleted?'
     },
     uid: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
-      comment: "user id"
+      comment: 'user id'
     },
     excluded: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: "should we exclude from the summary"
+      comment: 'should we exclude from the summary'
     }
   }, {
     sequelize,
@@ -68,21 +68,21 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "gauge2river_idx",
+        name: 'gauge2river_idx',
         unique: true,
         fields: [
-          { name: "sourceid" },
-          { name: "targetid" },
-          { name: "metricid" },
+          { name: 'sourceid' },
+          { name: 'targetid' },
+          { name: 'metricid' }
         ]
       },
       {
-        name: "gauge_dependent_headers_pkey",
+        name: 'gauge_dependent_headers_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

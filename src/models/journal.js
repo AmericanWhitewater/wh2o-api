@@ -60,12 +60,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "triplog_pkey",
+        name: 'triplog_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
+          { name: 'artid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

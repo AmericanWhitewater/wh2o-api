@@ -4,7 +4,7 @@ const MemberUpdateStats = require('../models/member_update_stats')(pgClient, Dat
 module.exports = (app) => {
   app.get('/member-update-stats', (req, res) => {
     MemberUpdateStats.findAll({
-      limit:5
+      limit: 5
     })
       .then((result) => {
         res.send(result).status(200)

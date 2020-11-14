@@ -25,5 +25,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'jrtopic',
     schema: 'public',
     timestamps: false
-  });
-};
+  })
+}

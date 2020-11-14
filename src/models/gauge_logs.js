@@ -16,39 +16,39 @@ module.exports = (sequelize, DataTypes) => {
     message_type: {
       type: DataTypes.STRING(60),
       allowNull: true,
-      comment: "The type of error."
+      comment: 'The type of error.'
     },
     message: {
       type: DataTypes.STRING(200),
       allowNull: true,
-      comment: "The message in human readable form"
+      comment: 'The message in human readable form'
     },
     source: {
       type: DataTypes.STRING(20),
       allowNull: true,
-      comment: "the component of the gauge system that had a problem"
+      comment: 'the component of the gauge system that had a problem'
     },
     data: {
       type: DataTypes.STRING(512),
       allowNull: true,
-      comment: "additional data provided."
+      comment: 'additional data provided.'
     },
     level: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: 0,
-      comment: "warning level, the higher the worse"
+      comment: 'warning level, the higher the worse'
     },
     source_id: {
       type: DataTypes.STRING(25),
       allowNull: true,
-      defaultValue: "0",
-      comment: "the item that caused the warning. 0 means nothing caused the warning in particular"
+      defaultValue: '0',
+      comment: 'the item that caused the warning. 0 means nothing caused the warning in particular'
     },
     write_sequence: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: "indicates what write sequence we are on"
+      comment: 'indicates what write sequence we are on'
     }
   }, {
     sequelize,
@@ -57,12 +57,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gauge_logs_pkey",
+        name: 'gauge_logs_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "accidents_causes_pkey",
+        name: 'accidents_causes_pkey',
         unique: true,
         fields: [
-          { name: "accident_id" },
-          { name: "cause_id" },
+          { name: 'accident_id' },
+          { name: 'cause_id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

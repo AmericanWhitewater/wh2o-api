@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
     expiration: {
       type: DataTypes.CHAR(10),
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     memberid: {
       type: DataTypes.BIGINT,
@@ -74,30 +74,30 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "affiliates_pkey",
+        name: 'affiliates_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "id",
+        name: 'id',
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "id_2",
+        name: 'id_2',
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "id_3",
+        name: 'id_3',
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

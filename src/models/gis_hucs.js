@@ -59,18 +59,18 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gis_hucs_pkey",
+        name: 'gis_hucs_pkey',
         unique: true,
         fields: [
-          { name: "gid" },
+          { name: 'gid' }
         ]
       },
       {
-        name: "gis_hucs_the_geom_gist",
+        name: 'gis_hucs_the_geom_gist',
         fields: [
-          { name: "the_geom" },
+          { name: 'the_geom' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

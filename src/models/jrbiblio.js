@@ -43,12 +43,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrbiblio_pkey",
+        name: 'jrbiblio_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
+          { name: 'artid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

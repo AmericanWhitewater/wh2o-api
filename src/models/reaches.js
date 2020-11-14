@@ -93,7 +93,7 @@ module.exports = function (sequelize, DataTypes) {
     status: {
       type: DataTypes.STRING(1),
       allowNull: false,
-      defaultValue: "u",
+      defaultValue: 'u',
       comment: "'u' = unverified, 'v'=verified, 'd'=deleted"
     },
     edited: {
@@ -108,13 +108,13 @@ module.exports = function (sequelize, DataTypes) {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "keeps the revision of the reach record.",
+      comment: 'keeps the revision of the reach record.',
       primaryKey: true
     },
     class: {
-      type: DataTypes.ENUM("none", "I", "I(II)", "I(III)", "I(IV)", "I(V)", "I(V+)", "I-II", "I-II(III)", "I-II(IV)", "I-II(V)", "I-II(V+)", "II", "II(III)", "II(IV)", "II(V)", "II(V+)", "I-II+(III)", "I-II+(IV)", "I-II+(V)", "I-II+(V+)", "II+", "II+(III)", "II+(IV)", "II+(V)", "II+(V+)", "I-III", "I-III(IV)", "I-III(V)", "I-III(V+)", "II-III", "II-III(IV)", "II-III(V)", "II-III(V+)", "III", "I-III+", "I-III+(IV)", "I-III+(V)", "I-III+(V+)", "II-III+", "II-III+(IV)", "II-III+(V)", "II-III+(V+)", "III+", "III+(IV)", "III+(V)", "III+(V+)", "I-IV", "I-IV(V)", "I-IV(V+)", "II-IV", "II-IV(V)", "II-IV(V+)", "III-IV", "III-IV(V)", "III-IV(V+)", "IV", "IV(V)", "IV(V+)", "I-IV+", "I-IV+(V)", "I-IV+(V+)", "II-IV+", "II-IV+(V)", "II-IV+(V+)", "III-IV+", "III-IV+(V)", "III-IV+(V+)", "IV+", "I-V", "I-V(V+)", "II-V", "II-V(V+)", "III-V", "III-V(V+)", "IV-V", "IV-V(V+)", "V", "II-V+", "III-V+", "IV-V+", "V+"),
+      type: DataTypes.ENUM('none', 'I', 'I(II)', 'I(III)', 'I(IV)', 'I(V)', 'I(V+)', 'I-II', 'I-II(III)', 'I-II(IV)', 'I-II(V)', 'I-II(V+)', 'II', 'II(III)', 'II(IV)', 'II(V)', 'II(V+)', 'I-II+(III)', 'I-II+(IV)', 'I-II+(V)', 'I-II+(V+)', 'II+', 'II+(III)', 'II+(IV)', 'II+(V)', 'II+(V+)', 'I-III', 'I-III(IV)', 'I-III(V)', 'I-III(V+)', 'II-III', 'II-III(IV)', 'II-III(V)', 'II-III(V+)', 'III', 'I-III+', 'I-III+(IV)', 'I-III+(V)', 'I-III+(V+)', 'II-III+', 'II-III+(IV)', 'II-III+(V)', 'II-III+(V+)', 'III+', 'III+(IV)', 'III+(V)', 'III+(V+)', 'I-IV', 'I-IV(V)', 'I-IV(V+)', 'II-IV', 'II-IV(V)', 'II-IV(V+)', 'III-IV', 'III-IV(V)', 'III-IV(V+)', 'IV', 'IV(V)', 'IV(V+)', 'I-IV+', 'I-IV+(V)', 'I-IV+(V+)', 'II-IV+', 'II-IV+(V)', 'II-IV+(V+)', 'III-IV+', 'III-IV+(V)', 'III-IV+(V+)', 'IV+', 'I-V', 'I-V(V+)', 'II-V', 'II-V(V+)', 'III-V', 'III-V(V+)', 'IV-V', 'IV-V(V+)', 'V', 'II-V+', 'III-V+', 'IV-V+', 'V+'),
       allowNull: false,
-      comment: "class of the river"
+      comment: 'class of the river'
     },
     ploc: {
       type: DataTypes.GEOMETRY,
@@ -133,42 +133,42 @@ module.exports = function (sequelize, DataTypes) {
     thumboverride: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
-      comment: "tells if we override the medium-resolution photo on the river description."
+      comment: 'tells if we override the medium-resolution photo on the river description.'
     },
     shuttledetails: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "text description of the shuttle"
+      comment: 'text description of the shuttle'
     },
     abstract: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "short description of the river."
+      comment: 'short description of the river.'
     },
     direction_default: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: "0=none, 1= shuttle 2=to home"
+      comment: '0=none, 1= shuttle 2=to home'
     },
     custom_destination: {
       type: DataTypes.STRING,
       allowNull: true,
-      comment: "google directions routing if you need it."
+      comment: 'google directions routing if you need it.'
     },
     revision_comment: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      comment: "when a new river is published this provides a short description of why"
+      comment: 'when a new river is published this provides a short description of why'
     },
     permiturl: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "provides the url for the permit information"
+      comment: 'provides the url for the permit information'
     },
     permitinfo: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "provides a description of the permit process."
+      comment: 'provides a description of the permit process.'
     },
     image_override: {
       type: DataTypes.STRING(255),
@@ -187,32 +187,32 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "only_one_final",
+        name: 'only_one_final',
         unique: true,
         fields: [
-          { name: "id" },
-          { name: "is_final" },
+          { name: 'id' },
+          { name: 'is_final' }
         ]
       },
       {
-        name: "reach_name",
+        name: 'reach_name',
         fields: [
         ]
       },
       {
-        name: "reaches_pkey",
+        name: 'reaches_pkey',
         unique: true,
         fields: [
-          { name: "revision" },
+          { name: 'revision' }
         ]
       },
       {
-        name: "reachgeometry",
+        name: 'reachgeometry',
         fields: [
-          { name: "ploc" },
-          { name: "tloc" },
+          { name: 'ploc' },
+          { name: 'tloc' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

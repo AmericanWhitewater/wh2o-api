@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
     bio: {
       type: DataTypes.TEXT,
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     lname: {
       type: DataTypes.STRING(25),
@@ -64,12 +64,12 @@ module.exports = (sequelize, DataTypes) => {
     photo: {
       type: DataTypes.STRING(24),
       allowNull: false,
-      defaultValue: "0"
+      defaultValue: '0'
     },
     company: {
       type: DataTypes.STRING(45),
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     position: {
       type: DataTypes.STRING(45),
@@ -78,12 +78,12 @@ module.exports = (sequelize, DataTypes) => {
     territory: {
       type: DataTypes.STRING(45),
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     country_code: {
       type: DataTypes.CHAR(2),
       allowNull: false,
-      defaultValue: "us"
+      defaultValue: 'us'
     }
   }, {
     sequelize,
@@ -92,45 +92,45 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "compdx",
+        name: 'compdx',
         fields: [
-          { name: "company" },
+          { name: 'company' }
         ]
       },
       {
-        name: "contacts_pkey",
+        name: 'contacts_pkey',
         unique: true,
         fields: [
-          { name: "contactid" },
+          { name: 'contactid' }
         ]
       },
       {
-        name: "emaildx",
+        name: 'emaildx',
         fields: [
-          { name: "email" },
+          { name: 'email' }
         ]
       },
       {
-        name: "name_simpledx",
+        name: 'name_simpledx',
         fields: [
-          { name: "name" },
+          { name: 'name' }
         ]
       },
       {
-        name: "nameidx2",
+        name: 'nameidx2',
         fields: [
-          { name: "name" },
-          { name: "lname" },
-          { name: "fname" },
+          { name: 'name' },
+          { name: 'lname' },
+          { name: 'fname' }
         ]
       },
       {
-        name: "uididx2",
+        name: 'uididx2',
         unique: true,
         fields: [
-          { name: "uid" },
+          { name: 'uid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

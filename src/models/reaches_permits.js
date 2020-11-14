@@ -5,13 +5,13 @@ module.exports = function (sequelize, DataTypes) {
     reachid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "id of river that allows permit",
+      comment: 'id of river that allows permit',
       primaryKey: true
     },
     state: {
       type: DataTypes.CHAR(7),
       allowNull: false,
-      comment: "state to show.",
+      comment: 'state to show.',
       primaryKey: true
     }
   }, {
@@ -21,13 +21,13 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "reaches_permits_pkey",
+        name: 'reaches_permits_pkey',
         unique: true,
         fields: [
-          { name: "reachid" },
-          { name: "state" },
+          { name: 'reachid' },
+          { name: 'state' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

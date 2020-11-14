@@ -2,10 +2,10 @@ import { pgClient, DataTypes } from '../config'
 const Document = require('../models/documents')(pgClient, DataTypes)
 
 module.exports = (app) => {
- 
- app.get('/documents', async (req, res) => {
 
-    try {
+  app.get('/documents', async (req, res) => {
+
+   try {
 
       let result
 
@@ -27,7 +27,7 @@ module.exports = (app) => {
       console.log(error)
       res.send(error).status(404)
     }
-  })
+ })
 
   app.post('/new-document', (req, res) => {
     Document.create(req.body)

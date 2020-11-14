@@ -11,14 +11,14 @@ module.exports = function (sequelize, DataTypes) {
     state: {
       type: DataTypes.STRING(7),
       allowNull: false,
-      comment: "state a river is in",
-      unique: "reaches_states_idx"
+      comment: 'state a river is in',
+      unique: 'reaches_states_idx'
     },
     reach_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "reach that is in the state",
-      unique: "reaches_states_idx"
+      comment: 'reach that is in the state',
+      unique: 'reaches_states_idx'
     }
   }, {
     sequelize,
@@ -28,20 +28,20 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "reaches_states_idx",
+        name: 'reaches_states_idx',
         unique: true,
         fields: [
-          { name: "state" },
-          { name: "reach_id" },
+          { name: 'state' },
+          { name: 'reach_id' }
         ]
       },
       {
-        name: "reaches_states_pkey",
+        name: 'reaches_states_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

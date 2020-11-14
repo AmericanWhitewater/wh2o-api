@@ -32,12 +32,12 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "listings_pkey",
+        name: 'listings_pkey',
         unique: true,
         fields: [
-          { name: "listing" },
+          { name: 'listing' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     starttime: {
       type: DataTypes.TIME,
       allowNull: true,
-      comment: "min time to notify"
+      comment: 'min time to notify'
     },
     endtime: {
       type: DataTypes.TIME,
       allowNull: true,
-      comment: "max time to notify"
+      comment: 'max time to notify'
     },
     tz: {
       type: DataTypes.STRING(60),
@@ -26,12 +26,12 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING(100),
       allowNull: true,
-      comment: "email of person"
+      comment: 'email of person'
     },
     format: {
       type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: "0=normal\r\n1=pager"
+      comment: '0=normal\r\n1=pager'
     }
   }, {
     sequelize,
@@ -40,12 +40,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gauge_personal_settings_pkey",
+        name: 'gauge_personal_settings_pkey',
         unique: true,
         fields: [
-          { name: "uid" },
+          { name: 'uid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

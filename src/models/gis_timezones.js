@@ -23,18 +23,18 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gis_timezone_the_geom_gist",
+        name: 'gis_timezone_the_geom_gist',
         fields: [
-          { name: "the_geom" },
+          { name: 'the_geom' }
         ]
       },
       {
-        name: "gis_timezones_pkey",
+        name: 'gis_timezones_pkey',
         unique: true,
         fields: [
-          { name: "gid" },
+          { name: 'gid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

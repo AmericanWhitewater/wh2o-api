@@ -35,19 +35,19 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "linker_sources_pkey",
+        name: 'linker_sources_pkey',
         unique: true,
         fields: [
-          { name: "source" },
-          { name: "target" },
+          { name: 'source' },
+          { name: 'target' }
         ]
       },
       {
-        name: "target",
+        name: 'target',
         fields: [
-          { name: "target" },
+          { name: 'target' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

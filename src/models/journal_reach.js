@@ -77,5 +77,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'journal_reach',
     schema: 'public',
     timestamps: false
-  });
-};
+  })
+}

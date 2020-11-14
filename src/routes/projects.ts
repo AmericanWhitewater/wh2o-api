@@ -6,7 +6,7 @@ module.exports = app => {
 
     try {
 
-    let result
+      let result
 
       const params = {
         limit: 100,

@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      defaultValue: ""
+      defaultValue: ''
     },
     maxvolunteer: {
       type: DataTypes.BIGINT,
@@ -61,26 +61,26 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "lgid",
+        name: 'lgid',
         fields: [
-          { name: "lgid" },
+          { name: 'lgid' }
         ]
       },
       {
-        name: "listing",
+        name: 'listing',
         unique: true,
         fields: [
-          { name: "listing" },
-          { name: "area" },
+          { name: 'listing' },
+          { name: 'area' }
         ]
       },
       {
-        name: "listinggroups_pkey",
+        name: 'listinggroups_pkey',
         unique: true,
         fields: [
-          { name: "lgid" },
+          { name: 'lgid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

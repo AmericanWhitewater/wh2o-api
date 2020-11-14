@@ -20,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'jrpeople',
     schema: 'public',
     timestamps: false
-  });
-};
+  })
+}

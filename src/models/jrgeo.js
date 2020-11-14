@@ -20,13 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrgeo_pkey",
+        name: 'jrgeo_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
-          { name: "geoloc" },
+          { name: 'artid' },
+          { name: 'geoloc' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -34,40 +34,40 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "articleid",
+        name: 'articleid',
         fields: [
-          { name: "articleid" },
+          { name: 'articleid' }
         ]
       },
       {
-        name: "awalerts_pkey",
+        name: 'awalerts_pkey',
         unique: true,
         fields: [
-          { name: "articleid" },
-          { name: "type" },
-          { name: "value" },
+          { name: 'articleid' },
+          { name: 'type' },
+          { name: 'value' }
         ]
       },
       {
-        name: "idxarticleid",
+        name: 'idxarticleid',
         fields: [
-          { name: "articleid" },
+          { name: 'articleid' }
         ]
       },
       {
-        name: "idxtype",
+        name: 'idxtype',
         fields: [
-          { name: "type" },
+          { name: 'type' }
         ]
       },
       {
-        name: "tve",
+        name: 'tve',
         fields: [
-          { name: "type" },
-          { name: "value" },
-          { name: "expiration" },
+          { name: 'type' },
+          { name: 'value' },
+          { name: 'expiration' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

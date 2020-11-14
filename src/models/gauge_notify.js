@@ -17,27 +17,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.REAL,
       allowNull: true,
       defaultValue: 0,
-      comment: "minimum to email"
+      comment: 'minimum to email'
     },
     metric: {
       type: DataTypes.SMALLINT,
       allowNull: true,
-      comment: "metric we are dealing with"
+      comment: 'metric we are dealing with'
     },
     show: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
-      comment: "show on the gauge page"
+      comment: 'show on the gauge page'
     },
     gauge_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: "gauge to link to"
+      comment: 'gauge to link to'
     },
     asap: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
-      comment: "show the gauge as soon as it comes up"
+      comment: 'show the gauge as soon as it comes up'
     },
     down: {
       type: DataTypes.BOOLEAN,
@@ -51,18 +51,18 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "gauge_notify_idx_uid",
+        name: 'gauge_notify_idx_uid',
         fields: [
-          { name: "uid" },
+          { name: 'uid' }
         ]
       },
       {
-        name: "gauge_notify_pkey",
+        name: 'gauge_notify_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

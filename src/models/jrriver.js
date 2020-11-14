@@ -20,13 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrriver_pkey",
+        name: 'jrriver_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
-          { name: "theriver" },
+          { name: 'artid' },
+          { name: 'theriver' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

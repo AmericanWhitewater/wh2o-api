@@ -39,27 +39,27 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "linker_lists_pkey",
+        name: 'linker_lists_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "sourcecomp",
+        name: 'sourcecomp',
         fields: [
-          { name: "sourcecomp" },
-          { name: "sourceid" },
+          { name: 'sourcecomp' },
+          { name: 'sourceid' }
         ]
       },
       {
-        name: "targetcomp",
+        name: 'targetcomp',
         fields: [
-          { name: "targetcomp" },
-          { name: "targetid" },
-          { name: "mutual" },
+          { name: 'targetcomp' },
+          { name: 'targetid' },
+          { name: 'mutual' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

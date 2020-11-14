@@ -29,32 +29,32 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "articleiddx3",
+        name: 'articleiddx3',
         fields: [
-          { name: "articleid" },
+          { name: 'articleid' }
         ]
       },
       {
-        name: "awnews_pkey",
+        name: 'awnews_pkey',
         unique: true,
         fields: [
-          { name: "articleid" },
-          { name: "type" },
+          { name: 'articleid' },
+          { name: 'type' }
         ]
       },
       {
-        name: "tedx3",
+        name: 'tedx3',
         fields: [
-          { name: "type" },
-          { name: "expiration" },
+          { name: 'type' },
+          { name: 'expiration' }
         ]
       },
       {
-        name: "typedx3",
+        name: 'typedx3',
         fields: [
-          { name: "type" },
+          { name: 'type' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -21,13 +21,13 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "club2river_pkey",
+        name: 'club2river_pkey',
         unique: true,
         fields: [
-          { name: "affiliateid" },
-          { name: "reachid" },
+          { name: 'affiliateid' },
+          { name: 'reachid' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

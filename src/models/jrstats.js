@@ -44,13 +44,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrstats_pkey",
+        name: 'jrstats_pkey',
         unique: true,
         fields: [
-          { name: "issueyear" },
-          { name: "issuenumber" },
+          { name: 'issueyear' },
+          { name: 'issuenumber' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

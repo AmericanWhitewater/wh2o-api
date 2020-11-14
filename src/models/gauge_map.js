@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('gauge_map', {
     source: {
@@ -77,5 +77,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'gauge_map',
     schema: 'public',
     timestamps: false
-  });
-};
+  })
+}

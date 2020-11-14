@@ -19,17 +19,17 @@ module.exports = function (sequelize, DataTypes) {
     schema_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: "layer_schema_name_table_name_feature_column_key"
+      unique: 'layer_schema_name_table_name_feature_column_key'
     },
     table_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: "layer_schema_name_table_name_feature_column_key"
+      unique: 'layer_schema_name_table_name_feature_column_key'
     },
     feature_column: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: "layer_schema_name_table_name_feature_column_key"
+      unique: 'layer_schema_name_table_name_feature_column_key'
     },
     feature_type: {
       type: DataTypes.INTEGER,
@@ -52,22 +52,22 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "layer_pkey",
+        name: 'layer_pkey',
         unique: true,
         fields: [
-          { name: "topology_id" },
-          { name: "layer_id" },
+          { name: 'topology_id' },
+          { name: 'layer_id' }
         ]
       },
       {
-        name: "layer_schema_name_table_name_feature_column_key",
+        name: 'layer_schema_name_table_name_feature_column_key',
         unique: true,
         fields: [
-          { name: "schema_name" },
-          { name: "table_name" },
-          { name: "feature_column" },
+          { name: 'schema_name' },
+          { name: 'table_name' },
+          { name: 'feature_column' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

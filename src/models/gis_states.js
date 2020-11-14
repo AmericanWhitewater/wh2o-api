@@ -67,30 +67,30 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "fips_state",
+        name: 'fips_state',
         fields: [
-          { name: "fips_admin" },
+          { name: 'fips_admin' }
         ]
       },
       {
-        name: "gis_states_pkey",
+        name: 'gis_states_pkey',
         unique: true,
         fields: [
-          { name: "gid" },
+          { name: 'gid' }
         ]
       },
       {
-        name: "gmi_admin",
+        name: 'gmi_admin',
         fields: [
-          { name: "gmi_admin" },
+          { name: 'gmi_admin' }
         ]
       },
       {
-        name: "spacial",
+        name: 'spacial',
         fields: [
-          { name: "the_geom" },
+          { name: 'the_geom' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

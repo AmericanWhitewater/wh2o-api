@@ -19,13 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "accidents_injuries_pkey",
+        name: 'accidents_injuries_pkey',
         unique: true,
         fields: [
-          { name: "accident_id" },
-          { name: "injury_id" },
+          { name: 'accident_id' },
+          { name: 'injury_id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

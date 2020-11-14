@@ -35,18 +35,18 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "index_date",
+        name: 'index_date',
         fields: [
-          { name: "update_date" },
+          { name: 'update_date' }
         ]
       },
       {
-        name: "member_update_stats_pkey",
+        name: 'member_update_stats_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

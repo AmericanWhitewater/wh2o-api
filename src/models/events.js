@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 module.exports = function (sequelize, DataTypes) {
   return sequelize.define('events', {
     id: {
@@ -12,12 +12,12 @@ module.exports = function (sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING(80),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     city: {
       type: DataTypes.STRING(40),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     description: {
       type: DataTypes.TEXT,
@@ -34,42 +34,42 @@ module.exports = function (sequelize, DataTypes) {
     state: {
       type: DataTypes.CHAR(2),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     url: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     orgname: {
       type: DataTypes.STRING(50),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     orgaddress: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     orgphone: {
       type: DataTypes.STRING(14),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     orgfax: {
       type: DataTypes.STRING(14),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     orgemail: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     site: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      defaultValue: "NULL"
+      defaultValue: 'NULL'
     },
     rivid: {
       type: DataTypes.INTEGER,
@@ -120,20 +120,20 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "events_pkey",
+        name: 'events_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
       },
       {
-        name: "state",
+        name: 'state',
         fields: [
-          { name: "cat" },
-          { name: "state" },
-          { name: "retired" },
+          { name: 'cat' },
+          { name: 'state' },
+          { name: 'retired' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

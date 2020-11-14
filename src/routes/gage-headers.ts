@@ -30,8 +30,6 @@ module.exports = (app) => {
       })
   })
 
-
-
   app.post('/new-gage-header', (req, res) => {
     GageHeader.create(req.body)
       .then(() => {

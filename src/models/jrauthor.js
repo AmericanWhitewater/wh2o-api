@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     authorfirst: {
-      type: "BYTEA",
+      type: 'BYTEA',
       allowNull: false,
       primaryKey: true
     }
@@ -25,14 +25,14 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "jrauthor_pkey",
+        name: 'jrauthor_pkey',
         unique: true,
         fields: [
-          { name: "artid" },
-          { name: "authorlast" },
-          { name: "authorfirst" },
+          { name: 'artid' },
+          { name: 'authorlast' },
+          { name: 'authorfirst' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

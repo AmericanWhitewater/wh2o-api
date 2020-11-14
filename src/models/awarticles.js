@@ -65,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.SMALLINT,
       allowNull: false,
       defaultValue: 0,
-      comment: "tells if article is deleted"
+      comment: 'tells if article is deleted'
     }
   }, {
     sequelize,
@@ -74,18 +74,18 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "awarticles_pkey",
+        name: 'awarticles_pkey',
         unique: true,
         fields: [
-          { name: "articleid" },
+          { name: 'articleid' }
         ]
       },
       {
-        name: "shortname",
+        name: 'shortname',
         fields: [
-          { name: "shortname" },
+          { name: 'shortname' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

@@ -50,18 +50,18 @@ module.exports = function (sequelize, DataTypes) {
     subject: {
       type: DataTypes.STRING(255),
       allowNull: true,
-      comment: "who the photo is of"
+      comment: 'who the photo is of'
     },
     detail: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "description of the photo"
+      comment: 'description of the photo'
     },
     allowhtml: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: "description should be in html, to preserve some historical photo html."
+      comment: 'description should be in html, to preserve some historical photo html.'
     },
     url: {
       type: DataTypes.STRING(255),
@@ -75,18 +75,18 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "journal_photos_idx_journal",
+        name: 'journal_photos_idx_journal',
         fields: [
-          { name: "triplog_id" },
+          { name: 'triplog_id' }
         ]
       },
       {
-        name: "triplog_photos_pkey",
+        name: 'triplog_photos_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

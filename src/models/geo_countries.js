@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.STRING(2),
       allowNull: false,
-      comment: "fips country code.",
+      comment: 'fips country code.',
       primaryKey: true
     },
     name: {
       type: DataTypes.STRING(80),
       allowNull: false,
-      comment: "name of the country (english)"
+      comment: 'name of the country (english)'
     }
   }, {
     sequelize,
@@ -20,12 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "geo_countries_pkey",
+        name: 'geo_countries_pkey',
         unique: true,
         fields: [
-          { name: "id" },
+          { name: 'id' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

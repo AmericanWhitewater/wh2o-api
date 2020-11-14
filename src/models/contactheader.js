@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     area: {
       type: DataTypes.STRING(25),
       allowNull: false,
-      defaultValue: "",
+      defaultValue: '',
       primaryKey: true
     },
     title: {
@@ -50,32 +50,32 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "contactheader_pkey",
+        name: 'contactheader_pkey',
         unique: true,
         fields: [
-          { name: "listing" },
-          { name: "area" },
-          { name: "contactid" },
+          { name: 'listing' },
+          { name: 'area' },
+          { name: 'contactid' }
         ]
       },
       {
-        name: "contactid",
+        name: 'contactid',
         fields: [
-          { name: "contactid" },
+          { name: 'contactid' }
         ]
       },
       {
-        name: "sortid",
+        name: 'sortid',
         fields: [
-          { name: "sortid" },
+          { name: 'sortid' }
         ]
       },
       {
-        name: "title",
+        name: 'title',
         fields: [
-          { name: "title" },
+          { name: 'title' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

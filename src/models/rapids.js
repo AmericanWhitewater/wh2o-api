@@ -5,43 +5,43 @@ module.exports = function (sequelize, DataTypes) {
     reachid: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: "reach it belongs to"
+      comment: 'reach it belongs to'
     },
     rapidid: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: "nextval('public'.'rapids_rapidid_seq')",
-      comment: "rapid id in reach"
+      comment: 'rapid id in reach'
     },
     name: {
       type: DataTypes.STRING(80),
       allowNull: false,
-      comment: "name of rapid\/POI"
+      comment: 'name of rapid\/POI'
     },
     distance: {
       type: DataTypes.REAL,
       allowNull: false,
-      comment: "how far down the river"
+      comment: 'how far down the river'
     },
     difficulty: {
       type: DataTypes.STRING(4),
       allowNull: true,
-      comment: "difficulty (if it is a rapid)"
+      comment: 'difficulty (if it is a rapid)'
     },
     description: {
       type: DataTypes.TEXT,
       allowNull: true,
-      comment: "description of the rapid"
+      comment: 'description of the rapid'
     },
     photoid: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: "photo "
+      comment: 'photo '
     },
     videoid: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      comment: "video"
+      comment: 'video'
     },
     isputin: {
       type: DataTypes.SMALLINT,
@@ -84,13 +84,13 @@ module.exports = function (sequelize, DataTypes) {
     approximate: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      comment: "is this an estimated location"
+      comment: 'is this an estimated location'
     },
     deleted: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-      comment: "true if deleted. "
+      comment: 'true if deleted. '
     },
     rloc: {
       type: DataTypes.GEOMETRY,
@@ -120,18 +120,18 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "rapids_idx",
+        name: 'rapids_idx',
         fields: [
-          { name: "rapidid" },
+          { name: 'rapidid' }
         ]
       },
       {
-        name: "rapids_pkey",
+        name: 'rapids_pkey',
         unique: true,
         fields: [
-          { name: "revision" },
+          { name: 'revision' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

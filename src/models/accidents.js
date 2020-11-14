@@ -115,23 +115,23 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "ndx_accident_accidentdate",
+        name: 'ndx_accident_accidentdate',
         fields: [
-          { name: "accidentdate" },
+          { name: 'accidentdate' }
         ]
       },
       {
-        name: "ndx_accident_reachid",
+        name: 'ndx_accident_reachid',
         fields: [
-          { name: "reachid" },
+          { name: 'reachid' }
         ]
       },
       {
-        name: "ndx_accident_state",
+        name: 'ndx_accident_state',
         fields: [
-          { name: "state" },
+          { name: 'state' }
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}

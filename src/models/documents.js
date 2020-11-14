@@ -65,24 +65,24 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     indexes: [
       {
-        name: "documents_pkey",
+        name: 'documents_pkey',
         unique: true,
         fields: [
-          { name: "documentid" },
+          { name: 'documentid' }
         ]
       },
       {
-        name: "index_2",
+        name: 'index_2',
         fields: [
-          { name: "shortname" },
-          { name: "title" },
+          { name: 'shortname' },
+          { name: 'title' }
         ]
       },
       {
-        name: "index_3",
+        name: 'index_3',
         fields: [
         ]
-      },
+      }
     ]
-  });
-};
+  })
+}
