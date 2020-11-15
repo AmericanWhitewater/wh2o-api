@@ -5,7 +5,7 @@ actionText: Get Started →
 actionLink: /guide/quick-start
 features:
 - title: Open Source
-  details: This project was built by and is maintained by volunteers.
+  details: This project was built and is maintained by volunteers.
 - title: River Safety
   details: Serving a wealth of information including river flow rates, alerts and more.
 - title: Community Driven
