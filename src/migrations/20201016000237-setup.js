@@ -4078,9 +4078,7 @@ let migrationCommands = [{
         allowNull: true
       }
     },
-    {
-      schema: 'wh2o'
-    }
+    {}
   ]
 },
 {

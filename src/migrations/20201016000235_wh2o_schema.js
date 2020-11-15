@@ -7,5 +7,12 @@ module.exports = {
     }).catch(err => {
       console.log('err :>> ', err)
     })
-  }
+  },
+  down: async function (queryInterface, Sequelize) {
+    pgClient.dropSchema('wh2o').then(() => {
+      console.log('schema wh2o removed')
+    }).catch(err => {
+      console.log('err :>> ', err)
+    })
+  },
 }

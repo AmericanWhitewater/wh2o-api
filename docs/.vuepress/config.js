@@ -63,8 +63,8 @@ module.exports = {
             path: '/guide/generate-docs'
           },
           {
-            title: 'Deployment',
-            path: '/guide/deployment'
+            title: 'Production',
+            path: '/guide/production'
           }
         ]
       },
@@ -90,6 +90,9 @@ module.exports = {
         serviceWorker: true,
         updatePopup: true
       }
-    ]
+    ],
+    ['@vuepress/medium-zoom', {
+      selector: '.theme-default-content:not(.custom) img'
+    }]
   ]
 }

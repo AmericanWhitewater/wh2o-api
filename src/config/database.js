@@ -1,14 +1,12 @@
 const { Sequelize, DataTypes } = require('sequelize')
-// const database = process.env.POSTGRES_DB || 'wh2o'
-// const host = process.env.POSTGRES_HOST || 'localhost'
-// const port = Number(process.env.POSTGRES_PORT) || 35432
-// const user = process.env.POSTGRES_USER || 'wh2o'
-// const pass = process.env.POSTGRES_PASSWORD || 'wh2o'
 
-// if (!pass || !user) {
-//   console.log('missing credentials')
-//   process.exit()
-// }
+const {
+  POSTGRES_HOST,
+  POSTGRES_PORT,
+  POSTGRES_DB,
+  POSTGRES_USER,
+  POSTGRES_PASSWORD
+} = process.env
 
 let pgClient
 async function initDBConnection () {
@@ -16,12 +14,11 @@ async function initDBConnection () {
   let dbConnection = false
   while (!dbConnection) {
     try {
-      pgClient = new Sequelize('postgresql://wh2o:wh2o@localhost:35432/wh2o',
+      pgClient = new Sequelize(`postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}`,
         {
-          // host,
-          // port,
-          // dialect: 'postgres',
-          logging: console.log,
+          // https://sequelize.org/master/manual/getting-started.html#logging
+          // logging: console.log,
+          logging: false,
           define: {
             freezeTableName: true,
             timestamps: false

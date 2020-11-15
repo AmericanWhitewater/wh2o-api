@@ -12,8 +12,8 @@ services:
     networks:
         - wh2o-network
   wh2o-api:
-    container_name: wh2o-api
-    image: drewalth/wh2o-api
+    container_name: api-container
+    image: americanwhitewater/wh2o-api
     build: 
       context: .
     ports:
