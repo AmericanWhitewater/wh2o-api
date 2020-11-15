@@ -25,6 +25,12 @@ Download the database image and bring up the server:
 docker-compose up
 ```
 
+Optionally, you could add the `-d` flag to hide Docker logs:
+
+```
+docker-compose up -d
+```
+
 ### Express App
 
 Install the project dependencies.

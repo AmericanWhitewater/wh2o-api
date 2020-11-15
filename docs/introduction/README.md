@@ -4,7 +4,7 @@ Welcome! [American Whitewater](https://www.americanwhitewater.org/) (AW) is a na
 
 This site is the technical documentation for [`wh2o-api`](https://github.com/AmericanWhitewater/wh2o-api).
 
-If you're looking to contribute to the project, visit the [Getting Started](/guide/quick-start.md) section in [Guides](/guide/).
+If you're looking to contribute to the project, visit the [`Quick Start`](/guide/quick-start) section in [`Guides`](/guide/).
 
 ## Projects
 
