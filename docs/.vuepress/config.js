@@ -14,7 +14,8 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' }],
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#4f758b' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#4f758b' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#4f758b' }],
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1.0, user-scalable=no' }]
   ],
   themeConfig: {
     logo: '/aw-logo-small.png',
@@ -93,6 +94,19 @@ module.exports = {
     ],
     ['@vuepress/medium-zoom', {
       selector: '.theme-default-content:not(.custom) img'
+    }],
+    ['seo', {
+      siteTitle: (_, $site) => $site.title,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description,
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
+      publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }]
   ]
 }

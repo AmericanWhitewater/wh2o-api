@@ -65,6 +65,7 @@
     "tslint-config-security": "^1.16.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^3.9.7",
-    "vuepress": "^1.7.1"
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-seo": "^0.1.4"
   }
 }

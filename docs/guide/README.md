@@ -1,3 +1,7 @@
+---
+description: Application development notes and guides.
+---
+
 # Guides 
 
 - [`Quick Start`](/guide/quick-start)

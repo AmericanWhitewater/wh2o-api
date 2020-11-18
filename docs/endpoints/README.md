@@ -1,3 +1,6 @@
+---
+description: A complete list of all available API endpoints.
+---
 
 # Endpoints
 

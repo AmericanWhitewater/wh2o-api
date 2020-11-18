@@ -4126,5 +4126,21 @@ module.exports = {
       next()
     })
   },
+  down: function (queryInterface, Sequelize) {
+    let index = this.pos
+
+    console.log('starting down...')
+    return new Promise(function (resolve, reject) {
+      function next () {
+        if (index < migrationCommands.length) {
+          index++
+          queryInterface.dropTable.apply(queryInterface, {}).then(next, reject)
+        } else {
+          resolve()
+        }
+      }
+      next()
+    })
+  },
   info: info
 }

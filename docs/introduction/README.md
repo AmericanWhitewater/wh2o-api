@@ -1,3 +1,7 @@
+---
+description: This site is the technical documentation for the American Whitewater REST web API.
+---
+
 # Introduction
 
 Welcome! [American Whitewater](https://www.americanwhitewater.org/) (AW) is a national non-profit and is the primary advocate for the preservation and protection of whitewater rivers throughout the United States. We connect the interests of human-powered recreational river users with ecological and science-based data to achieve goals within our mission.
