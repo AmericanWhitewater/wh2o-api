@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/specialtactics/laravel-api-boilerplate.svg?branch=master)](https://travis-ci.com/specialtactics/l5-api)
 [![StyleCI](https://github.styleci.io/repos/131504554/shield?branch=master)](https://github.styleci.io/repos/131504554)
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
@@ -11,7 +10,7 @@ It is intended for this repository to be used when starting a new API project. T
 The principles of this boilerplate are to;
 
  - Save developers considerable effort by using reasonable conventions
- - Allow for everything the boilerplate provides to be easily extended and entirely customised to suit developer needs, through normal PHP inheritance
+ - Allow for everything the boilerplate provides to be easily and entirely customised to suit developer needs, through normal PHP inheritance
    - As well as allow developers to easily use the boilerplate functionality and mix it in with their own implementation
  - Follow REST standards very closely
  - Use existing Laravel features and existing Laravel add-on packages where possible
@@ -49,6 +48,22 @@ I have tried to include only the packages thought absolutely necessary, so here 
 #### For Debugging 
  - [Bugsnag for Laravel](https://github.com/bugsnag/bugsnag-laravel)
  - [Sentry](https://github.com/getsentry/sentry-laravel)
+
+
+## Todo
+ - Add model factory to make:api-resource command and integrate it with stub for seeder
+ - Add pagination to child controller getAll() (requires a bit of a rewrite of how that works)
+ - Think of an easy way to deal with needing to hide relationships 
+ - Add command to make a new transformer
+ - Integrate this https://github.com/spatie/laravel-query-builder
+ - Add primitive transformers
+ - Add config & allow ID to be added to model resource
+ - Write more tests
+ - Allow for authentication using only JWT, with middleware (for high speed requests)
+ - Bulk delete
+ - Bulk put/post
+ - Abstract all string text into language files
+ - Logging of API requests using middleware
 
 ## License
  

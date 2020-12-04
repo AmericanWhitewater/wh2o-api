@@ -5,7 +5,7 @@ namespace Tests\Api;
 use Tests\ApiTestCase;
 use App\Models\User;
 
-class UserControllerTest extends ApiTestCase
+class UserTest extends ApiTestCase
 {
     public function testGetAll() {
         $jsonResponse = $this->actingAsAdmin()->json('GET', '/users');
