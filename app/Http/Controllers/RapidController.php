@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\POI;
+use App\Rapid;
 use Illuminate\Http\Request;
 
-class POIController extends Controller
+class RapidController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class POIController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\POI  $pOI
+     * @param  \App\Rapid  $rapid
      * @return \Illuminate\Http\Response
      */
-    public function show(POI $pOI)
+    public function show(Rapid $rapid)
     {
         //
     }
@@ -52,10 +52,10 @@ class POIController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\POI  $pOI
+     * @param  \App\Rapid  $rapid
      * @return \Illuminate\Http\Response
      */
-    public function edit(POI $pOI)
+    public function edit(Rapid $rapid)
     {
         //
     }
@@ -64,10 +64,10 @@ class POIController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\POI  $pOI
+     * @param  \App\Rapid  $rapid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, POI $pOI)
+    public function update(Request $request, Rapid $rapid)
     {
         //
     }
@@ -75,10 +75,10 @@ class POIController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\POI  $pOI
+     * @param  \App\Rapid  $rapid
      * @return \Illuminate\Http\Response
      */
-    public function destroy(POI $pOI)
+    public function destroy(Rapid $rapid)
     {
         //
     }

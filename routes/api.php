@@ -322,14 +322,14 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         });
 
         /*
-        * POIS
+        * Rapids
         */
-        $api->group(['prefix' => 'pois'], function (Router $api) {
-            $api->get('/', 'App\Http\Controllers\POIController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\POIController@get');
-            $api->post('/', 'App\Http\Controllers\POIController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\POIController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\POIController@delete');
+        $api->group(['prefix' => 'rapids'], function (Router $api) {
+            $api->get('/', 'App\Http\Controllers\RapidController@getAll');
+            $api->get('/{uuid}', 'App\Http\Controllers\RapidController@get');
+            $api->post('/', 'App\Http\Controllers\RapidController@post');
+            $api->patch('/{uuid}', 'App\Http\Controllers\RapidController@patch');
+            $api->delete('/{uuid}', 'App\Http\Controllers\RapidController@delete');
         });
 
         /*

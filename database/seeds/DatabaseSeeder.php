@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LinksSeeder::class);
         $this->call(NewsSeeder::class);
         $this->call(PhotosSeeder::class);
-        $this->call(POISSeeder::class);
+        $this->call(RapidsSeeder::class);
         $this->call(PostsSeeder::class);
         $this->call(ProjectsSeeder::class);
         $this->call(ReachNextEventsSeeder::class);
