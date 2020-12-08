@@ -4,7 +4,7 @@ services:
 
 # Workspace Container
     workspace:
-      container_name: your_project_workspace
+      container_name: wh2o_workspace
       build:
         context: ./env/docker/workspace
         args:
@@ -21,11 +21,11 @@ services:
         - ~/.aws:/home/laradock/.aws
       tty: true
       networks:
-        - your_project_network
+        - wh2o_network
 
 # PHP-FPM
     php-fpm:
-      container_name: your_project_php_fpm
+      container_name: wh2o_php_fpm
       build:
         context: ./env/docker/php-fpm
         args:
@@ -38,11 +38,11 @@ services:
       depends_on:
         - workspace
       networks:
-        - your_project_network
+        - wh2o_network
 
 # NGINX
     nginx:
-      container_name: your_project_nginx
+      container_name: wh2o_nginx
       build:
         context: ./env/docker/nginx
       volumes:
@@ -56,11 +56,11 @@ services:
       ports:
         - 80:80
       networks:
-        - your_project_network
+        - wh2o_network
 
 # PostgreSQL
     postgres:
-      container_name: your_project_postgres
+      container_name: wh2o_postgres
       build:
         context: ./env/docker/postgres
       volumes:
@@ -70,15 +70,15 @@ services:
         - POSTGRES_USER=${POSTGRES_USER}
         - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       networks:
-        - your_project_network
+        - wh2o_network
 
 # Redis
     redis:
-      container_name: your_project_redis
+      container_name: wh2o_redis
       image: "redis"
-      hostname: your_project_redis
+      hostname: wh2o_redis
       networks:
-        - your_project_network
+        - wh2o_network
 
 # Volumes configuration
 volumes:
@@ -87,5 +87,5 @@ volumes:
 
 # Network configuration
 networks:
-  your_project_network:
-    name: your_project_network
+  wh2o_network:
+    name: wh2o_network
