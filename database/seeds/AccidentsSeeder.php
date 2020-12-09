@@ -12,11 +12,8 @@ class AccidentsSeeder extends BaseSeeder
      */
     public function runFake()
     {
-        $accidents = Accident::all();
-
-        for($i = 0; $i < 1000; ++$i) {
+        for($i = 0; $i < 100; ++$i) {
             factory(App\Accident::class)->create();
         }
-
     }
 }
