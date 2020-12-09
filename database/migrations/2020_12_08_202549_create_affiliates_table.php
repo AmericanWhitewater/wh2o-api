@@ -16,6 +16,20 @@ class CreateAffiliatesTable extends Migration
         Schema::create('affiliates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('last', 50)->nullable();
+            $table->string('url', 255)->nullable();
+            $table->string('con_email', 120)->nullable();
+            $table->bigInteger('members')->nullable();
+            $table->text('contact')->nullable();
+            $table->text('abstract')->nullable();
+            $table->text('description')->nullable();
+            $table->text('reaches')->nullable();
+            $table->bigInteger('volunteer')->nullable();
+            $table->string('city', 25);
+            $table->char('state', 2);
+            $table->char('expiration', 10);
+            $table->bigInteger('member_id');
+            $table->smallInteger('deleted')->nullable();
         });
     }
 
