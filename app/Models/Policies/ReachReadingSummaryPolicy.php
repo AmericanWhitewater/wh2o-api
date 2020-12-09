@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies\..\Models\Policies;
+namespace App\Models\Policies;
 
 use App\Models\User;
 use App\ReachReadingSummary;

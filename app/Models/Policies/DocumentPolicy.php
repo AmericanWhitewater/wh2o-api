@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies\..\Models\Policies;
+namespace App\Models\Policies;
 
 use App\Document;
 use App\Models\User;
