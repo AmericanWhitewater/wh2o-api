@@ -15,7 +15,19 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('uid');
+            $table->bigInteger('sectionid');
+            $table->text('name');
+            $table->text('comments')->nullable();
+            $table->date('posted')->nullable();
             $table->timestamps();
+            $table->string('section', 25)->default('river');
+            $table->string('type', 10)->nullable();
+            $table->date('deleted')->nullable();
+            $table->bigInteger('duid')->nullable();
+            $table->bigInteger('revision');
+            $table->boolean('is_final');
+            $table->boolean('is_private');
         });
     }
 
