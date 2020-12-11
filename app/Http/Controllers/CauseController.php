@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CauseController extends Controller
 {
+
+    public static $model = Cause::class;
+
     /**
      * Display a listing of the resource.
      *

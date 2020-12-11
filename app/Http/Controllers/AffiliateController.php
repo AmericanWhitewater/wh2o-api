@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class AffiliateController extends Controller
 {
+
+    public static $model = Affiliate::class;
+
     /**
      * Display a listing of the resource.
      *

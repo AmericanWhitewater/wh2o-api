@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+
+    public static $model = Article::class;
+
     /**
      * Display a listing of the resource.
      *

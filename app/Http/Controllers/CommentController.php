@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+
+    public static $model = Comment::class;
+
     /**
      * Display a listing of the resource.
      *

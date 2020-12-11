@@ -1,10 +1,9 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Affiliate extends Model
+class Affiliate extends BaseModel
 {
-    //
+    public $primaryKey = 'id';
 }

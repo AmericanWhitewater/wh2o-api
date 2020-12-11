@@ -1,10 +1,9 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Cause extends Model
+class Cause extends BaseModel
 {
-    //
+    public $primaryKey = 'id';
 }

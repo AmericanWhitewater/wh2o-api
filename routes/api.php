@@ -38,10 +38,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'reaches'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ReachController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ReachController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ReachController@get');
             $api->post('/', 'App\Http\Controllers\ReachController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ReachController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ReachController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ReachController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ReachController@delete');
         });
 
         /*
@@ -49,10 +49,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'accidents'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\AccidentController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\AccidentController@get');
+            $api->get('/{id}', 'App\Http\Controllers\AccidentController@get');
             $api->post('/', 'App\Http\Controllers\AccidentController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\AccidentController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\AccidentController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\AccidentController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\AccidentController@delete');
         });
 
         /*
@@ -60,10 +60,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'affiliates'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\AffiliateController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\AffiliateController@get');
+            $api->get('/{id}', 'App\Http\Controllers\AffiliateController@get');
             $api->post('/', 'App\Http\Controllers\AffiliateController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\AffiliateController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\AffiliateController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\AffiliateController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\AffiliateController@delete');
         });
 
         /*
@@ -71,10 +71,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'articles'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ArticleController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ArticleController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ArticleController@get');
             $api->post('/', 'App\Http\Controllers\ArticleController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ArticleController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ArticleController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ArticleController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ArticleController@delete');
         });
 
         /*
@@ -82,10 +82,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'causes'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\CauseController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\CauseController@get');
+            $api->get('/{id}', 'App\Http\Controllers\CauseController@get');
             $api->post('/', 'App\Http\Controllers\CauseController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\CauseController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\CauseController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\CauseController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\CauseController@delete');
         });
 
         /*
@@ -93,10 +93,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'comments'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\CommentController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\CommentController@get');
+            $api->get('/{id}', 'App\Http\Controllers\CommentController@get');
             $api->post('/', 'App\Http\Controllers\CommentController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\CommentController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\CommentController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\CommentController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\CommentController@delete');
         });
 
         /*
@@ -104,10 +104,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'contacts'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ContactController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ContactController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ContactController@get');
             $api->post('/', 'App\Http\Controllers\ContactController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ContactController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ContactController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ContactController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ContactController@delete');
         });
 
         /*
@@ -115,10 +115,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'documents'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\DocumentController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\DocumentController@get');
+            $api->get('/{id}', 'App\Http\Controllers\DocumentController@get');
             $api->post('/', 'App\Http\Controllers\DocumentController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\DocumentController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\DocumentController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\DocumentController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\DocumentController@delete');
         });
 
         /*
@@ -126,10 +126,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'events'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\EventController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\EventController@get');
+            $api->get('/{id}', 'App\Http\Controllers\EventController@get');
             $api->post('/', 'App\Http\Controllers\EventController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\EventController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\EventController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\EventController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\EventController@delete');
         });
 
         /*
@@ -137,10 +137,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'event-dates'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\EventDateController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\EventDateController@get');
+            $api->get('/{id}', 'App\Http\Controllers\EventDateController@get');
             $api->post('/', 'App\Http\Controllers\EventDateController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\EventDateController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\EventDateController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\EventDateController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\EventDateController@delete');
         });
 
         /*
@@ -148,10 +148,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'event-notifies'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\EventNotifyController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\EventNotifyController@get');
+            $api->get('/{id}', 'App\Http\Controllers\EventNotifyController@get');
             $api->post('/', 'App\Http\Controllers\EventNotifyController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\EventNotifyController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\EventNotifyController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\EventNotifyController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\EventNotifyController@delete');
         });
 
         /*
@@ -159,10 +159,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'factors'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\FactorController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\FactorController@get');
+            $api->get('/{id}', 'App\Http\Controllers\FactorController@get');
             $api->post('/', 'App\Http\Controllers\FactorController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\FactorController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\FactorController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\FactorController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\FactorController@delete');
         });
 
         /*
@@ -170,10 +170,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauges'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeController@get');
             $api->post('/', 'App\Http\Controllers\GaugeController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeController@delete');
         });
 
         /*
@@ -181,10 +181,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-correlations'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeCorrelationController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeCorrelationController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeCorrelationController@get');
             $api->post('/', 'App\Http\Controllers\GaugeCorrelationController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeCorrelationController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeCorrelationController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeCorrelationController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeCorrelationController@delete');
         });
 
         /*
@@ -192,10 +192,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-notifies'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeNotifyController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeNotifyController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeNotifyController@get');
             $api->post('/', 'App\Http\Controllers\GaugeNotifyController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeNotifyController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeNotifyController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeNotifyController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeNotifyController@delete');
         });
 
         /*
@@ -203,10 +203,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-personal-settings'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugePersonalSettingsController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugePersonalSettingsController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugePersonalSettingsController@get');
             $api->post('/', 'App\Http\Controllers\GaugePersonalSettingsController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugePersonalSettingsController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugePersonalSettingsController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugePersonalSettingsController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugePersonalSettingsController@delete');
         });
 
         /*
@@ -214,10 +214,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-reading-metrics'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeReadingMetricController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeReadingMetricController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeReadingMetricController@get');
             $api->post('/', 'App\Http\Controllers\GaugeReadingMetricController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeReadingMetricController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeReadingMetricController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeReadingMetricController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeReadingMetricController@delete');
         });
 
         /*
@@ -225,10 +225,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-sources'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeSourceController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeSourceController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeSourceController@get');
             $api->post('/', 'App\Http\Controllers\GaugeSourceController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeSourceController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeSourceController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeSourceController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeSourceController@delete');
         });
 
         /*
@@ -236,10 +236,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'gauge-updates'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\GaugeUpdatesController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\GaugeUpdatesController@get');
+            $api->get('/{id}', 'App\Http\Controllers\GaugeUpdatesController@get');
             $api->post('/', 'App\Http\Controllers\GaugeUpdatesController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeUpdatesController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeUpdatesController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\GaugeUpdatesController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\GaugeUpdatesController@delete');
         });
 
         /*
@@ -247,10 +247,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'injuries'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\InjuryController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\InjuryController@get');
+            $api->get('/{id}', 'App\Http\Controllers\InjuryController@get');
             $api->post('/', 'App\Http\Controllers\InjuryController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\InjuryController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\InjuryController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\InjuryController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\InjuryController@delete');
         });
 
         /*
@@ -258,10 +258,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'links'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\LinkController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\LinkController@get');
+            $api->get('/{id}', 'App\Http\Controllers\LinkController@get');
             $api->post('/', 'App\Http\Controllers\LinkController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\LinkController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\LinkController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\LinkController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\LinkController@delete');
         });
 
         /*
@@ -269,10 +269,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'news'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\NewsController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\NewsController@get');
+            $api->get('/{id}', 'App\Http\Controllers\NewsController@get');
             $api->post('/', 'App\Http\Controllers\NewsController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\NewsController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\NewsController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\NewsController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\NewsController@delete');
         });
 
         /*
@@ -280,10 +280,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'photos'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\PhotoController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\PhotoController@get');
+            $api->get('/{id}', 'App\Http\Controllers\PhotoController@get');
             $api->post('/', 'App\Http\Controllers\PhotoController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\PhotoController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\PhotoController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\PhotoController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\PhotoController@delete');
         });
 
         /*
@@ -291,10 +291,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'rapids'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\RapidController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\RapidController@get');
+            $api->get('/{id}', 'App\Http\Controllers\RapidController@get');
             $api->post('/', 'App\Http\Controllers\RapidController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\RapidController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\RapidController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\RapidController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\RapidController@delete');
         });
 
         /*
@@ -302,10 +302,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'posts'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\PostController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\PostController@get');
+            $api->get('/{id}', 'App\Http\Controllers\PostController@get');
             $api->post('/', 'App\Http\Controllers\PostController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\PostController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\PostController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\PostController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\PostController@delete');
         });
 
         /*
@@ -313,10 +313,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'projects'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ProjectController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ProjectController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ProjectController@get');
             $api->post('/', 'App\Http\Controllers\ProjectController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ProjectController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ProjectController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ProjectController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ProjectController@delete');
         });
 
         /*
@@ -324,10 +324,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'reach-next-events'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ReachNextEventController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ReachNextEventController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ReachNextEventController@get');
             $api->post('/', 'App\Http\Controllers\ReachNextEventController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ReachNextEventController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ReachNextEventController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ReachNextEventController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ReachNextEventController@delete');
         });
 
         /*
@@ -335,10 +335,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'reach-observations'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ReachObservationController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ReachObservationController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ReachObservationController@get');
             $api->post('/', 'App\Http\Controllers\ReachObservationController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ReachObservationController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ReachObservationController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ReachObservationController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ReachObservationController@delete');
         });
 
         /*
@@ -346,10 +346,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'reach-reading-summaries'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ReachReadingSummaryController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ReachReadingSummaryController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ReachReadingSummaryController@get');
             $api->post('/', 'App\Http\Controllers\ReachReadingSummaryController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ReachReadingSummaryController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ReachReadingSummaryController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ReachReadingSummaryController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ReachReadingSummaryController@delete');
         });
 
         /*
@@ -357,10 +357,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'reach-warnings'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\ReachWarningController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\ReachWarningController@get');
+            $api->get('/{id}', 'App\Http\Controllers\ReachWarningController@get');
             $api->post('/', 'App\Http\Controllers\ReachWarningController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\ReachWarningController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\ReachWarningController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\ReachWarningController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ReachWarningController@delete');
         });
 
         /*
@@ -368,10 +368,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'regions'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\RegionController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\RegionController@get');
+            $api->get('/{id}', 'App\Http\Controllers\RegionController@get');
             $api->post('/', 'App\Http\Controllers\RegionController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\RegionController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\RegionController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\RegionController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\RegionController@delete');
         });
 
         /*
@@ -379,10 +379,10 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         */
         $api->group(['prefix' => 'states'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\StateController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\StateController@get');
+            $api->get('/{id}', 'App\Http\Controllers\StateController@get');
             $api->post('/', 'App\Http\Controllers\StateController@post');
-            $api->patch('/{uuid}', 'App\Http\Controllers\StateController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\StateController@delete');
+            $api->patch('/{id}', 'App\Http\Controllers\StateController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\StateController@delete');
         });
 
     /*
@@ -406,11 +406,11 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
          */
         $api->group(['prefix' => 'users', 'middleware' => 'check_role:admin'], function (Router $api) {
             $api->get('/', 'App\Http\Controllers\UserController@getAll');
-            $api->get('/{uuid}', 'App\Http\Controllers\UserController@get');
+            $api->get('/{uid}', 'App\Http\Controllers\UserController@get');
             $api->post('/', 'App\Http\Controllers\UserController@post');
-            $api->put('/{uuid}', 'App\Http\Controllers\UserController@put');
-            $api->patch('/{uuid}', 'App\Http\Controllers\UserController@patch');
-            $api->delete('/{uuid}', 'App\Http\Controllers\UserController@delete');
+            $api->put('/{uid}', 'App\Http\Controllers\UserController@put');
+            $api->patch('/{uid}', 'App\Http\Controllers\UserController@patch');
+            $api->delete('/{uid}', 'App\Http\Controllers\UserController@delete');
         });
 
         /*
