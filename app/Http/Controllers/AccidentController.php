@@ -12,6 +12,9 @@ class AccidentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public static $model = Accident::class;
+
     public function index()
     {
         //
