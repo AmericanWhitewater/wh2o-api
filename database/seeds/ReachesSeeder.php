@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Reach;
 class ReachesSeeder extends Seeder
 {
     /**
@@ -11,6 +11,8 @@ class ReachesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        for($i = 0; $i < 1500; ++$i) {
+            factory(App\Reach::class)->create();
+        }
     }
 }

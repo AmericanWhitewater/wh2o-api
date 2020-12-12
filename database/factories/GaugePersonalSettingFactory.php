@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\GaugeCorrelation;
+use App\GaugePersonalSettings;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -16,13 +16,14 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(GaugeCorrelation::class, function (Faker $faker) {
+$factory->define(GaugePersonalSettings::class, function (Faker $faker) {
     return [
-        'id' => $faker->unique()->numberBetween(1,1100),
-        'sourceid' => $faker->unique()->numberBetween(1,1100),
-        'targetid' => $faker->unique()->numberBetween(1,1100),
-        'time_adjustments' => null,
-        'comment' => $faker->word,
-        'metricid' => rand(1, 10)
+        'id' => $faker->unique()->numberBetween(1,10000),
+        'uid' => $faker->numberBetween(1,1000),
+        'starttime' => $faker->time,
+        'endtime' => $faker->time,
+        'tz' => null,
+        'email' => $faker->email,
+        'format' => null
     ];
 });

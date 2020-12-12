@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Injury;
 class InjuriesSeeder extends Seeder
 {
     /**
@@ -11,6 +11,12 @@ class InjuriesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $injuries = array('Does not Apply', 'Asthma Attack', 'Head Injury / Concussion', 'Heart Attack / Heart Failure', 'Hypothermia', 'Near Drowning', 'Other', 'Shoulder Dislocation','Spinal Injury','Physical Trauma');
+
+        foreach ($injuries as $injury) {
+             factory(App\Injury::class)->create([
+                'injury' => $injury,
+            ]);
+        }
     }
 }

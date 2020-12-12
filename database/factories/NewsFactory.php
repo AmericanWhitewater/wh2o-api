@@ -1,9 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\GaugeCorrelation;
+use App\News;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +15,11 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(GaugeCorrelation::class, function (Faker $faker) {
+$factory->define(News::class, function (Faker $faker) {
     return [
-        'id' => $faker->unique()->numberBetween(1,1100),
-        'sourceid' => $faker->unique()->numberBetween(1,1100),
-        'targetid' => $faker->unique()->numberBetween(1,1100),
-        'time_adjustments' => null,
-        'comment' => $faker->word,
-        'metricid' => rand(1, 10)
+        'id' => $faker->unique()->numberBetween(1,2000),
+        'articleid' => $faker->unique()->numberBetween(1,2000),
+        'type' => 'type', // wut
+        'expiration' => $faker->date
     ];
 });

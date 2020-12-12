@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\GaugeNotify;
 class GaugeNotifiesSeeder extends Seeder
 {
     /**
@@ -11,6 +11,8 @@ class GaugeNotifiesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        for($i = 0; $i < 100; ++$i) {
+            factory(App\GaugeNotify::class)->create();
+        }
     }
 }
