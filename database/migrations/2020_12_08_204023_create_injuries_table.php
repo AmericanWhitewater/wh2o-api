@@ -15,8 +15,8 @@ class CreateInjuriesTable extends Migration
     {
         Schema::create('injuries', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('injury', 50);
+            $table->timestamps();
         });
     }
 

@@ -15,7 +15,6 @@ class CreateGaugeUpdatesTable extends Migration
     {
         Schema::create('gauge_updates', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('gauge_id');
             $table->smallInteger('metric');
             $table->date('lobs_time')->nullable();
@@ -29,6 +28,7 @@ class CreateGaugeUpdatesTable extends Migration
             $table->bigInteger('obs_ref')->nullable();
             $table->date('last_journal_date'); // last time a journal was written on the gauge.
             $table->integer('gd_ref')->nullable(); // gauge dependent reference
+            $table->timestamps();
         });
     }
 

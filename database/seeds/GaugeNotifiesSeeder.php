@@ -11,8 +11,6 @@ class GaugeNotifiesSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\GaugeNotify::class)->create();
-        }
+        factory(App\GaugeNotify::class, 100)->create();
     }
 }

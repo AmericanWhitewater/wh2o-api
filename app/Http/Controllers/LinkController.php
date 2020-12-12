@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class LinkController extends Controller
 {
+
+    public static $model = Link::class;
+
     /**
      * Display a listing of the resource.
      *

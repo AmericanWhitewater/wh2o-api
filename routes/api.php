@@ -33,7 +33,7 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         });
     });
 
-    /*
+        /*
         * Reaches
         */
         $api->group(['prefix' => 'reaches'], function (Router $api) {
@@ -42,6 +42,28 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
             $api->post('/', 'App\Http\Controllers\ReachController@post');
             $api->patch('/{id}', 'App\Http\Controllers\ReachController@patch');
             $api->delete('/{id}', 'App\Http\Controllers\ReachController@delete');
+        });
+
+        /*
+        * Listings
+        */
+        $api->group(['prefix' => 'listings'], function (Router $api) {
+            $api->get('/', 'App\Http\Controllers\ListingController@getAll');
+            $api->get('/{id}', 'App\Http\Controllers\ListingController@get');
+            $api->post('/', 'App\Http\Controllers\ListingController@post');
+            $api->patch('/{id}', 'App\Http\Controllers\ListingController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\ListingController@delete');
+        });
+
+        /*
+        * Journals
+        */
+        $api->group(['prefix' => 'journals'], function (Router $api) {
+            $api->get('/', 'App\Http\Controllers\JournalController@getAll');
+            $api->get('/{id}', 'App\Http\Controllers\JournalController@get');
+            $api->post('/', 'App\Http\Controllers\JournalController@post');
+            $api->patch('/{id}', 'App\Http\Controllers\JournalController@patch');
+            $api->delete('/{id}', 'App\Http\Controllers\JournalController@delete');
         });
 
         /*

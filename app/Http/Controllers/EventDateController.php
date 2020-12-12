@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class EventDateController extends Controller
 {
+
+    public static $model = EventDate::class;
+
     /**
      * Display a listing of the resource.
      *

@@ -15,13 +15,13 @@ class CreateGaugePersonalSettingsTable extends Migration
     {
         Schema::create('gauge_personal_settings', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('uid');
             $table->time('starttime')->nullable();
             $table->time('endtime')->nullable();
             $table->string('tz', 60)->nullable();
             $table->string('email', 100)->nullable();
             $table->smallInteger('format')->nullable();
+            $table->timestamps();
         });
     }
 

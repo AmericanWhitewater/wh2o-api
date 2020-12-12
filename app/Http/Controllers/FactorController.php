@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class FactorController extends Controller
 {
+
+    public static $model = Factor::class;
+
     /**
      * Display a listing of the resource.
      *

@@ -15,7 +15,6 @@ class CreateGaugeNotifiesTable extends Migration
     {
         Schema::create('gauge_notifies', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('uid')->nullable();
             $table->integer('min')->nullable();
             $table->smallInteger('metric')->nullable();
@@ -23,6 +22,7 @@ class CreateGaugeNotifiesTable extends Migration
             $table->integer('gauge_id')->nullable();
             $table->boolean('asap')->nullable();
             $table->boolean('down')->nullable();
+            $table->timestamps();
         });
     }
 

@@ -11,8 +11,6 @@ class CausesSeeder extends BaseSeeder
      */
     public function runFake()
     {
-        for($i = 0; $i < 10; ++$i) {
-            factory(App\Cause::class)->create();
-        }
+        factory(App\Cause::class, 10)->create();
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Rapid;
+use App\Listing;
 use Illuminate\Http\Request;
 
-class RapidController extends Controller
+class ListingController extends Controller
 {
 
-    public static $model = Rapid::class;
-    
+    public static $model = Listing::class;
+
     /**
      * Display a listing of the resource.
      *
@@ -44,10 +44,10 @@ class RapidController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Rapid  $rapid
+     * @param  \App\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function show(Rapid $rapid)
+    public function show(Listing $listing)
     {
         //
     }
@@ -55,10 +55,10 @@ class RapidController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Rapid  $rapid
+     * @param  \App\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rapid $rapid)
+    public function edit(Listing $listing)
     {
         //
     }
@@ -67,10 +67,10 @@ class RapidController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rapid  $rapid
+     * @param  \App\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rapid $rapid)
+    public function update(Request $request, Listing $listing)
     {
         //
     }
@@ -78,10 +78,10 @@ class RapidController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Rapid  $rapid
+     * @param  \App\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rapid $rapid)
+    public function destroy(Listing $listing)
     {
         //
     }

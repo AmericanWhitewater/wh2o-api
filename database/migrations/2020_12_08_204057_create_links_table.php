@@ -15,6 +15,12 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
+            $table->string('sourcecomp', 25);
+            $table->string('sourceid', 25);
+            $table->string('targetcomp', 25);
+            $table->string('targetid', 25);
+            $table->smallInteger('mutual');
+            $table->date('expire_date')->nullable();
             $table->timestamps();
         });
     }

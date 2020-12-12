@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\GaugeSource;
-class GaugeSourcesSeeder extends Seeder
+use App\Journal;
+
+class JournalsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class GaugeSourcesSeeder extends Seeder
      */
     public function run()
     {
-       factory(App\GaugeSource::class, 100)->create();
+         factory(App\Journal::class, 100)->create();
     }
 }

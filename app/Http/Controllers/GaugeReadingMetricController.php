@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class GaugeReadingMetricController extends Controller
 {
+
+    public static $model = GaugeReadingMetric::class;
+
     /**
      * Display a listing of the resource.
      *

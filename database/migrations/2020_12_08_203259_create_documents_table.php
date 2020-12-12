@@ -15,7 +15,6 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->bigInteger('documentid')->primary();
-            $table->timestamps();
             $table->string('shortname', 45);
             $table->text('abstract');
             $table->string('description', 255);
@@ -28,6 +27,7 @@ class CreateDocumentsTable extends Migration
             $table->smallInteger('deleted')->default(0);
             $table->string('title', 100);
             $table->bigInteger('document_size');
+            $table->timestamps();
         });
     }
 

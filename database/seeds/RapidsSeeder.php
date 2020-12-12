@@ -11,8 +11,6 @@ class RapidsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 1500; ++$i) {
-            factory(App\Rapid::class)->create();
-        }
+        factory(App\Rapid::class, 100)->create();
     }
 }

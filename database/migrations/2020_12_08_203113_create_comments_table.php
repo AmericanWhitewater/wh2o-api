@@ -20,7 +20,6 @@ class CreateCommentsTable extends Migration
             $table->text('name');
             $table->text('comments')->nullable();
             $table->date('posted')->nullable();
-            $table->timestamps();
             $table->string('section', 25)->default('river');
             $table->string('type', 10)->nullable();
             $table->date('deleted')->nullable();
@@ -28,6 +27,7 @@ class CreateCommentsTable extends Migration
             $table->bigInteger('revision');
             $table->boolean('is_final');
             $table->boolean('is_private');
+            $table->timestamps();
         });
     }
 

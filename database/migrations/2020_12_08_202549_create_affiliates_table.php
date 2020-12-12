@@ -15,7 +15,6 @@ class CreateAffiliatesTable extends Migration
     {
         Schema::create('affiliates', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('last', 50)->nullable();
             $table->string('url', 255)->nullable();
             $table->string('con_email', 120)->nullable();
@@ -30,6 +29,7 @@ class CreateAffiliatesTable extends Migration
             $table->char('expiration', 10);
             $table->bigInteger('member_id');
             $table->smallInteger('deleted')->nullable();
+            $table->timestamps();
         });
     }
 

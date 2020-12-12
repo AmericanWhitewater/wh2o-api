@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCausesTable extends Migration
+class CreateListingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateCausesTable extends Migration
      */
     public function up()
     {
-        Schema::create('causes', function (Blueprint $table) {
+        Schema::create('listings', function (Blueprint $table) {
             $table->id();
-            $table->string('cause', 50);
+            $table->string('listing', 25);
+            $table->string('name');
+            $table->string('arealookup', 25);
+            $table->smallInteger('public')->default(0);
+            $table->smallInteger('deleted')->default(0);
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateCausesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('causes');
+        Schema::dropIfExists('listings');
     }
 }

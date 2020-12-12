@@ -11,8 +11,6 @@ class EventDatesSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\EventDate::class)->create();
-        }
+        factory(App\EventDate::class, 100)->create();
     }
 }

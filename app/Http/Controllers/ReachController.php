@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ReachController extends Controller
 {
+
+    public static $model = Reach::class;
+
     /**
      * Display a listing of the resource.
      *

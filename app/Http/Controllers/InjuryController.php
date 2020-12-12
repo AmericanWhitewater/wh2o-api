@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class InjuryController extends Controller
 {
+
+    public static $model = Injury::class;
+
     /**
      * Display a listing of the resource.
      *

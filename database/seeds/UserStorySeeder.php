@@ -36,7 +36,7 @@ class UserStorySeeder extends BaseSeeder
         $fakeRolesToAssign = RoleTableSeeder::getRandomRoles($fakeRolesToAssignCount);
 
         // Assign fake roles to users
-        for ($i = 0; $i < 5; ++$i) {
+        for ($i = 0; $i < 100; ++$i) {
             $user = factory(App\Models\User::class)->create([
                 'primary_role' => $roles->random()->role_id,
             ]);

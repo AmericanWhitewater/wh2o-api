@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ReachNextEventController extends Controller
 {
+
+    public static $model = ReachNextEvent::class;
+
     /**
      * Display a listing of the resource.
      *

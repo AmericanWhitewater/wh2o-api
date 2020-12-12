@@ -15,7 +15,6 @@ class CreateGaugesTable extends Migration
     {
         Schema::create('gauges', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('source', 8)->nullable();
             $table->string('source_id', 25)->nullable();
             $table->string('name', 75)->nullable();
@@ -32,6 +31,7 @@ class CreateGaugesTable extends Migration
             $table->integer('update_calculated_frequency')->nullable();
             $table->date('clean_date')->nullable();
             $table->boolean('enabled')->nullable();
+            $table->timestamps();
         });
     }
 

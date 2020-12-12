@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class DocumentController extends Controller
 {
+
+    public static $model = Document::class;
+    
     /**
      * Display a listing of the resource.
      *

@@ -15,11 +15,11 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->bigInteger('articleid');
             $table->string('type', 20);
             $table->date('expiration')->nullable();
             $table->bigInteger('priority')->default(0);
+            $table->timestamps();
         });
     }
 

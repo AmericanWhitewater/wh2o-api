@@ -15,7 +15,6 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('title', 80)->nullable();
             $table->string('author', 50)->nullable();
             $table->text('abstract')->nullable();
@@ -30,6 +29,7 @@ class CreateArticlesTable extends Migration
             $table->bigInteger('uid');
             $table->date('release_date')->nullable();
             $table->smallInteger('deleted')->default(0);
+            $table->timestamps();
         });
     }
 

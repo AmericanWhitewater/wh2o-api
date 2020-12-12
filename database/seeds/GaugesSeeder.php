@@ -11,8 +11,6 @@ class GaugesSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 1000; ++$i) {
-            factory(App\Gauge::class)->create();
-        }
+        factory(App\Gauge::class, 100)->create();
     }
 }

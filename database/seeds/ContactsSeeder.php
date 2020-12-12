@@ -11,8 +11,6 @@ class ContactsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\Contact::class)->create();
-        }
+        factory(App\Contact::class, 100)->create();
     }
 }

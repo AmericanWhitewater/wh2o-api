@@ -15,7 +15,6 @@ class CreateReachesTable extends Migration
     {
         Schema::create('reaches', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('river', 80);
             $table->string('section', 255);
             $table->string('altname', 80)->nullable();
@@ -56,6 +55,7 @@ class CreateReachesTable extends Migration
             $table->text('permitinfo')->nullable();
             $table->string('image_override', 255)->nullable();
             $table->geometry('geom')->nullable();
+            $table->timestamps();
         });
     }
 

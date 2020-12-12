@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\News;
+use App\Link;
 use Faker\Generator as Faker;
 
 /*
@@ -15,11 +15,14 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(News::class, function (Faker $faker) {
+$factory->define(Link::class, function (Faker $faker) {
     return [
-        'id' => $faker->unique()->numberBetween(1,5000),
-        'articleid' => $faker->unique()->numberBetween(1,5000),
-        'type' => 'type', // wut
-        'expiration' => $faker->date
+        'id' => $faker->unique()->numberBetween(1,2000),
+        'sourcecomp' => $faker->word,
+        'sourceid' => rand(1,2000),
+        'targetcomp' => $faker->word,
+        'targetid' => rand(1,2000),
+        'mutual' => rand(1,2000),
+        'expire_date' => $faker->date,
     ];
 });

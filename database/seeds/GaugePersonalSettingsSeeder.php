@@ -11,8 +11,6 @@ class GaugePersonalSettingsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\GaugePersonalSettings::class)->create();
-        }
+        factory(App\GaugePersonalSettings::class, 100)->create();
     }
 }

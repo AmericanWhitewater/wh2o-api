@@ -17,7 +17,6 @@ class CreateGaugeCorrelationsTable extends Migration
 
         Schema::create('gauge_correlations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('sourceid');
             $table->integer('targetid');
             $table->integer('time_adjustments')->nullable();
@@ -27,6 +26,7 @@ class CreateGaugeCorrelationsTable extends Migration
             $table->boolean('deleted')->default(false);
             $table->boolean('excluded')->default(false);
             $table->integer('uid')->default(0);
+            $table->timestamps();
         });
     }
 

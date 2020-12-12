@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+    public static $model = Event::class;
+
     /**
      * Display a listing of the resource.
      *

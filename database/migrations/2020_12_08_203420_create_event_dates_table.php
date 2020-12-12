@@ -15,7 +15,6 @@ class CreateEventDatesTable extends Migration
     {
         Schema::create('event_dates', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('event_id'); // 'nextVal(event_dateseq::regclass)'
             $table->date('evdate');
             $table->string('detail_description', 240)->nullable();
@@ -26,6 +25,7 @@ class CreateEventDatesTable extends Migration
             $table->integer('mincfs')->nullable();
             $table->integer('maxcfs')->nullable();
             $table->smallInteger('deleted')->default(0);
+            $table->timestamps();
         });
     }
 

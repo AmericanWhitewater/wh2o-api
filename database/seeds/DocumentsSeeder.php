@@ -11,8 +11,6 @@ class DocumentsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\Document::class)->create();
-        }
+        factory(App\Document::class, 100)->create();
     }
 }

@@ -11,8 +11,6 @@ class NewsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 100; ++$i) {
-            factory(App\News::class)->create();
-        }
+        factory(App\News::class, 100)->create();
     }
 }

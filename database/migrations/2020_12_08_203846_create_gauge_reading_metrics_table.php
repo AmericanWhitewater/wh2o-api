@@ -15,12 +15,12 @@ class CreateGaugeReadingMetricsTable extends Migration
     {
         Schema::create('gauge_reading_metrics', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('shortkey', 5);
             $table->string('unit', 15);
             $table->string('name', 50);
             $table->string('format', 50);
             $table->smallInteger('sortorder');
+            $table->timestamps();
         });
     }
 

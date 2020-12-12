@@ -15,7 +15,6 @@ class CreateGaugeSourcesTable extends Migration
     {
         Schema::create('gauge_sources', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('source', 8);
             $table->string('title', 75)->nullable();
             $table->string('url', 200)->nullable();
@@ -28,6 +27,7 @@ class CreateGaugeSourcesTable extends Migration
             $table->char('data', 512)->nullable();
             $table->date('populated')->nullable()->default(now());
             $table->text('disclaimer')->nullable();
+            $table->timestamps();
         });
     }
 

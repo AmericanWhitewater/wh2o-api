@@ -11,8 +11,6 @@ class ReachesSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 1500; ++$i) {
-            factory(App\Reach::class)->create();
-        }
+        factory(App\Reach::class, 100)->create();
     }
 }

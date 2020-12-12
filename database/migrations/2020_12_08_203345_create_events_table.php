@@ -15,7 +15,6 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('title', 80)->nullable();
             $table->string('city', 80)->nullable();
             $table->text('description');
@@ -38,6 +37,7 @@ class CreateEventsTable extends Migration
             $table->integer('contact_id')->nullable();
             $table->text('html_description')->nullable();
             $table->smallInteger('retired')->default(0);
+            $table->timestamps();
         });
     }
 

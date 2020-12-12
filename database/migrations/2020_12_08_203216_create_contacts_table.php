@@ -15,7 +15,6 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->bigInteger('uid')->nullable();
             $table->string('type', 10)->nullable();
             $table->string('name', 50)->nullable();
@@ -35,6 +34,7 @@ class CreateContactsTable extends Migration
             $table->string('position', 45)->nullable();
             $table->string('territory', 45)->default('');
             $table->char('country_code', 2)->default('us');
+            $table->timestamps();
         });
     }
 

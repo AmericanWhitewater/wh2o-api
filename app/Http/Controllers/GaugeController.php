@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class GaugeController extends Controller
 {
+
+    public static $model = Gauge::class;
+
     /**
      * Display a listing of the resource.
      *
