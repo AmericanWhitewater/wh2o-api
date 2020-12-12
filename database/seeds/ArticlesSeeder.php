@@ -11,7 +11,7 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 1000; ++$i) {
+        for($i = 0; $i < 100; ++$i) {
             factory(App\Article::class)->create();
         }
     }

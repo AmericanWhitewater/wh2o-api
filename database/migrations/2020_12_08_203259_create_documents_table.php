@@ -14,8 +14,20 @@ class CreateDocumentsTable extends Migration
     public function up()
     {
         Schema::create('documents', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('documentid')->primary();
             $table->timestamps();
+            $table->string('shortname', 45);
+            $table->text('abstract');
+            $table->string('description', 255);
+            $table->bigInteger('uid')->default(0);
+            $table->string('keywords', 255);
+            $table->date('editdate')->nullable();
+            $table->bigInteger('recipient');
+            $table->bigInteger('author');
+            $table->string('document', 50);
+            $table->smallInteger('deleted')->default(0);
+            $table->string('title', 100);
+            $table->bigInteger('document_size');
         });
     }
 

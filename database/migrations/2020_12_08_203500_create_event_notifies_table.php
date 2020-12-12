@@ -16,6 +16,8 @@ class CreateEventNotifiesTable extends Migration
         Schema::create('event_notifies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('uid');
+            $table->integer('eventid');
         });
     }
 

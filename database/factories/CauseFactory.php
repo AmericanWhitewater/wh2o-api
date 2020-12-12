@@ -3,7 +3,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Cause;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +18,6 @@ use Illuminate\Support\Str;
 $factory->define(Cause::class, function (Faker $faker) {
     return [
         'cause' => $faker->name,
+        'id' => $faker->unique()->numberBetween(1,2000)
     ];
 });

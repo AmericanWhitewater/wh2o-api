@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    public static $model = Contact::class;
+
     /**
      * Display a listing of the resource.
      *

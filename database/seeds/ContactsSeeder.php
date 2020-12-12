@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Contact;
 class ContactsSeeder extends Seeder
 {
     /**
@@ -11,6 +11,8 @@ class ContactsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        for($i = 0; $i < 100; ++$i) {
+            factory(App\Contact::class)->create();
+        }
     }
 }

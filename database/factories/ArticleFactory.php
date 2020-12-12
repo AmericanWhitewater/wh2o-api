@@ -20,6 +20,7 @@ $factory->define(Article::class, function (Faker $faker) {
         'uid' => rand(1, 2000),
         'title' => $faker->title,
         'short_name' => $faker->name,
-        'contents' => $faker->text 
+        'contents' => $faker->text,
+        'id' => $faker->unique()->numberBetween(1,2000)
     ];
 });

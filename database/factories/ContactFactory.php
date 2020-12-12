@@ -1,9 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Affiliate;
+use App\Contact;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +15,11 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Affiliate::class, function (Faker $faker) {
+$factory->define(Contact::class, function (Faker $faker) {
     return [
-        'city' => 'CITY',
-        'state' => 'CO',
-        'expiration' => 'EXPIRATION',
-        'member_id' => rand(0,1000),
+        'contactid' => $faker->unique()->numberBetween(1,2000),
+        'bio' => $faker->text,
+        'photo' => '//picsum.photos/200/300',
         'id' => $faker->unique()->numberBetween(1,2000)
     ];
 });

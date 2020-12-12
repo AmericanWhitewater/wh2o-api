@@ -24,6 +24,7 @@ $factory->define(Comment::class, function (Faker $faker) {
         'comments' => $faker->text,
         'revision' => rand(1,100),
         'is_final' => 1,
-        'is_private' => 0
+        'is_private' => 0,
+        'id' => $faker->unique()->numberBetween(1,2000)
     ];
 });

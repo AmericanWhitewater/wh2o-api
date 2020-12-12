@@ -1,10 +1,9 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Contact extends Model
+class Contact extends BaseModel
 {
-    //
+    public $primaryKey = 'id';
 }

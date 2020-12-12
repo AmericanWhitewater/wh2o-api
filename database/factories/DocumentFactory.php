@@ -1,9 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Affiliate;
+use App\Document;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +15,17 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Affiliate::class, function (Faker $faker) {
+$factory->define(Document::class, function (Faker $faker) {
     return [
-        'city' => 'CITY',
-        'state' => 'CO',
-        'expiration' => 'EXPIRATION',
-        'member_id' => rand(0,1000),
-        'id' => $faker->unique()->numberBetween(1,2000)
+        'shortname' => $faker->word,
+        'abstract' => $faker->text,
+        'description' => $faker->text,
+        'keywords' => $faker->word,
+        'recipient' => rand(1, 2000),
+        'author' => rand(1, 2000),
+        'document' => $faker->word,
+        'title' => $faker->word,
+        'document_size' => rand(1, 2000),
+        'documentid' => $faker->unique()->numberBetween(1,2000)
     ];
 });

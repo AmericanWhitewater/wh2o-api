@@ -26,6 +26,7 @@ $factory->define(Accident::class, function (Faker $faker) {
         'water_level' => null,
         'rel_level' => null,
         'difficulty' => null,
-        'age' => null,
+        'age' => rand(18, 63),
+        'id' => $faker->unique()->numberBetween(1,2000)
     ];
 });

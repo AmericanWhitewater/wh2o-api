@@ -1,9 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Affiliate;
+use App\EventDate;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +15,17 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Affiliate::class, function (Faker $faker) {
+$factory->define(EventDate::class, function (Faker $faker) {
     return [
-        'city' => 'CITY',
-        'state' => 'CO',
-        'expiration' => 'EXPIRATION',
-        'member_id' => rand(0,1000),
-        'id' => $faker->unique()->numberBetween(1,2000)
+        'id' => $faker->unique()->numberBetween(1,2000),
+        'event_id' => rand(1,100),
+        'evdate' => $faker->date,
+        'detail_description' => $faker->text,
+        'batchid' => rand(1,100),
+        'starttime' => $faker->time,
+        'endtime' => $faker->time,
+        'tz' => 'mst',
+        'mincfs' => rand(100, 1000),
+        'maxcfs' => rand(1001, 5000)
     ];
 });
