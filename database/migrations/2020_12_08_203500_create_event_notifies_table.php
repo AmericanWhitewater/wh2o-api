@@ -13,7 +13,7 @@ class CreateEventNotifiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_notifies', function (Blueprint $table) {
+        Schema::create('event_notify', function (Blueprint $table) {
             $table->id();
             $table->integer('uid');
             $table->integer('eventid');

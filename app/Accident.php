@@ -8,16 +8,29 @@ class Accident extends BaseModel
     public $primaryKey = 'accident_id';
 
     protected $fillable = [
-        'accident_date', 'victim_name', 'reach_id', 'country_abbr', 'state', 'river', 'section', 'location', 'water_level', 'rel_level', 'difficulty', 'age',
+        'accident_date',
+        'victim_name',
+        'reach_id',
+        'country_abbr',
+        'state',
+        'river',
+        'section',
+        'location',
+        'water_level',
+        'rel_level',
+        'difficulty',
+        'age',
     ];
 
     protected $searchableFields = ['*'];
 
-    /**
-    * @Before("inline")
-    * @After("inline")
-    * @return Response
-    */
+    protected $hidden = ['accident_id'];
+
+    protected $casts = [
+        'accident_date' => 'datetime',
+    ];
+
+    
     public function reach()
     {
         return $this->hasOne(Reach::class);

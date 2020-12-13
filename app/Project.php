@@ -1,10 +1,11 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Project extends Model
+class Project extends BaseModel
 {
-    //
+    public $primaryKey = 'id';
+
+    protected $fillable = ['name', 'description', 'uid', 'shortname'];
 }

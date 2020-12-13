@@ -56,6 +56,17 @@ $api->version('v1', ['middleware' => ['api']], function (Router $api) {
         });
 
         /*
+        * GaugeCorrelationRanges
+        */
+        $api->group(['prefix' => 'gauge-correlation-ranges'], function (Router $api) {
+            $api->get('/', 'App\Http\Controllers\GaugeCorrelationRangeController@getAll');
+            $api->get('/{uuid}', 'App\Http\Controllers\GaugeCorrelationRangeController@get');
+            $api->post('/', 'App\Http\Controllers\GaugeCorrelationRangeController@post');
+            $api->patch('/{uuid}', 'App\Http\Controllers\GaugeCorrelationRangeController@patch');
+            $api->delete('/{uuid}', 'App\Http\Controllers\GaugeCorrelationRangeController@delete');
+        });
+
+        /*
         * Journals
         */
         $api->group(['prefix' => 'journals'], function (Router $api) {

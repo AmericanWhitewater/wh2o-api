@@ -13,7 +13,7 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
+        Schema::create('linker_lists', function (Blueprint $table) {
             $table->id();
             $table->string('sourcecomp', 25);
             $table->string('sourceid', 25);

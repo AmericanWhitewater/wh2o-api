@@ -1,10 +1,12 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Listing extends Model
+class Listing extends BaseModel
 {
-    //
+
+    public $primaryKey = 'id';
+
+    protected $fillable = ['listing', 'name', 'arealookup', 'public'];
 }

@@ -1,10 +1,21 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class GaugePersonalSettings extends Model
+class GaugePersonalSettings extends BaseModel
 {
-    //
+
+    public $primaryKey = 'id';
+    
+    protected $fillable = [
+        'uid',
+        'starttime',
+        'endtime',
+        'tz',
+        'email',
+        'format',
+    ];
+
+    protected $table = 'gauge_personal_settings';
 }

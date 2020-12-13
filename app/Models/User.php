@@ -31,13 +31,46 @@ class User extends BaseModel implements
      */
     public static $localWith = ['primaryRole', 'roles'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'email', 'password', 'primary_role',
+        'password',
+        'uid',
+        'uname',
+        'upass',
+        'email',
+        'google_id',
+        'facebook_id',
+        'epassword',
+        'zip',
+        'address',
+        'city',
+        'state',
+        'country',
+        'lastlogin',
+        'volunteer',
+        'alerts',
+        'postal',
+        'memnum',
+        'address2',
+        'home_phone',
+        'work_phone',
+        'journal',
+        'aw_beta',
+        'mbr_level',
+        'bad_addr',
+        'bad_email',
+        'mod_date',
+        'record_type',
+        'name',
+        'mem_transaction',
+        'transaction_id',
+        'expiration',
+        'modifydate',
+        'pushdate',
+        'mbr_relation',
+        'prefs',
+        'annual_renew',
+        'code',
+        'social_profile',
     ];
 
     /**

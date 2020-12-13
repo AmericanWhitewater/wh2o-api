@@ -15,7 +15,7 @@ class CreateGaugeCorrelationsTable extends Migration
     {
         // gauge_dependent_headers
 
-        Schema::create('gauge_correlations', function (Blueprint $table) {
+        Schema::create('gauge_dependent_headers', function (Blueprint $table) {
             $table->id();
             $table->integer('sourceid');
             $table->integer('targetid');

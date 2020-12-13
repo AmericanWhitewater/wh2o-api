@@ -13,7 +13,7 @@ class CreateGaugesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gauges', function (Blueprint $table) {
+        Schema::create('gauge_headers', function (Blueprint $table) {
             $table->id();
             $table->string('source', 8)->nullable();
             $table->string('source_id', 25)->nullable();

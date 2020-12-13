@@ -13,7 +13,7 @@ class CreateGaugeNotifiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gauge_notifies', function (Blueprint $table) {
+        Schema::create('gauge_notify', function (Blueprint $table) {
             $table->id();
             $table->integer('uid')->nullable();
             $table->integer('min')->nullable();

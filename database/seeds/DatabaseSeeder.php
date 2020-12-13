@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EventNotifiesSeeder::class);
         $this->call(EventsSeeder::class);
         $this->call(FactorsSeeder::class);
+        $this->call(GaugeCorrelationRangesSeeder::class);
         $this->call(GaugeCorrelationsSeeder::class);
         $this->call(GaugeNotifiesSeeder::class);
         $this->call(GaugePersonalSettingsSeeder::class);
