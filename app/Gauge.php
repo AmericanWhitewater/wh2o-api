@@ -1,10 +1,15 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Gauge extends Model
+class Gauge extends BaseModel
 {
-    //
+
+    protected $fillable = ['id', 'state', 'source'];
+
+    public function gaugeCorrelation()
+    {
+        return $this->belongsTo(GaugeCorrelation::class, 'id');
+    }
 }

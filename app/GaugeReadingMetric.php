@@ -1,10 +1,15 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class GaugeReadingMetric extends Model
+class GaugeReadingMetric extends BaseModel
 {
-    //
+
+    public $primaryKey = 'id';
+
+    public function gaugeCorrelation()
+    {
+        return $this->belongsTo(GaugeCorrelation::class, 'id');
+    }
 }

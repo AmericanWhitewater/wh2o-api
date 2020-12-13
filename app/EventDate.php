@@ -1,10 +1,14 @@
 <?php
 
 namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-
-class EventDate extends Model
+use App\Models\BaseModel;
+class EventDate extends BaseModel
 {
-    //
+
+    public $primaryKey = 'id';
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }

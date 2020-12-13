@@ -1,10 +1,17 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class EventNotify extends Model
+class EventNotify extends BaseModel
 {
-    //
+    public function uid()
+    {
+        return $this->hasOne(User::class, 'uid');
+    }
+
+    public function id()
+    {
+        return $this->hasOne(Event::class, 'event_id');
+    }
 }

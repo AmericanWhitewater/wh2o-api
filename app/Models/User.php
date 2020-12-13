@@ -169,4 +169,19 @@ class User extends BaseModel implements
     {
         return $this->getKeyName();
     }
+
+    public function comment()
+    {
+        return $this->belongsTo(Comment::class, 'uid');
+    }
+
+    public function document()
+    {
+        return $this->belongsTo(Document::class, 'uid');
+    }
+
+    public function eventNotify()
+    {
+        return $this->belongsTo(EventNotify::class, 'uid');
+    }
 }

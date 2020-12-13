@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use App\Accident;
 use Illuminate\Http\Request;
 
+/**
+ * @Resource("foobar/photos", only={"index", "update"}, names={"index": "index.name"})
+ * @Controller(domain="{id}.account.com")
+ * @Before("auth")
+ * @Before("csrf", on={"post", "put", "delete"})
+ * @Where({"id": "regex"})
+ */
 class AccidentController extends Controller
 {
     /**

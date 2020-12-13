@@ -1,10 +1,12 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Reach extends Model
+class Reach extends BaseModel
 {
-    //
+    public function accident()
+    {
+        return $this->belongsTo(Accident::class);
+    }
 }

@@ -14,7 +14,7 @@ class CreateAccidentsTable extends Migration
     public function up()
     {
         Schema::create('accidents', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('accident_id');
             $table->timestamp('accident_date')->nullable();
             $table->string('victim_name', 255)->nullable();
             $table->smallInteger('reach_id')->nullable();
@@ -27,6 +27,7 @@ class CreateAccidentsTable extends Migration
             $table->string('rel_level', 255)->nullable();
             $table->string('difficulty', 255)->nullable();
             $table->smallInteger('age')->nullable();
+            $table->primary('accident_id');
             $table->timestamps();
         });
     }

@@ -27,6 +27,6 @@ $factory->define(Accident::class, function (Faker $faker) {
         'rel_level' => null,
         'difficulty' => null,
         'age' => rand(18, 63),
-        'id' => $faker->unique()->numberBetween(1,2000)
+        'accident_id' => $faker->uuid()
     ];
 });

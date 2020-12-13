@@ -1,10 +1,11 @@
 <?php
 
 namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Factor extends Model
+use App\Models\BaseModel;
+class Factor extends BaseModel
 {
-    //
+    public function accidents()
+    {
+        return $this->belongsToMany(Accident::class, 'accident_factors');
+    }
 }

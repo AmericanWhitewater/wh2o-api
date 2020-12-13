@@ -1,10 +1,12 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Injury extends Model
+class Injury extends BaseModel
 {
-    //
+    public function accidents()
+    {
+        return $this->belongsToMany(Accident::class, 'accidents_injury');
+    }
 }

@@ -1,10 +1,15 @@
 <?php
 
 namespace App;
+use App\Models\BaseModel;
 
-use Illuminate\Database\Eloquent\Model;
-
-class News extends Model
+class News extends BaseModel
 {
-    //
+
+    public $primaryKey = 'id';
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
