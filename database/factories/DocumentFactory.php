@@ -1,31 +1,40 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Document;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Document;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Document::class, function (Faker $faker) {
-    return [
-        'shortname' => $faker->word,
-        'abstract' => $faker->text,
-        'description' => $faker->text,
-        'keywords' => $faker->word,
-        'recipient' => rand(1, 2000),
-        'author' => rand(1, 2000),
-        'document' => $faker->word,
-        'title' => $faker->word,
-        'document_size' => rand(1, 2000),
-        'documentid' => $faker->unique()->numberBetween(1,2000)
-    ];
-});
+class DocumentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Document::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'abstract' => $this->faker->text,
+            'description' => $this->faker->text(255),
+            'keywords' => $this->faker->text(255),
+            'editdate' => $this->faker->date,
+            'deleted' => $this->faker->numberBetween(0, 32767),
+            'title' => $this->faker->word,
+            'shortname' => $this->faker->text(45),
+            'uid' => $this->faker->randomNumber(),
+            'recipient' => $this->faker->randomNumber(),
+            'author' => $this->faker->randomNumber(),
+            'document' => 'document',
+            'document_size' => $this->faker->randomNumber(),
+        ];
+    }
+}

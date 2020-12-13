@@ -1,32 +1,41 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Accident;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
+use App\Models\Accident;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class AccidentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Accident::class;
 
-$factory->define(Accident::class, function (Faker $faker) {
-    return [
-        'victim_name' => $faker->name,
-        'accident_date' => now(),
-        'river' => $faker->name,
-        'section' => $faker->name,
-        'location' => $faker->name,
-        'water_level' => null,
-        'rel_level' => null,
-        'difficulty' => null,
-        'age' => rand(18, 63),
-        'accident_id' => $faker->uuid()
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'accident_id' => $this->faker->uuid,
+            'accident_date' => $this->faker->dateTime,
+            'victim_name' => $this->faker->text(255),
+            'reach_id' => $this->faker->numberBetween(0, 32767),
+            'country_abbr' => null,
+            'state' => $this->faker->countryCode(),
+            'river' => $this->faker->text(255),
+            'section' => $this->faker->text(255),
+            'location' => $this->faker->text(255),
+            'water_level' => $this->faker->text(40),
+            'rel_level' => $this->faker->text(255),
+            'difficulty' => $this->faker->text(255),
+            'age' => $this->faker->numberBetween(0, 32767),
+        ];
+    }
+}

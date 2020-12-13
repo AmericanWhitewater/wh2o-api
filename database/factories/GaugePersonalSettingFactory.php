@@ -1,29 +1,34 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\GaugePersonalSettings;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
 use Illuminate\Support\Str;
+use App\Models\GaugePersonalSetting;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class GaugePersonalSettingFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = GaugePersonalSetting::class;
 
-$factory->define(GaugePersonalSettings::class, function (Faker $faker) {
-    return [
-        'id' => $faker->unique()->numberBetween(1,10000),
-        'uid' => $faker->numberBetween(1,1000),
-        'starttime' => $faker->time,
-        'endtime' => $faker->time,
-        'tz' => null,
-        'email' => $faker->email,
-        'format' => null
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'uid' => $this->faker->randomNumber(0),
+            'starttime' => $this->faker->time,
+            'endtime' => $this->faker->time,
+            'tz' => $this->faker->text(60),
+            'email' => $this->faker->email,
+            'format' => $this->faker->numberBetween(0, 32767),
+        ];
+    }
+}

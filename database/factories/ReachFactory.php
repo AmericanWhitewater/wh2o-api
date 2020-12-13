@@ -1,64 +1,65 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Reach;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Reach;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Reach::class, function (Faker $faker) {
+class ReachFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Reach::class;
 
-
-    $classes = ['none', 'I', 'I(II)', 'I(III)', 'I(IV)', 'I(V)', 'I(V+)', 'I-II', 'I-II(III)', 'I-II(IV)', 'I-II(V)', 'I-II(V+)', 'II', 'II(III)', 'II(IV)', 'II(V)', 'II(V+)', 'I-II+(III)', 'I-II+(IV)', 'I-II+(V)', 'I-II+(V+)', 'II+', 'II+(III)', 'II+(IV)', 'II+(V)', 'II+(V+)', 'I-III', 'I-III(IV)', 'I-III(V)', 'I-III(V+)', 'II-III', 'II-III(IV)', 'II-III(V)', 'II-III(V+)', 'III', 'I-III+', 'I-III+(IV)', 'I-III+(V)', 'I-III+(V+)', 'II-III+', 'II-III+(IV)', 'II-III+(V)', 'II-III+(V+)', 'III+', 'III+(IV)', 'III+(V)', 'III+(V+)', 'I-IV', 'I-IV(V)', 'I-IV(V+)', 'II-IV', 'II-IV(V)', 'II-IV(V+)', 'III-IV', 'III-IV(V)', 'III-IV(V+)', 'IV', 'IV(V)', 'IV(V+)', 'I-IV+', 'I-IV+(V)', 'I-IV+(V+)', 'II-IV+', 'II-IV+(V)', 'II-IV+(V+)', 'III-IV+', 'III-IV+(V)', 'III-IV+(V+)', 'IV+', 'I-V', 'I-V(V+)', 'II-V', 'II-V(V+)', 'III-V', 'III-V(V+)', 'IV-V', 'IV-V(V+)', 'V', 'II-V+', 'III-V+', 'IV-V+', 'V+'];
-
-    return [
-        'id' => $faker->unique()->numberBetween(1,10000),
-        'river' => $faker->word,
-        'section' => $faker->word,
-        'altname' =>$faker->word,
-        'county' => null,
-        'zipcode' => null,
-        'length' => null,
-        'avggradient' => null,
-        'maxgradient' => null,
-        'agency' => null,
-        'gaugeinfo' => null,
-        'description' => $faker->text,
-        'abstract' => $faker->text,
-        'photoid' => null,
-        'permitid' => null,
-        'huc' => null,
-        'plat' => null,
-        'plon' => null,
-        'ploc' => null,
-        'prrn' => null,
-        'tlat' => null,
-        'tlon' => null,
-        'tloc' => null,
-        'trrn' => null,
-        'skid' => null,
-        'status' => 'u',
-        'edited' => null,
-        'is_final' => true,
-        'was_final' => false,
-        'thumboverride' => null,
-        'shuttledetails' => null,
-        'revision' => 0,
-        'class' => $classes[rand(0,8)],
-        'direction_default' => null,
-        'custom_destination' => null,
-        'revision_comment' => null,
-        'permiturl' => null,
-        'permitinfo' => null,
-        'image_override' => null
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'river' => $this->faker->text(80),
+            'section' => $this->faker->text(255),
+            'altname' => $this->faker->text(80),
+            'county' => $this->faker->text(80),
+            'zipcode' => $this->faker->text(5),
+            'length' => $this->faker->randomNumber(0),
+            'avggradient' => $this->faker->randomNumber(0),
+            'maxgradient' => $this->faker->randomNumber(0),
+            'agency' => $this->faker->text(255),
+            'gaugeinfo' => $this->faker->text,
+            'description' => $this->faker->sentence(15),
+            'photoid' => $this->faker->randomNumber(0),
+            'permitid' => $this->faker->randomNumber(0),
+            'huc' => $this->faker->text(8),
+            'plat' => $this->faker->randomNumber(2),
+            'plon' => $this->faker->randomNumber(2),
+            'prrn' => $this->faker->text(20),
+            'tlat' => $this->faker->randomNumber(2),
+            'tlon' => $this->faker->randomNumber(2),
+            'trrn' => $this->faker->text(20),
+            'skid' => $this->faker->randomNumber(0),
+            'status' => $this->faker->text(255),
+            'edited' => $this->faker->date,
+            'is_final' => $this->faker->boolean,
+            'revision' => $this->faker->randomNumber(0),
+            'class' => 'none',
+            'was_final' => $this->faker->boolean,
+            'thumboverride' => $this->faker->boolean,
+            'shuttledetails' => $this->faker->text,
+            'abstract' => $this->faker->text,
+            'direction_default' => $this->faker->randomNumber(0),
+            'custom_destination' => $this->faker->text(255),
+            'revision_comment' => $this->faker->text(255),
+            'permiturl' => $this->faker->text,
+            'permitinfo' => $this->faker->text,
+            'image_override' => $this->faker->text(255),
+            'accident_id' => \App\Models\Accident::factory(),
+        ];
+    }
+}

@@ -1,27 +1,42 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Affiliate;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
+use App\Models\Affiliate;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class AffiliateFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Affiliate::class;
 
-$factory->define(Affiliate::class, function (Faker $faker) {
-    return [
-        'city' => 'CITY',
-        'state' => 'CO',
-        'expiration' => 'EXPIRATION',
-        'member_id' => rand(0,1000),
-        'id' => $faker->unique()->numberBetween(1,2000)
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'last' => $this->faker->text(50),
+            'url' => $this->faker->url,
+            'con_email' => $this->faker->text(120),
+            'members' => $this->faker->randomNumber(),
+            'contact' => $this->faker->text,
+            'abstract' => $this->faker->text,
+            'description' => $this->faker->sentence(15),
+            'reaches' => $this->faker->text,
+            'volunteer' => $this->faker->randomNumber(),
+            'city' => $this->faker->city,
+            'state' => $this->faker->countryCode(),
+            'expiration' => 'EXPIRATION',
+            'member_id' => $this->faker->randomNumber(),
+            'deleted' => $this->faker->numberBetween(0, 32767),
+        ];
+    }
+}

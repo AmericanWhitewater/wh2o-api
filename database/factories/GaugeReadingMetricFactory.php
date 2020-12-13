@@ -1,23 +1,34 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\GaugeReadingMetric;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
 use Illuminate\Support\Str;
+use App\Models\GaugeReadingMetric;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class GaugeReadingMetricFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = GaugeReadingMetric::class;
 
-$factory->define(GaugeReadingMetric::class, function (Faker $faker) {
-    return [
-        'id' => $faker->unique()->numberBetween(1,10000),
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'shortkey' => $this->faker->text(5),
+            'unit' => $this->faker->text(15),
+            'name' => $this->faker->name,
+            'format' => $this->faker->text(50),
+            'sortorder' => $this->faker->numberBetween(0, 32767),
+            'id' => \App\Models\GaugeCorrelation::factory(),
+        ];
+    }
+}

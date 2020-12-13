@@ -1,42 +1,71 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
+
 use App\Models\User;
-use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class UserFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
 
-$factory->define(User::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
-        'address' => $faker->streetAddress(),
-        'city' => $faker->city(),
-        'state' => $faker->countryCode(),
-        'country' => $faker->countryCode(),
-        'lastlogin' => $faker->date,
-        'volunteer' => rand(0,1),
-        'alerts' => rand(0,1),
-        'postal' => rand(0,1),
-        'memnum' => $faker->unique()->numberBetween(1, 200000),
-        'address2' => $faker->buildingNumber(),
-        'home_phone' => $faker->phoneNumber(),
-        'work_phone' => $faker->phoneNumber(),
-        'journal' => rand(0,1),
-        'aw_beta' => rand(0,1),
-        'name' => $faker->firstName(),
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'email_verified_at' => now(),
+            'password' => \Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'uname' => $this->faker->name,
+            'upass' => $this->faker->text(255),
+            'email' => $this->faker->unique()->email,
+            'google_id' => $this->faker->text(255),
+            'facebook_id' => $this->faker->text(255),
+            'epassword' => $this->faker->text(255),
+            'zip' => $this->faker->text(255),
+            'address' => $this->faker->address,
+            'city' => $this->faker->city,
+            'state' => $this->faker->countryCode(),
+            'country' => $this->faker->country,
+            'lastlogin' => $this->faker->date,
+            'volunteer' => $this->faker->randomNumber(0),
+            'alerts' => $this->faker->randomNumber(0),
+            'postal' => $this->faker->randomNumber(0),
+            'memnum' => $this->faker->randomNumber(),
+            'address2' => $this->faker->text(255),
+            'home_phone' => $this->faker->text(255),
+            'work_phone' => $this->faker->text(255),
+            'journal' => $this->faker->randomNumber(0),
+            'aw_beta' => $this->faker->randomNumber(0),
+            'mbr_level' => $this->faker->text(255),
+            'bad_addr' => $this->faker->randomNumber(0),
+            'bad_email' => $this->faker->randomNumber(0),
+            'mod_date' => $this->faker->date,
+            'record_type' => $this->faker->text(255),
+            'name' => $this->faker->name,
+            'mem_transaction' => $this->faker->text(255),
+            'transaction_id' => $this->faker->text(255),
+            'expiration' => $this->faker->date,
+            'modifydate' => $this->faker->date,
+            'pushdate' => $this->faker->date,
+            'mbr_relation' => $this->faker->text(255),
+            'prefs' => $this->faker->text,
+            'annual_renew' => $this->faker->randomNumber(0),
+            'code' => $this->faker->randomNumber(0),
+            'social_profile' => $this->faker->text(255),
+            'uid' => \App\Models\Comment::factory(),
+            'uid' => \App\Models\Document::factory(),
+            'uid' => \App\Models\EventNotify::factory(),
+        ];
+    }
+}

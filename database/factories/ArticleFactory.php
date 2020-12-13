@@ -1,26 +1,43 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Article;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Article;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Article::class, function (Faker $faker) {
-    return [
-        'uid' => rand(1, 2000),
-        'title' => $faker->title,
-        'short_name' => $faker->name,
-        'contents' => $faker->text,
-        'id' => $faker->unique()->numberBetween(1,2000)
-    ];
-});
+class ArticleFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Article::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'title' => $this->faker->word,
+            'author' => $this->faker->text(50),
+            'abstract' => $this->faker->text,
+            'abstract_photo' => $this->faker->text(24),
+            'icon' => $this->faker->text(50),
+            'has_contents' => $this->faker->numberBetween(0, 32767),
+            'contents' => $this->faker->text,
+            'contents_photo' => $this->faker->text(24),
+            'contact' => $this->faker->text(50),
+            'posted' => $this->faker->date,
+            'short_name' => $this->faker->text(65),
+            'uid' => $this->faker->randomNumber(),
+            'release_date' => $this->faker->date,
+            'deleted' => $this->faker->numberBetween(0, 32767),
+            'news_article_id' => \App\Models\News::factory(),
+        ];
+    }
+}

@@ -1,24 +1,30 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\EventNotify;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\EventNotify;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(EventNotify::class, function (Faker $faker) {
-    return [
-        'id' => $faker->unique()->numberBetween(1,1000),
-        'uid' => rand(1,100),
-        'eventid' => rand(1,100),
-    ];
-});
+class EventNotifyFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = EventNotify::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'uid' => $this->faker->randomNumber(0),
+            'eventid' => $this->faker->randomNumber(0),
+        ];
+    }
+}

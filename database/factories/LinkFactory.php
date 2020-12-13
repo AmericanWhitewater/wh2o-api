@@ -1,28 +1,32 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Link;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Link;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Link::class, function (Faker $faker) {
-    return [
-        'id' => $faker->unique()->numberBetween(1,2000),
-        'sourcecomp' => $faker->word,
-        'sourceid' => rand(1,2000),
-        'targetcomp' => $faker->word,
-        'targetid' => rand(1,2000),
-        'mutual' => rand(1,2000),
-        'expire_date' => $faker->date,
-    ];
-});
+class LinkFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Link::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'sourcecomp' => $this->faker->text(25),
+            'sourceid' => $this->faker->text(25),
+            'targetcomp' => $this->faker->text(25),
+            'targetid' => $this->faker->text(25),
+        ];
+    }
+}

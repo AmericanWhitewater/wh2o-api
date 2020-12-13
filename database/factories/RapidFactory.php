@@ -1,38 +1,48 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Rapid;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Rapid;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Rapid::class, function (Faker $faker) {
-    return [
-        'approximate' => true,
-        'deleted' => false,
-        'description' => $faker->text,
-        'difficulty' => null,
-        'distance' => 0,
-        'id' => $faker->unique()->numberBetween(1,200000),
-        'isaccess' => null,
-        'ishazard' => null,
-        'isportage' => null,
-        'isputin' => null,
-        'istakeout' => null,
-        'name' => $faker->word,
-        'photoid' => null,
-        'photoid' => null,
-        'photoid' => null,
-        'reachid' => rand(1,1000),
-        'videoid' => null,
-    ];
-});
+class RapidFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Rapid::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'approximate' => $this->faker->boolean,
+            'rlat' => $this->faker->randomNumber(2),
+            'rlon' => $this->faker->randomNumber(2),
+            'distance' => $this->faker->randomNumber(0),
+            'photoid' => $this->faker->randomNumber(0),
+            'revision' => $this->faker->randomNumber(0),
+            'videoid' => $this->faker->randomNumber(0),
+            'isaccess' => $this->faker->numberBetween(0, 32767),
+            'ishazard' => $this->faker->numberBetween(0, 32767),
+            'isplayspot' => $this->faker->numberBetween(0, 32767),
+            'isportage' => $this->faker->numberBetween(0, 32767),
+            'isputin' => $this->faker->numberBetween(0, 32767),
+            'istakeout' => $this->faker->numberBetween(0, 32767),
+            'iswaterfall' => $this->faker->numberBetween(0, 32767),
+            'isother' => $this->faker->numberBetween(0, 32767),
+            'israpid' => $this->faker->numberBetween(0, 32767),
+            'difficulty' => null,
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
+            'reach_id' => \App\Models\Reach::factory(),
+        ];
+    }
+}

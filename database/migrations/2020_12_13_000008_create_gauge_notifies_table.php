@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateGaugeNotifiesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('gauge_notifies', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('uid')->nullable();
+            $table->integer('min')->nullable();
+            $table->smallInteger('metric')->nullable();
+            $table->boolean('show')->nullable();
+            $table->integer('gauge_id')->nullable();
+            $table->boolean('asap')->nullable();
+            $table->boolean('down')->nullable();
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('gauge_notifies');
+    }
+}

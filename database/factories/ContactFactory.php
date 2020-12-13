@@ -1,25 +1,46 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Contact;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Contact;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Contact::class, function (Faker $faker) {
-    return [
-        'contactid' => $faker->unique()->numberBetween(1,2000),
-        'bio' => $faker->text,
-        'photo' => '//picsum.photos/200/300',
-        'id' => $faker->unique()->numberBetween(1,2000)
-    ];
-});
+class ContactFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Contact::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'uid' => $this->faker->randomNumber(0),
+            'name' => $this->faker->name,
+            'city' => $this->faker->city,
+            'address' => $this->faker->text,
+            'state' => $this->faker->countryCode(),
+            'zip' => $this->faker->text(10),
+            'email' => $this->faker->email,
+            'phone' => $this->faker->phoneNumber,
+            'fax' => $this->faker->text(25),
+            'contactid' => $this->faker->randomNumber(0),
+            'bio' => $this->faker->sentence(15),
+            'lname' => $this->faker->text(255),
+            'fname' => $this->faker->text(25),
+            'photo' => '//picsum.photos/200/300',
+            'company' => $this->faker->text(45),
+            'position' => $this->faker->text(45),
+            'territory' => $this->faker->text(45),
+            'country_code' => $this->faker->countryCode(),
+        ];
+    }
+}

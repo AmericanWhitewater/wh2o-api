@@ -1,30 +1,39 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Comment;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
+use App\Models\Comment;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+class CommentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Comment::class;
 
-$factory->define(Comment::class, function (Faker $faker) {
-    return [
-        'uid' => rand(0,1000),
-        'sectionid' => rand(0,1000),
-        'name' => $faker->word,
-        'comments' => $faker->text,
-        'revision' => rand(1,100),
-        'is_final' => 1,
-        'is_private' => 0,
-        'id' => $faker->unique()->numberBetween(1,2000)
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'revision' => $this->faker->randomNumber(),
+            'uid' => $this->faker->randomNumber(),
+            'sectionid' => $this->faker->randomNumber(),
+            'name' => $this->faker->text,
+            'comments' => $this->faker->text,
+            'posted' => $this->faker->date,
+            'section' => $this->faker->text(25),
+            'deleted' => $this->faker->date,
+            'duid' => $this->faker->randomNumber(),
+            'is_final' => $this->faker->boolean,
+            'is_private' => $this->faker->boolean,
+        ];
+    }
+}

@@ -1,33 +1,38 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Journal;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Journal;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Journal::class, function (Faker $faker) {
-    return [
-        'id' => $faker->unique()->numberBetween(1,2000),
-        'artid' => $faker->unique()->numberBetween(1,2000),
-        'arttitle' => $faker->word,
-        'artdate' => $faker->date,
-        'startpage' => rand(0,5),
-        'endpage' => rand(0,5),
-        'volume' => rand(0,5),
-        'issuenumber' => 0,
-        'issueyear' => $faker->year,
-        'scanner_uid' => rand(0,2000),
-        'pdfsize' => null,
-        'forpublic' => rand(0,1),
-    ];
-});
+class JournalFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Journal::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'arttitle' => $this->faker->text,
+            'artdate' => $this->faker->text,
+            'startpage' => $this->faker->randomNumber(),
+            'endpage' => $this->faker->randomNumber(),
+            'volume' => $this->faker->randomNumber(),
+            'issuenumber' => $this->faker->randomNumber(),
+            'issueyear' => $this->faker->randomNumber(),
+            'scanner_uid' => $this->faker->randomNumber(),
+            'pdfsize' => $this->faker->text,
+            'forpublic' => $this->faker->numberBetween(0, 32767),
+        ];
+    }
+}
