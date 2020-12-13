@@ -1,91 +1,108 @@
+
 version: '3.7'
-
 services:
-
-# Workspace Container
-    workspace:
-      container_name: wh2o_workspace
-      build:
-        context: ./env/docker/workspace
-        args:
-          - PHP_VERSION=${PHP_VERSION}
-          - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
-          - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
-          - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
-          - COMPOSER_PROCESS_TIMEOUT=${COMPOSER_PROCESS_TIMEOUT}
-      volumes:
-        - ./:/var/www:cached
-        - ~/.ssh:/home/laradock/.ssh
-        - ~/.gitconfig:/home/laradock/.gitconfig
-        - ~/.config/composer:/home/laradock/.config/composer
-        - ~/.aws:/home/laradock/.aws
-      tty: true
-      networks:
-        - wh2o_network
-
-# PHP-FPM
-    php-fpm:
-      container_name: wh2o_php_fpm
-      build:
-        context: ./env/docker/php-fpm
-        args:
-          - PHP_VERSION=${PHP_VERSION}
-          - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
-          - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
-          - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
-      volumes:
-        - ./:/var/www:cached
-      depends_on:
-        - workspace
-      networks:
-        - wh2o_network
-
-# NGINX
-    nginx:
-      container_name: wh2o_nginx
-      build:
-        context: ./env/docker/nginx
-      volumes:
-        - ./:/var/www:cached
-        - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
-      depends_on:
-        - php-fpm
-        - postgres
-      environment:
-        - HTTPS_METHOD=${HTTPS_METHOD}
-      ports:
-        - 80:80
-      networks:
-        - wh2o_network
-
-# PostgreSQL
-    postgres:
-      container_name: wh2o_postgres
-      build:
-        context: ./env/docker/postgres
-      volumes:
-        - ${DATA_PATH_HOST}postgres:/var/lib/postgresql/data
-      environment:
-        - POSTGRES_DB=${POSTGRES_DB}
-        - POSTGRES_USER=${POSTGRES_USER}
-        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      networks:
-        - wh2o_network
-
-# Redis
-    redis:
-      container_name: wh2o_redis
-      image: "redis"
-      hostname: wh2o_redis
-      networks:
-        - wh2o_network
-
-# Volumes configuration
-volumes:
-  postgres:
-    driver: "local"
-
-# Network configuration
+  wh2o-db:
+    container_name: db-container
+    image: mdillon/postgis:9.6
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: wh2o
+      POSTGRES_PASSWORD: wh2o
+      POSTGRES_DB: wh2o
+    networks:
+        - wh2o-network
 networks:
-  wh2o_network:
-    name: wh2o_network
+    wh2o-network:
+      driver: bridge
+
+# version: '3.7'
+
+# services:
+
+# # Workspace Container
+#     workspace:
+#       container_name: wh2o_workspace
+#       build:
+#         context: ./env/docker/workspace
+#         args:
+#           - PHP_VERSION=${PHP_VERSION}
+#           - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
+#           - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
+#           - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
+#           - COMPOSER_PROCESS_TIMEOUT=${COMPOSER_PROCESS_TIMEOUT}
+#       volumes:
+#         - ./:/var/www:cached
+#         - ~/.ssh:/home/laradock/.ssh
+#         - ~/.gitconfig:/home/laradock/.gitconfig
+#         - ~/.config/composer:/home/laradock/.config/composer
+#         - ~/.aws:/home/laradock/.aws
+#       tty: true
+#       networks:
+#         - wh2o_network
+
+# # PHP-FPM
+#     php-fpm:
+#       container_name: wh2o_php_fpm
+#       build:
+#         context: ./env/docker/php-fpm
+#         args:
+#           - PHP_VERSION=${PHP_VERSION}
+#           - PHP_XDEBUG_ENABLE=${PHP_XDEBUG_ENABLE}
+#           - PHP_XDEBUG_VERSION=${PHP_XDEBUG_VERSION}
+#           - PHP_XDEBUG_REMOTE_CONNECT_BACK=${PHP_XDEBUG_REMOTE_CONNECT_BACK}
+#       volumes:
+#         - ./:/var/www:cached
+#       depends_on:
+#         - workspace
+#       networks:
+#         - wh2o_network
+
+# # NGINX
+#     nginx:
+#       container_name: wh2o_nginx
+#       build:
+#         context: ./env/docker/nginx
+#       volumes:
+#         - ./:/var/www:cached
+#         - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
+#       depends_on:
+#         - php-fpm
+#         - postgres
+#       environment:
+#         - HTTPS_METHOD=${HTTPS_METHOD}
+#       ports:
+#         - 80:80
+#       networks:
+#         - wh2o_network
+
+# # PostgreSQL
+#     postgres:
+#       image: mdillon/postgis:9.6
+#       container_name: wh2o_postgres
+#       build:
+#         context: ./env/docker/postgres
+#       environment:
+#         - POSTGRES_DB=wh2o
+#         - POSTGRES_USER=wh2o
+#         - POSTGRES_PASSWORD=wh2o
+#       networks:
+#         - wh2o_network
+
+# # Redis
+#     redis:
+#       container_name: wh2o_redis
+#       image: "redis"
+#       hostname: wh2o_redis
+#       networks:
+#         - wh2o_network
+
+# # Volumes configuration
+# volumes:
+#   postgres:
+#     driver: "local"
+
+# # Network configuration
+# networks:
+#   wh2o_network:
+#     name: wh2o_network
