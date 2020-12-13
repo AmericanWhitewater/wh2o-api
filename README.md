@@ -13,6 +13,7 @@ American Whitewater's REST API built with Laravel.
 - cd to project root
 - `docker-compose up -d`
 - `composer install`
+- `cp .env.example .env`
 - `php artisan key:generate`
 - `php artisan jwt:secret`
 - `php artisan migrate:fresh --seed`
