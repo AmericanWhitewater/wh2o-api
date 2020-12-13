@@ -1,7 +1,20 @@
 # wh2o-api
 
-[![Build Status](https://travis-ci.com/AmericanWhitewater/wh2o-api.svg?branch=development)](https://travis-ci.org/AmericanWhitewater/wh2o-api) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e92b843b2e24cf4b45e4033c66cbcd4)](https://www.codacy.com/gh/AmericanWhitewater/wh2o-api/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AmericanWhitewater/wh2o-api&amp;utm_campaign=Badge_Grade)
+American Whitewater's REST API built with Laravel.
+### System Requirements
 
-American Whitewater's REST API built on Node.js
+- php
+- composer
+- docker desktop
 
-For documentation, visit the [Documentation Website](https://bit.ly/2Cn6Ywh)
+## Getting Started
+
+- Clone repo
+- cd to project root
+- `docker-compose up -d`
+- `composer install`
+- `cp .env.example .env`
+- `php artisan key:generate`
+- `php artisan jwt:secret`
+- `php artisan migrate:fresh --seed`
+- `php artisan serve`
