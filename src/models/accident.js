@@ -113,6 +113,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Accidents.associate = models => {
     Accidents.belongsToMany(models.cause, { through: 'accident_causes'})
+    Accidents.belongsToMany(models.factor, { through: 'accident_factors'})
   }
 
   return Accidents

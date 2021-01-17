@@ -1,7 +1,8 @@
 module.exports = (app) => {
   const models = require("../models")
   const Accident = models.accident
-  const Causes = models.cause
+  const Cause = models.cause
+  const Factor = models.factor
 
   app.get('/accident', (req, res) => {
     Accident.findOne({
@@ -10,7 +11,10 @@ module.exports = (app) => {
       },
       include: [
         {
-          model: Causes
+          model: Cause
+        },
+        {
+          model: Factor
         }
       ]
     })
