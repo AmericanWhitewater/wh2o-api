@@ -1,7 +1,5 @@
 const apiRoutes = [
   require('./accidents'),
-  require('./accidents-causes'),
-  require('./accidents-factors'),
   require('./affiliate'),
   require('./affiliate-reach'),
   require('./alerts'),

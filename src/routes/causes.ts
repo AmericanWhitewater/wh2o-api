@@ -1,7 +1,7 @@
-import { pgClient, DataTypes } from '../config'
-const Causes = require('../models/causes')(pgClient, DataTypes)
-
 module.exports = (app) => {
+  
+  const Causes = require("../models").cause
+  
   app.get('/causes', (req, res) => {
     Causes.findAll()
       .then((result) => {

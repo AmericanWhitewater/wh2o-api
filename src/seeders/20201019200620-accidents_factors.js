@@ -4,18 +4,18 @@ const randomFactorID = () => {
   return ids[[Math.floor(Math.random() * ids.length) + 0]]
 }
 
-const accidents_factors = [...Array(100)].map((af,index) => (
+const accidentFactors = [...Array(100)].map((af,index) => (
   {
-    accident_id: index + 1,
-    factor_id: randomFactorID()
+    accidentId: index + 1,
+    factorId: randomFactorID()
   }
 ))
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('accidents_factors', accidents_factors, {})
+    return queryInterface.bulkInsert('accident_factors', accidentFactors, {})
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('accidents_factors', null, {})
+    return queryInterface.bulkDelete('accident_factors', null, {})
   }
 }
