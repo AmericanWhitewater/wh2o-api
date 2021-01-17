@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('accidents', {
+  const Accidents = sequelize.define('accidents', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -134,4 +134,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     ]
   })
+
+  Accidents.associate = models => {
+    Accidents.hasMany(models.causes, { through: 'accidents_causes'})
+  }
+
+  return Accidents
 }

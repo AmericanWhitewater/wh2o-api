@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('causes', {
+  const Causes = sequelize.define('causes', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -26,4 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     ]
   })
+
+  Causes.associate = models => {
+    Causes.belongsToMany(models.accidents, { through: 'accidents_causes'})
+  }
+
+  return Causes
 }
