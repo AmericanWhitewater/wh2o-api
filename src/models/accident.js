@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-  const Accidents = sequelize.define('accidents', {
+  const Accidents = sequelize.define('accident', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -88,10 +88,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.CHAR(1),
       allowNull: true
     },
-    cause: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
     contactname: {
       type: DataTypes.STRING(255),
       allowNull: true
@@ -113,30 +109,10 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'accidents',
     schema: 'public',
     timestamps: false,
-    indexes: [
-      {
-        name: 'ndx_accident_accidentdate',
-        fields: [
-          { name: 'accidentdate' }
-        ]
-      },
-      {
-        name: 'ndx_accident_reachid',
-        fields: [
-          { name: 'reachid' }
-        ]
-      },
-      {
-        name: 'ndx_accident_state',
-        fields: [
-          { name: 'state' }
-        ]
-      }
-    ]
   })
 
   Accidents.associate = models => {
-    Accidents.hasMany(models.causes, { through: 'accidents_causes'})
+    Accidents.belongsToMany(models.cause, { through: 'accident_causes'})
   }
 
   return Accidents

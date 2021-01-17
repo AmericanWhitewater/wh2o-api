@@ -1,14 +1,13 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    // Product belongsToMany Tag
     return queryInterface.createTable(
       'accident_causes',
       {
-        accident_id: {
+        accidentId: {
           type: Sequelize.INTEGER,
           primaryKey: true,
         },
-        cause_id: {
+        causeId: {
           type: Sequelize.INTEGER,
           primaryKey: true,
         },
@@ -17,7 +16,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    // remove table
     return queryInterface.dropTable('accident_causes');
   },
 };

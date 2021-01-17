@@ -1,12 +1,18 @@
-import { pgClient, DataTypes } from '../config'
-const Accident = require('../models/accidents')(pgClient, DataTypes)
-
 module.exports = (app) => {
+  const models = require("../models")
+  const Accident = models.accident
+  const Causes = models.cause
+
   app.get('/accident', (req, res) => {
     Accident.findOne({
       where: {
         id: req.query.id,
       },
+      include: [
+        {
+          model: Causes
+        }
+      ]
     })
       .then((result) => {
         res.send(result).status(200)

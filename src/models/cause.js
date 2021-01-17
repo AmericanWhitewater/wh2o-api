@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-  const Causes = sequelize.define('causes', {
+  const Causes = sequelize.define('cause', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -15,20 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     tableName: 'causes',
     schema: 'public',
-    timestamps: false,
-    indexes: [
-      {
-        name: 'causes_pkey',
-        unique: true,
-        fields: [
-          { name: 'id' }
-        ]
-      }
-    ]
+    timestamps: false
   })
 
   Causes.associate = models => {
-    Causes.belongsToMany(models.accidents, { through: 'accidents_causes'})
+    Causes.belongsToMany(models.accident, { through: 'accident_causes'})
   }
 
   return Causes
