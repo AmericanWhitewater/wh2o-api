@@ -219,25 +219,6 @@ let migrationCommands = [{
 {
   fn: 'createTable',
   params: [
-    'accidents_injuries',
-    {
-      accident_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
-      },
-      injury_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true
-      }
-    },
-    {}
-  ]
-},
-{
-  fn: 'createTable',
-  params: [
     'affiliates',
     {
       last: {

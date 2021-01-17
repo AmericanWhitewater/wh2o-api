@@ -3,6 +3,7 @@ module.exports = (app) => {
   const Accident = models.accident
   const Cause = models.cause
   const Factor = models.factor
+  const Injury = models.injury
 
   app.get('/accident', (req, res) => {
     Accident.findOne({
@@ -15,6 +16,9 @@ module.exports = (app) => {
         },
         {
           model: Factor
+        },
+        {
+          model: Injury
         }
       ]
     })

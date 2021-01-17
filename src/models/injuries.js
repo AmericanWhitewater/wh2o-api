@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('injuries', {
+  const Injury = sequelize.define('injury', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -15,15 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     tableName: 'injuries',
     schema: 'public',
-    timestamps: false,
-    indexes: [
-      {
-        name: 'injuries_pkey',
-        unique: true,
-        fields: [
-          { name: 'id' }
-        ]
-      }
-    ]
+    timestamps: false
   })
+
+  Injury.associate = models => {
+    Injury.belongsToMany(models.accident, { through: 'accident_injuries' })
+  }
+
+  return Injury
 }
