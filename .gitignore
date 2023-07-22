@@ -4,3 +4,4 @@ dist/
 docs/.vuepress/dist
 .DS_Store
 .scannerwork
+.idea
