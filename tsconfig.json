@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es6",
     "module": "commonjs",
+    "lib": ["es7"],
     "esModuleInterop": true,
     "outDir": "./dist",
     "strict": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -13,7 +13,10 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "Node",
+    "allowJs": false,
+    "removeComments": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

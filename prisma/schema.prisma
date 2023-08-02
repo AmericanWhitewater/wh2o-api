@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  content   String?
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  reach     Reach    @relation(fields: [reachId], references: [id])
+  reachId   Int
+}
+
+model Profile {
+  id     Int     @id @default(autoincrement())
+  bio    String?
+  user   User    @relation(fields: [userId], references: [id])
+  userId Int     @unique
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String?
+  posts    Post[]
+  articles Article[]
+  profile  Profile?
+}
+
+model Reach {
+  id       Int       @id @default(autoincrement())
+  name     String
+  section  String
+  state    String
+  grade    String
+  events   Event[]
+  features Feature[]
+  gages    Gage[]
+  posts    Post[]
+  geom     Float[] // GeoJSON?
+}
+
+model Feature {
+  id      Int    @id @default(autoincrement())
+  name    String
+  grade   String
+  reach   Reach  @relation(fields: [reachId], references: [id])
+  reachId Int
+}
+
+model Event {
+  id      Int    @id @default(autoincrement())
+  name    String
+  state   String
+  reach   Reach  @relation(fields: [reachId], references: [id])
+  reachId Int
+}
+
+model Article {
+  id       Int    @id @default(autoincrement())
+  title    String
+  subtitle String
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId Int
+}
+
+model Gage {
+  id      Int    @id @default(autoincrement())
+  name    String
+  state   String
+  reach   Reach  @relation(fields: [reachId], references: [id])
+  reachId Int
+}

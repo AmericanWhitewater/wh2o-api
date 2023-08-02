@@ -1,0 +1,349 @@
+openapi: 3.0.0
+info:
+  title: wh2o-api
+  description: The API for American Whitewater.
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000'
+    description: Local server
+  - url: 'https://beta.americanwhitewater.org'
+    description: Beta server
+  - url: 'https://americanwhitewater.org'
+    description: Production server
+paths:
+  /reach:
+    description: CRUD operations for reaches (rivers, creeks, streams).
+    get:
+      tags:
+        - Reach
+      summary: Returns a list of reaches (rivers, creeks, streams).
+      parameters:
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to return items
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+        - name: limit
+          in: query
+          description: Maximum number of items to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: A JSON array of reach objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reach'
+    post:
+      tags:
+        - Reach
+      summary: Creates a new reach.
+      security:
+        - ApiKeyAuth: [ ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reach'
+      responses:
+        '201':
+          description: Reach created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reach'
+  /reach/{id}:
+    get:
+      tags:
+        - Reach
+      summary: Gets a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A reach object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reach'
+    put:
+      summary: Updates a reach by ID.
+      tags:
+        - Reach
+      security:
+        - ApiKeyAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reach'
+      responses:
+        '200':
+          description: Reach updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reach'
+    delete:
+      summary: Deletes a reach by ID.
+      tags:
+        - Reach
+      security:
+        - ApiKeyAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Reach deleted successfully.
+  /reach/{id}/feature:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the features for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of feature objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feature'
+  /reach/{id}/event:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the events for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of event objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+  /reach/{id}/post:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the posts for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of post objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+  /reach/{id}/accident:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the accidents for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of accident objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accident'
+  /reach/{id}/gage:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the gages for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of gage objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gage'
+  /reach/{id}/article:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the articles for a reach by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of article objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+  /reach/state/{state}:
+    get:
+      tags:
+        - Reach
+      summary: Gets all the reaches for U.S. State.
+      parameters:
+        - name: state
+          in: path
+          required: true
+          schema:
+            type: string
+          example: CO
+      responses:
+        '200':
+          description: A list of reach objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reach'
+# security applied to all operations
+# if you only want to apply security to a subset of operations
+# then remove this section and apply it directly to the relevant operations
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-WH2O-API-KEY
+  schemas:
+    Reach:
+      title: Reach
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the reach
+        river:
+          type: string
+          description: The name of the reach
+        section:
+          type: string
+          description: The section of the reach
+      required:
+        - river
+        - section
+    Feature:
+      title: Feature
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the feature
+        name:
+          type: string
+          description: The name of the feature
+    Post:
+      title: Post
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the post
+        title:
+          type: string
+          description: The title the post
+    Event:
+      title: Event
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the event
+        name:
+          type: string
+          description: The name of the event
+    Accident:
+      title: Accident
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the accident
+        title:
+          type: string
+          description: The title of the accident
+    Gage:
+      title: Gage
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the gage
+        name:
+          type: string
+          description: The name of the gage
+    Revision:
+      title: Revision
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the revision
+        name:
+          type: string
+          description: The name of the revision
+    Article:
+      title: Article
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the article
+        title:
+          type: string
+          description: The name of the article
+
