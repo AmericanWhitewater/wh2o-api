@@ -3,3 +3,4 @@
 
 npm run lint
 npm run build
+npx --no-install pretty-quick --staged

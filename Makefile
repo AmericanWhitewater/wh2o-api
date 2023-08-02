@@ -1,5 +1,5 @@
 # Description: Makefile for the project
-setup_mac: install_homebrew install_nvm nvm_lts install_brew_deps install_npm_deps
+setup_mac: install_homebrew install_nvm nvm_lts install_brew_deps install_npm_deps copy_env
 
 install_homebrew:
 	@which brew || /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,7 +24,7 @@ install_npm_deps:
 # Database
 
 database_migrations:
-	npx prisma migrate dev
+	npx prisma migrate dev --name init
 
 database_seed:
 	npx prisma db seed
@@ -35,4 +35,10 @@ action_build: install_act
 
 # dev
 
+copy_env:
+	cp .env.example .env
+
 setup_dev: install_npm_deps database_migrations database_seed
+
+docker_dev:
+	docker-compose up db -d

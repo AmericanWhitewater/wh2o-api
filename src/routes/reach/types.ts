@@ -8,6 +8,6 @@ export type ReachByStateRequest = FastifyRequest<{
 
 export type ReachRequest = FastifyRequest<{
   Params: {
-    reachId: number
+    id: number
   }
 }>

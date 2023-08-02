@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - "main"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,15 +11,23 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Setup Env
+        run: cp .env.example .env
+      - uses: isbang/compose-action@v1.5.0
+        with:
+          compose-file: "./docker-compose.yml"
+          services: "db"
       - uses: actions/setup-node@v3
         name: Setup Node.js
         with:
-          node-version: '18'
+          node-version: "18"
       - name: Install dependencies
         run: npm ci
       - name: Lint
         run: npm run lint
-#      - name: Test
-#        run: npm test
+      - name: Setup Prisma
+        run: npm run db:push
+      - name: Test
+        run: npm run test:ci
       - name: Build
         run: npm run build
