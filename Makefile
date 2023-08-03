@@ -1,5 +1,5 @@
 # Description: Makefile for the project
-setup_mac: install_homebrew install_nvm nvm_lts install_brew_deps install_npm_deps copy_env
+setup_mac: install_homebrew install_nvm nvm_lts install_brew_deps install_npm_deps copy_env install_serverless_framework
 
 install_homebrew:
 	@which brew || /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -12,6 +12,9 @@ nvm_lts: install_homebrew install_nvm
 	nvm install --lts && \
 	nvm use --lts && \
 	nvm alias default node
+
+install_serverless_framework:
+	@which serverless || npm install -g serverless
 
 install_brew_deps: install_act
 
@@ -42,3 +45,12 @@ setup_dev: install_npm_deps database_migrations database_seed
 
 docker_dev:
 	docker-compose up db -d
+
+invoke_local_reach_state: build
+	serverless invoke local --function main -p data.json
+
+pre_build:
+	rm -rf dist
+
+build: pre_build
+	npm run build

@@ -1,0 +1,27 @@
+service: wh2o-api-service
+frameworkVersion: "3"
+provider:
+  name: aws
+  runtime: nodejs18.x
+functions:
+  main:
+    package:
+      patterns:
+        - dist/**
+    handler: dist/lambda.handler # NOTE: update this with correct handler path for deployed code; e.g. lambda.handler
+    events:
+      - http:
+          path: "{proxy+}"
+          method: GET
+          cors: true
+      - http:
+          path: "{proxy+}"
+          method: POST
+          cors: true
+      - http:
+          path: "{proxy+}"
+          method: PUT
+      - http:
+          path: "{proxy+}"
+          method: DELETE
+          cors: true
