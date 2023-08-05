@@ -1,0 +1,283 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Post": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": ["string", "null"]
+        },
+        "published": {
+          "type": "boolean",
+          "default": false
+        },
+        "author": {
+          "$ref": "#/definitions/User"
+        },
+        "reach": {
+          "$ref": "#/definitions/Reach"
+        }
+      }
+    },
+    "Profile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "bio": {
+          "type": ["string", "null"]
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": ["string", "null"]
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Post"
+          }
+        },
+        "articles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Article"
+          }
+        },
+        "profile": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Profile"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Reach": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "abstract": {
+          "type": ["string", "null"]
+        },
+        "altname": {
+          "type": ["string", "null"]
+        },
+        "avggradient": {
+          "type": ["integer", "null"]
+        },
+        "county": {
+          "type": ["string", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Event"
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Feature"
+          }
+        },
+        "gages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Gage"
+          }
+        },
+        "geom": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "grade": {
+          "type": "string",
+          "description": "the difficulty rating of the reach"
+        },
+        "length": {
+          "type": ["number", "null"]
+        },
+        "maxgradient": {
+          "type": ["integer", "null"]
+        },
+        "permitid": {
+          "type": ["integer", "null"]
+        },
+        "photoid": {
+          "type": ["integer", "null"]
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Post"
+          }
+        },
+        "river": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        },
+        "shuttledetails": {
+          "type": ["string", "null"]
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "Feature": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "grade": {
+          "type": "string"
+        },
+        "reach": {
+          "$ref": "#/definitions/Reach"
+        },
+        "character": {
+          "type": "string",
+          "enum": [
+            "access",
+            "hazard",
+            "other",
+            "playspot",
+            "portage",
+            "putin",
+            "rapid",
+            "takeout",
+            "waterfall"
+          ]
+        },
+        "distance": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "Event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "reach": {
+          "$ref": "#/definitions/Reach"
+        }
+      }
+    },
+    "Article": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "author": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "Gage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "reach": {
+          "$ref": "#/definitions/Reach"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "post": {
+      "$ref": "#/definitions/Post"
+    },
+    "profile": {
+      "$ref": "#/definitions/Profile"
+    },
+    "user": {
+      "$ref": "#/definitions/User"
+    },
+    "reach": {
+      "$ref": "#/definitions/Reach"
+    },
+    "feature": {
+      "$ref": "#/definitions/Feature"
+    },
+    "event": {
+      "$ref": "#/definitions/Event"
+    },
+    "article": {
+      "$ref": "#/definitions/Article"
+    },
+    "gage": {
+      "$ref": "#/definitions/Gage"
+    }
+  }
+}

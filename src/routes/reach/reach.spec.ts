@@ -38,4 +38,20 @@ describe("Reach", () => {
       "/content/River/search/.json?state=stCO"
     )
   })
+  it("should return status 200 and reach by state", async () => {
+    const response = await testUtils.request().get("/reach/state/CO")
+    expect(response.status).toBe(200)
+    expect(response.body).toMatchSnapshot()
+    expect(getSpy).toHaveBeenCalledWith(
+      "/content/River/search/.json?state=stCO"
+    )
+  })
+  it("should return status 500 when a reach is deleted", async () => {
+    const response = await testUtils.request().delete("/reach/1")
+    expect(response.status).toBe(500)
+  })
+  it("should return status 500 when a reach is updated", async () => {
+    const response = await testUtils.request().put("/reach/1")
+    expect(response.status).toBe(500)
+  })
 })

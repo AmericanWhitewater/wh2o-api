@@ -1,29 +1,59 @@
 import { FastifyError, FastifyInstance, FastifyReply } from "fastify"
 
-import { PostRequest } from "./types"
+import { PostCreateUpdateRequest, PostRequest } from "./types"
+import { PostService } from "../../service/post-service"
 
 const post = (
   fastify: FastifyInstance,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   opts: unknown,
-  done: (err?: FastifyError) => void,
+  done: (err?: FastifyError) => void
 ): void => {
+  const postService = new PostService(fastify.prisma)
+
   const getPost = async (request: PostRequest, reply: FastifyReply) => {
     const { id } = request.params
 
-    const result = await fastify.prisma.post.findUnique({
-      where: {
-        id: Number(id),
-      },
-    })
+    const result = await postService.getPost(Number(id))
 
-    console.log("result", result)
+    reply.send(result)
+  }
+  const updatePost = async (
+    request: PostCreateUpdateRequest,
+    reply: FastifyReply
+  ) => {
+    const { id } = request.params
+    const post = request.body
+
+    const result = await postService.updatePost(Number(id), post)
+
+    reply.send(result)
+  }
+
+  const deletePost = async (request: PostRequest, reply: FastifyReply) => {
+    const { id } = request.params
+
+    const result = await postService.deletePost(Number(id))
+
+    reply.send(result)
+  }
+
+  const createPost = async (
+    request: PostCreateUpdateRequest,
+    reply: FastifyReply
+  ) => {
+    const post = request.body
+
+    const result = await postService.createPost(post)
 
     reply.send(result)
   }
 
   fastify.get("/post/:id", getPost)
+  fastify.put("/post/:id", updatePost)
+  fastify.delete("/post/:id", deletePost)
+  fastify.post("/post", createPost)
   done()
 }
 

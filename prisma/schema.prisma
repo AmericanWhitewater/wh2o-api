@@ -40,24 +40,50 @@ model User {
 }
 
 model Reach {
-  id       Int       @id @default(autoincrement())
-  name     String
-  section  String
-  state    String
-  grade    String
-  events   Event[]
-  features Feature[]
-  gages    Gage[]
-  posts    Post[]
-  geom     Float[] // GeoJSON?
+  id             Int       @id @default(autoincrement())
+  abstract       String?
+  altname        String?
+  avggradient    Int?
+  county         String?
+  description    String?
+  events         Event[]
+  features       Feature[]
+  gages          Gage[]
+  geom           Float[] // Unsupported('geom') https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#unsupported
+  /// the difficulty rating of the reach
+  grade          String
+  length         Float?
+  maxgradient    Int?
+  permitid       Int?
+  photoid        Int?
+  posts          Post[]
+  river          String
+  section        String
+  shuttledetails String?
+  state          String
+  zipcode        String?
 }
 
 model Feature {
-  id      Int    @id @default(autoincrement())
-  name    String
-  grade   String
-  reach   Reach  @relation(fields: [reachId], references: [id])
-  reachId Int
+  id        Int              @id @default(autoincrement())
+  name      String
+  grade     String
+  reach     Reach            @relation(fields: [reachId], references: [id])
+  reachId   Int
+  character FeatureCharacter
+  distance  Float?
+}
+
+enum FeatureCharacter {
+  access
+  hazard
+  other
+  playspot
+  portage
+  putin
+  rapid
+  takeout
+  waterfall
 }
 
 model Event {
@@ -82,4 +108,9 @@ model Gage {
   state   String
   reach   Reach  @relation(fields: [reachId], references: [id])
   reachId Int
+}
+
+generator jsonSchema {
+  provider = "prisma-json-schema-generator"
+  output   = "../src/openapi"
 }

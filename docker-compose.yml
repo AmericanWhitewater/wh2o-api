@@ -1,9 +1,9 @@
-version: '3.7'
+version: "3.7"
 services:
   db:
     restart: always
     container_name: db
-    image: postgres:latest
+    image: mdillon/postgis:latest
     volumes:
       - /usr/lib/postgres/pgdata:/var/lib/postgresql
     ports:

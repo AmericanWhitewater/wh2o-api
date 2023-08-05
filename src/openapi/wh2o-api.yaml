@@ -4,13 +4,179 @@ info:
   description: The API for American Whitewater.
   version: 1.0.0
 servers:
-  - url: 'http://localhost:3000'
+  - url: "http://localhost:3000"
     description: Local server
-  - url: 'https://beta.americanwhitewater.org'
+  - url: "https://beta.americanwhitewater.org"
     description: Beta server
-  - url: 'https://americanwhitewater.org'
+  - url: "https://americanwhitewater.org"
     description: Production server
 paths:
+  /gage:
+    description: CRUD operations for gages.
+    get:
+      tags:
+        - Gage
+      summary: Returns a list of gages.
+      parameters:
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to return items
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+        - name: limit
+          in: query
+          description: Maximum number of items to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 100
+      responses:
+        "200":
+          description: A JSON array of gage objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Gage"
+    post:
+      tags:
+        - Gage
+      summary: Creates a new gage.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Gage"
+      responses:
+        "201":
+          description: Gage created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Gage"
+  /feature/{id}:
+    get:
+      tags:
+        - Feature
+      summary: Returns a feature by ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A feature object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feature"
+    put:
+      tags:
+        - Feature
+      summary: Updates a feature by ID.
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Feature"
+      responses:
+        "200":
+          description: Feature updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feature"
+    delete:
+      summary: Deletes a feature by ID.
+      tags:
+        - Feature
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Feature deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feature"
+  /feature:
+    description: CRUD operations for features (rapids, waterfalls, etc.).
+    get:
+      tags:
+        - Feature
+      summary: Returns a list of features (rapids, waterfalls, etc.).
+      parameters:
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to return items
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+        - name: limit
+          in: query
+          description: Maximum number of items to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 100
+      responses:
+        "200":
+          description: A JSON array of feature objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Feature"
+    post:
+      tags:
+        - Feature
+      summary: Creates a new feature.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Feature"
+      responses:
+        "201":
+          description: Feature created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Feature"
   /reach:
     description: CRUD operations for reaches (rivers, creeks, streams).
     get:
@@ -36,33 +202,33 @@ paths:
             minimum: 1
             maximum: 100
       responses:
-        '200':
+        "200":
           description: A JSON array of reach objects
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Reach'
+                  $ref: "#/components/schemas/Reach"
     post:
       tags:
         - Reach
       summary: Creates a new reach.
       security:
-        - ApiKeyAuth: [ ]
+        - ApiKeyAuth: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Reach'
+              $ref: "#/components/schemas/Reach"
       responses:
-        '201':
+        "201":
           description: Reach created successfully.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reach'
+                $ref: "#/components/schemas/Reach"
   /reach/{id}:
     get:
       tags:
@@ -75,18 +241,18 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A reach object.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reach'
+                $ref: "#/components/schemas/Reach"
     put:
       summary: Updates a reach by ID.
       tags:
         - Reach
       security:
-        - ApiKeyAuth: [ ]
+        - ApiKeyAuth: []
       parameters:
         - name: id
           in: path
@@ -98,20 +264,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Reach'
+              $ref: "#/components/schemas/Reach"
       responses:
-        '200':
+        "200":
           description: Reach updated successfully.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reach'
+                $ref: "#/components/schemas/Reach"
     delete:
       summary: Deletes a reach by ID.
       tags:
         - Reach
       security:
-        - ApiKeyAuth: [ ]
+        - ApiKeyAuth: []
       parameters:
         - name: id
           in: path
@@ -119,7 +285,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        "204":
           description: Reach deleted successfully.
   /reach/{id}/feature:
     get:
@@ -133,12 +299,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of feature objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Feature'
+                $ref: "#/components/schemas/Feature"
   /reach/{id}/event:
     get:
       tags:
@@ -151,12 +317,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of event objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Event'
+                $ref: "#/components/schemas/Event"
   /reach/{id}/post:
     get:
       tags:
@@ -169,12 +335,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of post objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
+                $ref: "#/components/schemas/Post"
   /reach/{id}/accident:
     get:
       tags:
@@ -187,12 +353,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of accident objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Accident'
+                $ref: "#/components/schemas/Accident"
   /reach/{id}/gage:
     get:
       tags:
@@ -205,12 +371,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of gage objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Gage'
+                $ref: "#/components/schemas/Gage"
   /reach/{id}/article:
     get:
       tags:
@@ -223,12 +389,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: A list of article objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Article'
+                $ref: "#/components/schemas/Article"
   /reach/state/{state}:
     get:
       tags:
@@ -242,12 +408,12 @@ paths:
             type: string
           example: CO
       responses:
-        '200':
+        "200":
           description: A list of reach objects.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reach'
+                $ref: "#/components/schemas/Reach"
 # security applied to all operations
 # if you only want to apply security to a subset of operations
 # then remove this section and apply it directly to the relevant operations
@@ -273,6 +439,46 @@ components:
         section:
           type: string
           description: The section of the reach
+        alternate_name:
+          type: string
+        abstract:
+          type: string
+        average_gradient:
+          type: number
+        maximum_gradient:
+          type: number
+        minimum_gradient:
+          type: number
+        county:
+          type: string
+        description:
+          type: string
+        grade:
+          type: string
+        state:
+          type: string
+        zipcode:
+          type: string
+        length:
+          type: number
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/Event"
+        features:
+          type: array
+          items:
+            $ref: "#/components/schemas/Feature"
+        gages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Gage"
+        posts:
+          type: array
+          items:
+            $ref: "#/components/schemas/Post"
+        permit:
+          $ref: "#/components/schemas/Permit"
       required:
         - river
         - section
@@ -286,6 +492,24 @@ components:
         name:
           type: string
           description: The name of the feature
+        description:
+          type: string
+        distance:
+          type: number
+        character:
+          type: string
+          enum:
+            - access
+            - hazard
+            - other
+            - surf_spot
+            - portage
+            - putin
+            - rapid
+            - takeout
+            - waterfall
+        reachId:
+          type: number
     Post:
       title: Post
       type: object
@@ -296,6 +520,22 @@ components:
         title:
           type: string
           description: The title the post
+        content:
+          type: string
+          description: The content of the post
+        published:
+          type: boolean
+          description: Whether the post is published or not
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        author:
+          $ref: "#/components/schemas/User"
+        reach:
+          $ref: "#/components/schemas/Reach"
     Event:
       title: Event
       type: object
@@ -306,8 +546,10 @@ components:
         name:
           type: string
           description: The name of the event
+        reach:
+          $ref: "#/components/schemas/Reach"
     Accident:
-      title: Accident
+      title: Accident - Model
       type: object
       properties:
         id:
@@ -336,6 +578,14 @@ components:
         name:
           type: string
           description: The name of the revision
+    Permit:
+      title: Permit
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
     Article:
       title: Article
       type: object
@@ -346,4 +596,23 @@ components:
         title:
           type: string
           description: The name of the article
-
+        author:
+          $ref: "#/components/schemas/User"
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        name:
+          type: string
+        posts:
+          type: array
+          items:
+            $ref: "#/components/schemas/Post"
+        articles:
+          type: array
+          items:
+            $ref: "#/components/schemas/Article"

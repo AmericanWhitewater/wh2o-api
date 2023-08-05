@@ -1,5 +1,8 @@
-import { PrismaClient } from "@prisma/client"
+import { FeatureCharacter, PrismaClient } from "@prisma/client"
 import { faker } from "@faker-js/faker"
+
+import { reachClasses } from "../src/lib/reach-classes"
+import { featureClasses } from "../src/lib/feature-classes"
 
 const prisma = new PrismaClient()
 
@@ -27,14 +30,15 @@ const seedGages = async () => {
           },
         },
       })
-    }),
+    })
   )
 }
 
 const seedFeatures = async () => {
   const mockFeatures = [...Array(100)].map(() => ({
     name: faker.company.name(),
-    grade: faker.location.city(),
+    grade: randomArrayItem(featureClasses),
+    character: randomArrayItem(Object.values(FeatureCharacter)),
   }))
 
   await Promise.all(
@@ -51,7 +55,7 @@ const seedFeatures = async () => {
           },
         },
       })
-    }),
+    })
   )
 }
 
@@ -75,17 +79,17 @@ const seedEvents = async () => {
           },
         },
       })
-    }),
+    })
   )
 }
 
 const seedReaches = async () => {
   const mockReaches = [...Array(100)].map((_, idx) => ({
     id: idx + 1,
-    name: faker.company.name(),
+    river: faker.company.name(),
     state: faker.location.state(),
     section: faker.location.street(),
-    grade: faker.location.city(),
+    grade: randomArrayItem(reachClasses),
   }))
 
   await Promise.all(
@@ -95,7 +99,7 @@ const seedReaches = async () => {
         update: {},
         create: reach,
       })
-    }),
+    })
   )
 }
 

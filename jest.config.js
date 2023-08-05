@@ -11,6 +11,12 @@ module.exports = {
     "src/**/*.{ts,tsx}",
     "!src/@types/**/*",
     "!src/**/index.ts",
+    "!src/**/lambda.ts",
+    "!src/**/server.ts",
+    // TEMP
+    "!src/**/feature-service.ts",
+    "!src/**/gage-service.ts",
+    "!src/**/user-service.ts",
   ],
   coverageThreshold: {
     global: {

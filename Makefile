@@ -16,7 +16,10 @@ nvm_lts: install_homebrew install_nvm
 install_serverless_framework:
 	@which serverless || npm install -g serverless
 
-install_brew_deps: install_act
+install_openapi_generator: install_homebrew
+	@which openapi-generator || brew install openapi-generator
+
+install_brew_deps: install_act install_openapi_generator
 
 install_act: install_homebrew
 	@which act || brew install act
@@ -54,3 +57,11 @@ pre_build:
 
 build: pre_build
 	npm run build
+
+# Generate SDKs for the iOS, Android, and Web clients.
+# See all available generators here: https://openapi-generator.tech/docs/generators
+generate_sdks:
+	openapi-generator generate -g kotlin -i ./src/openapi/wh2o-api.yaml -o ./sdks/kotlin && \
+	openapi-generator generate -g typescript-axios -i ./src/openapi/wh2o-api.yaml -o ./sdks/typescript-axios && \
+	openapi-generator generate -g php -i ./src/openapi/wh2o-api.yaml -o ./sdks/php && \
+	openapi-generator generate -g swift5 -i ./src/openapi/wh2o-api.yaml -o ./sdks/swift --additional-properties library=Alamofire,nonPublicApi=true,responseAs=AsyncAwait

@@ -2,11 +2,16 @@
   "name": "wh2o-api",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "author": "American Whitewater",
+  "license": "ISC",
+  "private": true,
   "scripts": {
     "start": "tsc && node dist/index.js",
     "dev": "nodemon ./src/index.ts",
     "prepare": "husky install",
     "lint": "eslint --ext .ts ./src --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
     "build": "tsc",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -18,17 +23,25 @@
     "migrate:dev": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy",
     "prisma:generate": "prisma generate",
-    "preinstall": "node checkEnvironment.js"
+    "preinstall": "node checkEnvironment.js",
+    "test:coverage:serve": "python3 -m http.server --directory coverage/lcov-report"
   },
-  "keywords": [],
-  "author": "American Whitewater",
-  "license": "ISC",
-  "private": true,
+  "dependencies": {
+    "@fastify/aws-lambda": "3.3.0",
+    "@fastify/swagger": "8.8.0",
+    "@fastify/swagger-ui": "1.9.3",
+    "@prisma/client": "5.1.0",
+    "axios": "1.4.0",
+    "dotenv": "16.3.1",
+    "fastify": "4.15.0",
+    "fastify-cors": "6.1.0",
+    "fastify-plugin": "4.5.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "17.6.7",
     "@commitlint/config-conventional": "17.6.7",
     "@faker-js/faker": "8.0.1",
-    "@types/aws-lambda": "^8.10.119",
+    "@types/aws-lambda": "8.10.119",
     "@types/jest": "29.5.3",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.62.0",
@@ -45,29 +58,19 @@
     "nodemon": "2.0.22",
     "prettier": "3.0.0",
     "prisma": "5.1.0",
+    "prisma-json-schema-generator": "^4.0.0",
     "semver": "^7.5.4",
     "supertest": "6.3.3",
-    "ts-jest": "^29.1.1",
+    "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.0.4"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "engines": {
     "node": "18.x",
     "npm": "9.x"
-  },
-  "dependencies": {
-    "@fastify/aws-lambda": "^3.3.0",
-    "@fastify/swagger": "8.8.0",
-    "@fastify/swagger-ui": "1.9.3",
-    "@prisma/client": "5.1.0",
-    "axios": "1.4.0",
-    "dotenv": "16.3.1",
-    "fastify": "4.15.0",
-    "fastify-cors": "6.1.0",
-    "fastify-plugin": "4.5.0"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   }
 }

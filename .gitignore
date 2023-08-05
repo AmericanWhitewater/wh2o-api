@@ -6,3 +6,7 @@ docs/.vuepress/dist
 .scannerwork
 .idea
 coverage
+sdks/kotlin/*
+sdks/php/*
+sdks/swift/*
+sdks/typescript-axios/*
