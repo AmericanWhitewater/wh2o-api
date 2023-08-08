@@ -29,6 +29,7 @@ and [PostgreSQL](https://www.postgresql.org/).
 ## Unknowns
 
 - prisma and geometry data type support
+- validating the web server conforms to openapi spec in ci.
 
 ## Getting Started
 
