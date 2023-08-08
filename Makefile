@@ -64,4 +64,4 @@ generate_sdks:
 	openapi-generator generate -g kotlin -i ./src/openapi/wh2o-api.yaml -o ./sdks/kotlin && \
 	openapi-generator generate -g typescript-axios -i ./src/openapi/wh2o-api.yaml -o ./sdks/typescript-axios && \
 	openapi-generator generate -g php -i ./src/openapi/wh2o-api.yaml -o ./sdks/php && \
-	openapi-generator generate -g swift5 -i ./src/openapi/wh2o-api.yaml -o ./sdks/swift --additional-properties library=Alamofire,nonPublicApi=true,responseAs=AsyncAwait
+	openapi-generator generate -g swift5 -i ./src/openapi/wh2o-api.yaml -o ./sdks/swift --additional-properties library=Alamofire,nonPublicApi=true,responseAs=AsyncAwait,projectName=AmericanWhitewater

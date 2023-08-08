@@ -2,10 +2,11 @@
 
 All URIs are relative to http://localhost:3000, except if the operation defines another base path.
 
-| Method                                | HTTP request   | Description              |
-| ------------------------------------- | -------------- | ------------------------ |
-| [**gageGet()**](GageApi.md#gageGet)   | **GET** /gage  | Returns a list of gages. |
-| [**gagePost()**](GageApi.md#gagePost) | **POST** /gage | Creates a new gage.      |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**gageGet()**](GageApi.md#gageGet) | **GET** /gage | Returns a list of gages. |
+| [**gagePost()**](GageApi.md#gagePost) | **POST** /gage | Creates a new gage. |
+
 
 ## `gageGet()`
 
@@ -47,10 +48,10 @@ try {
 
 ### Parameters
 
-| Name       | Type    | Description                                             | Notes      |
-| ---------- | ------- | ------------------------------------------------------- | ---------- |
-| **offset** | **int** | Number of items to skip before starting to return items | [optional] |
-| **limit**  | **int** | Maximum number of items to return                       | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| Number of items to skip before starting to return items | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] |
 
 ### Return type
 
@@ -108,9 +109,9 @@ try {
 
 ### Parameters
 
-| Name     | Type                                               | Description | Notes |
-| -------- | -------------------------------------------------- | ----------- | ----- |
-| **gage** | [**\OpenAPI\Client\Model\Gage**](../Model/Gage.md) |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **gage** | [**\OpenAPI\Client\Model\Gage**](../Model/Gage.md)|  | |
 
 ### Return type
 

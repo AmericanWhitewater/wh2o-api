@@ -36,5 +36,3 @@ lib/Model/Revision.php
 lib/Model/User.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/FeatureApiTest.php
-test/Api/GageApiTest.php

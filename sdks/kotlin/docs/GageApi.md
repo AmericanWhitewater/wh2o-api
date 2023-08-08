@@ -1,22 +1,20 @@
 # GageApi
 
-All URIs are relative to _http://localhost:3000_
+All URIs are relative to *http://localhost:3000*
 
-| Method                              | HTTP request   | Description              |
-| ----------------------------------- | -------------- | ------------------------ |
-| [**gageGet**](GageApi.md#gageGet)   | **GET** /gage  | Returns a list of gages. |
-| [**gagePost**](GageApi.md#gagePost) | **POST** /gage | Creates a new gage.      |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**gageGet**](GageApi.md#gageGet) | **GET** /gage | Returns a list of gages.
+[**gagePost**](GageApi.md#gagePost) | **POST** /gage | Creates a new gage.
+
 
 <a id="gageGet"></a>
-
 # **gageGet**
-
 > kotlin.collections.List&lt;Gage&gt; gageGet(offset, limit)
 
 Returns a list of gages.
 
 ### Example
-
 ```kotlin
 // Import classes:
 //import org.openapitools.client.infrastructure.*
@@ -39,10 +37,10 @@ try {
 
 ### Parameters
 
-| Name       | Type           | Description                                             | Notes      |
-| ---------- | -------------- | ------------------------------------------------------- | ---------- |
-| **offset** | **kotlin.Int** | Number of items to skip before starting to return items | [optional] |
-| **limit**  | **kotlin.Int** | Maximum number of items to return                       | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **kotlin.Int**| Number of items to skip before starting to return items | [optional]
+ **limit** | **kotlin.Int**| Maximum number of items to return | [optional]
 
 ### Return type
 
@@ -50,32 +48,30 @@ try {
 
 ### Authorization
 
+
 Configure ApiKeyAuth:
-ApiClient.apiKey["X-WH2O-API-KEY"] = ""
-ApiClient.apiKeyPrefix["X-WH2O-API-KEY"] = ""
+    ApiClient.apiKey["X-WH2O-API-KEY"] = ""
+    ApiClient.apiKeyPrefix["X-WH2O-API-KEY"] = ""
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a id="gagePost"></a>
-
 # **gagePost**
-
 > Gage gagePost(gage)
 
 Creates a new gage.
 
 ### Example
-
 ```kotlin
 // Import classes:
 //import org.openapitools.client.infrastructure.*
 //import org.openapitools.client.models.*
 
 val apiInstance = GageApi()
-val gage : Gage =  // Gage |
+val gage : Gage =  // Gage | 
 try {
     val result : Gage = apiInstance.gagePost(gage)
     println(result)
@@ -90,9 +86,9 @@ try {
 
 ### Parameters
 
-| Name     | Type                | Description | Notes |
-| -------- | ------------------- | ----------- | ----- |
-| **gage** | [**Gage**](Gage.md) |             |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gage** | [**Gage**](Gage.md)|  |
 
 ### Return type
 
@@ -100,11 +96,13 @@ try {
 
 ### Authorization
 
+
 Configure ApiKeyAuth:
-ApiClient.apiKey["X-WH2O-API-KEY"] = ""
-ApiClient.apiKeyPrefix["X-WH2O-API-KEY"] = ""
+    ApiClient.apiKey["X-WH2O-API-KEY"] = ""
+    ApiClient.apiKeyPrefix["X-WH2O-API-KEY"] = ""
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+

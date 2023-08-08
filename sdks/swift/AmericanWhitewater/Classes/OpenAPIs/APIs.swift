@@ -6,14 +6,14 @@
 
 import Foundation
 
-// We reverted the change of OpenAPIClientAPI to OpenAPIClient introduced in https://github.com/OpenAPITools/openapi-generator/pull/9624
+// We reverted the change of AmericanWhitewaterAPI to AmericanWhitewater introduced in https://github.com/OpenAPITools/openapi-generator/pull/9624
 // Because it was causing the following issue https://github.com/OpenAPITools/openapi-generator/issues/9953
 // If you are affected by this issue, please consider removing the following two lines,
 // By setting the option removeMigrationProjectNameClass to true in the generator
-@available(*, deprecated, renamed: "OpenAPIClientAPI")
-internal typealias OpenAPIClient = OpenAPIClientAPI
+@available(*, deprecated, renamed: "AmericanWhitewaterAPI")
+internal typealias AmericanWhitewater = AmericanWhitewaterAPI
 
-internal class OpenAPIClientAPI {
+internal class AmericanWhitewaterAPI {
     internal static var basePath = "http://localhost:3000"
     internal static var customHeaders: [String: String] = [:]
     internal static var credential: URLCredential?
@@ -42,7 +42,7 @@ internal class RequestBuilder<T> {
         self.headers = headers
         self.requiresAuthentication = requiresAuthentication
 
-        addHeaders(OpenAPIClientAPI.customHeaders)
+        addHeaders(AmericanWhitewaterAPI.customHeaders)
     }
 
     internal func addHeaders(_ aHeaders: [String: String]) {
@@ -52,7 +52,7 @@ internal class RequestBuilder<T> {
     }
 
     @discardableResult
-    internal func execute(_ apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) -> RequestTask {
+    internal func execute(_ apiResponseQueue: DispatchQueue = AmericanWhitewaterAPI.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) -> RequestTask {
         return requestTask
     }
 
@@ -89,7 +89,7 @@ internal class RequestBuilder<T> {
     }
 
     internal func addCredential() -> Self {
-        credential = OpenAPIClientAPI.credential
+        credential = AmericanWhitewaterAPI.credential
         return self
     }
 }

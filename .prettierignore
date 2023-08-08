@@ -2,3 +2,4 @@ CHANGELOG.md
 # Ignore artifacts:
 build
 coverage
+sdks/

@@ -2,13 +2,14 @@
 
 All URIs are relative to http://localhost:3000, except if the operation defines another base path.
 
-| Method                                                 | HTTP request             | Description                                            |
-| ------------------------------------------------------ | ------------------------ | ------------------------------------------------------ |
-| [**featureGet()**](FeatureApi.md#featureGet)           | **GET** /feature         | Returns a list of features (rapids, waterfalls, etc.). |
-| [**featureIdDelete()**](FeatureApi.md#featureIdDelete) | **DELETE** /feature/{id} | Deletes a feature by ID.                               |
-| [**featureIdGet()**](FeatureApi.md#featureIdGet)       | **GET** /feature/{id}    | Returns a feature by ID.                               |
-| [**featureIdPut()**](FeatureApi.md#featureIdPut)       | **PUT** /feature/{id}    | Updates a feature by ID.                               |
-| [**featurePost()**](FeatureApi.md#featurePost)         | **POST** /feature        | Creates a new feature.                                 |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**featureGet()**](FeatureApi.md#featureGet) | **GET** /feature | Returns a list of features (rapids, waterfalls, etc.). |
+| [**featureIdDelete()**](FeatureApi.md#featureIdDelete) | **DELETE** /feature/{id} | Deletes a feature by ID. |
+| [**featureIdGet()**](FeatureApi.md#featureIdGet) | **GET** /feature/{id} | Returns a feature by ID. |
+| [**featureIdPut()**](FeatureApi.md#featureIdPut) | **PUT** /feature/{id} | Updates a feature by ID. |
+| [**featurePost()**](FeatureApi.md#featurePost) | **POST** /feature | Creates a new feature. |
+
 
 ## `featureGet()`
 
@@ -50,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name       | Type    | Description                                             | Notes      |
-| ---------- | ------- | ------------------------------------------------------- | ---------- |
-| **offset** | **int** | Number of items to skip before starting to return items | [optional] |
-| **limit**  | **int** | Maximum number of items to return                       | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| Number of items to skip before starting to return items | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] |
 
 ### Return type
 
@@ -111,9 +112,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -171,9 +172,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -232,10 +233,10 @@ try {
 
 ### Parameters
 
-| Name        | Type                                                     | Description | Notes |
-| ----------- | -------------------------------------------------------- | ----------- | ----- |
-| **id**      | **string**                                               |             |       |
-| **feature** | [**\OpenAPI\Client\Model\Feature**](../Model/Feature.md) |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **feature** | [**\OpenAPI\Client\Model\Feature**](../Model/Feature.md)|  | |
 
 ### Return type
 
@@ -293,9 +294,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                                                     | Description | Notes |
-| ----------- | -------------------------------------------------------- | ----------- | ----- |
-| **feature** | [**\OpenAPI\Client\Model\Feature**](../Model/Feature.md) |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **feature** | [**\OpenAPI\Client\Model\Feature**](../Model/Feature.md)|  | |
 
 ### Return type
 

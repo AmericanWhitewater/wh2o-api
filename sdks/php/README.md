@@ -2,6 +2,7 @@
 
 The API for American Whitewater.
 
+
 ## Installation & Usage
 
 ### Requirements
@@ -74,29 +75,29 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to _http://localhost:3000_
+All URIs are relative to *http://localhost:3000*
 
-| Class        | Method                                                            | HTTP request                 | Description                                            |
-| ------------ | ----------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------ |
-| _FeatureApi_ | [**featureGet**](docs/Api/FeatureApi.md#featureget)               | **GET** /feature             | Returns a list of features (rapids, waterfalls, etc.). |
-| _FeatureApi_ | [**featureIdDelete**](docs/Api/FeatureApi.md#featureiddelete)     | **DELETE** /feature/{id}     | Deletes a feature by ID.                               |
-| _FeatureApi_ | [**featureIdGet**](docs/Api/FeatureApi.md#featureidget)           | **GET** /feature/{id}        | Returns a feature by ID.                               |
-| _FeatureApi_ | [**featureIdPut**](docs/Api/FeatureApi.md#featureidput)           | **PUT** /feature/{id}        | Updates a feature by ID.                               |
-| _FeatureApi_ | [**featurePost**](docs/Api/FeatureApi.md#featurepost)             | **POST** /feature            | Creates a new feature.                                 |
-| _GageApi_    | [**gageGet**](docs/Api/GageApi.md#gageget)                        | **GET** /gage                | Returns a list of gages.                               |
-| _GageApi_    | [**gagePost**](docs/Api/GageApi.md#gagepost)                      | **POST** /gage               | Creates a new gage.                                    |
-| _ReachApi_   | [**reachGet**](docs/Api/ReachApi.md#reachget)                     | **GET** /reach               | Returns a list of reaches (rivers, creeks, streams).   |
-| _ReachApi_   | [**reachIdAccidentGet**](docs/Api/ReachApi.md#reachidaccidentget) | **GET** /reach/{id}/accident | Gets all the accidents for a reach by ID.              |
-| _ReachApi_   | [**reachIdArticleGet**](docs/Api/ReachApi.md#reachidarticleget)   | **GET** /reach/{id}/article  | Gets all the articles for a reach by ID.               |
-| _ReachApi_   | [**reachIdDelete**](docs/Api/ReachApi.md#reachiddelete)           | **DELETE** /reach/{id}       | Deletes a reach by ID.                                 |
-| _ReachApi_   | [**reachIdEventGet**](docs/Api/ReachApi.md#reachideventget)       | **GET** /reach/{id}/event    | Gets all the events for a reach by ID.                 |
-| _ReachApi_   | [**reachIdFeatureGet**](docs/Api/ReachApi.md#reachidfeatureget)   | **GET** /reach/{id}/feature  | Gets all the features for a reach by ID.               |
-| _ReachApi_   | [**reachIdGageGet**](docs/Api/ReachApi.md#reachidgageget)         | **GET** /reach/{id}/gage     | Gets all the gages for a reach by ID.                  |
-| _ReachApi_   | [**reachIdGet**](docs/Api/ReachApi.md#reachidget)                 | **GET** /reach/{id}          | Gets a reach by ID.                                    |
-| _ReachApi_   | [**reachIdPostGet**](docs/Api/ReachApi.md#reachidpostget)         | **GET** /reach/{id}/post     | Gets all the posts for a reach by ID.                  |
-| _ReachApi_   | [**reachIdPut**](docs/Api/ReachApi.md#reachidput)                 | **PUT** /reach/{id}          | Updates a reach by ID.                                 |
-| _ReachApi_   | [**reachPost**](docs/Api/ReachApi.md#reachpost)                   | **POST** /reach              | Creates a new reach.                                   |
-| _ReachApi_   | [**reachStateStateGet**](docs/Api/ReachApi.md#reachstatestateget) | **GET** /reach/state/{state} | Gets all the reaches for U.S. State.                   |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*FeatureApi* | [**featureGet**](docs/Api/FeatureApi.md#featureget) | **GET** /feature | Returns a list of features (rapids, waterfalls, etc.).
+*FeatureApi* | [**featureIdDelete**](docs/Api/FeatureApi.md#featureiddelete) | **DELETE** /feature/{id} | Deletes a feature by ID.
+*FeatureApi* | [**featureIdGet**](docs/Api/FeatureApi.md#featureidget) | **GET** /feature/{id} | Returns a feature by ID.
+*FeatureApi* | [**featureIdPut**](docs/Api/FeatureApi.md#featureidput) | **PUT** /feature/{id} | Updates a feature by ID.
+*FeatureApi* | [**featurePost**](docs/Api/FeatureApi.md#featurepost) | **POST** /feature | Creates a new feature.
+*GageApi* | [**gageGet**](docs/Api/GageApi.md#gageget) | **GET** /gage | Returns a list of gages.
+*GageApi* | [**gagePost**](docs/Api/GageApi.md#gagepost) | **POST** /gage | Creates a new gage.
+*ReachApi* | [**reachGet**](docs/Api/ReachApi.md#reachget) | **GET** /reach | Returns a list of reaches (rivers, creeks, streams).
+*ReachApi* | [**reachIdAccidentGet**](docs/Api/ReachApi.md#reachidaccidentget) | **GET** /reach/{id}/accident | Gets all the accidents for a reach by ID.
+*ReachApi* | [**reachIdArticleGet**](docs/Api/ReachApi.md#reachidarticleget) | **GET** /reach/{id}/article | Gets all the articles for a reach by ID.
+*ReachApi* | [**reachIdDelete**](docs/Api/ReachApi.md#reachiddelete) | **DELETE** /reach/{id} | Deletes a reach by ID.
+*ReachApi* | [**reachIdEventGet**](docs/Api/ReachApi.md#reachideventget) | **GET** /reach/{id}/event | Gets all the events for a reach by ID.
+*ReachApi* | [**reachIdFeatureGet**](docs/Api/ReachApi.md#reachidfeatureget) | **GET** /reach/{id}/feature | Gets all the features for a reach by ID.
+*ReachApi* | [**reachIdGageGet**](docs/Api/ReachApi.md#reachidgageget) | **GET** /reach/{id}/gage | Gets all the gages for a reach by ID.
+*ReachApi* | [**reachIdGet**](docs/Api/ReachApi.md#reachidget) | **GET** /reach/{id} | Gets a reach by ID.
+*ReachApi* | [**reachIdPostGet**](docs/Api/ReachApi.md#reachidpostget) | **GET** /reach/{id}/post | Gets all the posts for a reach by ID.
+*ReachApi* | [**reachIdPut**](docs/Api/ReachApi.md#reachidput) | **PUT** /reach/{id} | Updates a reach by ID.
+*ReachApi* | [**reachPost**](docs/Api/ReachApi.md#reachpost) | **POST** /reach | Creates a new reach.
+*ReachApi* | [**reachStateStateGet**](docs/Api/ReachApi.md#reachstatestateget) | **GET** /reach/state/{state} | Gets all the reaches for U.S. State.
 
 ## Models
 
@@ -114,12 +115,12 @@ All URIs are relative to _http://localhost:3000_
 ## Authorization
 
 Authentication schemes defined for the API:
-
 ### ApiKeyAuth
 
 - **Type**: API key
 - **API key parameter name**: X-WH2O-API-KEY
 - **Location**: HTTP header
+
 
 ## Tests
 
@@ -131,6 +132,8 @@ vendor/bin/phpunit
 ```
 
 ## Author
+
+
 
 ## About this package
 

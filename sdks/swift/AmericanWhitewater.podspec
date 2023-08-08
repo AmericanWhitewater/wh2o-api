@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = 'OpenAPIClient'
+  s.name = 'AmericanWhitewater'
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.authors = 'OpenAPI Generator'
   s.license = 'Proprietary'
   s.homepage = 'https://github.com/OpenAPITools/openapi-generator'
-  s.summary = 'OpenAPIClient Swift SDK'
-  s.source_files = 'OpenAPIClient/Classes/**/*.swift'
+  s.summary = 'AmericanWhitewater Swift SDK'
+  s.source_files = 'AmericanWhitewater/Classes/**/*.swift'
   s.dependency 'AnyCodable-FlightSchool', '~> 0.6'
 end

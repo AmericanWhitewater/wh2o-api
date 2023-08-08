@@ -2,20 +2,21 @@
 
 All URIs are relative to http://localhost:3000, except if the operation defines another base path.
 
-| Method                                                     | HTTP request                 | Description                                          |
-| ---------------------------------------------------------- | ---------------------------- | ---------------------------------------------------- |
-| [**reachGet()**](ReachApi.md#reachGet)                     | **GET** /reach               | Returns a list of reaches (rivers, creeks, streams). |
-| [**reachIdAccidentGet()**](ReachApi.md#reachIdAccidentGet) | **GET** /reach/{id}/accident | Gets all the accidents for a reach by ID.            |
-| [**reachIdArticleGet()**](ReachApi.md#reachIdArticleGet)   | **GET** /reach/{id}/article  | Gets all the articles for a reach by ID.             |
-| [**reachIdDelete()**](ReachApi.md#reachIdDelete)           | **DELETE** /reach/{id}       | Deletes a reach by ID.                               |
-| [**reachIdEventGet()**](ReachApi.md#reachIdEventGet)       | **GET** /reach/{id}/event    | Gets all the events for a reach by ID.               |
-| [**reachIdFeatureGet()**](ReachApi.md#reachIdFeatureGet)   | **GET** /reach/{id}/feature  | Gets all the features for a reach by ID.             |
-| [**reachIdGageGet()**](ReachApi.md#reachIdGageGet)         | **GET** /reach/{id}/gage     | Gets all the gages for a reach by ID.                |
-| [**reachIdGet()**](ReachApi.md#reachIdGet)                 | **GET** /reach/{id}          | Gets a reach by ID.                                  |
-| [**reachIdPostGet()**](ReachApi.md#reachIdPostGet)         | **GET** /reach/{id}/post     | Gets all the posts for a reach by ID.                |
-| [**reachIdPut()**](ReachApi.md#reachIdPut)                 | **PUT** /reach/{id}          | Updates a reach by ID.                               |
-| [**reachPost()**](ReachApi.md#reachPost)                   | **POST** /reach              | Creates a new reach.                                 |
-| [**reachStateStateGet()**](ReachApi.md#reachStateStateGet) | **GET** /reach/state/{state} | Gets all the reaches for U.S. State.                 |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**reachGet()**](ReachApi.md#reachGet) | **GET** /reach | Returns a list of reaches (rivers, creeks, streams). |
+| [**reachIdAccidentGet()**](ReachApi.md#reachIdAccidentGet) | **GET** /reach/{id}/accident | Gets all the accidents for a reach by ID. |
+| [**reachIdArticleGet()**](ReachApi.md#reachIdArticleGet) | **GET** /reach/{id}/article | Gets all the articles for a reach by ID. |
+| [**reachIdDelete()**](ReachApi.md#reachIdDelete) | **DELETE** /reach/{id} | Deletes a reach by ID. |
+| [**reachIdEventGet()**](ReachApi.md#reachIdEventGet) | **GET** /reach/{id}/event | Gets all the events for a reach by ID. |
+| [**reachIdFeatureGet()**](ReachApi.md#reachIdFeatureGet) | **GET** /reach/{id}/feature | Gets all the features for a reach by ID. |
+| [**reachIdGageGet()**](ReachApi.md#reachIdGageGet) | **GET** /reach/{id}/gage | Gets all the gages for a reach by ID. |
+| [**reachIdGet()**](ReachApi.md#reachIdGet) | **GET** /reach/{id} | Gets a reach by ID. |
+| [**reachIdPostGet()**](ReachApi.md#reachIdPostGet) | **GET** /reach/{id}/post | Gets all the posts for a reach by ID. |
+| [**reachIdPut()**](ReachApi.md#reachIdPut) | **PUT** /reach/{id} | Updates a reach by ID. |
+| [**reachPost()**](ReachApi.md#reachPost) | **POST** /reach | Creates a new reach. |
+| [**reachStateStateGet()**](ReachApi.md#reachStateStateGet) | **GET** /reach/state/{state} | Gets all the reaches for U.S. State. |
+
 
 ## `reachGet()`
 
@@ -57,10 +58,10 @@ try {
 
 ### Parameters
 
-| Name       | Type    | Description                                             | Notes      |
-| ---------- | ------- | ------------------------------------------------------- | ---------- |
-| **offset** | **int** | Number of items to skip before starting to return items | [optional] |
-| **limit**  | **int** | Maximum number of items to return                       | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**| Number of items to skip before starting to return items | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] |
 
 ### Return type
 
@@ -118,9 +119,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -178,9 +179,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -237,9 +238,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -297,9 +298,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -357,9 +358,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -417,9 +418,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -477,9 +478,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -537,9 +538,9 @@ try {
 
 ### Parameters
 
-| Name   | Type       | Description | Notes |
-| ------ | ---------- | ----------- | ----- |
-| **id** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
 
 ### Return type
 
@@ -598,10 +599,10 @@ try {
 
 ### Parameters
 
-| Name      | Type                                                 | Description | Notes |
-| --------- | ---------------------------------------------------- | ----------- | ----- |
-| **id**    | **string**                                           |             |       |
-| **reach** | [**\OpenAPI\Client\Model\Reach**](../Model/Reach.md) |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **reach** | [**\OpenAPI\Client\Model\Reach**](../Model/Reach.md)|  | |
 
 ### Return type
 
@@ -659,9 +660,9 @@ try {
 
 ### Parameters
 
-| Name      | Type                                                 | Description | Notes |
-| --------- | ---------------------------------------------------- | ----------- | ----- |
-| **reach** | [**\OpenAPI\Client\Model\Reach**](../Model/Reach.md) |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **reach** | [**\OpenAPI\Client\Model\Reach**](../Model/Reach.md)|  | |
 
 ### Return type
 
@@ -719,9 +720,9 @@ try {
 
 ### Parameters
 
-| Name      | Type       | Description | Notes |
-| --------- | ---------- | ----------- | ----- |
-| **state** | **string** |             |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **state** | **string**|  | |
 
 ### Return type
 
