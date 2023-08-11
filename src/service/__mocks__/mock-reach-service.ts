@@ -1,4 +1,4 @@
-import { ReachServiceInterface } from "../reach-service"
+import { ReachServiceInterface } from "../reach.service"
 
 export const mockReachService: ReachServiceInterface = {
   getReach: jest.fn(),

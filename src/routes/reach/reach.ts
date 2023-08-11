@@ -1,13 +1,8 @@
 import { FastifyInstance, FastifyError, FastifyReply } from "fastify"
 
-import {
-  getReachByStateSchema,
-  getReachFeaturesSchema,
-  getReachGagesSchema,
-  getReachSchema,
-} from "./schemas"
+import schema from "./schemas"
 import { ReachByStateRequest, ReachRequest, ReachUpdateRequest } from "./types"
-import { ReachService } from "../../service/reach-service"
+import { ReachService } from "../../service/reach.service"
 
 const reach = (
   fastify: FastifyInstance,
@@ -36,7 +31,6 @@ const reach = (
       // TODO: default sorting and filtering here
       const { id } = request.params
 
-      // const reachService = new ReachService(fastify.prisma)
       const result = await reachService.getFeatures(Number(id))
 
       reply.send(result)
@@ -52,7 +46,6 @@ const reach = (
     try {
       const { state } = request.params
 
-      // const reachService = new ReachService(fastify.prisma)
       const result = await reachService.getReachesByState(state)
 
       reply.send(result)
@@ -66,7 +59,6 @@ const reach = (
     try {
       const { id } = request.params
 
-      // const reachService = new ReachService(fastify.prisma)
       const result = await reachService.getGages(Number(id))
 
       reply.send(result)
@@ -80,7 +72,6 @@ const reach = (
     try {
       const { id } = request.params
 
-      // const reachService = new ReachService(fastify.prisma)
       const result = await reachService.deleteReach(Number(id))
 
       reply.send(result)
@@ -98,7 +89,6 @@ const reach = (
       const { id } = request.params
       const { body } = request
 
-      // const reachService = new ReachService(fastify.prisma)
       const result = await reachService.updateReach(Number(id), body)
 
       reply.send(result)
@@ -108,12 +98,16 @@ const reach = (
     }
   }
 
-  fastify.get("/reach/:id", getReachSchema, getReach)
-  fastify.delete("/reach/:id", getReachSchema, deleteReach)
-  fastify.put("/reach/:id", getReachSchema, updateReach)
-  fastify.get("/reach/state/:state", getReachByStateSchema, getAllByState)
-  fastify.get("/reach/:id/feature", getReachFeaturesSchema, getFeatures)
-  fastify.get("/reach/:id/gage", getReachGagesSchema, getGages)
+  fastify.get("/reach/:id", schema.getReachSchema, getReach)
+  fastify.delete("/reach/:id", schema.getReachSchema, deleteReach)
+  fastify.put("/reach/:id", schema.updateReachSchema, updateReach)
+  fastify.get(
+    "/reach/state/:state",
+    schema.getReachByStateSchema,
+    getAllByState
+  )
+  fastify.get("/reach/:id/feature", schema.getReachFeaturesSchema, getFeatures)
+  fastify.get("/reach/:id/gage", schema.getReachGagesSchema, getGages)
   done()
 }
 

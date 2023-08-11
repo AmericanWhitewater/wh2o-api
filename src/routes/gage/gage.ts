@@ -1,8 +1,8 @@
 import { FastifyError, FastifyInstance, FastifyReply } from "fastify"
 
-import { GageService } from "../../service/gage-service"
+import { GageService } from "../../service/gage.service"
 import { GageCreateUpdateRequest, GageRequest } from "./types"
-
+import schema from "./schema"
 const gage = async (
   fastify: FastifyInstance,
   // NOTE: disabling eslint on the `opts` param because it's not used
@@ -52,10 +52,10 @@ const gage = async (
     reply.send(result)
   }
 
-  fastify.get("/gage/:id", getGage)
-  fastify.put("/gage/:id", updateGage)
-  fastify.delete("/gage/:id", deleteGage)
-  fastify.post("/gage", createGage)
+  fastify.get("/gage/:id", schema.getGageSchema, getGage)
+  fastify.put("/gage/:id", schema.updateGageSchema, updateGage)
+  fastify.delete("/gage/:id", schema.deleteGageSchema, deleteGage)
+  fastify.post("/gage", schema.createGageSchema, createGage)
   done()
 }
 

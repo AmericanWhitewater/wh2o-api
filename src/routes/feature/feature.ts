@@ -1,8 +1,8 @@
 import { FastifyInstance, FastifyReply } from "fastify"
 
-import { FeatureService } from "../../service/feature-service"
+import { FeatureService } from "../../service/feature.service"
 import { FeatureCreateUpdateRequest, FeatureRequest } from "./types"
-
+import schema from "./schema"
 const feature = async (
   fastify: FastifyInstance,
   // NOTE: disabling eslint on the `opts` param because it's not used
@@ -53,7 +53,7 @@ const feature = async (
     }
   }
 
-  fastify.get("/feature/:id", getFeature)
+  fastify.get("/feature/:id", schema.getFeature, getFeature)
   fastify.put("/feature/:id", updateFeature)
   fastify.delete("/feature/:id", deleteFeature)
   done()

@@ -479,6 +479,10 @@ components:
             $ref: "#/components/schemas/Post"
         permit:
           $ref: "#/components/schemas/Permit"
+        revisions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Revision"
       required:
         - river
         - section

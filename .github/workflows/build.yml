@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+      - "fastify" # temp for testing ci
 jobs:
   build:
     runs-on: ubuntu-latest
