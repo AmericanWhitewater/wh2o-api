@@ -99,7 +99,7 @@ const reach = (
   }
 
   fastify.get("/reach/:id", schema.getReachSchema, getReach)
-  fastify.delete("/reach/:id", schema.getReachSchema, deleteReach)
+  fastify.delete("/reach/:id", schema.deleteReachSchema, deleteReach)
   fastify.put("/reach/:id", schema.updateReachSchema, updateReach)
   fastify.get(
     "/reach/state/:state",

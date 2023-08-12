@@ -168,10 +168,31 @@ const updateReachSchema = {
   },
 }
 
+const deleteReachSchema = {
+  schema: {
+    params: {
+      type: "object",
+      properties: {
+        id: { type: "number" },
+      },
+    },
+    response: {
+      200: {
+        type: "number",
+      },
+      "5xx": {
+        description: "Server Error",
+        type: "string",
+      },
+    },
+  },
+}
+
 export default {
   getReachSchema,
   getReachByStateSchema,
   getReachFeaturesSchema,
   getReachGagesSchema,
   updateReachSchema,
+  deleteReachSchema,
 }

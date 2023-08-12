@@ -3,6 +3,7 @@ import { FastifyInstance, FastifyReply } from "fastify"
 import { FeatureService } from "../../service/feature/feature.service"
 import { FeatureCreateUpdateRequest, FeatureRequest } from "./types"
 import schema from "./schema"
+import logger from "../../lib/logger"
 const feature = async (
   fastify: FastifyInstance,
   // NOTE: disabling eslint on the `opts` param because it's not used
@@ -19,7 +20,7 @@ const feature = async (
       const result = await featureService.getFeature(Number(id))
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }
@@ -34,7 +35,7 @@ const feature = async (
       const result = await featureService.updateFeature(Number(id), feature)
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }
@@ -48,7 +49,7 @@ const feature = async (
       const result = await featureService.deleteFeature(Number(id))
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }

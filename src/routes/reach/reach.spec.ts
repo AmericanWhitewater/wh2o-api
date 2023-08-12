@@ -3,10 +3,7 @@ import {
   mockReaches,
   mockReachesExt,
 } from "../../service/reach/__mocks__/mockReaches"
-import {
-  mockExtendedFeatures,
-  mockFeatures,
-} from "../../service/feature/__mocks__/mockFeatures"
+import { mockExtendedFeatures } from "../../service/feature/__mocks__/mockFeatures"
 import { mockGages } from "../../service/gage/__mocks__/mockGages"
 import { ReachService } from "../../service/reach/reach.service"
 

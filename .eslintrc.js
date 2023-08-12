@@ -25,6 +25,8 @@ module.exports = {
     },
   },
   rules: {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     complexity: ["error", 10],
     "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
     "@typescript-eslint/no-var-requires": "error",
