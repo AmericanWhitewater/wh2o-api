@@ -1,7 +1,7 @@
 import { FastifyError, FastifyInstance, FastifyReply } from "fastify"
 
 import { PostCreateUpdateRequest, PostRequest } from "./types"
-import { PostService } from "../../service/post.service"
+import { PostService } from "../../service/post/post.service"
 
 const post = (
   fastify: FastifyInstance,

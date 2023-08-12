@@ -2,7 +2,8 @@ import { FastifyInstance, FastifyError, FastifyReply } from "fastify"
 
 import schema from "./schemas"
 import { ReachByStateRequest, ReachRequest, ReachUpdateRequest } from "./types"
-import { ReachService } from "../../service/reach.service"
+import { ReachService } from "../../service/reach/reach.service"
+import logger from "../../lib/logger"
 
 const reach = (
   fastify: FastifyInstance,
@@ -22,7 +23,7 @@ const reach = (
 
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }
@@ -35,7 +36,7 @@ const reach = (
 
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }
@@ -50,7 +51,7 @@ const reach = (
 
       reply.send(result)
     } catch (err) {
-      console.error(err)
+      logger.error(err)
       throw err
     }
   }
@@ -63,7 +64,7 @@ const reach = (
 
       reply.send(result)
     } catch (e) {
-      console.error(e)
+      logger.error(e)
       throw e
     }
   }
@@ -76,7 +77,7 @@ const reach = (
 
       reply.send(result)
     } catch (e) {
-      console.error(e)
+      logger.error(e)
       throw e
     }
   }
@@ -85,17 +86,16 @@ const reach = (
     request: ReachUpdateRequest,
     reply: FastifyReply
   ) => {
-    try {
-      const { id } = request.params
-      const { body } = request
+    const { id } = request.params
+    const { body } = request
 
-      const result = await reachService.updateReach(Number(id), body)
+    const result = await reachService
+      .updateReach(Number(id), body)
+      .catch(() => {
+        throw new Error("Failed to update reach")
+      })
 
-      reply.send(result)
-    } catch (e) {
-      console.error(e)
-      throw e
-    }
+    reply.send(result)
   }
 
   fastify.get("/reach/:id", schema.getReachSchema, getReach)

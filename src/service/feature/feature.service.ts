@@ -1,10 +1,13 @@
-import { Feature, PrismaClient } from "@prisma/client"
+import { Feature, Prisma, PrismaClient } from "@prisma/client"
+
+import { FeatureExtended, Point } from "../../types"
 
 export interface FeatureServiceInterface {
   createFeature: (feature: Feature) => Promise<Feature>
   deleteFeature: (id: number) => Promise<Feature>
   getFeature: (id: number) => Promise<Feature>
   updateFeature: (id: number, feature: Feature) => Promise<Feature>
+  getLocation: (id: number) => Promise<number[]>
 }
 
 export class FeatureService implements FeatureServiceInterface {
@@ -13,8 +16,22 @@ export class FeatureService implements FeatureServiceInterface {
     this.prisma = prisma
   }
 
-  getFeature = async (id: number): Promise<Feature> => {
-    return this.prisma.feature
+  async getLocation(id: number): Promise<number[]> {
+    const result = await this.prisma.$queryRaw<{ location: Point }[]>(
+      Prisma.sql`SELECT location::json FROM "public"."Feature" WHERE id = ${id}`
+    )
+
+    if (result === null || !result || result.length === 0) {
+      return []
+    }
+
+    return result[0].location.coordinates
+  }
+
+  async getFeature(id: number): Promise<FeatureExtended> {
+    const location = await this.getLocation(id)
+
+    const feature = await this.prisma.feature
       .findUnique({
         where: {
           id: id,
@@ -26,9 +43,14 @@ export class FeatureService implements FeatureServiceInterface {
         }
         return res
       })
+
+    return {
+      ...feature,
+      location,
+    }
   }
 
-  updateFeature = async (id: number, feature: Feature): Promise<Feature> => {
+  async updateFeature(id: number, feature: Feature): Promise<Feature> {
     return this.prisma.feature
       .update({
         where: {
@@ -44,7 +66,7 @@ export class FeatureService implements FeatureServiceInterface {
       })
   }
 
-  deleteFeature = async (id: number): Promise<Feature> => {
+  async deleteFeature(id: number): Promise<Feature> {
     return this.prisma.feature
       .delete({
         where: {
@@ -59,7 +81,7 @@ export class FeatureService implements FeatureServiceInterface {
       })
   }
 
-  createFeature = async (feature: Feature): Promise<Feature> => {
+  async createFeature(feature: Feature): Promise<Feature> {
     return this.prisma.feature.create({
       data: feature,
     })

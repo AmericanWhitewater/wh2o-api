@@ -13,11 +13,11 @@ module.exports = {
     "!src/**/index.ts",
     "!src/**/lambda.ts",
     "!src/**/server.ts",
-    // TEMP
-    "!src/**/feature-service.ts",
-    "!src/**/gage-service.ts",
-    "!src/**/user-service.ts",
+    "!src/plugins/database/database.ts",
+    "!src/plugins/database/client.ts",
   ],
+  clearMocks: true,
+  setupFilesAfterEnv: ["<rootDir>/src/plugins/database/singleton.ts"],
   coverageThreshold: {
     global: {
       branches: 80,

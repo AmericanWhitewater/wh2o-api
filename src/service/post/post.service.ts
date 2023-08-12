@@ -15,7 +15,7 @@ export class PostService implements PostServiceInterface {
     this.prisma = prisma
   }
 
-  createPost = async (post: Post): Promise<Post> => {
+  async createPost(post: Post): Promise<Post> {
     return this.prisma.post
       .create({
         data: post,
@@ -25,7 +25,7 @@ export class PostService implements PostServiceInterface {
       })
   }
 
-  getPost = async (id: number): Promise<Post> => {
+  async getPost(id: number): Promise<Post> {
     return this.prisma.post
       .findUnique({
         where: {
@@ -40,7 +40,7 @@ export class PostService implements PostServiceInterface {
       })
   }
 
-  updatePost = async (id: number, post: Post): Promise<Post> => {
+  async updatePost(id: number, post: Post): Promise<Post> {
     return this.prisma.post
       .update({
         where: {
@@ -56,7 +56,7 @@ export class PostService implements PostServiceInterface {
       })
   }
 
-  deletePost = async (id: number): Promise<Post> => {
+  async deletePost(id: number): Promise<Post> {
     return this.prisma.post
       .delete({
         where: {
@@ -71,7 +71,7 @@ export class PostService implements PostServiceInterface {
       })
   }
 
-  getPostsByReach = async (id: number): Promise<Post[]> => {
+  async getPostsByReach(id: number): Promise<Post[]> {
     return this.prisma.post.findMany({
       where: {
         reach: {

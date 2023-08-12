@@ -26,7 +26,7 @@ module.exports = {
   },
   rules: {
     complexity: ["error", 10],
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
     "@typescript-eslint/no-var-requires": "error",
     "import/order": [
       "error",

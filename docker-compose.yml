@@ -3,9 +3,7 @@ services:
   db:
     restart: always
     container_name: db
-    image: mdillon/postgis:latest
-    volumes:
-      - /usr/lib/postgres/pgdata:/var/lib/postgresql
+    image: postgis/postgis
     ports:
       - "5432:5432"
     environment:

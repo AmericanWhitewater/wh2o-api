@@ -443,6 +443,12 @@ components:
           type: string
         abstract:
           type: string
+        geom:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
         average_gradient:
           type: number
         maximum_gradient:
@@ -498,6 +504,10 @@ components:
           description: The name of the feature
         description:
           type: string
+        location:
+          type: array
+          items:
+            type: number
         distance:
           type: number
         character:

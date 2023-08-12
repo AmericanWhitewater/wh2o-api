@@ -122,12 +122,6 @@
             "$ref": "#/definitions/Gage"
           }
         },
-        "geom": {
-          "type": "array",
-          "items": {
-            "type": "number"
-          }
-        },
         "grade": {
           "type": "string",
           "description": "the difficulty rating of the reach"

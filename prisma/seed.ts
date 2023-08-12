@@ -39,12 +39,15 @@ const seedFeatures = async () => {
     name: faker.company.name(),
     grade: randomArrayItem(featureClasses),
     character: randomArrayItem(Object.values(FeatureCharacter)),
+    distance: faker.number.float({ min: 0, max: 100 }),
   }))
 
   await Promise.all(
     mockFeatures.map(async (feature, idx) => {
+      const id = idx + 1
+
       await prisma.feature.upsert({
-        where: { id: idx + 1 },
+        where: { id },
         update: {},
         create: {
           ...feature,
@@ -55,6 +58,8 @@ const seedFeatures = async () => {
           },
         },
       })
+
+      await prisma.$queryRaw`UPDATE "public"."Feature" SET location = ST_SetSRID(ST_Point((RANDOM() * 360) - 180,(RANDOM() * 180) - 90), 4326) WHERE id = ${id}`
     })
   )
 }
@@ -99,6 +104,7 @@ const seedReaches = async () => {
         update: {},
         create: reach,
       })
+      await prisma.$queryRaw`UPDATE "public"."Reach" SET geom = ST_GeomFromText('LINESTRING(-114.5 45.1, -114.3 44.9, -114.1 44.8, -113.9 44.7)', 4326) WHERE id = ${reach.id}`
     })
   )
 }

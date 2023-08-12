@@ -1,5 +1,7 @@
 import { Reach } from "@prisma/client"
 
+import { ReachExtended } from "../../../types"
+
 export const mockReaches: Reach[] = [
   {
     id: 1,
@@ -7,7 +9,6 @@ export const mockReaches: Reach[] = [
     state: "CO",
     section: "Test Section",
     grade: "Test Class",
-    geom: [],
     abstract: "Test Abstract",
     altname: "Test Alt Name",
     avggradient: 1,
@@ -19,5 +20,13 @@ export const mockReaches: Reach[] = [
     permitid: null,
     shuttledetails: "Test Shuttle Details",
     photoid: null,
+  },
+]
+
+export const mockReachesExt: ReachExtended[] = [
+  {
+    ...mockReaches[0],
+    geom: [],
+    features: [],
   },
 ]

@@ -8,7 +8,7 @@ export default {
     return server
   },
   stopServer: async function () {
-    await server.close()
+    return server.close()
   },
   request: function () {
     return request(server.server)

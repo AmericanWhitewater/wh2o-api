@@ -19,5 +19,10 @@
     "removeComments": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "src/testUtils.ts"]
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/testUtils.ts",
+    "**/*/__mocks__/**/*"
+  ]
 }

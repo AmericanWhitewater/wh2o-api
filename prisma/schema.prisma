@@ -40,7 +40,7 @@ model User {
 }
 
 model Reach {
-  id             Int       @id @default(autoincrement())
+  id             Int                      @id @default(autoincrement())
   abstract       String?
   altname        String?
   avggradient    Int?
@@ -49,7 +49,7 @@ model Reach {
   events         Event[]
   features       Feature[]
   gages          Gage[]
-  geom           Float[] // Unsupported('geom') https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#unsupported
+  geom           Unsupported("geometry")? @map("geom")
   /// the difficulty rating of the reach
   grade          String
   length         Float?
@@ -62,16 +62,22 @@ model Reach {
   shuttledetails String?
   state          String
   zipcode        String?
+
+  @@index([geom], name: "geom_idx", type: Gist)
 }
 
 model Feature {
-  id        Int              @id @default(autoincrement())
+  id        Int                      @id @default(autoincrement())
   name      String
   grade     String
-  reach     Reach            @relation(fields: [reachId], references: [id])
+  reach     Reach                    @relation(fields: [reachId], references: [id])
   reachId   Int
   character FeatureCharacter
   distance  Float?
+  /// the relative location of the feature on the reach
+  location  Unsupported("geometry")? @map("location")
+
+  @@index([location], name: "location_idx", type: Gist)
 }
 
 enum FeatureCharacter {

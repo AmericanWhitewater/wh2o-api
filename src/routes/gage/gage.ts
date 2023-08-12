@@ -1,6 +1,6 @@
 import { FastifyError, FastifyInstance, FastifyReply } from "fastify"
 
-import { GageService } from "../../service/gage.service"
+import { GageService } from "../../service/gage/gage.service"
 import { GageCreateUpdateRequest, GageRequest } from "./types"
 import schema from "./schema"
 const gage = async (

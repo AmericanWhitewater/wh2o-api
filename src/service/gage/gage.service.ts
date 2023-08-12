@@ -16,7 +16,7 @@ export class GageService implements GageServiceInterface {
     this.prisma = prisma
   }
 
-  createGage = async (gage: Gage): Promise<Gage> => {
+  async createGage(gage: Gage): Promise<Gage> {
     return this.prisma.gage
       .create({
         data: gage,
@@ -26,7 +26,7 @@ export class GageService implements GageServiceInterface {
       })
   }
 
-  getGage = async (id: number): Promise<Gage> => {
+  async getGage(id: number): Promise<Gage> {
     return this.prisma.gage
       .findUnique({
         where: {
@@ -41,7 +41,7 @@ export class GageService implements GageServiceInterface {
       })
   }
 
-  updateGage = async (id: number, gage: Gage): Promise<Gage> => {
+  async updateGage(id: number, gage: Gage): Promise<Gage> {
     return this.prisma.gage
       .update({
         where: {
@@ -57,7 +57,7 @@ export class GageService implements GageServiceInterface {
       })
   }
 
-  deleteGage = async (id: number): Promise<Gage> => {
+  async deleteGage(id: number): Promise<Gage> {
     return this.prisma.gage
       .delete({
         where: {
@@ -72,7 +72,7 @@ export class GageService implements GageServiceInterface {
       })
   }
 
-  getGagesByState = async (state: string): Promise<Gage[]> => {
+  async getGagesByState(state: string): Promise<Gage[]> {
     return this.prisma.gage.findMany({
       where: {
         state: state,
@@ -80,7 +80,7 @@ export class GageService implements GageServiceInterface {
     })
   }
 
-  getGagesByReach = async (id: number): Promise<Gage[]> => {
+  async getGagesByReach(id: number): Promise<Gage[]> {
     return this.prisma.gage.findMany({
       where: {
         reachId: id,

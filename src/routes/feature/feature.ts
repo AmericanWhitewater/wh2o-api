@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyReply } from "fastify"
 
-import { FeatureService } from "../../service/feature.service"
+import { FeatureService } from "../../service/feature/feature.service"
 import { FeatureCreateUpdateRequest, FeatureRequest } from "./types"
 import schema from "./schema"
 const feature = async (

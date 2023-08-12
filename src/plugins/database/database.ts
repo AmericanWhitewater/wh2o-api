@@ -1,13 +1,13 @@
 import fp from "fastify-plugin"
-import { PrismaClient } from "@prisma/client"
 import { FastifyInstance } from "fastify"
+
+import prisma from "./client"
 
 // TODO: Type this properly
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export default fp(async (fastify: FastifyInstance, options: unknown, done) => {
   if (!fastify.prisma) {
-    const prisma = new PrismaClient()
     fastify.decorate("prisma", prisma)
 
     fastify.addHook("onClose", async (fastify, done) => {

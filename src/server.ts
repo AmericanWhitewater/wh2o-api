@@ -3,11 +3,35 @@ import * as path from "path"
 import fastifySwagger from "@fastify/swagger"
 import fastifySwaggerUi from "@fastify/swagger-ui"
 
-import databasePlugin from "./plugins/database"
+import databasePlugin from "./plugins/database/database"
 import routes from "./routes/routes"
 
+// const envToLogger = {
+//   development: {
+//     transport: {
+//       target: "pino-pretty",
+//       options: {
+//         translateTime: "HH:MM:ss Z",
+//         ignore: "pid,hostname",
+//       },
+//     },
+//   },
+//   production: true,
+//   test: false,
+// }
+
 // Instantiate Fastify with some config
-const server = fastify({ logger: true })
+const server = fastify({
+  logger: {
+    transport: {
+      target: "pino-pretty",
+      options: {
+        translateTime: "HH:MM:ss Z",
+        ignore: "pid,hostname",
+      },
+    },
+  },
+})
 
 server.register(databasePlugin)
 server.register(routes)

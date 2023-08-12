@@ -8,6 +8,9 @@ CREATE TABLE "Feature" (
     CONSTRAINT "Feature_pkey" PRIMARY KEY ("id")
 );
 
+-- AlterTable
+ALTER TABLE "Feature" ADD COLUMN "location" GEOMETRY;
+
 -- CreateTable
 CREATE TABLE "Event" (
     "id" SERIAL NOT NULL,

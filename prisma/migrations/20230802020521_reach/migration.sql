@@ -7,8 +7,5 @@
 -- AlterTable
 ALTER TABLE "Post" ADD COLUMN     "reachId" INTEGER NOT NULL;
 
--- AlterTable
-ALTER TABLE "Reach" ADD COLUMN     "geom" DOUBLE PRECISION[];
-
 -- AddForeignKey
 ALTER TABLE "Post" ADD CONSTRAINT "Post_reachId_fkey" FOREIGN KEY ("reachId") REFERENCES "Reach"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

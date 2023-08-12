@@ -1,40 +1,87 @@
 import { reachClasses } from "../../lib/reach-classes"
 
+const baseProperties = {
+  id: { type: "number" },
+  river: { type: "string" },
+  section: { type: "string" },
+  altname: { type: "string" },
+  class: { type: "string", enum: reachClasses },
+  state: { type: "string" },
+  avggradient: { type: "number" },
+  permiturl: { type: "string" },
+  permitinfo: { type: "string" },
+  description: { type: "string" },
+  edited: { type: "string" },
+  length: { type: "number" },
+  maxgradient: { type: "number" },
+  plat: { type: "number" },
+  plon: { type: "number" },
+  geom: {
+    type: "array",
+    items: {
+      type: "array",
+      items: {
+        type: "number",
+      },
+    },
+  },
+  status: { type: "string" },
+  permissions: {
+    type: "array",
+    items: {
+      type: "object",
+      properties: {
+        domain: { type: "string" },
+        permission: { type: "string" },
+        result: { type: "string" },
+      },
+    },
+  },
+}
+
 const getReachSchema = {
   schema: {
     response: {
       200: {
         type: "object",
         properties: {
-          id: { type: "number" },
-          river: { type: "string" },
-          section: { type: "string" },
-          altname: { type: "string" },
-          class: { type: "string", enum: reachClasses },
-          state: { type: "string" },
-          avggradient: { type: "number" },
-          permiturl: { type: "string" },
-          permitinfo: { type: "string" },
-          description: { type: "string" },
-          edited: { type: "string" },
-          length: { type: "number" },
-          maxgradient: { type: "number" },
-          plat: { type: "number" },
-          plon: { type: "number" },
-          geom: { type: "string" },
-          status: { type: "string" },
-          permissions: {
+          ...baseProperties,
+          features: {
             type: "array",
             items: {
               type: "object",
               properties: {
-                domain: { type: "string" },
-                permission: { type: "string" },
-                result: { type: "string" },
+                id: {
+                  type: "integer",
+                },
+                name: {
+                  type: "string",
+                },
+                grade: {
+                  type: "string",
+                },
+                character: {
+                  type: "string",
+                  enum: [
+                    "access",
+                    "hazard",
+                    "other",
+                    "playspot",
+                    "portage",
+                    "putin",
+                    "rapid",
+                    "takeout",
+                    "waterfall",
+                  ],
+                },
+                distance: {
+                  type: ["number", "null"],
+                },
               },
             },
           },
         },
+        required: ["geom"],
       },
     },
   },
@@ -48,11 +95,7 @@ const getReachByStateSchema = {
         items: {
           type: "object",
           properties: {
-            id: { type: "number" },
-            river: { type: "string" },
-            section: { type: "string" },
-            name: { type: "string" },
-            class: { type: "string", enum: reachClasses },
+            ...baseProperties,
           },
         },
       },
@@ -69,7 +112,15 @@ const getReachFeaturesSchema = {
           type: "object",
           properties: {
             id: { type: "number" },
+            distance: { type: "number" },
             name: { type: "string" },
+            character: { type: "string" },
+            location: {
+              type: "array",
+              items: {
+                type: "number",
+              },
+            },
           },
         },
       },
@@ -99,33 +150,19 @@ const updateReachSchema = {
     body: {
       type: "object",
       properties: {
-        river: { type: "string" },
-        section: { type: "string" },
-        altname: { type: "string" },
-        class: { type: "string", enum: reachClasses },
-        state: { type: "string" },
-        avggradient: { type: "number" },
-        permiturl: { type: "string" },
-        permitinfo: { type: "string" },
-        description: { type: "string" },
-        edited: { type: "string" },
-        length: { type: "number" },
-        maxgradient: { type: "number" },
-        plat: { type: "number" },
-        plon: { type: "number" },
-        geom: { type: "string" },
-        status: { type: "string" },
-        permissions: {
-          type: "array",
-          items: {
-            type: "object",
-            properties: {
-              domain: { type: "string" },
-              permission: { type: "string" },
-              result: { type: "string" },
-            },
-          },
+        ...baseProperties,
+      },
+    },
+    response: {
+      200: {
+        type: "object",
+        properties: {
+          ...baseProperties,
         },
+      },
+      "5xx": {
+        description: "Server Error",
+        type: "string",
       },
     },
   },
