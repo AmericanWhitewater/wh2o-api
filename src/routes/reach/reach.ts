@@ -73,9 +73,9 @@ const reach = (
     try {
       const { id } = request.params
 
-      const result = await reachService.deleteReach(Number(id))
+      await reachService.deleteReach(Number(id))
 
-      reply.send(result)
+      reply.send(Number(id))
     } catch (e) {
       logger.error(e)
       throw e
