@@ -8,6 +8,7 @@ import {
   ReachLegacy,
 } from "../../types"
 import { FeatureService } from "../feature/feature.service"
+import { geoParser } from "../../lib/geoParser"
 
 export interface ReachServiceInterface {
   deleteReach: (id: number) => Promise<Reach>
@@ -25,6 +26,23 @@ export class ReachService implements ReachServiceInterface {
     this.prisma = prisma
   }
 
+  private formatGeometry(geom: Geometry): number[][] {
+    let val: number[][] = []
+
+    switch (geom.type) {
+      case "Polygon":
+        val = geom.coordinates[0]
+        break
+      case "LineString":
+        val = geom.coordinates
+        break
+      case "Point":
+        val = [geom.coordinates]
+    }
+
+    return val
+  }
+
   async getGeometry(id: number): Promise<number[][]> {
     const result = await this.prisma.$queryRaw<{ geom: Geometry }[]>(
       Prisma.sql`SELECT geom::json FROM "public"."Reach" WHERE id = ${id}`
@@ -34,20 +52,7 @@ export class ReachService implements ReachServiceInterface {
       return []
     }
 
-    let val: number[][] = []
-
-    switch (result[0].geom.type) {
-      case "Polygon":
-        val = result[0].geom.coordinates[0]
-        break
-      case "LineString":
-        val = result[0].geom.coordinates
-        break
-      case "Point":
-        val = [result[0].geom.coordinates]
-    }
-
-    return val
+    return this.formatGeometry(result[0].geom)
   }
 
   async getReach(id: number): Promise<ReachExtended> {
@@ -114,9 +119,14 @@ export class ReachService implements ReachServiceInterface {
       `/content/River/search/.json?state=st${state}`
     )
 
+    const getGeom = (reach: ReachLegacy) => {
+      if (!reach.geom) return []
+      return this.formatGeometry(geoParser.postgisToGeoJSON(reach.geom))
+    }
+
     return response.data.map((reach: ReachLegacy) => ({
       ...reach,
-      geom: [], // do some magic here to convert the string to an array of an array of numbers/coordinates
+      geom: getGeom(reach),
       features: [],
     }))
   }

@@ -9,6 +9,7 @@ import {
   mockFeatures,
 } from "../feature/__mocks__/mockFeatures"
 import { FeatureService } from "../feature/feature.service"
+// import { ReachLegacy } from "../../types"
 
 const getSpy = jest.spyOn(http, "get")
 
@@ -60,7 +61,29 @@ describe("ReachService", () => {
   it("should fetch reaches by state", async () => {
     getSpy.mockResolvedValueOnce({ data: mockLegacyReaches })
     const result = await reachService.getReachesByState("CO")
-    expect(result).toEqual(mockReachesExt)
+
+    expect(result).toEqual([
+      {
+        abstract: "Test Abstract",
+        altname: "Test Alt Name",
+        avggradient: 1,
+        county: "Test County",
+        description: "Test Description",
+        features: [],
+        geom: [[-123.78037308890543, 53.929411764705875]],
+        grade: "Test Class",
+        id: 1,
+        length: 1,
+        maxgradient: 1,
+        permitid: null,
+        photoid: null,
+        river: "Test Reach",
+        section: "Test Section",
+        shuttledetails: "Test Shuttle Details",
+        state: "CO",
+        zipcode: "12345",
+      },
+    ])
   })
   it("should return coordinates of the polygon geometry", async () => {
     prismaMock.$queryRaw.mockResolvedValueOnce([
