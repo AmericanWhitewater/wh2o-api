@@ -14,10 +14,13 @@ const post = (
 
   const getPost = async (request: PostRequest, reply: FastifyReply) => {
     const { id } = request.params
+    try {
+      const result = await postService.getPost(Number(id))
 
-    const result = await postService.getPost(Number(id))
-
-    reply.send(result)
+      reply.send(result)
+    } catch (error) {
+      reply.status(404).send({ message: `Post ${id} not found` })
+    }
   }
   const updatePost = async (
     request: PostCreateUpdateRequest,

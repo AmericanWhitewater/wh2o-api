@@ -1,3 +1,5 @@
+import { Gage, Reach } from "@prisma/client"
+
 import { ReachService } from "./reach.service"
 import { prismaMock } from "../../plugins/database/singleton"
 import { mockReaches, mockReachesExt } from "./__mocks__/mockReaches"
@@ -13,6 +15,9 @@ const getSpy = jest.spyOn(http, "get")
 const getLocationSpy = jest.spyOn(FeatureService.prototype, "getLocation")
 
 const reachService = new ReachService(prismaMock)
+
+const getGeometrySpy = jest.spyOn(ReachService.prototype, "getGeometry")
+const getFeaturesSpy = jest.spyOn(ReachService.prototype, "getFeatures")
 
 const mockLegacyReaches = mockReaches.map((r) => ({
   ...r,
@@ -103,5 +108,77 @@ describe("ReachService", () => {
       mockExtendedFeatures[2],
       mockExtendedFeatures[1],
     ])
+  })
+  it("should throw an error if a reach is not found", async () => {
+    let error = false
+    try {
+      prismaMock.reach.findUnique.mockResolvedValueOnce(null)
+      await reachService.getReach(1)
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if updating a reach fails", async () => {
+    let error = false
+    try {
+      prismaMock.reach.update.mockResolvedValueOnce(null as unknown as Reach)
+      await reachService.updateReach(1, mockReaches[0])
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if fetching reaches by state fails", async () => {
+    let error = false
+    try {
+      getSpy.mockResolvedValueOnce(null as unknown as Reach)
+      await reachService.getReachesByState("CO")
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if deleting a reach fails", async () => {
+    let error = false
+    try {
+      prismaMock.reach.delete.mockResolvedValueOnce(null as unknown as Reach)
+      await reachService.deleteReach(1)
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should handle deleting a reach", async () => {
+    prismaMock.reach.delete.mockResolvedValueOnce(mockReaches[0])
+    const result = await reachService.deleteReach(1)
+    expect(result).toEqual(mockReaches[0])
+  })
+  it("should get gages for a reach", async () => {
+    prismaMock.gage.findMany.mockResolvedValueOnce([])
+    const result = await reachService.getGages(1)
+    expect(result).toEqual([])
+  })
+  it("should throw an error if getting gages fails", async () => {
+    let error = false
+    try {
+      prismaMock.gage.findMany.mockResolvedValueOnce(null as unknown as Gage[])
+      await reachService.getGages(1)
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if no reach is found", async () => {
+    getGeometrySpy.mockResolvedValueOnce([])
+    getFeaturesSpy.mockResolvedValueOnce([])
+    let error = false
+    try {
+      prismaMock.reach.findUnique.mockResolvedValueOnce(null)
+      await reachService.getReach(1)
+    } catch {
+      error = true
+    }
+    expect(error).toEqual(true)
   })
 })

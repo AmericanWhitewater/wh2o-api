@@ -1,3 +1,5 @@
+import { Post } from "@prisma/client"
+
 import { PostService } from "./post.service"
 import { prismaMock } from "../../plugins/database/singleton"
 import { mockPosts } from "./__mocks__/mockPosts"
@@ -29,5 +31,45 @@ describe("PostService", () => {
     prismaMock.post.findMany.mockResolvedValueOnce(mockPosts)
     const result = await postService.getPostsByReach(1)
     expect(result).toEqual(mockPosts)
+  })
+  it("should throw an error if creating a post fails", async () => {
+    let error = false
+    try {
+      prismaMock.post.create.mockRejectedValueOnce(null)
+      await postService.createPost(mockPosts[0])
+    } catch (e) {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if a post is not found", async () => {
+    let error = false
+    try {
+      prismaMock.post.findUnique.mockResolvedValueOnce(null)
+      await postService.getPost(1)
+    } catch (e) {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if updating a post fails", async () => {
+    let error = false
+    try {
+      prismaMock.post.update.mockResolvedValueOnce(null as unknown as Post)
+      await postService.updatePost(1, mockPosts[0])
+    } catch (e) {
+      error = true
+    }
+    expect(error).toEqual(true)
+  })
+  it("should throw an error if deleting a post fails", async () => {
+    let error = false
+    try {
+      prismaMock.post.delete.mockResolvedValueOnce(null as unknown as Post)
+      await postService.deletePost(1)
+    } catch (e) {
+      error = true
+    }
+    expect(error).toEqual(true)
   })
 })

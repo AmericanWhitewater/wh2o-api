@@ -153,10 +153,17 @@ export class ReachService implements ReachServiceInterface {
   }
 
   async getGages(id: number): Promise<Gage[]> {
-    return this.prisma.gage.findMany({
-      where: {
-        reachId: id,
-      },
-    })
+    return this.prisma.gage
+      .findMany({
+        where: {
+          reachId: id,
+        },
+      })
+      .then((res) => {
+        if (res === null) {
+          throw new Error(`Gages for Reach ${id} not found`)
+        }
+        return res
+      })
   }
 }

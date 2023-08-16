@@ -82,8 +82,15 @@ export class FeatureService implements FeatureServiceInterface {
   }
 
   async createFeature(feature: Feature): Promise<Feature> {
-    return this.prisma.feature.create({
-      data: feature,
-    })
+    return this.prisma.feature
+      .create({
+        data: feature,
+      })
+      .then((res) => {
+        if (res === null) {
+          throw new Error(`Feature ${feature.id} not found`)
+        }
+        return res
+      })
   }
 }

@@ -24,4 +24,9 @@ describe("Feature", () => {
       })
     )
   })
+  it("should return status 500 if a feature does not exist", async () => {
+    getFeatureSpy.mockRejectedValueOnce("err")
+    const response = await testUtils.request().get("/feature/1")
+    expect(response.status).toBe(500)
+  })
 })

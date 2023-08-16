@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyError, FastifyReply } from "fastify"
 
-import schema from "./schemas"
+import schema from "./schema"
 import { ReachByStateRequest, ReachRequest, ReachUpdateRequest } from "./types"
 import { ReachService } from "../../service/reach/reach.service"
 import logger from "../../lib/logger"
