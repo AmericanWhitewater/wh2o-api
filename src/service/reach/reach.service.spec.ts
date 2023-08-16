@@ -9,7 +9,6 @@ import {
   mockFeatures,
 } from "../feature/__mocks__/mockFeatures"
 import { FeatureService } from "../feature/feature.service"
-// import { ReachLegacy } from "../../types"
 
 const getSpy = jest.spyOn(http, "get")
 
