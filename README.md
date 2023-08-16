@@ -4,6 +4,8 @@ American Whitewater's next generation API built
 with [Fastify](https://www.fastify.io/), [Prisma](https://www.prisma.io/),
 and [PostgreSQL](https://www.postgresql.org/).
 
+[![build](https://github.com/AmericanWhitewater/wh2o-api/actions/workflows/build.yml/badge.svg)](https://github.com/AmericanWhitewater/wh2o-api/actions/workflows/build.yml)
+
 > This is still a proof of concept and is not ready for production.
 
 ## Goals
