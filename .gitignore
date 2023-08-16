@@ -4,3 +4,11 @@ dist/
 docs/.vuepress/dist
 .DS_Store
 .scannerwork
+.idea
+coverage
+
+# disabling just for the poc
+#sdks/kotlin/*
+#sdks/php/*
+#sdks/swift/*
+#sdks/typescript-axios/*

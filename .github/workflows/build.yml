@@ -1,0 +1,28 @@
+name: build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+      - "fastify" # temp for testing ci
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Env
+        run: cp .env.example .env
+      - uses: actions/setup-node@v3
+        name: Setup Node.js
+        with:
+          node-version: "18"
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test:ci
+      - name: Build
+        run: npm run build
