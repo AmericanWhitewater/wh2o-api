@@ -426,7 +426,7 @@ components:
       in: header
       name: X-WH2O-API-KEY
   schemas:
-    Reach:
+    Reach: # Reflects ReachExtended type. See src/types.ts
       title: Reach
       type: object
       properties:
@@ -492,7 +492,7 @@ components:
       required:
         - river
         - section
-    Feature:
+    Feature: # Reflects FeatureExtended type. See src/types.ts
       title: Feature
       type: object
       properties:
