@@ -14,10 +14,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Env
         run: cp .env.example .env
-      - uses: isbang/compose-action@v1.5.0
-        with:
-          compose-file: "./docker-compose.yml"
-          services: "db"
       - uses: actions/setup-node@v3
         name: Setup Node.js
         with:
@@ -26,8 +22,6 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Setup Prisma
-        run: npm run db:push
       - name: Test
         run: npm run test:ci
       - name: Build
